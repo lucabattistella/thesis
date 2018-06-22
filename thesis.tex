@@ -268,7 +268,7 @@ The idea is to find a line bundle on the universal curve that will give us the c
  A proof attributed to Jun Li can be found in \cite[Lemma 2.6]{LLY1} for the parametrised/graph space case; applying the same argument more carefully shows that the collapsing can be performed step-by-step, something that was exploited for example in \cite{Mustata}, as noted in \cite{CF-K-wallcrossing}. The statement generalises well to higher genus - where it is only a virtually birational morphism, see \cite[Theorem 3]{MOP} and \cite[Proposition 4.21]{Manolache-Push}; instead it does not extend to the case that the target is any toric variety. The problem is that there could be some toric line bundle of negative degree along a rational tail; examples may be found already when looking at the Hirzebruch surfaces. A lengthier discussion takes place in \cite[Appendix A]{BN}.
 \end{rmk}
 
-\subsection{Generating functions and $\epsilon$-wallcrossing} Fixed $X$ and the numerical invariants $g,n,\beta$, the quasimap spaces determine a finite wall-and-chamber structure on $\QQ_{>0}$, such that $\Qe{g}{n}{X}{\beta}$ is constant for $\epsilon$ in a fixed chamber, and changes across finitely many values of $\epsilon$. I will briefly report on the beautiful results of Ciocan-Fontanine and Kim \cite{CF-K-wallcrossing,CF-K-higher-genus,CF-K-MirrorSymmetry} entailing relationships between the virtual classes and the resulting invariants when crossing an $\epsilon$-wall.
+\subsection{Generating functions and $\epsilon$-wallcrossing}\label{subsec:gf_and_wc} Fixed $X$ and the numerical invariants $g,n,\beta$, the quasimap spaces determine a finite wall-and-chamber structure on $\QQ_{>0}$, such that $\Qe{g}{n}{X}{\beta}$ is constant for $\epsilon$ in a fixed chamber, and changes across finitely many values of $\epsilon$. I will briefly report on the beautiful results of Ciocan-Fontanine and Kim \cite{CF-K-wallcrossing,CF-K-higher-genus,CF-K-MirrorSymmetry} entailing relationships between the virtual classes and the resulting invariants when crossing an $\epsilon$-wall.
 
 Let me introduce some more notation. Fix a homogeneous basis $\gamma_0,\ldots,\gamma_l$ of $H^*(X,\QQ)$, with dual basis $\gamma^0,\ldots,\gamma^l$ with respect to the intersection product $\langle\cdot,\cdot\rangle$, and let $\mathbf{t}=\sum_{i=0}^lt_i\gamma_i$ be a general element of $H^*(X,\QQ)$. Adopting double bracket notation:
 \[\lala\delta_1\psi_1^{a_1},\ldots,\delta_n\psi_n^{a_n}\rara^\epsilon_{g,n}(\mathbf{t})=\sum_{\substack{\beta\in\operatorname{Eff}(X) \\ m\geq 0}}\frac{q^\beta}{m!}\langle \delta_1\psi_1^{a_1},\ldots,\delta_n\psi_n^{a_n},\mathbf t,\ldots,\mathbf t\rangle^{\epsilon}_{g,n+m,\beta} \]
@@ -339,6 +339,24 @@ Finally, notice that the basepoint set of $\xi':=\left((\bar C,\mathbf x),(\bar 
 
 We have also proved in \cite[Lemma B.5]{BN} that if $f$ is finite onto its image (i.e. it does not contract any effective curve class in $X$) and $\Q{g}{n}{Y}{f_*\beta}$ is unobstructed, then $Q(f)$ admits a perfect obstruction theory compatible with the given ones, hence $Q(f)^!\virt{\Q{g}{n}{Y}{f_*\beta}}=\virt{\Q{g}{n}{X}{\beta}}$, i.e. the virtual classes behave well under virtual pullback.
 
+\begin{rmk}
+I. Ciocan-Fontanine has kindly pointed out that, contrary to the case of stable maps, $k$ might not be a closed embedding, even though $i$ is. Consider the Segre embedding:
+\begin{align*}
+\PP^1\times\PP^1 & \xhookrightarrow{i} \PP^3\\ 
+([x:y],[z:w]) & \mapsto [xz:xw:yz:yw]\end{align*}
+Consider the induced morphism between quasimap spaces
+\begin{equation*} k\colon \Q{0}{3}{\PP^1\times\PP^1}{(2,2)}\to\Q{0}{3}{\PP^3}{4} \end{equation*}
+and the following two objects of $\Q{0}{3}{\PP^1 \times \PP^1}{(2,2)}$:
+\begin{align*}
+  \left(\left(\PP^1_{[s:t]},0,1,\infty\right),\left(L_1=\OO_{\PP^1}(2),u_1=s^2 ,v_1=st\right),\left(L_2=\OO_{\PP^1}(2), u_2=st,v_2=t^2\right)\right)\\
+  \left(\left(\PP^1_{[s:t]},0,1,\infty\right),\left(L_1=\OO_{\PP^1}(2),u_1=st ,v_1=t^2 \right),\left(L_2=\OO_{\PP^1}(2), u_2=s^2,v_2=st\right)\right)
+\end{align*}
+These two quasimaps are non-isomorphic, but they both map to the same object under $k$, namely:
+ \[
+   \left(\left(\PP^1_{[s:t]},0,1,\infty\right),\left(L=\OO_{\PP^1}(4),z_0=s^3t,z_1=s^2t^2,z_2=s^2t^2,z_3=st^3\right)\right)
+ \]
+Notice that this only happens on the locus of quasimaps with basepoints.
+ \end{rmk}
 \subsection{Splitting axiom and CohFT}
 This is discussed e.g. in \cite[\S 2.3.3]{CF-K-higher-genus}. There is a morphism $\fgt\colon \Qe{g}{n}{X}{\beta}\to \oM_{g,n}$ given by stabilising the source curve and forgetting all the extra data. For every $\epsilon\in\QQ_{>0}$ and $2g-2+n>0$ there is a system of $\Lambda$-linear maps
 \begin{align*}\Omega^\epsilon_{g,n}\colon H^*(X,\Lambda)^{\otimes n} & \to H^*(\oM_{g,n},\Lambda) \\
@@ -647,8 +665,8 @@ It would be interesting to have a full relative theory for $\epsilon$-quasimaps,
  a stable map $(C,x_1, \ldots, x_n,f)$ is in $\M{0}{\alpha}{\PP^N|H}{d}$ if and only if, for each connected component $Z$ of $f^{-1}(H) \subseteq C$:
 \begin{enumerate}
 \item if $Z$ is a point and is equal to a marked point $x_i$, then $f$ is tangent to $H$ at $x_i$ to order at least $\alpha_i$;
-\item if $Z$ is a curve, and if we let $C^{(i)}$ for $1 \leq i \leq r$ denote the irreducible components of $C$ adjacent to $Z$ and $m^{(i)}$ denote the multiplicity of $f|_{C^{(i)}}$ to $H$ at the node $Z \cap C^{(i)}$, then:
-\begin{equation} \label{Relative stable map internal component inequality} H \cdot f_* [Z] + \sum_{i=1}^r m^{(i)} \geq \sum_{x_i \in Z} \alpha_i \tag{\textasteriskcentered} \end{equation}
+\item if $Z$ is a curve, and if we let $C^{(i)}$ for $1 \leq i \leq r$ denote the irreducible components of $C$ adjacent to $Z$, and $m^{(i)}$ denote the multiplicity of $f|_{C^{(i)}}$ to $H$ at the node $Z \cap C^{(i)}$, then:
+\begin{equation} \label{Relative stable map internal component inequality} H \cdot f_* [Z] + \sum_{i=1}^r m^{(i)} \geq \sum_{x_i \in Z} \alpha_i \end{equation}
 \end{enumerate}
 Now this definition works well for every pair $(X|Y)$ of a variety with a smooth divisor, by just replacing $H$ with $Y$ in the description above. On the other hand, the definition as the closure of the nice locus makes it clear that $\M{0}{\alpha}{\PP^N|}{d}$ is irreducible of the expected dimension: \[\dim(\M{0}{\alpha}{\PP^N|H}{d})=\dim (\M{0}{n}{\PP^N}{d})-\sum\alpha.\]
 If we then assume that $Y$ is very ample, we may use the complete linear system assoiated to it in order to embed $\phi_{\lvert Y\rvert}\colon X\hookrightarrow\PP^N$ and find a hyperplane $H\subseteq \PP^N$ such that $H\cap X= Y$. Set $d=\phi_{\lvert Y\rvert,*}(\beta)$ for a curve class $\beta\in\operatorname{Eff}(X)$. The following cartesian diagram holds true:
@@ -677,7 +695,7 @@ The proof goes roughly as follows: the reduction to the case of $(\PP^N|H)$ is j
 \end{rmk}
 
 \subsection{Definitions and propositions}
-I come now to the definition of relative quasimaps \cite[\S 2.3]{BN}. Let $X$ be a smooth toric variety, $Y=V(s)$ a smooth very ample divisor (not necessarily toric). As in the discussion of functoriality abov, we may write $\OO_X(Y)=\bigotimes_{\rho\in\Sigma(1)}\OO_X(D_\rho)^{\otimes a_\rho}$ and 
+I come now to the definition of relative quasimaps \cite[\S 2.3]{BN}. Let $X$ be a smooth toric variety, $Y=V(s)$ a smooth very ample divisor (not necessarily toric). As in the discussion of functoriality above, we may write $\OO_X(Y)=\bigotimes_{\rho\in\Sigma(1)}\OO_X(D_\rho)^{\otimes a_\rho}$ and 
 \[s=\sum_{\mathbf a:[\mathbf a]=\OO_X(Y)}\mu_{\mathbf a}\prod_{\rho\in\Sigma(1)}z_\rho^{a_\rho}\]
 in terms of Cox's homogeneous coordinates. For a quasimap 
 \[ \Big((C,x_1,\ldots,x_n), (L_\rho,u_\rho)_{\rho \in \Sigma(1)}, (\varphi_m)_{m \in M}\Big) \]
@@ -688,11 +706,235 @@ set $L_Y=\bigotimes_{\rho\in\Sigma(1)}L_\rho^{\otimes a_\rho}$ and
  A quasimap belongs to the relative space $\Q{0}{\alpha}{X|Y}{\beta}\subseteq \Q{0}{n}{X}{\beta}$ if for every connected component $Z$ of $s_Y^{-1}(0)$, the following holds:
 \begin{enumerate}
 \item if $Z$ is a point and is equal to a marked point $x_i$, then $s_Y^*(0)$ has order at least $\alpha_i$ at $x_i$;
-\item if $Z$ is a curve, and if we let $C^{(i)}$ for $1 \leq i \leq r$ denote the irreducible components of $C$ adjacent to $Z$ and $m^{(i)}$ denote the multiplicity of $f|_{C^{(i)}}$ to $H$ at the node $Z \cap C^{(i)}$, then:
-\begin{equation} \label{Relative quasimap internal component inequality} \deg(L_{Y|Z}) + \sum_{i=1}^r m^{(i)} \geq \sum_{x_i \in Z} \alpha_i \tag{\textasteriskcentered} \end{equation}
+\item if $Z$ is a curve, and if we let $C^{(i)}$ for $1 \leq i \leq r$ denote the irreducible components of $C$ adjacent to $Z$, and $m^{(i)}$ denote the multiplicity of $f|_{C^{(i)}}$ to $H$ at the node $Z \cap C^{(i)}$, then:
+\begin{equation} \label{Relative quasimap internal component inequality} \deg(L_{Y}|_Z) + \sum_{i=1}^r m^{(i)} \geq \sum_{x_i \in Z} \alpha_i \end{equation}
 \end{enumerate}
 \end{definition}
 
+I am going to discuss an adaptation of Gathmann's recursion formula to this setup: the idea is simply to push down Theorem \ref{thm:Gathmann_formula} along the collapsing morphism in the case of $(\PP^N|H)$, and then recover the general formula by virtual pullback.
+
+\begin{lem}
+ The collapsing morphism $\chi$ restricts to a proper and birational morphism \[\chi_\alpha\colon \M{0}{\alpha}{\PP^N|H}{d}\to \Q{0}{\alpha}{\PP^N|H}{d}.\]
+\end{lem}
+\begin{proof}
+ Fix coordinates on $\PP^N$ such that $H=\{x_0=0\}$. We first show that a stable map satisfying \eqref{Relative stable map internal component inequality} is sent to a quasimap satisfying \eqref{Relative quasimap internal component inequality}: the collapsing of rational tails happens far from any markings, so we only have to discuss the case of an internal component $Z$. If the rational tail $R$ is internal, then collapsing does not affect the left hand side of the inequality (it simply transfers some degree from $R$ to $\overline{Z\setminus R}$); on the other hand, if it is external, collapsing may only increase the left hand side, since the multiplicity of contact $m^R$ is at most equal to the degree of $f_{|R}$. This proves that $\chi(\M{0}{\alpha}{\PP^N|H}{d})\subseteq \Q{0}{\alpha}{\PP^N|H}{d}$.
+ 
+ On the other hand $\chi_\alpha$ is surjective: given a relative quasimap $\xi'$ with an internal basepoint $q_0$ of order $d_0$, choose any line $\ell$ through its image, with $\ell$ transverse to $H$, and lift $\xi'$ to a stable map $\xi$ by adjoining a $\PP^1=:R$ to the source curve at $q_0$, and defining the map $f_{|R}$ to be a $d_0$-fold cover of $\ell$ totally ramified at $q_0$ (any basepoint which is not internal is easier to deal with). Now, given any relative quasimap $\xi'\in\Q{0}{\alpha}{\PP^N|H}{d}$ we may choose a lifting $\xi\in\M{0}{\alpha}{\PP^N|H}{d}$; by Gathmann's result, $\xi$ can be smoothed to a map in the nice locus; applying $\chi$ to such a smoothing we obtain a smoothing of $\xi'$. This shows that $\Q{0}{\alpha}{\PP^N|H}{d}$ is contained in the closure of the nice locus of relative quasimaps with no basepoints and image not contained in $H$. On the other hand $\Q{0}{\alpha}{\PP^N|H}{d}$ is closed by the conservation of number principle. Therefore $\chi_\alpha$ is proper and birational, being an isomorphism on the nice locus.
+\end{proof}
+
+\begin{prop}\label{prop:quasimap_Gathmann_formula} In the Chow group of $\Q{0}{\alpha}{X|Y}{\beta}$
+ \begin{equation*} (\alpha_k \psi_k + x_k^*c_1(L_Y)) \cap \virt{\Q{0}{\alpha}{X|Y}{\beta}} = \virt{\Q{0}{\alpha+e_k}{X|Y}{\beta}} + \virt{\mathcal{D}^Q_{\alpha,k}(X,\beta)} \end{equation*}
+\end{prop}
+Notice that $\mathcal{D}^Q_{\alpha,k}(X,\beta)$ is a sum of ``comb loci'', running over all splittings $A,B,M$ of the markings, curve class, and multiplicities at the internal-to-external nodes, this time required to satisfy the quasimap stability condition, namely there are no rational tails:
+\[\mathcal{D}^Q_{A,B,M}(X)=\Q{0}{\lvert\alpha^{(0)}\rvert+r}{Y}{\beta_0}\times_{H^r}\prod_{i=1}^r
+\Q{0}{\alpha^{(i)}\cup m^{(i)}}{X|Y}{\beta_i}\]
+endowed with the product virtual fundamental class, weighted by a factor $\frac{m^{(1)}\cdot\ldots\cdot m^{(r)}}{r!}$.
+\begin{proof}
+ In the case of $(\PP^N|H)$ the formula follows by pushing forward Gathmann's formula along $\chi$: for this it is useful to notice that
+ \begin{equation}
+  \chi^*(\psi_k)=\psi_k, \quad \text{and} \quad \chi^*(x_k^*L_Y)=\ev_k^*\OO_X(Y),
+ \end{equation}
+because collapsing does not affect the universal curve in a neighbourhood of the marking $x_k$. On the other hand if a comb locus $\mathcal{D}^Q_{A,B,M}(X)$ contains a rational tail (necessarily external), then the restriction of $\chi$ to $\mathcal{D}^Q_{A,B,M}(X)$ has positive dimensional fibers, because $\dim(\M{0}{(m^{(i)})}{\PP^N|H}{d})>\dim H$, so the corresponding term of Gathmann's formula vanishes under $\chi_*$.
+
+The case of a smooth very ample divisor $(X|Y)$ follows by virtual pullback: $\Q{0}{n}{\PP^N}{d}$ is unobstructed, hence the  closed embedding $\phi_{\lvert Y\rvert}\colon X\hookrightarrow \PP^N$ induces $\Phi_{\lvert Y\rvert}\colon \Q{0}{n}{X}{\beta}\to \Q{0}{n}{\PP^N}{d}$ endowed with a perfect obstruction theory. $\Phi_{\lvert Y\rvert}^!\virt{\Q{0}{\alpha}{\PP^N|H}{d}}=\virt{\Q{0}{\alpha}{X|Y}{\beta}}$ by the very definition of the latter, and it is easily checked that $\Phi_{\lvert Y\rvert}^!\virt{\Q{0}{a_0+r}{H}{d_0}}=\virt{\Q{0}{a_0+r}{Y}{\beta_0}}$ where the latter is defined as in \cite{CFKM}. The claim follows from a careful application of the splitting property of the virtual class of quasimap spaces; the details are checked in \cite[\S 4 and Appendix B.4]{BN}.
+\end{proof}
+
+\subsection{Gathmann's algorithm and quasimap quantum Lefschetz} Notice that in the very last step of the recursion, i.e. increasing $\sum\alpha$ from $Y\cdot \beta$ to $Y\cdot \beta+1$, there is no main term but only boundary corrections; also, one of them represent maps with no external components, which recovers $\Q{0}{n}{Y}{\beta}$.
+
+Gathmann describes an algorithm for computing relative invariants of $(X|Y)$ and \ilemph{restricted} absolute invariants of $Y$ (i.e. the cohomological insertions all lie in the image of the restriction map $H^*(X)\to H^*(Y)$) recursively, assuming that we know the descendant invariants of $X$. The proof is by induction on $d=Y\cdot \beta, n,$ and $\sum\alpha$ (where we set $\sum\alpha=d+1$ when looking at absolute invariants of $Y$). If we want to compute a relative invariant with tangency condition $\alpha$ and degree $\beta$, assume $\alpha_k>0$ (if we cannot find such a $k$ then we are just considering an absolute invariant of $X$); we may then write down the formula as
+\[\virt{\Q{0}{\alpha}{X}{\beta}}=((\alpha_k-1)\psi_k+\ev_k^*\OO_X(Y))\virt{\Q{0}{\alpha-e_k}{X}{\beta}}-\virt{\mathcal{D}^Q_{\alpha-e_k,k}(X,\beta)}.\]
+The classes appearing on the right hand side have lower numerical invariants, so we may assume they have been computed inductively. There is one subtlety, namely that we use the cohomological splitting of the diagonal of $Y\times Y$ in order to reduce the integral on the right hand side to a product of relative $(X|Y)$ and absolute $Y$ invariants, but in doing so we might introduce some non-restricted insertions. It can be proved that invariants of $Y$ comprising only one unrestricted insertion vanish: assume we are interested in $\langle\tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n)\rangle^{\epsilon,Y}_{0,n\beta}$ with only $\delta_1\in i^*H^*(X)^\perp$. Then recall that $i_*\virt{\Q{0}{n}{Y}{\beta}}=c_{top}(\pi_*f^*\OO_X(Y))\cap \virt{\Q{0}{n}{X}{i_*\beta}}$, and we may write $c_{top}(\pi_*f^*\OO_X(Y))=\ev_1^*\OO_X(Y)c_{top}(E^{Y\cdot\beta})$. We may factor through the following diagram:
+\bcd
+\Q{0}{(1,0,\ldots,0)}{X|Y}{\beta}\ar[r,"j"]\ar[d,"\tilde\ev_1"] & \Q{0}{n}{X}{\beta}\ar[d,"\ev_1"] \\
+Y\ar[r,"i"] & X
+\ecd
+and $\langle\tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n)\rangle^{\epsilon,Y}_{0,n\beta}$ is computed by
+\begin{multline*}
+ \delta_1\cdot\tilde\ev_{1,*}i^!\left(\psi_1^{a_1}\prod_{i=2}^n\ev_i^*(\delta_i)\psi_i^{a_i}c_{top}(E^{Y\cdot\beta})\cap\virt{\Q{0}{n}{X}{\beta}}\right)= \\
+ \delta_1\cdot i^*\ev_{1,*}\left(\psi_1^{a_1}\prod_{i=2}^n\ev_i^*(\delta_i)\psi_i^{a_i}c_{top}(E^{Y\cdot\beta})\cap\virt{\Q{0}{n}{X}{\beta}}\right) =0
+\end{multline*}
+It is possible then to prove recursively that any relative invariant with only one unrestricted invariant vanishes, and this is sufficient for our application, since the external components always get at most one such insertion.
+
+\smallskip
+
+The above algorithm can be realised into a compact formula relating some quasimap invariants of $Y$ to those of $X$ under some positivity assumption, which allows us to discard most contributions from the comb loci by dimensional reasons. The following discussion is inspired by \cite{Ga-MF}, in which Gathmann applies the stable map recursion formula to obtain a new proof of the mirror theorem for hypersurfaces \cite{Givental-equivariantGW}.
+
+From now on we make the following two assumptions:
+\begin{enumerate}
+\item \emph{$Y$ is semi-positive}: $-K_Y$ is nef;
+\item \emph{$Y$ contains all curve classes}: the map $i_* : \Achow_1(Y) \to \Achow_1(X)$ is surjective.
+\end{enumerate}
+\begin{rmk}
+ By adjunction, $-K_X$ pairs strictly positively with every curve class coming from $Y$, hence with every curve class by Assumption (2). Thus $-K_X$ is ample, or in other words, $X$ is Fano, by Kleiman's criterion, since the effective cone of the toric variety $X$ is finitely generated in $\Achow_1(X)$, hence is closed in $\Achow_1(X)_{\mathbb{R}}$. Also note that if $\dim X \geq 3$ then Assumption (2) always holds, due to the classical Lefschetz hyperplane theorem; on the other hand if $\dim X = 2$ then Assumption (2) forces $X$ to be $\PP^2$.
+\end{rmk}
+
+We fix a homogeneous basis $\eta_0, \ldots, \eta_k$ for $\HH^*(X) = \HH^*(X,\QQ)$ and let $\eta^0, \ldots, \eta^k$ denote the dual basis with respect to the Poincar\'e pairing. Without loss of generality we may suppose that $\eta^0=\mathbbm 1_X$ and $\eta^1=[Y]$. We get an induced basis $\rho_1=i^*\eta_1, \ldots, \rho_k = i^* \eta_k$ for $i^*\HH^*(X)$. Notice that $\rho_0 = i^* \eta_0 = i^* [\pt_X] = 0$, $\rho_1 = i^* \eta_1 = [\pt_Y]$.  We can extend the $\rho_i$ to a basis $\rho_1, \ldots, \rho_l$ for $\HH^*(Y)$ by adding $\rho_{k+1}\ldots,\rho_{l}$. Let $\rho^1, \ldots, \rho^l$ denote the dual basis; notice that $\rho^i$ is \emph{not} equal to $i^* \eta^i$ (they do not even have the same degree!).  Note also that $\rho^1 = \mathbbm{1}_Y$.
+
+We are going to analyse the behaviour of a generating function of $2$-pointed quasimap invariants with a fundamental class insertion, which in fact coincides with the small $I$-function from Section \ref{subsec:gf_and_wc}. Let me fix some more notation for this section.
+
+For any smooth projective toric variety\footnote{Or more generally any space for which the quasimap invariants are defined, for instance a smooth hypersurface in a toric variety.} $X$ and any effective curve class $\beta\in \HH_2^+(X)$, we define
+\begin{align*} S_0^X(z,\beta) & =(\ev_1)_*\left(\frac{1}{z-\psi_1} \virt{\Q{0}{2}{X}{\beta}}\right) 
+\intertext{and}
+S_0^X(z,q) &=\sum_{\beta\geq 0} q^\beta S_0^X(z,\beta)\end{align*}
+where by convention $S_0^X(z,0)= \mathbbm 1_X$, and $q$ is a Novikov variable. These are generating functions for quasimap invariants of $X$ which take values in $\HH^*(X)$.
+
+The same definition applies to $Y$. However, sometimes we may wish to consider only insertions of cohomology classes coming from $X$. These are the so-called \emph{restricted quasimap invariants}, and the corresponding generating function is defined as
+\begin{equation*} \tilde{S}^Y_0(z,\beta) = (\ev_1)_* \left( \dfrac{1}{z-\psi_1} \virt{\Q{0}{2}{Y}{\beta}} \right) \end{equation*}
+where crucially $\ev_1$ is viewed as \emph{mapping to $X$} instead of to $Y$. Thus $\tilde{S}^Y_0(z,\beta)$ takes values in $\HH^*(X)$ and involves only quasimap invariants of $Y$ with insertions coming from $i^*\HH^*(X)$; this is in contrast to $S^Y_0(z,\beta)$, which takes values in $\HH^*(Y)$ and involves quasimap invariants of $Y$ with arbitrary insertions. As earlier, we can also define $\tilde{S}_0^Y(z,q)$.
+
+Now, since $X$ and $Y$ are smooth, we may use Poincar\'{e} duality to define a push-forward map on cohomology, $i_* \colon \HH^k(Y) \to \HH^{k+2}(X)$.
+
+\begin{lemma} $i_* S^Y_0(z,\beta) = \tilde{S}^Y_0(z,\beta)$. \end{lemma}
+\begin{proof} This follows from functoriality of cohomological push-forwards and the fact that we have a commuting triangle:
+\bcd
+\Q{0}{2}{Y}{\beta} \ar[rr,"\ev_1"] \ar[rd,"\ev_1" left=0.2cm] & & Y \ar[ld,"i"] \\
+& X & 
+\ecd
+Let us spell this out explicitly, in order to help familiarise the reader with the generating functions involved. First, it is easy to see from the projection formula that:
+\begin{align*} i_* \rho^i =
+\begin{cases} \eta^i \qquad \text{for $i = 1, \ldots, k$} \\
+0 \qquad \text{\ for $i = k+1, \ldots, l$} \end{cases} \end{align*}
+Now, we can write $S_0^Y(z,\beta)$ as:
+\begin{equation*} S_0^Y(z,\beta) = \sum_{i=1}^l \left\langle \dfrac{\rho_i}{z-\psi_1} , \mathbbm{1}_Y \right\rangle_{0,2,\beta}^Y  \rho^i \end{equation*}
+Thus applying $i_*$ gives
+\begin{align*} i_* S_0^Y(z,\beta)  = \sum_{i=1}^l \left\langle \dfrac{\rho_i}{z-\psi_1} , \mathbbm{1}_Y \right\rangle_{0,2,\beta}^Y   i_* \rho^i
+= \sum_{i=1}^k \left\langle \dfrac{\eta_i}{z-\psi_1}, \mathbbm{1}_X \right\rangle_{0,2,\beta}^Y   \eta^i = \tilde{S}_0^Y(z,\beta) \end{align*}
+as claimed. \end{proof}
+
+\subsection{Quasimap Lefschetz formula} We now turn to our main result: a formula expressing the generating function $\tilde{S}_0^Y(z,q)$ for restricted quasimap invariants of $Y$ in terms of the quasimap invariants of $X$.
+
+\begin{thm} \label{Theorem Quantum Lefschetz}
+Let $X$ and $Y$ be as above. Then
+\begin{equation}\label{eqn:mirror}
+\dfrac{\sum_{\beta\geq 0} q^\beta\prod_{j=0}^{Y\cdot\beta}(Y+jz)S_0^X(z,\beta)}{P_0^X(q)}= \tilde{S}_0^Y(z,q)
+\end{equation}
+where:
+\begin{align*}
+ P_0^X(q) % & = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta (Y\cdot\beta) \langle [\pt_Y],\mathbbm 1_{X}\rangle_{0,(Y\cdot\beta,0),\beta}^{X|Y} \\
+            & = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta(Y\cdot\beta)!\langle [\pt_X] \psi_1^{Y\cdot\beta-1} ,\mathbbm 1_{X}\rangle_{0,2,\beta}^X
+\end{align*}
+Notice that $P_0^X(q)$ depends not only on $X$ but also on the divisor class of $Y$ in~$X$; the superscript is supposed to indicate that the definition only involves quasimap invariants of $X$.
+\end{thm}
+
+\begin{proof}
+For $m = 0, \ldots, Y \cdot \beta$, define the following generating function for $2$-pointed relative quasimap invariants
+ \[
+  S_{0,(m)}^{X|Y}(z,\beta)=(\ev_1)_*\left(\frac{1}{z-\psi_1}\virt{\Q{0}{(m,0)}{X|Y}{\beta}}\right)
+ \]
+where we view $\ev_1$ as mapping to $X$.  Note that  $S_{0,(0)}^{X|Y}(z,\beta) = S_0^X(z, \beta)$. Also define the following generating function for ``comb loci invariants''
+\[
+ T_{0,(m)}^{X|Y}(z,\beta)=(\ev_1)_*\left(m \virt{\Q{0}{(m,0)}{X|Y}{\beta}}+\frac{1}{z-\psi_1} \virt{\mathcal{D}^{\mathcal{Q}}_{(m,0),1}(X|Y,\beta)} \right)
+\]
+where again we view $\ev_1$ as mapping to $X$. As in \cite[Lemma 1.2]{Ga-MF}, it follows from Theorem \ref{Theorem general recursion} that
+\begin{equation}
+ (Y+mz) S_{0,(m)}^{X|Y}(z,\beta) = S_{0,(m+1)}^{X|Y}(z,\beta)+ T_{0,(m)}^{X|Y}(z,\beta)
+\end{equation}
+and we can apply this repeatedly to obtain:
+\begin{equation} \label{eqn:G}
+\prod_{j=0}^{Y\cdot\beta}(Y+jz) S_0^X(z,\beta) = \sum_{m=0}^{Y\cdot\beta}\prod_{j=m+1}^{Y\cdot\beta}(Y+jz)T_{0,(m)}^{X|Y}(z,\beta)
+\end{equation}
+We now examine the right-hand side in detail. By definition, $T_{0,(m)}^{X|Y}(z,\beta)$ splits into two parts: those terms coming from the relative space and those terms coming from the comb loci.
+
+Let us first consider the contribution of the comb loci. Since there are only two marked points and the first is required to lie on the internal component of the comb, it follows from the strong stability condition that there are only two options: a comb with zero teeth or a comb with one tooth.
+
+First consider the case of a comb with zero teeth. The moduli space is then $\Q{0}{2}{Y}{\beta}$ and we require that $Y \cdot \beta = m$. Thus this piece only contributes to $T_{0,(Y\cdot\beta)}^{X|Y}(z,\beta)$, and the contribution is:
+\begin{equation*} \sum_{i=1}^k \left\langle \dfrac{\rho_i}{z-\psi_1}, \mathbbm{1}_Y \right\rangle_{0,2,\beta}^Y \eta^i \end{equation*}
+
+Next consider the case of a comb with one tooth. Let $\beta^{(0)}$ and $\beta^{(1)}$ denote the curve classes of the internal and external components, respectively, and let $m^{(1)}$ be the contact order of the external component with $Y$. The picture is as follows
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+  \draw [fill=gray!50] (-.5,-1) -- (6,-1) -- (4,2) -- (-2.5,2) -- (-.5,-1);
+  \draw [thick] (0,0) to [out=90,in=180] (1,1) to [out=0,in=180] (2.5,0) to [out=0,in=-135] (4,1);
+  \draw [thick] (2.5,0) to (4,3);
+  \draw [thick,dashed] (2.5,0) to (2,-1);
+  \draw [thick] (2,-1) -- (1.5,-2);
+  \draw [fill] (3.75,2.5) circle [radius=2pt] node[above left]{$x_2$};
+  \draw [fill] (.15,.5) circle [radius=2pt] node[above left]{$x_1$};
+  \draw [fill] (2.5,0.0) circle [radius=2pt] node[below right]{$m^{(1)}$};
+ \end{tikzpicture}
+\end{center}
+and the invariants which contribute take the form
+\begin{equation*} \bigg\langle \dfrac{\rho_i}{z-\psi_1},\rho^h\bigg\rangle_{0,2,\beta^{(0)}}^Y \bigg\langle \rho_h, \mathbbm 1_{X}\bigg\rangle_{0,(m^{(1)},0),\beta^{(1)}}^{X|Y} \end{equation*}
+for $i = 1, \ldots, k$ and $h = 1, \ldots, l$. By computing dimensions, we find
+\begin{align*}
+0\leq \codim \rho^h &= \dim Y-\codim \rho_h \\
+&= \dim Y-\vdim \Q{0}{(m^{(1)},0)}{X|Y}{\beta^{(1)}} \\
+&= \dim Y-(\dim X-3-K_{X}\cdot \beta^{(1)}+2-m^{(1)})\\
+&= K_Y \cdot \beta^{(1)} - Y \cdot \beta^{(1)}+m^{(1)} \\
+&\leq 0
+\end{align*}
+where the final equality follows from adjunction and the final inequality holds because $-K_Y$ is nef and $m^{(1)}\leq Y \cdot \beta_1$. This shows that the only non-trivial contributions come from curve classes $\beta^{(1)}$ such that $K_Y \cdot \beta^{(1)}=0$, and that in this case the order of tangency must be maximal, i.e. $m^{(1)}=Y \cdot \beta^{(1)}$. Furthermore we must have $\codim \rho^h = 0$ and so $\rho^h = \rho^1 = \mathbbm{1}_Y$ which implies $\rho_h = \rho_1 = [\pt_Y]$. Finally since $m^{(1)}=Y \cdot \beta^{(1)}$ we have
+\begin{equation*} m = Y \cdot \beta^{(0)}+m^{(1)}=Y \cdot (\beta^{(0)} + \beta^{(1)}) = Y \cdot \beta \end{equation*}
+and so again this piece only contributes to $T_{0,(Y\cdot\beta)}^{X|Y}(z,\beta)$, and the contribution is:
+\begin{equation*} \sum_{i=1}^k \left( \sum_{\substack{0 < \beta^{(1)} < \beta \\ K_Y \cdot \beta^{(1)}=0}} (Y \cdot \beta^{(1)}) \bigg\langle \dfrac{\rho_i}{z-\psi_1}, \mathbbm{1}_Y \bigg\rangle_{0,2,\beta-\beta^{(1)}}^Y \bigg\langle \rho_1, \mathbbm{1}_X \bigg\rangle_{0,(Y \cdot \beta^{(1)},0),\beta^{(1)}}^{X|Y} \right) \eta^i \end{equation*}
+where the $Y \cdot \beta^{(1)}$ factor comes from the weighting on the virtual class of the comb locus. Finally, we must examine the terms of $T_{0,(m)}^{X|Y}(z,\beta)$ coming from:
+\begin{equation*}\ev_{1*}(m\virt{\Q{0}{(m,0)}{X|Y}{\beta}})\end{equation*} 
+Notice that we only have insertions from $i^*\HH^*(X) \subseteq \HH^*(Y)$, since $\ev_1$ is viewed as mapping to $X$. On the other hand
+\begin{align*} \vdim \Q{0}{(m,0)}{X|Y}{\beta} & = \dim X-3 -K_X \cdot \beta +2-m & \\
+& = \dim X - 1 -K_Y \cdot \beta + Y \cdot \beta - m \ \ & \text{by adjunction} \\
+& \geq \dim X - 1 + Y\cdot\beta - m \ \ & \text{since $-K_Y$ is nef} \\
+& \geq \dim X - 1 \ \ & \text{since $m \leq Y \cdot \beta$} \end{align*}
+where in the second line we have applied the projection formula to $i$, and thus have implicitly used Assumption (2), discussed in \S \ref{Subsection setup}; namely that every curve class on $X$ comes from a class on $Y$.
+
+Consequently the only insertions that can appear are those of dimension $0$ and $1$. However, the restriction of the $0$-dimensional class $\eta_0 = [\pt_X]$ to $Y$ vanishes, as do the restrictions of all $1$-dimensional classes except for $\eta_1$ (by the definition of the dual basis, since $\eta^1 = Y$). Thus the only insertion is $i^*\eta_1=\rho_1=[\pt_Y]$, and since $\eta^1$ has dimension $1$ all the inequalities above must actually be equalities. Thus we only have a contribution if $-K_Y \cdot \beta = 0$ and $m = Y \cdot \beta$. The contribution to $T_{0,(Y\cdot\beta)}^{X|Y}(z,\beta)$ in this case is:
+\begin{equation*} (Y \cdot \beta) \langle \rho_1 , \mathbbm{1}_X \rangle_{0,(Y \cdot \beta,0),\beta}^{X|Y} \eta^1 \end{equation*}
+
+Thus we have calculated $T_{0,(m)}^{X|Y}(z,\beta)$ for all $m$; substituting into equation \eqref{eqn:G} we obtain
+\begin{align*} \prod_{j=0}^{Y \cdot \beta} (Y + jz) & S_0^X(z,\beta) = T_{0,(Y\cdot\beta)}^{X|Y}(z,\beta) \\
+= \ & \sum_{i=1}^k \left\langle \dfrac{\rho_i}{z-\psi_1}, \mathbbm{1}_Y \right\rangle_{0,2,\beta}^Y \eta^i + \\
+& \sum_{i=1}^k \left( \sum_{\substack{0 < \beta^{(1)} < \beta \\ K_Y \cdot \beta^{(1)}=0}} (Y \cdot \beta^{(1)}) \bigg\langle \dfrac{\rho_i}{z-\psi_1}, \mathbbm{1}_Y \bigg\rangle_{0,2,\beta-\beta^{(1)}}^Y \bigg\langle \rho_1, \mathbbm{1}_X \bigg\rangle_{0,(Y \cdot \beta^{(1)},0),\beta^{(1)}}^{X|Y} \right) \eta^i + \\
+& (Y \cdot \beta) \langle \rho_1 , \mathbbm{1}_X \rangle_{0,(Y \cdot \beta,0),\beta}^{X|Y} \eta^1
+\end{align*}
+where the third term only appears if $K_Y \cdot \beta=0$. We can rewrite this as:
+\begin{align*} \prod_{j=0}^{Y \cdot \beta} (Y + jz) & S_0^X(z,\beta) \\
+& = \tilde{S}_0^Y(z,\beta) + \sum_{\substack{0 < \beta^{(1)} \leq \beta \\ K_Y \cdot \beta^{(1)}=0}} \left( (Y \cdot \beta^{(1)}) \bigg\langle \rho_1, \mathbbm{1}_X \bigg\rangle_{0,(Y \cdot \beta^{(1)},0),\beta^{(1)}}^{X|Y} \right) \tilde{S}_0^Y(z,\beta-\beta^{(1)})
+\end{align*}
+It is now clear from the expression above that equation \eqref{eqn:mirror} in the statement of Theorem \ref{Theorem Quantum Lefschetz} holds, with:
+\begin{equation*} P_0^X(q) = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta (Y\cdot\beta) \langle \rho_1,\mathbbm 1_{X}\rangle_{0,(Y\cdot\beta,0),\beta}^{X|Y} \end{equation*}
+To complete the proof it thus remains to show that:
+\begin{equation*} P_0^X(q) = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta(Y\cdot\beta)!\langle\psi_1^{Y\cdot\beta-1} [\pt_X],\mathbbm 1_{X}\rangle_{0,2,\beta}^X \end{equation*}
+The aim therefore is to express the relative invariants
+\begin{equation*} \langle \rho_1 , \mathbbm{1}_X \rangle_{0,(Y\cdot\beta,0),\beta}^{X|Y} \end{equation*}
+in terms of absolute invariants of $X$. Unsurprisingly, we once again do this by applying Theorem \ref{Theorem general recursion}. We have:
+\begin{align*} \virt{\Q{0}{(Y \cdot \beta,0)}{X|Y}{\beta}} = \ & ((Y\cdot\beta-1)\psi_1+\ev_1^*Y) \virt{\Q{0}{(Y\cdot\beta-1,0)}{X|Y}{\beta}} \ - \\
+& \virt{\mathcal{D}_{(Y\cdot\beta-1,0),1}^{\mathcal Q}(X|Y,\beta)} \end{align*}
+We begin by examining the contributions from the comb loci. As before, we have only contributions coming from combs with $0$ teeth and combs with $1$ tooth. The former contributions take the form
+\begin{equation*} \langle \rho_1 , \mathbbm{1}_Y \rangle_{0,2,\beta}^Y \end{equation*}
+which vanish because $\vdim{\Q{0}{2}{Y}{\beta}} = \dim Y -1 -K_Y\cdot\beta = \dim Y -1$ whereas the insertion has codimension $\dim Y$. The latter contributions take the form
+\begin{equation*} \langle \rho_1 ,\rho^h\rangle_{0,2,\beta^{(0)}}^Y \langle \rho_h,\mathbbm 1_{X}\rangle_{0,(Y\cdot(\beta-\beta^{(0)})-1,0),\beta-\beta^{(0)}}^{X|Y}\end{equation*}
+and these must also vanish since:
+\begin{align*} \codim \rho^h & = \dim Y - \codim \rho_h \\
+& = \dim Y - \vdim \Q{0}{(Y\cdot(\beta-\beta^{(0)})-1,0)}{X|Y}{\beta-\beta^{(0)}} \\
+& = \dim Y - (\dim X - 3 - K_X \cdot (\beta - \beta^{(0)}) + 2 - Y \cdot (\beta - \beta^{(0)}) + 1) \\
+&= -1 + K_X \cdot (\beta-\beta^{(0)}) + Y \cdot (\beta-\beta^{(0)}) \\
+& = -1 + K_Y\cdot(\beta-\beta^{(0)}) \\
+& \leq -1
+\end{align*}
+Thus the comb loci do not contribute at all. Applying this recursively (the same argument as above shows that we never get comb loci contributions), we find that
+\begin{align*}
+(Y\cdot\beta)\langle \rho_1 ,\mathbbm 1_{X}\rangle_{0,(Y\cdot\beta,0),\beta}^{X|Y} & = (Y\cdot\beta) \langle \eta_1 \prod_{j=0}^{Y\cdot\beta-1}(Y+j\psi_1) , \mathbbm{1}_X \rangle_{0,2,\beta}^X \\
+& = (Y\cdot\beta)!\langle[ \pt_X]\psi_1^{Y\cdot\beta-1},\mathbbm 1_X\rangle_{0,2,\beta}^X
+\end{align*}
+where the second equality holds because $Y\cdot\eta_1=\eta^1 \cdot \eta_1 = [\pt_X]$ and $Y^2\cdot\eta_1=0$. This completes the proof of Theorem \ref{Theorem Quantum Lefschetz}. \end{proof}
+
+\begin{cor}
+ If $Y$ is Fano then there is no correction term:
+\begin{equation*} \sum_{\beta\geq 0} q^\beta\prod_{j=0}^{Y\cdot\beta}(Y+jz)S_0^X(z,\beta) = \tilde{S}_0^Y(z,q) \end{equation*}
+\end{cor}
+
+\begin{cor}
+Let $Y = Y_5 \subseteq  X = \PP^4$ be the quintic three-fold. Then
+\begin{equation*} \tilde{S}_0^{Y_5}(z,q)=\dfrac{I_{\text{sm}}^{Y_5}(z,q)}{P(q)} \end{equation*}
+where
+\begin{equation*} I_{\text{sm}}^{Y_5}(z,q)=5H+\sum_{d>0}\frac{\prod_{j=0}^{5d}(H+jz)}{\prod_{j=0}^{d}(H+jz)^5} \ q^d \end{equation*}
+and:
+\begin{equation*} P(q)=1+\sum_{d>0}\frac{(5d)!}{(d!)^5}q^d \end{equation*}
+\end{cor}
+\begin{proof} Apply Theorem \ref{Theorem Quantum Lefschetz} and use the fact that the quasimap invariants of $\PP^4$ coincide with the Gromov--Witten invariants, which are well-known from mirror symmetry. \end{proof}
+
+\begin{rmk}
+Theorem \ref{Theorem Quantum Lefschetz} agrees with \cite[Theorem~1]{CZ-mirror} when $X$ is a projective space.
+\end{rmk}
 \bibliographystyle{alpha}
 \bibliography{the}
 
