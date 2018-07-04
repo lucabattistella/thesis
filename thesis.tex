@@ -392,7 +392,7 @@ A different approach to reducing the complexity of $\M{1}{n}{\PP^N}{d}$ is the o
 
 The easiest example is the following: the cusp
 \[\kk[\![x,y]\!]/(y^2-x^3)\]
-is the only unibranch singularity of genus one (meaning that there exists a flat family of smooth elliptic curves degenerating to an irreducible curve of geometric genus $0$ and with only one singular point, around which the curve is formally isomorphic to the spectrum of the ring above). It is a well-known computation \cite[\S 3.C]{HM} that the semistable reduction of the cusp has a rational tail (normalising the singularity) attached to an elliptic curve at the preimage of the singular point; this suggests to make curves of genus one with only one special point unstable. On the other hand the only singularities appearing in the fibers of the miniversal deformation of the cusp are nodes, hence for a curve being \emph{at worst cuspidal} (i.e. smooth, nodal or cuspidal) is an open condition. Consider then the following:
+is the only unibranch singularity of genus one (meaning that there exists a flat family of smooth elliptic curves degenerating to an irreducible curve of geometric genus $0$ and with only one singular point, around which the curve is formally isomorphic to the spectrum of the ring above). It is a well-known computation \cite[\S 3.C]{HM} that the semistable reduction of the cusp has a rational tail (normalising the singularity) attached to an elliptic curve at the preimage of the singular point; this indicates that we should make curves of genus one with only one special point unstable. On the other hand the only singularities appearing in the fibers of the miniversal deformation of the cusp are nodes, hence for a curve being \emph{at worst cuspidal} (i.e. smooth, nodal or cuspidal) is an open condition. Consider then the following:
 \begin{dfn}
  The moduli space of $1$-stable maps $\Mone{n}{X}{\beta}$ parametrises $f\colon (C,\mathbf p)\to X$ such that
  \begin{enumerate}
@@ -406,7 +406,15 @@ is the only unibranch singularity of genus one (meaning that there exists a flat
 \end{lemma}
 For example $\oM^{(1)}(\PP^2,3)$ has only two components, since $D^1$ is gone! On the other hand the intersection of $D^1$ with main and with $D^2$ has been filled up by maps from cuspidal curves. This is the main instance of Smyth-Viscardi's spaces that I am going to be concerned with, but there is a well-developed theory which I shall quickly review here.
 
-
+\begin{dfn}
+ Let $(C,p)$ be the germ of a curve singularity, with normalisation $\nu\colon\tilde{C}\to C$. Let me denote by $m$ the number of branches of $C$ at $p$ (i.e. irreducible components of $\tilde{C}$) and by $\delta=\dim_{\kk}(\nu_*\OO_{\tilde{C}}/\OO_C)$. The \emph{genus} of $(C,p)$ is defined by \[g=\delta-m+1.\]
+\end{dfn}
+\begin{prop}\cite[Proposition A.3]{SMY1}
+ There is up to isomorphism only one germ of Gorenstein curve singularity $(C,p)$ of genus one with $m$ branches, namely
+ \[\hat\OO_{C,p}\simeq\begin{cases} \kk[\![x,y]\!]/(y^2-x^3) & \text{(cusp) if } m=1, \\ \kk[\![x,y]\!]/y(y-x^2) &  \text{(tacnode) if } m=2,\end{cases}\]
+ and the germ of $m$ generic lines through the origin in $\Aaff^{m-1}$ for $m\geq 3$. It is called the \emph{elliptic $m$-fold point}.
+\end{prop}
+All these singularities are smoothable (see the proof of \cite[Theorem 3.8]{SMY1}). Smyth studied their semistable models: pick a smoothing $\bar{\mathcal C}$ of the $m$-fold elliptic point and consider its semistable model with \emph{regular} total space $\tilde{\mathcal C}$; let $(E,q_1,\ldots,q_m)$ be the exceptional locus of the contraction (the fiber over the $m$-fold elliptic point) marked with its intersection with the rest of the curve ($m$ rational trees). Call a semistable genus one curve $(E,q_1,\ldots,q_m)$ a \emph{semistable tail} if it arises in this way. Smyth shows \cite[Proposition 2.12]{SMY1} that semistable tails can be characterised combinatorially as those curves such that the distance (on the dual graph) from $q_i$ to the core of $E$ is constant for all $i=1,\ldots,m$ (\emph{balancing condition}). The idea is that $\bar{\mathcal C}$ is a normal surface, and it is Gorenstein if and only if the central fiber is. In this case, denoting by $\phi\colon \tilde{\mathcal C}\to\bar{\mathcal C}$ the contraction, $\phi^*\omega_{\bar{\mathcal C}}=\omega_{\tilde{\mathcal C}}(D)$ for some divisor $D$ supported on the exceptional locus $E$ and such that $\omega_{\tilde{\mathcal C}}(D)_{|E}\simeq\OO_E$; we can find appropriate weights on the components of $E$ such that this holds precisely in the balanced case. On the other hand, if balancing holds, we may contract $E$ by applying the Proj construction to $\omega_{\tilde{\mathcal C}}(D)$ (possibly twisted by some sections of $\tilde{\mathcal C}$ far away from $E$) as above, and then show that the resulting $\bar{\mathcal C}$ is Gorenstein by relating its dualising sheaf to the $\OO_{\bar{\mathcal C}}(1)$ from the Proj construction.
 
 
 \section{p-fields, local equations and splitting of the cone}
