@@ -123,6 +123,7 @@
 \newcommand{\pazocal}{\mathcal}
 \newcommand{\TT}{\operatorname{T}}
 \newcommand{\oM}{\overline{\mathcal{M}}}
+\newcommand{\tM}{\widetilde{\mathcal{M}}}
 \newcommand{\M}[4]{\overline{\mathcal{M}}_{#1,#2}(#3,#4)}
 \newcommand{\MK}[4]{\overline{\mathcal{M}}^{\rm{Kim}}_{#1,#2}(#3,#4)}
 \newcommand{\Mone}[3]{\overline{\pazocal M}^{(1)}_{1,#1}(#2,#3)}
@@ -133,6 +134,7 @@
 \newcommand{\tZp}{\widetilde{\pazocal Z}^p}
 \newcommand{\oZp}{\overline{\mathcal Z}^{p,\rm{gst}}}
 \newcommand{\XP}{\mathfrak Z}
+\newcommand{\tXP}{\widetilde{\mathfrak Z}}
 \newcommand{\Q}[4]{\mathcal{Q}_{#1,#2}(#3,#4)}
 \newcommand{\Qe}[4]{\mathcal{Q}^{\epsilon}_{#1,#2}(#3,#4)}
 \newcommand{\Qt}[4]{\widetilde{\mathcal Q}_{#1,#2}(#3,#4)}
@@ -416,7 +418,7 @@ is the only unibranch singularity of genus one (meaning that there exists a flat
  $\Mone{n}{X}{\beta}$ is a proper DM stack of finite type over $\kk$.
 \end{lemma}
 For example $\oM^{(1)}(\PP^2,3)$ has only two components, since $D^1$ is gone! On the other hand the intersection of $D^1$ with main and with $D^2$ has been filled up by maps from cuspidal curves. This is the main instance of Smyth-Viscardi's spaces that I am going to be concerned with, but there is a well-developed theory which I shall quickly review here.
-
+\subsection{Gorenstein singularities of genus one and $1$-stabilisation}
 \begin{dfn}
  Let $(C,p)$ be the germ of a curve singularity, with normalisation $\nu\colon\tilde{C}\to C$. Let me denote by $m$ the number of branches of $C$ at $p$ (i.e. irreducible components of $\tilde{C}$) and by $\delta=\dim_{\kk}(\nu_*\OO_{\tilde{C}}/\OO_C)$. The \emph{genus} of $(C,p)$ is defined by \[g=\delta-m+1.\]
 \end{dfn}
@@ -573,7 +575,8 @@ By construction $\operatorname{Exc}(\phi_1)=\operatorname{Exc}(\phi_2)$ is the l
 implies that $\phi_2$ factors through $\phi_1$, and viceversa. This proves the regularity of $\psi$ and its inverse. Notice that $\psi$ is unique as it is the only extension of $\phi_2\circ\phi_1^{-1}$.
 \end{proof} 
 
-This concludes the proof of Proposition \ref{prop:1-stab}. I finally come to M. Viscardi's definition of alternative compactification of the space of maps \cite[Definition 2.15]{VISC}.
+This concludes the proof of Proposition \ref{prop:1-stab}. 
+\subsection{Viscardi's moduli spaces of maps} I finally come to M. Viscardi's definition of alternative compactification of the space of maps \cite[Definition 2.15]{VISC}.
 
 \begin{dfn}
  The moduli space of $m$-stable maps $\oM^{(m)}_{1,n}(X,\beta)$ parametrises $f\colon (C,\mathbf p)\to X$ of class $\beta$ such that:\begin{enumerate}
@@ -592,7 +595,7 @@ Checking the valuative criterion for properness goes as follows: assume the gene
 \begin{prop}
  For $m\geq m_0(d,n)$, $\oM^{(m)}_{1,n}(\PP^N,d)$ is irreducible.
 \end{prop}
-Finally, I would like to discuss how these two lines of thought (Li-Vakil-Zinger desingularisation and reduced invariants, compared to Smyth-Viscardi alternative compactifications) are not unrelated. A main issue with the Vakil-Zinger desingularisation is that the iterated blow-up procedure makes the modular interpretation of the resulting space not immediately clear. This has recently been fixed by D. Ranganathan, K. Santos-Parker and J. Wise with the introduction of the notion of an \emph{aligned} log curve. Recall the description of log smooth curves, due to F. Kato\cite{KatoF}, and the parallel with pointed prestable curves. Let us work over a geometric point $S=\Spec(\kk=\bar\kk)$. In the genus one case, we can modify the usual dual graph construction by collapsing all the vertices corresponding to components of the core (in case the latter is a circle of $\PP^1$) to one vertex, called the \emph{circuit} and denoted by $\circ$. Define an $\oM_S$-valued function on the dual graph by \[\lambda(v)=\sum_{e\in[\circ,v]}\rho_e,\] i.e. by associating to a vertex/component the sum of all the smoothing parameters of the edges/nodes separating it from the circuit.
+\subsection{Aligned log structures} Finally, I would like to discuss how these two lines of thought (Li-Vakil-Zinger desingularisation and reduced invariants, compared to Smyth-Viscardi alternative compactifications) are not unrelated. A main issue with the Vakil-Zinger desingularisation is that the iterated blow-up procedure makes the modular interpretation of the resulting space not immediately clear. This has recently been fixed by D. Ranganathan, K. Santos-Parker and J. Wise with the introduction of the notion of an \emph{aligned} log curve. Recall the description of log smooth curves, due to F. Kato\cite{KatoF}, and the parallel with pointed prestable curves. Let us work over a geometric point $S=\Spec(\kk=\bar\kk)$. In the genus one case, we can modify the usual dual graph construction by collapsing all the vertices corresponding to components of the core (in case the latter is a circle of $\PP^1$) to one vertex, called the \emph{circuit} and denoted by $\circ$. Define an $\oM_S$-valued function on the dual graph by \[\lambda(v)=\sum_{e\in[\circ,v]}\rho_e,\] i.e. by associating to a vertex/component the sum of all the smoothing parameters of the edges/nodes separating it from the circuit.
 \begin{dfn}
  Let $S$ be a log scheme and $C\to S$ a log smooth curve of genus one on it. We say that $C$ is \emph{radially aligned} if for every geometric point $s\in S$ the values of $\lambda(v)$ are \emph{comparable} in $\oM_{S,s}$ for every vertex $v$ of $\Gamma(C_s)$.
 \end{dfn}
@@ -637,7 +640,7 @@ Notice that by construction $\bar{f}$ is non-constant on at least one branch of 
 \begin{rmk}
  From the discussion above we see that the construction in \cite{RSPW} might be suitable to extend the definition of reduced invariants to a larger class of varieties than projective complete intersections. It would be enough that $\VZ{n}{X}{\beta}$ is irreducible and $Y\subseteq X$ is such that $N_{Y/X}$ is an ample vector bundle, so that $\operatorname R^1\bar{\pi}_*\bar{f}^*N_{Y/X}=0$ and the inclusion $\VZ{n}{Y}{\beta}\hookrightarrow\VZ{n}{X}{\beta}$ admits a perfect obstruction theory. On the other hand if we want to prove that $\VZ{n}{X}{\beta}$ is smooth following in the steps above, we need $T_X$ ample, which is quite a restrictive condition (the only smooth variety with ample tangent bundle is the projective space, by a theorem of Mori \cite{Mori}, on the other hand I think it should be possible to extend e.g. to the orbifold theory of weighted projective spaces).
 \end{rmk}
-In the next section I am going to discuss a result that I have obtained with F. Carocci and C. Manolache, which illustrates the relation between the Li-Vakil-Zinger's and the Smyth-Viscardi's plans along a slightly different line: namely, the idea is that the reduced invariants may be recovered as $m$-stable invariants, when $m$ is big enough that all the boundary components contributing non-trivially to the Li-Zinger's formula have been deleted. We demonstrate this principle in the case of the quintic threefold, for which only $D^1$ matters, so that it is enough to allow maps from cuspidal curves.
+\subsection{Reduced vs cuspidal invariants} In the next section I am going to discuss a result that I have obtained with F. Carocci and C. Manolache, which illustrates the relation between the Li-Vakil-Zinger's and the Smyth-Viscardi's plans along a slightly different line: namely, the idea is that the reduced invariants may be recovered as $m$-stable invariants, when $m$ is big enough that all the boundary components contributing non-trivially to the Li-Zinger's formula have been deleted. We demonstrate this principle in the case of the quintic threefold, for which only $D^1$ matters, so that it is enough to allow maps from cuspidal curves.
 
 \begin{thm}\cite{BCM}
  For a smooth quintic threefold $X_5=V(\mathbf w)\subseteq \PP^4$, \[GW_1^{\mathrm{red}}(X_5)=GW_1^{(1)}(X_5).\]
@@ -653,7 +656,7 @@ is endowed with a class $\virt{\mathcal Z_X}$ by virtual pullback, such that $\p
 
 The indirect approach is the following: we introduce the moduli space of $1$-stable maps with $p$-fields, $\oM_1^{(1)}(\PP^4,d)^p$, the geometry of which is closely related to that of $\oM_1^{(1)}(\PP^4,d)$ (in fact, it is a line bundle over the boundary, while the main components are isomorphic); $\oM_1^{(1)}(\PP^4,d)^p$ is endowed with a cosection localised virtual class carrying the same information as $\virt{\oM_1^{(1)}(X,d)}$. By pulling back along the $1$-stabilisation as above, we may define $\mathcal Z_{\PP^4}$ and $\mathcal Z^p$; unfortunately $\mathcal Z^p$ does not compare directly with $\oM_1(\PP^4,d)^p$. On the other hand, after studying local equations for the moduli space and a Vakil-Zinger blow-up, we are able to split the normal cone of $\tZp$ directly, and show that the only non-trivial contribution to the invariants comes from the main component.
 
-In \cite{CLpfields}, Chang and Li develop a general theory of moduli spaces of sections: let us work over a base $B$ - an algebraic stack - and let $\pi\colon \cC\to B$ be a family of proper l.c.i. curves (they restrict to the nodal case, but all their arguments carry through unchanged, as we have checked in \cite[\S 3]{BCM}). Let $\mathcal V$ be representable, quasi-projective, and smooth over $\cC$. The \emph{space of sections} of $\mathcal V$ over $\cC$ is a $B$-stack $\mathfrak S$ defined by:
+\subsection{$1$-stable maps with $p$-fields} In \cite{CLpfields}, Chang and Li develop a general theory of moduli spaces of sections: let us work over a base $B$ - an algebraic stack - and let $\pi\colon \cC\to B$ be a family of proper l.c.i. curves (they restrict to the nodal case, but all their arguments carry through unchanged, as we have checked in \cite[\S 3]{BCM}). Let $\mathcal V$ be representable, quasi-projective, and smooth over $\cC$. The \emph{space of sections} of $\mathcal V$ over $\cC$ is a $B$-stack $\mathfrak S$ defined by:
  \[\mathfrak{S}(S\to B)=\left\{\text{sections of}\ \mathcal V_S\to\cC_S\right\};\]
 it has a dual perfect obstruction theory relative to $B$ \cite[Proposition 2.5]{CLpfields}:
 \[ \phi_{\mathfrak S/B}\colon \mathbb T_{\mathfrak S/B}\to \mathbb E_{\mathfrak S/B}:=\R\pi_{\mathfrak S,*}\mathfrak e^* T_{\mathcal V/\cC}.\]
@@ -684,7 +687,8 @@ The degeneracy locus of this cosection is precisely $\oM_1^{(1)}(X,d)$ by Serre 
 \begin{thm}\label{thm:p-fields-quintic}
  \[\deg[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc}}= (-1)^{5d}\deg[\oM_1^{(1)}(X,d)]^{\rm{vir}}\]
 \end{thm}
-This is proved by deforming to the normal cone and then working out explicitly the localised virtual pullback along $\oM_1^{(1)}(N_{X/\PP^4},d)^p\to \oM_1^{(1)}(X,d)$, which has a symmetric obstruction theory. All the details are spelled out in \cite{CLpfields} and summarised in \cite[\S 3]{BCM}. Consider now the fiber diagram:
+This is proved by deforming to the normal cone and then working out explicitly the localised virtual pullback along $\oM_1^{(1)}(N_{X/\PP^4},d)^p\to \oM_1^{(1)}(X,d)$, which has a symmetric obstruction theory. All the details are spelled out in \cite{CLpfields} and summarised in \cite[\S 3]{BCM}.
+\subsection{Auxiliary spaces} Consider now the fiber diagram:
 \bcd
 \mathcal Z^p \ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \overline{\mathcal M}_1^{(1)}(\PP^4,d)^p \ar[d] \\
 \XP \ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \overline{\mathfrak{P}} \ar[d] \\
@@ -699,10 +703,295 @@ Similarly the stack $\mathcal Z^p$ parametrises $C\xrightarrow{\phi}\bar{C}\xrig
 
 $\mathcal Z^p$ is endowed with a localised virtual cycle that has the same degree of $[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc}}$, by commutativity of localised virtual pullback with pushforward \cite[Lemma 4.17]{BCM}.
 
-In order to study the intrinsic cone of $\Zp$ we need to embed it, at least locally, in a smooth space, and understand the equations of the embedding. Since locally $\Zp$ sits inside $\mathcal Z_{\PP^4}\times \Aaff^1$, it is enough to find local equations for $\mathcal Z_{\PP^4}$. Recall that $\mathcal Z_{\PP^4}$ is an open inside the cone of sections $\bar{\pi}_*\hL^{\oplus 5}$ over $\hP$. It is standard to resolve $\R\bar{\pi}_*\hL$ twisting by a sufficiently $\bar{\pi}$-ample line bundle on $\hC$, but in the genus one case this can be performed very efficiently by twisting with a local section $\mathcal A$ passing through the core (a line bundle of positive degree on a Gorenstein genus one curve has no $h^1$); $\bar{\pi}_*\hL$ is then the kernel of the restriction map $\bar{\pi}_*\hL(\mathcal A)\to \bar{\pi}_*\hL(\mathcal A)_{|\mathcal A}$. Furthermore this map can be expressed very explicitly in local coordinates.
+\subsection{Local equations} In order to study the intrinsic cone of $\Zp$ we need to embed it, at least locally, in a smooth space, and understand the equations of the embedding. Since locally $\Zp$ sits inside $\mathcal Z_{\PP^4}\times \Aaff^1$, it is enough to find local equations for $\mathcal Z_{\PP^4}$. Recall that $\mathcal Z_{\PP^4}$ is an open inside the cone of sections $\bar{\pi}_*\hL^{\oplus 5}$ over $\hP$. It is standard to resolve $\R\bar{\pi}_*\hL$ twisting by a sufficiently $\bar{\pi}$-ample line bundle on $\hC$, but in the genus one case this can be performed very efficiently by twisting with a local section $\mathcal A$ passing through the core (a line bundle of positive degree on a Gorenstein genus one curve has no $h^1$); $\bar{\pi}_*\hL$ is then the kernel of the restriction map $\bar{\pi}_*\hL(\mathcal A)\to \bar{\pi}_*\hL(\mathcal A)_{|\mathcal A}$. Furthermore this map can be expressed very explicitly in local coordinates.
 
-For technical reasons we work over $\mathfrak Z^{\rm{div}}:=\mathfrak Z\times_{\MM_1(1)}\MM_1^{\textrm{div}}(1)$: locally on $\mathcal Z_{\PP^4}$ we can choose a hyperplane $H_0\subseteq\PP^4$ that pulls back to a simple divisor contained in the smooth locus of the curve, say $D=\sum_{i=1}^d \delta_i$, and choose coordinates on $\PP^4$ such that $H_0=\{x_0=0\}$. So $\mathcal Z_{\PP^4}\to \mathfrak Z^{\rm{div}}$
+For technical reasons we work over $\mathfrak Z^{\rm{div}}:=\mathfrak Z\times_{\MM_1(1)}\MM_1^{\textrm{div}}(1)$: locally on $\mathcal Z_{\PP^4}$ we can choose a hyperplane $H_0\subseteq\PP^4$ that pulls back to a simple divisor contained in the smooth locus of the curve, say $D=\sum_{i=1}^d \delta_i$, and choose coordinates on $\PP^4$ such that $H_0=\{x_0=0\}$. We thus get a local map $\mathcal Z_{\PP^4}\to \mathfrak Z^{\rm{div}}$ by associating $(C\to\overline{C}\supseteq D=\bar{f}^{-1}(H_0))$ to $(C\to \overline{C}\xrightarrow{\bar{f}}\PP^4)$. By choosing a distinct local section $\mathcal B$ through the core, and by restricting the chart $\mathcal U\to\mathcal Z_{\PP^4}$ we may write:
+\begin{enumerate}
+ \item $\bar{\pi}_*\hL=\bar{\pi}_*\hL(-\mathcal B)\oplus\OO_{\mathcal U}$,
+ \item $\bar{\pi}_*\hL(-\mathcal B)=\operatorname{Ker}\left(\bar{\pi}_*\hL(\mathcal A-\mathcal B)\xrightarrow{\rm{res}_{\mathcal A}}\bar{\pi}_*\OO_{\mathcal A}(\mathcal A)\right)$, and
+ \item $\bar{\pi}_*\hL(\mathcal A-\mathcal B)=\bigoplus_{i=1}^d \bar{\pi}_*\OO_{\overline{\mathcal C}}(\delta_i+\mathcal A-\mathcal B)\xrightarrow{\oplus \rm{res}^i_{\mathcal A}}\bar{\pi}_*\OO_{\mathcal A}(\mathcal A)$.
+\end{enumerate}
 
+Let me introduce some notation: around a point $[\overline{C}]\in\MM_1^{\rm{wt,st}}(1)$, for every node $q$ of $\overline{C}$ there is a coordinate $\zeta_q$ whose vanishing locus is the divisor where that node persists. Denote by $\zeta_{[\delta_i,\pazocal A]}=\prod\zeta_q$
+where the product runs over all the nodes separating $\delta_i$ from the core.
+ 
+\begin{prop}\cite[Proposition 4.13]{HL}
+The line bundles $\bar\pi_*\OO_{\overline{\mathcal C}}(\pazocal \delta_i+\A-\B)$ and $\bar\pi_*\OO_{\A}(\A) $ admit trivialisations such that:
+\[\rm{res}^i_{\mathcal A}=\zeta_{[\delta_i,\A]}.\]
+\end{prop}
+\begin{prop}\label{prop:equations} \cite[Theorems 2.17-19]{HL}
+A local chart $\pazocal U$ for $\mathcal Z_{\PP^4}$ can be embedded as an open inside:
+\[ (F_0=\ldots=F_4=0)\subseteq \rm{Vb}(\bar{\pi}_*\hL(\A)^{\oplus 5}),\qquad F_j:=\sum_{i=1}^d \zeta_{[\delta_i,\pazocal A]}w_i^j \]
+where $w_i^j$ are coordinates on the fiber of the $j$-th copy of $\rm{Vb}(\hat{\pi}_*\hL(\A))$ over (a chart of) $\hP$.
+\end{prop}
+The local equations and the method adopted to find them is essentially the same as in the case of stable maps \cite{HL}, except that there is no boundary component $D^1(\PP^4,d)$ in the $1$-stable case. Local equations can be used to give a proof of Vakil's criterion of smoothability (see Proposition \ref{prop:components}(2)), that I will include here.
+\begin{proof}
+ Let me start with the easiest degenerate situation: a contracted elliptic curve attached to a $\PP^1$ of degree $d$ at a single node $q$. Equations for the moduli space of maps around such a point look like: 
+ \[\zeta_q\sum_{i=1}^d w_i^j=0,\;\;\;\text{for} \;\;\;j=1,\ldots,r.\]
+ 
+ 
+  Thi point corresponds to a smoothable map if and only if the equations admit a solution with $\zeta_q\neq 0$, that is $\sum_{i=1}^d w_i^j=0$ for every $j$. Taking a coordinate $z$ on  $\PP^1$ centred at the node $q$,   the $i$-th basis vector corresponds to a polynomial vanishing at $q$ and at $\delta_l,\;\forall l\neq i$. This can be written as:
+  \[e_i(z)=z\prod_{l\neq i}\frac{(z-\delta_l)}{-\delta_l},\] 
+  where we have chosen a convenient normalisation. So the restriction to the rational tail of the map corresponding to the point of coordinates $(w_i^j)_{i=1,\ldots,d}^{j=1,\ldots,r}$ can be written as:
+  \[[1:\sum_{i=1}^d w_i^1e_i(z):\ldots:\sum_{i=1}^d w_i^re_i(z)].\] 
+  Differentiating with respect to $z$ we see that the image of the tangent vector at $q$ is given in affine coordinates around $f(E)$ by:
+  \[(\sum_{i=1}^d w_i^1,\ldots,\sum_{i=1}^d w_i^r).\] 
+  Hence smoothability is equivalent to the image of the tangent vector being zero.
+ 
+ More generally we may assume that the dual graph is terminally weighted \cite[\S 3.1]{HL}. Assume there are $k$  rational tails of positive weight $R_h,\ h=1,\ldots,k$. Denote by $D(h)$ the set of indices $i$ such that $\delta_i$ belongs to the $R_h$, and by $E(h)$ the set of nodes separating the core from $R_h$. The equations will then take the following form:
+ \[\sum_{h=1}^k\left(\prod_{q\in E(h)}\zeta_q\right)\left(\sum_{i\in D(h)}w_i^j\right)=0,\ j=1,\ldots,r,\]
+ which can be assembled in matrix form as follows:
+ $$W\cdot\underline\zeta:=\left(\sum_{i\in D(h)}w_i^j\right)_{j,h}\cdot\left(\prod_{q\in E(h)}\zeta_q\right)_h=0.$$
+ We see that smoothability is equivalent to the linear dependence of the rows of the above matrix $W$. On the other hand we can choose a suitable coordinate $z_h$ around the node $q_h$ on $R_h$ and write the map as: 
+ \[[1:p_h^1(z_h):\ldots:p_h^r(z_h)],\]
+  where: 
+ \[p_h^j(z_h)=\sum_{i\in D(h)}w_i^je_i^h(z_h) \quad \text{and} \quad e_i^h(z_h)=z_h\prod_{l\in D(h)\setminus\{i\}}\frac{(z_h-\delta_l)}{-\delta_l}.\] The elliptic curve is contracted to the point $[1:0:\ldots:0]$ and the tangent vector to $R_h$ at $q_h$ is mapped to the $h$-th row of $W$ (in affine coordinates around $f(E)$). Again we see that the map is smoothable if and only if the image of the tangent vectors to the rational tails at the nodes are linearly dependent in $T_{f(E)}\PP^r$.
+ \end{proof}
+
+\subsection{A Vakil-Zinger blow-up}
+At this point we perform a modular blow-up of $\MM_1^{\rm{wt,st}}(1)$: we successively blow up $\overline{\Theta}_k, \;k\geq 2,$  which is the closure of the locus where the minimal subcurve $E$ of genus one has weight $0$ and $\left\lvert E\cap \overline{C\setminus E}\right\rvert=k.$ After the $k$-th blow-up, the strict transform of $\overline{\Theta}_{k+1}$ is smooth, so the final result  $\widetilde{\MM}_1^{\rm{wt,st}}(1)$ is smooth as well. 
+
+The fiber product 
+\[\widetilde{\MM}_1^{\rm{wt,st}}(1)\times_{\MM_1^{\rm{wt,st}}(1)}\MM_1^{\rm{wt,st}}\]
+recovers the Hu-Li blow-up $\widetilde{\MM}_1^{\rm{wt,st}}$. Indeed $\Theta_1$ is already a Cartier divisor in $\MM_1^{\rm{wt,st}}$, and the inverse image of $\overline{\Theta}_k$ is precisely $\Theta_k$; 
+using the universal property of the blow-up, it can be shown that there are maps in both directions, and they are inverse to one another. 
+
+After blowing up, the equations above are simplified and assume the following form:
+\[\tilde\zeta\tilde w^j=0,\quad j=0,\ldots,4\]
+where $\{\tilde\zeta=0\}$ is one of the newly created boundary divisors $\widetilde{\Theta}_k$ in $\widetilde{\MM}_1^{\rm{wt,st}}(1)$ (i.e. one of the exceptional divisors produced by the blow-up process), and $\tilde w$ is a suitably defined coordinate on the fiber of $\rm{Vb}(\hat{\pi}_*\hL(\A))$.
+
+
+Summing up, we get:
+\bcd
+   &  \widetilde{\mathcal Z}^p \ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \tM_1^{(1)}(\PP^4,d)^p \ar[d] \\
+\tM_1(\PP^4,d)\ar[d] & \widetilde{\mathcal Z}_{\PP^4} \ar[l,hook,swap,"i"]\ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \tM_1^{(1)}(\PP^4,d) \ar[d] \\
+\widetilde{\mathfrak{Pic}}_1\ar[d] &\widetilde{\XP}\ar[l]\ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \widetilde{\mathfrak{Pic}}_1 (1)\ar[d]\\
+\widetilde{\MM}^{\rm{wt,st}}_1 & \widetilde{\MM}^{\rm{wt,st}}_1\ar[equal]{l}\ar[r] & \widetilde{\MM}_1^{\rm{wt,st}}(1)
+\ecd
+
+Notice that the components of $\tZp$ are in bijection with those of $\Zp$, however all the boundary ones have the same dimension $5d+4$, and their intersection with main is a divisor in the latter.
+The blow-up procedure does not affect the invariants:
+\begin{lem}\label{lem:tilding}\cite[Proposition~2.5]{CL}
+We have the identity:
+\[\deg\virloc{\tZp}=\deg\virloc{\Zp}.\]
+\end{lem}
+
+\subsection{Splitting the cone} The restriction of the intrinsic cone to the open strata is easily understood, see \cite[Lemma 4.3]{CLpfields}. Recall that $\tZp\to\tXP$ has a relative perfect obstruction theory $\mathbb {E}_{\tZp/\tXP}=\R\hat\pi_*(\hL^{\oplus 5}\oplus\overline{\mathcal P})=:\mathbb E_1\oplus \mathbb E_2$.
+\begin{lem}\label{lem:open_cones}
+The intrinsic normal cone $\mathfrak{C}_{\tZp/\tXP}$ has the following properties:
+\begin{enumerate}
+\item Its restriction to the open $\tZ^{p,\circ}= \tZ^{p,\rm{main}}\setminus \bigcup_{k\geq 2}D^k \tZp$ is the zero section of $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,\circ}}$.
+\item Its restriction to the open $\tZ^{p,\rm{gst},\circ}=\tZp - \tZ^{p,\rm{main}}$  is a rank $2$ subbundle stack of $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,\rm{gst},\circ}}$.
+\end{enumerate}
+\end{lem}
+\begin{proof}\begin{enumerate}
+\item Observe that $\tZ^{p,\circ}\cong \tZ^{\circ}$ because here $H^0(\overline{C}, \overline{L}^{\otimes -5}\otimes \omega_{\overline{C}})=0$. Moreover $\tZ^{\circ}$ is unobstructed on its image, which is an open of $\tXP$, because $\operatorname{R}^1\hat{\pi}_*\hL=0$.
+So the normal cone is $[\tZ^{p,\circ}/\hat{\pi}_*\hL^{\oplus 5}]$, which is the zero section of $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,\circ}}=[0\oplus \operatorname{R}^1\hat{\pi}_*\widehat{\mathcal P}/\hat{\pi}_*\hL^{\oplus 5}\oplus 0]$.
+
+\item We know that $\tZ^{p,\rm{gst},\circ}$ is a line bundle over $\tZ^{\rm{gst},\circ}$. From the equations \ref{rmk:eqn} we see that the latter is smooth over its image $\pazocal W$ in $\tXP$, which is the codimension $2$ locus where the core has weight $0$ and the line bundle is trivial on it. Recall that every smooth morphism $A\to B$ of relative dimension $n$ factors as $A\xrightarrow{\acute{e}t} B\times \Aaff^n\xrightarrow{\pr_1} B$. So we have
+\bcd
+\tZ^{p,\rm{gst},\circ} \ar[r,"\acute{e}t"] & \pazocal W\times\Aaff^{5d+6}\ar[r,hook]\ar[d,"q"] & \tXP\times \Aaff^{5d+6}\ar[d] \\
+& \pazocal W \ar[r,hook] & \tXP
+\ecd
+where the bottom horizontal arrow is a codimension $2$ regular embedding. Thus 
+\[\mathfrak{C}_{\tZp/\tXP}\rvert_{\tZ^{p,\rm{gst},\circ}}\cong \left[ q^* C_{\pazocal W/\tXP}/ \hat{\pi}_*\hL^{\oplus 5}\oplus\hat{\pi}_*\widehat{\mathcal P}\right]\]
+is a rank 2 subbundle stack of  $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,\rm{gst},\circ}}.$
+\end{enumerate}
+\end{proof}
+Notice that the image of $\tZ^{\circ}$ in $\tM_1(\PP^4)$ contains $\tM_1(\PP^4)^{\rm{main}}\cap \widetilde{D}^1.$
+
+\subsection{Contribution of the main component}
+Recall the definition of the \emph{closure of the zero section of a vector bundle stack}: let $B$ be an integral algebraic stack and let $\mathbb F=[F_0\xrightarrow{d} F_1]$ be a complex of locally free sheaves on $B$. The zero section is $0_{\mathbb F}\colon [F_0/F_0]\to h^1/h^0(\mathbb F)=[F_1/F_0]$, which is in general not a closed embedding; its closure is defined as:
+\[ \overline{0}_{\mathbb F}=[\operatorname{cl}(dF_0)/F_0] \]
+$\overline{0}_{\mathbb F}$ is an integral stack.
+
+\begin{ex}
+When $h^0(\mathbb F)=0$, the closure of the zero section looks like $B$ with some further stacky structure on the vanishing locus of $d$. Consider for example $B=\PP^1$ and $\mathbb F=[\OO_{\PP^1}\xrightarrow{x}\OO_{\PP^1}(1)]$. Then the action of $e\in F_0$ on $F_1$ is given by $f\mapsto f+xe$. Clearly $\operatorname{cl}(dF_0)$ is the whole line bundle $F_1$; the $F_0$-action is transitive on the fibers over $\{x\neq 0\}$ and trivial on the $\{x=0\}$-fiber. Hence $\overline{0}_{\mathbb F}$ is isomorphic to $\PP^1\setminus\{x=0\}$ with a gerbe $[\Aaff^1/\mathbb G_{\rm a}]$ replacing the point $\{x=0\}$.
+\end{ex}
+
+We may now split the cone $\mathfrak{C}_{\tZp/\tXP}$ in the following manner: we denote by $\mathfrak C^{\rm{main}}$ the closure of the zero section of $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,\rm{main}}}$, which is an irreducible cone supported on the main component. All the rest is supported on the boundary components, possibly on their intersection with the main one, and we are going to pack all the components supported on $D^k\tZp$ together and label them $\mathfrak C^k$ accordingly, so in the end we obtain a splitting:
+\[
+ \mathfrak{C}_{\tZp/\tXP}=\mathfrak C^{\rm{main}}+\sum_{k\geq 2} \mathfrak C^k
+\]
+We are going to show that:
+\begin{enumerate}
+ \item the contribution of $\mathfrak C^{\rm{main}}$ is exactly the reduced invariants of $X$;
+ \item the other cones $\mathfrak C^k,\ k\geq 2,$ are enumeratively meaningless.
+\end{enumerate}
+\subsection{Comparison of components}
+In order to prove the first claim we proceed as in \cite[\S5]{CLpfields}; let us start by noticing that the obstruction theory $\mathbb E:=\mathbb E_{\tZp/\tXP}$ splits as $\mathbb E_1\oplus\mathbb E_2$ where $\mathbb E_1=\R^{\bullet}\hat\pi_*(\hL^{\oplus 5})$ and $\mathbb E_2=\R^{\bullet}\hat\pi_*(\widehat{\mathcal P})$. When we restrict to $\tZ^{p,\rm{main}}$ we see that $h^1/h^0(\mathbb E_1)$ is the closure of its own zero section; it follows that:
+\[
+ \mathfrak C^{\rm{main}}=\overline{0}_{\mathbb E\rvert_{\tZ^{p,\rm{main}}}}=h^1/h^0(\mathbb E_1)\rvert_{\tZ^{p,\rm{main}}}\oplus \overline{0}_{\mathbb E_2\rvert_{\tZ^{p,\rm{main}}}}
+\]
+Then by standard intersection theory (pullback the right-hand side by $\hat\pi_{\mathbb E}^*=\hat\pi_{\mathbb E_1}^*\circ\hat\pi_{\mathbb E_2}^*$):
+\[
+ 0^!_{\mathbb E}[\mathfrak C^{\rm{main}}]=0_{\mathbb E_2}^![\overline{0}_{\mathbb E_2\rvert_{\tZ^{p,\rm{main}}}}]
+\]
+
+At this point we recall the following \cite[Lemma 5.3]{CLpfields}:
+\begin{lem}
+Let $\mathbb E=[E_0\to E_1]$ be a complex of locally free sheaves on an integral Deligne-Mumford stack $B$ such that
+$h^1(\mathbb E)$ is a torsion sheaf on $B$ and the image sheaf of $E_0\to E_1$ is locally free.
+Let $U\subseteq B$ be the complement of the support of $h^1(\mathbb E)$, and let $\mathbf{B}\subseteq h^1/h^0(\mathbb E^\vee[-1])$
+be the closure of the zero section  of the vector bundle $h^1/h^0(\mathbb E^\vee[-1]|_U)= h^0(\mathbb E|_U)^\vee$. Then
+$$0^![\mathbf{B}]=e(h^0(\mathbb E)^\vee)\in A_*(B).
+$$
+\end{lem}
+
+We apply this lemma to $\R^{\bullet}\hat{\pi}_*\hL^{\otimes 5}=\mathbb E_2^\vee$ on $\tZ^{p,\rm{main}}$. Notice that it satisfies the hypotheses by virtue of the equations in Remark \ref{rmk:eqn}: indeed the question may be addressed locally; looking at the resolution of $\mathbb E_2^\vee$:
+\[
+ \hat\pi_*\hL^{\otimes 5}(\A)\to \hat\pi_*\hL^{\otimes 5}(\A)\rvert_{\A}
+\]
+we deduce from the equation that the image of this map is $\pi_*\hL^{\otimes 5}(\A)\rvert_{\A}\otimes\OO_{\tZ^{p,\rm{main}}}(-\Xi)$, where $\Xi$ denotes the Cartier divisor $\Xi=\tZ^{p,\rm{main}}\cap\left(\bigcup_{k\geq 2}D^k\tZp\right)$. Then $\hat\pi_*\hL^{\otimes 5}$ is a vector bundle, being the kernel of a vector bundle map.
+
+\begin{lem}\label{lem:main-compo}
+ If we let $i$ be the inclusion of $\tZ$ in $\tM_1(\PP^4,d)$, then:
+ \[
+  i_*(c_{\rm{top}}(\hat{\pi}_*\hL^{\otimes 5})\cap[\tZ^{p,\rm{main}}])=c_{\rm{top}}({\pi}_*\mathcal L^{\otimes 5})\cap[\tM_1(\PP^4,d)^{p,\rm{main}}]
+ \]
+\end{lem}
+\begin{proof}
+ Recall that the projection $(-)^p\to (-)$ is an isomorphism on main, so it makes sense to write $i_*[\tZ^{p,\rm{main}}]=[\tM_1(\PP^4,d)^{p,\rm{main}}]$, which follows from Lemma~\ref{lem:inclusion}. On the other hand notice that on $\tZ^{p,\rm{main}}$ we have:
+ \[
+  \pi_*\mathcal L=\hat{\pi}_*\phi_*\phi^*\hL=\hat{\pi}_*\hL
+ \]
+by projection formula and since $\phi_*\OO_{\cC_{\tZ^{p,\rm{main}}}}=\OO_{\hC_{\tZ^{p,\rm{main}}}}$ by Zariski connectedness theorem. The result follows from the projection formula for Chern classes.
+\end{proof}
+
+We are left with showing that the rest of the $\mathfrak C^k$ do not contribute to the invariants. This is essentially a dimensional computation. The arguments of \cite[\S\S6-8]{CLpfields} may be adapted; we shall outline them for the benefit of the reader. We introduce the notation $\tZ^{p,\rm{gst}}:=\bigcup_{k\geq 2} D^k\tZp$ for the union of the boundary components, and $\mathfrak C^{\rm{gst}}=\bigcup_{k\geq 2}\mathfrak C^k$.
+
+\subsection*{Step I: reduction to the case of a cone inside a vector bundle}
+
+This section deals with removing the technicalities of working with a cone stack inside a vector bundle stack.
+
+The key point is that $\mathbb E:=\mathbb E\rvert_{\tZ^{p,\rm{gst}}}$ has locally free $h^0$ \emph{and} $h^1$: the equations in Remark \ref{rmk:eqn} are automatically satisfied on the boundary, without imposing any condition on the fiber coordinates.
+
+When we fix a resolution by locally free sheaves $\mathbb E=[F_0\xrightarrow{d} F_1]$, the image sheaf $d(F_0)$, which is the kernel of $F_1\to h^1(\mathbb E)$, is a subbundle of $F_1$. Consider the projections:
+\[
+ \beta\colon F_1\to h^1/h^0(\mathbb E) \quad \text{and} \quad \beta'\colon F_1\to \tilde{V}:=\R^1\hat{\pi}_*(\hL^{\oplus 5}\oplus\widehat{\mathcal P});
+\]
+the second is also flat since $d(F_0)$ is a vector bundle. The cone stack $\mathfrak C^{\rm{gst}}$ can be descended to a cone $C^{\rm{gst}}\subseteq \tilde{V}$ by taking the quotient of $\beta^{-1}\mathfrak C^{\rm{gst}}$ by the free action of $d(F_0)$; $C^{\rm{gst}}$ should then be thought of as the coarse moduli of $\mathfrak C^{\rm{gst}}$. Recall that we started with a cosection $\sigma_1$ of $V$ (see Eq. \eqref{eqn:cosection}) and pulled it back to all relevant spaces. 
+It follows from the commutativity of localised Gysin pullback with flat pullback that:
+\[
+ s^!_{h^1/h^0(\mathbb E),\tilde\sigma_1}[\mathfrak C^{\rm{gst}}]= s^!_{\tilde V,\tilde\sigma_1}[C^{\rm{gst}}]
+\]
+See \cite[Proposition 6.3]{CLpfields}.
+
+
+
+\subsection*{Step II: from cosection localised to standard Gysin map}
+Recall that the construction of a localised virtual class refines the standard one, namely:
+\[\iota_*\virloc{Y}=\vir{Y},\]
+where $\iota\colon Y(\sigma)\hookrightarrow Y$ is the degeneray locus of the cosection. In particular, when $Y$ itself is a proper Deligne-Mumford stack, the degree of the localised virtual class can be computed after pushing it forward to $Y$.
+
+Then to compute $s^!_{\tilde V,\tilde\sigma_1}[C^{\rm{gst}}]$ we are going to compactify $\tZ^{p,\rm{gst}},$ extend the cone, the vector bundle and the cosection to it, and then make use of the fact we just recalled.
+
+Since $\tZ^{p,\rm{gst}}\cong\operatorname{Vb}_{\tZ^{\rm{gst}}}\left(\hat{\pi}_*\widehat{\mathcal P}\right)$, we take its standard copactification:
+\[\bar{\gamma}\colon \overline{\Z}^{p,\rm{gst}}:=\PP\left(\hat{\pi}_*\widehat{\mathcal P}\oplus \OO_{\tZ^{\rm{gst}}}\right)\to \tZ^{\rm{gst}}.\]
+We want to pullback the cosection:
+\[\sigma_{1|(u,\psi)}(\mathring{x},\mathring{p})=\mathring{p}\w(u)+\psi\sum_{i=0}^4\partial_i\w(u)\mathring{x}_i;\]
+noticing that in the compactification the $p$-field $\psi$ can go to infinity, we define the vector bundles on $\oZp$:
+\[\tilde{V}^{\rm{cpt}}_1=\bar{\gamma}^*V_1(-D_{\infty}),\qquad \tilde{V}^{\rm{cpt}}_2=\bar{\gamma}^*V_2.\]
+We are now able to extend the cosection and get:
+\[\bar{\sigma}\colon \tilde{V}^{\rm{cpt}}=\tilde{V}^{\rm{cpt}}_1\oplus \tilde{V}^{\rm{cpt}}_2\to\OO_{\oZp}. \]
+ 
+ The compatibility of $\tilde\sigma$ with $\bar\sigma$, and the fact that $\oZp$ is proper, together with the observation at the beginning of this section, explain the following:
+ \begin{prop}
+ Let $\iota_{!}\colon Z_*(\tilde{V}(\widetilde{\sigma}))\to Z_*(\tilde{V}^{\rm{cpt}})$ be defined by 
+ $\iota_{!}[C]=[\overline{C}].$ And $i\colon D(\widetilde{\sigma})\to \tZ^{\rm{gst}}$ the inclusion. Then
+ \[\bar{\gamma}_*\circ s^{!}_{\tilde{V}^{\rm{cpt}}}\circ\iota_{!}=i_*\circ s^{!}_{\tilde\sigma,\rm{loc}}\colon  Z_*(\tilde{V}(\widetilde{\sigma}))\to A_*(\tilde{Z}^{\rm{gst}}).\]
+ \end{prop}
+ See \cite[Proposition~6.4]{CL} for full details.
+ 
+ Furthermore, from functoriality of Gysin pullbacks and the deformation to the normal cone it follows that:
+ \[s^!_{\tilde V^{\rm{cpt}}}[\overline C]=s^!_{\tilde V_2^{\rm{cpt}}}\circ s^!_{\tilde V_1^{\rm{cpt}}}[N_{\overline C\cap 0\oplus\tilde V_2^{\rm{cpt}}}\overline C].\]
+ 
+ \subsection*{Step III: homogeneous cones}
+Chang an Li introduce the notion of \emph{homogeneity} for substacks of $\tilde V$ on $\tZ^{p,\rm{gst}}$: write 
+\[\tilde V=\tilde V_1\oplus\tilde V_2\;\;\text{ with} \;\;\tilde V_1=\R^1\hat{\pi}_*(\hL^{\oplus 5})\;\; \text{and}\;\; \tilde V_2=\R^1\hat{\pi}_*(\widehat{\mathcal P}),\]
+ and $\gamma\colon \tZ^{p,\rm{gst}}\to\tZ^{\rm{gst}}$ the projection. Since $\tZ^{p,\rm{gst}}$ is the total space of a line bundle over $\tZ^{\rm{gst}}$, it comes with a natural $\Gm$-action on the fibers of $\gamma$. Moreover, since the highest pushforwards satisfy cohomology and base-change:
+ \[\tilde V_i=\gamma^*V_i\]
+ for the corresponding vector bundles $V_i$ on $\tZ^{\rm{gst}}$, so the total space of $\tilde V_i$ can be endowed with a $\Gm$-action that makes the projection to $\tZ^{p,\rm{gst}}$ equivariant. We say that a closed substack of $\tilde V$ is $0$-homogeneous if it is the pullback of a closed substack of $V$ along $\gamma$. In fact there are different $\Gm$-actions on $\tilde V$ that make the projection to $\tZ^{p,\rm{gst}}$ equivariant: namely, we can twist the trivial action on the fibers by two characters of $\Gm$, one for each $\tilde V_i$. Then we say that a substack of $\tilde V$ is $(l_1,l_2)$-homogeneous if it is invariant with respect to such an action. Here is how we are going to use the homogeneity:
+
+\begin{lem}
+ Let $C\subseteq \tilde V$ be an $(l_1,l_2)$-homogeneous sub\emph{cone} of $\tilde V$; then the cone $\overline{C}\cap(0\oplus\tilde V_2^{\rm{cpt}})$ is pulled back from a cone in $V_2$ on $\tZ^{\rm{gst}}$.
+\end{lem}
+\begin{proof}
+ Locally we may pick coordinates $t$ on the fibers of $\gamma$, $x_1,\ldots,x_5$ on the fibers of $\tilde V_1^{\rm{cpt}}$, and $y_1,\ldots,y_{5d+5}$ on the fibers of $\tilde V_2^{\rm{cpt}}$, such that the ideal of $\overline{C}$ is generated by separately homogeneous polynomials $p_j$ in $t^{-l_1}x_i$ and $t^{-l_2}y_i$. The ideal of $\overline{C}\cap(0\oplus\tilde V_2^{\rm{cpt}})$ is then given by $\langle x_1,\ldots, x_5,p_j(0,t^{-l_2}y)\rangle_j$, where $p_j(0,t^{-l_2}y)$ results from setting $x_i=0$ in $p_j$. Notice now that $\overline{C}$ being a cone, it is invariant by scalar multiplication on the fibers of $\tilde V^{\rm{cpt}}$, so we may as well say that $\overline{C}\cap(0\oplus\tilde V_2^{\rm{cpt}})$ is cut by the ideal $\langle x_1,\ldots, x_5,p_j(0,y)\rangle_j$. This makes it clear that $\overline{C}\cap(0\oplus\tilde V_2^{\rm{cpt}})$ is pulled back from $(0\oplus V_2)$ on $\tZ^{\rm{gst}}$.
+\end{proof}
+
+Finally Chang and Li point out that the coarse moduli cone $C^{\rm{gst}}$ is $(0,1)$-homogeneous \cite[Proposition 6.7]{CLpfields}.
+%recalling the interpretation of $\Mone{1}{\PP^4}{d}^p$ as an open inside the cone of sections of $\mathcal V=\rm{Vb}(\mathcal L^{\oplus 5}\oplus \widehat{\mathcal P})$ over $\hC_{\mathfrak{Pic}_1^{(1)}}$, the desired $\Gm$-action on the fibers of $\gamma\colon \tZ^{p,\rm{gst}}\to\tZ^{\rm{gst}}$ is induced by endowing $\rm{Vb}(\mathcal L^{\oplus 5}\oplus \widehat{\mathcal P})$ with the $\Gm$-action that is trivial on the fibers of every copy of $\rm{Vb}(\mathcal L)$, and has character $1$ on those of $\rm{Vb}(\widehat{\mathcal P})$, with an underlying trivial action on $\mathfrak{Pic}_1^{(1)}$. This influences the obstruction theory  $\R^\bullet\hat\pi_*\left(\mathfrak e^* T_{\mathcal V/\hC_{\mathfrak{Pic}_1^{(1)}}}\right)$ of $\Mone{1}{\PP^4}{d}^p$ in the obvious way, and consequently $\mathbb E$ on $\tZp$.
+
+
+ 
+\subsection*{Step IV: reduction of the support of the cone}
+We now explain a key technical lemma which will enable us to show that $C^{\rm{gst}}$ pushes forward to zero under a suitably defined morphism. It is basically reducing the support of $\overline{C^{\rm{gst}}}\cap 0\oplus\tilde{V}_2^{\rm{cpt}}$ to a manageable substack of $\tilde{V}_2^{\rm{cpt}}$, that is the union of the zero-section (i.e. $\oZp$) and a line subbundle of $\tilde{V}_2^{\rm{cpt}}$ supported on $\widetilde{\Xi}=\tZ^{p,\rm{main}}\cap\tZ^{p,\rm{gst}}$. Even better, using the homogeneity we can show that such a line bundle comes from $\Xi=\tZ^{\rm{main}}\cap\tZ^{\rm{gst}}$. We give a sketch of the proof, see \cite[Proposition 7.1]{CLpfields} for more details.
+\begin{lem}
+ There is a line subbundle $F$ of $V_2\rvert_\Xi$ such that:
+ \[
+  \overline{C^{\rm{gst}}}\cap 0\oplus\tilde{V}_2^{\rm{cpt}}\subseteq 0_{\tilde{V}_2^{\rm{cpt}}}\cup \tilde F:= \oZp\cup \bar\gamma^* F
+ \]
+\end{lem}
+It is enough to show this before taking the closure. First they use the fact that there is a triple of compatible obstruction theories for the triangle:
+\bcd
+\tZp \ar[rr,"\gamma"]\ar[dr] & & \tZ \ar[dl] \\
+& \widetilde{\XP} &
+\ecd
+such that their restrictions to $\tZ^{p,\rm{gst}}$ have locally free $h^0$ and $h^1$. By taking $h^1$ of the dual obstruction theories we obtain a commutative diagram:
+\bcd
+h^1(\mathbb L_{\tZp/\tZ}^\vee\rvert_{\tZ^{p,\rm{gst}}}) \ar[r]\ar[d] & h^1(\mathbb L_{\tZp/\XP}^\vee\rvert_{\tZ^{p,\rm{gst}}})\ar[r]\ar[d] &h^1(\gamma^*\mathbb L_{\tZ/\XP}^\vee\rvert_{\tZ^{p,\rm{gst}}})\ar[d] \\
+\tilde{V}_2\ar[r,"i_2"] & \tilde{V}_1\oplus\tilde{V}_2 \ar[r,"\pr_1"] & \tilde{V}_1
+\ecd
+The vertical arrows are injective by the definition of an obstruction theory, and the bottom triangle is exact. Notice that $0\oplus\tilde{V}_2$ is precisely the kernel of $\pr_1$. It follows that, in order to understand the support of $C^{\rm{gst}}\cap 0\oplus\tilde{V}_2$, it is enough to study that of $N$, where $N$ is the coarse moduli cone of $\mathfrak C_{\tZp/\tZ}$, living in the upper left corner of the above diagram.
+
+This is an easier task, since we know that $\tZp/\tZ$ is a line bundle on $\tZ^{\rm{gst}}$ and an isomorphism on $\tZ^{\rm{main},\circ}$. Hence we can always find a local chart $S\to \tZ$ and a diagram as follows:
+\bcd
+\tZp\ar[d] & T\ar[l]\ar[ld,phantom,"\Box"]\ar[d]\ar[r,hook,"V(\tilde\zeta t)"] & S\times\Aaff^1_t\ar[ld] \\
+\tZ & S\ar[l,"\acute{e}t"] &
+\ecd
+where $\tilde\zeta$ is a local equation for the boundary. Then $\tau^{\geq-1}\mathbb L_{\tZp/\tZ}\rvert_T=[I/I^2\xrightarrow{\delta}\Omega_{\Aaff^1_S/S}]$; $I$ is generated by $\tilde\zeta t$, whose image under $\delta$ is $\tilde\zeta \rm{d}t$, which restricts to $0$ on $\tZ^{p,\rm{gst}}\times_{\tZp}T=\{\tilde\zeta=0\}$. So the action is trivial, and the coarse moduli cone is precisely $\Spec_{T^{\rm{gst}}}\operatorname{Sym}^{\bullet} I/I^2$, which is a line bundle supported on $\widetilde{\Xi}\times_{\tZp}T$ and trivial otherwise. By gluing different charts we get the line bundle $\tilde F$ on $\widetilde{\Xi}$.
+
+The last part of the statement, namely that $\tilde F$ descends to a line bundle $F$ on $\Xi$ is proved by homogeneity: the normal cone of $\tZp/\tZ$ is homogeneous with respect to the $\Gm$-action with character $1$ on the fibers of $\tilde{V}_2\to \tZ^{p,\rm{gst}}$, but being a cone it is $0$-homogeneous as well (see the above discussion of homogeneity), so it is $\bar\gamma^*F$ for some line bundle $F$ on $\Xi\subseteq \tZ$.
+
+\subsection*{Step V: the boundary pushes forward to zero} Recall that we need to show that the degree of the following class is $0$:
+\[
+ s_{\tilde{V}^{\rm{cpt}}}^![\overline {C^{\rm{gst}}}]=s_{\tilde{V}_2^{\rm{cpt}}}^!\circ s_{\tilde{V}_1^{\rm{cpt}}}^![N_{\overline {C^{\rm{gst}}}\cap (0\oplus {\tilde{V}_2^{\rm{cpt}}})}\overline {C^{\rm{gst}}}]
+\]
+
+It follows from the previous section that $s_{\tilde{V}_1^{\rm{cpt}}}^![N_{\overline {C^{\rm{gst}}}\cap (0\oplus {\tilde{V}_2^{\rm{cpt}}})}\overline {C^{\rm{gst}}}]$ can be represented by the sum of two cycles, one (call it $N_1$) supported on a line subbundle of $\tilde{V}_2^{\rm{cpt}}$ on $\widetilde\Xi$, the other one (call it $N_2$) supported on the zero section of $\tilde{V}_2^{\rm{cpt}}$.
+
+\begin{lem}\label{lem:boundary}
+ Both $N_1$ and $N_2$ are $5d+1$-dimensional cycles, and for $i=1,2$: \[\deg(s_{\tilde{V}_2^{\rm{cpt}}}^![N_i])=0.\]
+\end{lem}
+\begin{proof}
+ Compare with \cite[Lemma 8.1]{CLpfields}. The dimension of $\tZ^{\rm{gst}}$ is $5d+3$, being locally a $5(d+1)$ vector bundle over a dimension $-2$ stack; so $\tZ^{p,\rm{gst}}$, which is a line bundle on the former, has dimension $5d+4$. The coarse moduli cone has then dimension $5d+6$, as can be argued from Lemma \ref{lem:open_cones}. $\tilde{V}_1^{\rm{cpt}}\rvert_{\oZp}$ has rank $5$, so $s_{\tilde{V}_1^{\rm{cpt}}}^![\overline {C^{\rm{gst}}}]$ is represented by a cycle of dimension $5d+1$. We shall exploit the commutativity of Gysin pullback with proper pushforward.
+
+For $N_1$ we conclude from the above facts, since $\deg(s_{\tilde{V}_2^{\rm{cpt}}}^![N_1])=\deg(s_{V_2}^!\bar{\gamma}_*[N_1])$, but $\bar{\gamma}_*[N_1]\in A_{5d+1}(F)$ must be trivial, since $F$ has dimension $5d$, being a line bundle on $\Xi$ which is a divisor in $\Z^{\rm{main}}$.
+
+On the other hand $N_2\subseteq \tilde{V}_2^{\rm{cpt}}$ admits a further splitting into $N_{2,\mu}\subseteq \tilde{V}_{2,\mu}^{\rm{cpt}}$ according to the component $D^{\mu}\oZp$ on which they are supported, with $\mu\vdash d$ in $k$ parts. There exists a comparison morphism:
+\[\beta_{\mu}\colon D^\mu\oZp\to D^\mu\Z=D^\mu\oM_1(\PP^4,d)\to \pazocal W_{\mu}\]
+where $\pazocal W_{\mu}:=\prod_{i=1}^k \M{0}{1}{\PP^4}{d_i}\times_{(\PP^r)^k}\PP^r$. The map $\beta_{\mu}$ is given by forgetting the $p$-field,  the Vakil-Zinger blow-up and the $k$-pointed elliptic curve contracted by the map to $\PP^4$. This has the nice property that $\tilde{V}_2^{\rm{cpt}}$ is the pullback along $\beta_{\mu}$ of a vector bundle on $\pazocal W_{\mu}$. First construct a connected curve $\overline \cC_\mu$ by gluing the universal curve over each factor along the given sections, producing a genus $0$ non-Gorenstein (unless $k=2$) singularity to which the universal maps to $\PP^4$ descend by the property of pushouts:
+\bcd
+\overline \cC_\mu \ar[d,"\bar\pi"]\ar[r,"\bar f"] & \PP^4 \\
+\pazocal W_\mu &
+\ecd
+Notice now that the sheaf $V_\mu:=\bar\pi_*\bar f^*\OO_{\PP^4}(5)$ is a vector bundle of rank $5d+1$ on $\pazocal W_\mu$, as can be checked by Riemann-Roch and the normalisation sequence, and $\tilde{V}_{2,\mu}^{\rm{cpt}}=\beta_{\mu}^*(V_\mu^\vee)$. Finally the actual dimension of $\pazocal W_\mu$ is $5d+4-2k <5d+1$ for $k\geq 2$ by Kleiman-Bertini theorem, so $\beta_{\mu,*}[N_{2,\mu}]=0$.
+
+\end{proof}
+\begin{proof}(\emph{Main Theorem})
+For the benefit of the reader we summarise here the key results which allow us to conclude:
+\begin{itemize}
+\item $p$-fields give the same invariants as the quintic up to a sign, see Theorem \ref{thm:p-fields-quintic}: \[\deg[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc}}= (-1)^{5d}\deg[\Mone{1}{X}{d}]^{\rm{vir}}.\]
+\item $\Zp$ and $\Mone{1}{\PP^4}{d}^p$ are virtually birational, see Corollary \ref{cor:Zp-vs-pfields}:
+\[\deg\virloc{\Zp}=\deg\virloc{\Mone{1}{\PP^4}{d}^p}.\]
+\item The desingularisation $\tZp\to \Zp$ does not alter the invariants, see Lemma \ref{lem:tilding} \[\deg\virloc{\tZp}=\deg\virloc{\Zp}.\]
+\item The main component of $\tZp$ contributes with the reduced invariants up to a sign, while the boundary is numerically irrelevant, see Lemmas \ref{lem:main-compo} and \ref{lem:boundary}:
+\[\deg\virloc{\tZp}=(-1)^{5d}\deg\left(c_{\rm{top}}(\tilde\pi_*\tilde f^*\OO_{\PP^4}(5)\cap[\widetilde{\pazocal M}_1(\PP^4,d)^{\rm{main}}]\right).\]
+\end{itemize}
+
+
+\end{proof}
 \section{On the relative problem}
 
 
