@@ -294,85 +294,102 @@ Contrary to the genus zero case, $\M{1}{n}{\PP^N}{d}$ is not a smooth stack; in 
 \end{itemize}
 Furthermore, the boundary of the main component admits a neat description: $\M{1}{0}{\PP^2}{3}^{\mathrm{main}}\cap D^1(\PP^2,3)$ consists of those maps where the rational tail normalises a cusp, and the elliptic curve is contracted exactly to the singular point (this has dimension $8$, thus being a divisor in \emph{main}); while $\M{1}{0}{\PP^2}{3}^{\mathrm{main}}\cap D^2(\PP^2,3)$ has the line tangent to the conic.
 
-The description above generalises indeed to all moduli space of maps to $\PP^N$ in genus one:
+The description above generalises indeed to all moduli spaces of maps to $\PP^N$ in genus one:
 besides the \emph{main component}, which is the closure of the locus of maps from a smooth elliptic curve, for every positive integer $k$ and partition $\lambda\vdash d$ into $k$ positive parts, there is an irreducible \emph{boundary component} $D^{\lambda}(\PP^N,d)$ defined to be the closure of the locus where:
 \begin{enumerate}[label=(\roman*)]
 \item the source curve is obtained by gluing a smooth $k$-pointed elliptic curve $E$ with as many rational tails $R_i\cong\PP^1,\ i=1,\ldots,k$,
 \item the map contracts the elliptic curve $E$ to a point, 
-\item and it has degree $\lambda_i$ on the rational tail $R_i$.
+\item the map has degree $\lambda_i$ on the rational tail $R_i$.
 \end{enumerate}
-Indeed $D^{\lambda}(\PP^N,d)$ is the image of the gluing morphism from
+$D^{\lambda}(\PP^N,d)$ is irreducible, being the image of the gluing morphism from
 \[\left(\oM_{1,k}\times\prod_{i=1}^k\M{0}{1}{\PP^N}{\lambda_i}\right)\times_{(\PP^N)^k}\PP^N.\]
-I will denote by $D^k$ the union of all $D^{\lambda}(\PP^N,d)$ where $\lambda$ has $k$ parts. Notice that an analogous description holds in the case of a positive number of markings, except that the combinatorial data should also include a partition $\mu\vdash n$ into $k+1$ parts (the $0$-th of which telling how many points lie on $E$).
+I will denote by $D^k(\PP^N,d)$ the union of all $D^{\lambda}(\PP^N,d)$ where $\lambda$ has $k$ parts. An analogous description holds in the case of a positive number of markings, except that the combinatorial data should also include a partition $\mu\vdash n$ into $k+1$ parts (the $0$-th of which telling how many points lie on $E$).
 
  %We then have:
-\begin{prop}\label{prop:components} Let the smallest connected arithmetic genus one subcurve go under the name of \emph{core} or \emph{circuit}.
+\begin{prop}\label{prop:components} The minimal connected arithmetic genus one subcurve is named the \emph{core} (it could consist of a circle of $\PP^1$).
 \begin{enumerate}
  \item The ones above are all the irreducible components of $\oM_1(\PP^N,d)$: 
 \[\oM_1(\PP^N,d)=\oM_1(\PP^N,d)^{\rm{main}}\cup\bigcup_{\lambda}D_{\lambda}(\PP^N,d).\]
 \item A map $[f]$ lies in \emph{the boundary of the main component}  if and only if:
 \begin{itemize}[leftmargin=0cm]
 \item $f$ is non-constant on at least one irreducible component of the core,
-\item or, if $f$ contracts the core, writing $C=E\ {}_{\mathbf p}\!\sqcup_{\mathbf q}\bigsqcup_{i=1}^k R_i$ with $E$ the \emph{maximal} contracted subcurve genus one, then $\{\operatorname{d}\!f(T_{q_i}R_i)\}_{i=1}^k$ are \emph{linearly dependent} in $T_{f(E)}\PP^r$.
+\item or, if $f$ contracts the core, writing $C=Z\ {}_{\mathbf p}\!\sqcup_{\mathbf q}\bigsqcup_{i=1}^k R_i$ with $Z$ the \emph{maximal} contracted subcurve of genus one, then $\{\operatorname{d}\!f(T_{q_i}R_i)\}_{i=1}^k$ is a \emph{linearly dependent} set in $T_{f(Z)}\PP^r$.
 \end{itemize}
 In this case we say that $[f]$ is smoothable.
 \end{enumerate}
 \end{prop}
  
-This is essentially due to R. Vakil and A. Zinger, see \cite[Lemma~5.9]{Vre} \cite{VZpreview} \cite[???]{VISC}. I shall later discuss a proof of the second fact based on local equations for the moduli space.
+This is essentially due to R. Vakil and A. Zinger, see \cite[Lemma~5.9]{Vre} \cite[\S 1.2]{VZ}. Later I shall discuss a proof of the second fact based on local equations for the moduli space.
 
-Let me carry the comparison to the genus zero situation one step further: assume we are interested in the Gromov-Witten theory of a complete intersection in $\PP^N$, say a hypersurface $X$ of degree $l$, cut out by a certain section $s\in H^0(\PP^N,\OO_{\PP^N}(l))$. Letting $(\pi,f)\colon \mathcal C_{0,n}(\PP^N,d) \to \M{0}{n}{\PP^N}{d}\times \PP^N$ be the universal curve and stable map, recall that there is an induced section $\tilde{s}$ of the sheaf $E=\pi_*f^*\OO_{\PP^N}(l)$ on $\M{0}{n}{\PP^N}{d}$, which vanishes along $\M{0}{n}{X}{d}$; in fact more is true: $E$ is a vector bundle of rank $dl+1$ (by cohomology and base-change, and a Riemann-Roch computation) and after shifting it provides us with a perfect obstruction theory for the inclusion $\iota\colon \M{0}{n}{X}{d}\hookrightarrow\M{0}{n}{\PP^N}{d}$, so that the following result holds.
+Let me carry the comparison to the genus zero situation one step further: assume we are interested in the Gromov-Witten theory of a complete intersection in $\PP^N$, say a hypersurface $X$ of degree $l$, cut out by a section $s\in H^0(\PP^N,\OO_{\PP^N}(l))$. Letting $(\pi,f)\colon \mathcal C_{0,n}(\PP^N,d) \to \M{0}{n}{\PP^N}{d}\times \PP^N$ denote the universal curve and stable map, recall that there is an induced section $\tilde{s}$ of the sheaf $E=\pi_*f^*\OO_{\PP^N}(l)$ on $\M{0}{n}{\PP^N}{d}$, which vanishes along $\M{0}{n}{X}{d}$. In fact more is true: $E$ is a vector bundle of rank $dl+1$ (by cohomology and base-change, and a Riemann-Roch computation) and, after shifting, it provides us with a perfect obstruction theory for the inclusion $\iota\colon \M{0}{n}{X}{d}\hookrightarrow\M{0}{n}{\PP^N}{d}$, so that the following result holds.
 
 \begin{prop}\cite{CKL,KKP}
  With notation as above,
  \[\iota_*\virt{\M{0}{n}{X}{d}}=c_{dl+1}(E)\cap [\M{0}{n}{\PP^N}{d}].\]
 \end{prop}
-In particular, this result makes the restricted Gromov-Witten invariants of $X$ into \emph{twisted} Gromov-Witten invariants of projective space, which are computable e.g. by localisation \cite{Kon}.
+In particular, this result makes the restricted Gromov-Witten invariants of $X$ into \emph{twisted} Gromov-Witten invariants of projective space, thus computable e.g. by localisation \cite{Kon}.
 
 Again the situation in genus one is much more intricate: $\pi_*f^*\OO_{\PP^N}(l)$ generically has rank $dl$ on the main component, but the rank jumps to $dl+1$ on the boundary, where the elliptic curve is contracted - as can be seen by constancy of the Euler characteristic and the fact that $\operatorname{R}^1\pi_*f^*\OO_{\PP^N}(l)$, that always satisfies cohomology and base-change, is supported on such boundary loci. In other words, the natural obstruction theory for $\M{1}{n}{X}{d}\hookrightarrow\M{1}{n}{\PP^N}{d}$ is not perfect.
 
-A possible approach to this problem is the one taken by J. Li, R. Vakil and A.Zinger in a series of papers \cite{???}: roughly, they produce a desingularisation $\VZ{n}{\PP^N}{d}$ of the main component, on which the cone $\pi_*f^*\OO_{\PP^N}(l)$ is seen to contain a vector bundle $E$ of rank $dl$, and for a hypersurface $X_l\subseteq \PP^N$ as before (more generally for a projective complete intersection) they define \emph{reduced invariants} by integrating against
+A possible approach to this problem is the one taken by J. Li, R. Vakil and A.Zinger in a series of papers \cite{zsharp,zstructure,redgone,LZ,lz2,zingerstvsred,VZpreview,VZ}: roughly, they produce a \emph{desingularisation} $\VZ{n}{\PP^N}{d}$ of the main component, on which the cone $\pi_*f^*\OO_{\PP^N}(l)$ is seen to contain a vector bundle $E$ of rank $dl$, and for a hypersurface $X_l\subseteq \PP^N$ as before (more generally for a projective complete intersection) they define \emph{reduced invariants} by integrating against
 \[\redu{\iota_* \VZ{n}{X}{d}}:= c_{dl}(E)\cap [\VZ{n}{\PP^N}{d}].\]
-In particular reduced invariants may again be computed by torus localisation \cite{Zinger-CYhyp,APopa}. Let me describe Vakil and Zinger's construction more precisely: it is an iterated blow-up that makes all the boundary components intersect main in a divisor (within the latter). Let $\Mwt$ denote the stack of prestable curves with a weight assignment, namely to every irreducible component in the fiber a non-negative integer is associated in a way compatible with specialisation morphisms: $\Mwt$ is \'etale, non-separated over $\MM_1$ and it was first considered in \cite{Costello-thesis}; by an abuse of notation I will keep denoting by $\Mwt$ the open, bounded locus where the curve is weighted-stable, i.e. every rational component of weight zero has at least three special points. $\M{1}{n}{\PP^N}{d}$ admits a map to $\Mwt$ by retaining only the degree of the map. Let $\Theta_k\subseteq \Mwt$ denote the closure of the locus where the elliptic curve has weight zero, and $k$ rational tails of positive weight attached to it. Define $\MM^{(0)}=\Mwt$ and $\MM^{(k)}$ iteratively as the blow-up of the strict transform of $\Theta_k$ in $\MM^{(k-1)}$. Notice that the blow-up loci are always smooth, hence so is $\MM^{(k)}$ for every $k$; also, by weighted-stability, for every fixed total degree $d$ the procedure stops after finitely many steps: denote by $\widetilde{\MM}$ the end result. Form the cartesian diagram
+Reduced invariants may be computed by torus localisation as well \cite{Zinger-CYhyp,APopa}. Let me describe Vakil and Zinger's construction more precisely: it is an iterated blow-up that makes all the boundary components intersect \emph{main} in a divisor (within the latter). Let $\Mwt$ denote the stack of prestable curves with a weight assignment, namely to every irreducible component in the fiber we associate a non-negative integer in a way compatible with specialisation morphisms: $\Mwt$ is \'etale but non-separated over $\MM_1$, and it was first considered by \cite{Costello} By a slight abuse of notation I will also denote by $\Mwt$ the open, bounded locus where the curve is weighted-stable, i.e. every rational component of weight zero has at least three special points. $\M{1}{n}{\PP^N}{d}$ admits a map to $\Mwt$ by retaining only the degree of the map. Let $\Theta_k\subseteq \Mwt$ denote the closure of the locus where the elliptic curve has weight zero, and $k$ rational tails of positive weight attached to it. Define $\MM^{(0)}=\Mwt$ and $\MM^{(k)}$ iteratively as the blow-up of the strict transform of $\Theta_k$ in $\MM^{(k-1)}$. Notice that the blow-up loci are always smooth, hence so is $\MM^{(k)}$ for every $k$; also, by weighted-stability, for every fixed total degree $d$ the procedure stops after finitely many steps: denote by $\widetilde{\MM}$ the end result. Form the cartesian diagram
 \bcd
 \tVZ{n}{\PP^N}{d}\ar[d]\ar[r]\ar[dr,phantom,"\Box"] & \M{1}{n}{\PP^N}{d}\ar[d] \\
 \widetilde{\MM}\ar[r] & \Mwt
 \ecd
-Now the pullback of any boundary component of $\M{1}{n}{\PP^N}{d}$ has the same dimension in $\tVZ{n}{\PP^N}{d}$ and intersects its main component (which is denoted by $\VZ{n}{\PP^N}{d}$ and is smooth \cite{???}) in a Cartier divisor. Denoting $\mathcal L=\tilde f^*\OO_{\PP^N}(1)$ on the universal curve, notice that $\R\pi_*\mathcal L$ may be resolved locally by picking a smooth section $\mathcal A$ of the universal curve passing through the core and writing:
+Now the pullback of any boundary component of $\M{1}{n}{\PP^N}{d}$ has the same dimension in $\tVZ{n}{\PP^N}{d}$ and intersects its main component (which is denoted by $\VZ{n}{\PP^N}{d}$ and is smooth \cite[Theorem 1.1(1)]{VZ}\cite[Theorem 2.9]{HL}) in a Cartier divisor. Denoting $\mathcal L=\tilde f^*\OO_{\PP^N}(1)$ on the universal curve, notice that $\R\pi_*\mathcal L$ may be resolved locally by picking a smooth section $\mathcal A$ of the universal curve passing through the core and writing:
 \[0\to \tilde\pi_*\mathcal L\to \tilde\pi_*(\mathcal L\otimes \OO_{\mathcal C}(\mathcal A))\xrightarrow{\mathrm{res}_{\mathcal A}} \tilde\pi_*(\mathcal L(\mathcal A)_{|\mathcal A})\to \operatorname{R}^1\tilde\pi_*\mathcal L\to 0\]
-By restricting to $\VZ{n}{\PP^N}{d}$ we see then that the image of the middle arrow is $\tilde\pi_*(\mathcal L(\mathcal A)_{|\mathcal A})(-\Xi)$ where $\Xi$ denotes the intersection of the main component of he Vakil-Zinger's desingularisation with the union of the boundary components, hence $\tilde\pi_*\mathcal L$ is a vector bundle (being expressed as the kernel of a vector bundle morphism). A similar argument works for all the tensor powers of $\mathcal L$, and in particular we let $E:=\tilde\pi_*\mathcal L^{\otimes l}$. The previous discussion is not completely accurate, but can be made so by studying the arrow $\mathrm{res}_{\mathcal A}$ in local coordinates \cite[???]{HL}.
+By restricting to $\VZ{n}{\PP^N}{d}$ we see then that the image of the middle arrow is $\tilde\pi_*(\mathcal L(\mathcal A)_{|\mathcal A})(-\Xi)$ where $\Xi$ denotes the boundary of the main component of the Vakil-Zinger's desingularisation, hence $\tilde\pi_*\mathcal L$ is a vector bundle (being the kernel of a vector bundle morphism). A similar argument works for all the tensor powers of $\mathcal L$, and in particular we let $E:=\tilde\pi_*\mathcal L^{\otimes l}$. The previous discussion can be made accurate by studying the arrow $\mathrm{res}_{\mathcal A}$ in local coordinates \cite[Proposition 4.13]{HL}.
 
-It is clear from the construction above that reduced invariants shoud have a better enumerative meaning than ordinary Gromov-Witten invariants, in the sense that they discard most boundary contributions from nodal curves. In the realm of symplectic geometry, it has been proven by Li and Zinger \cite{LZ} that for every \emph{primary} insertion $(\delta_1,\ldots,\delta_n)\in H^*(X)^{\otimes n}$ and curve class $\beta\in H^+_2(X)$
+It is clear from the construction above that reduced invariants ought to have a better enumerative meaning than ordinary Gromov-Witten invariants, in the sense that they discard most boundary contributions from nodal curves. In the realm of symplectic geometry, it has been proven by Li and Zinger \cite{LZ} that for every \emph{primary} insertion $(\delta_1,\ldots,\delta_n)\in H^*(X)^{\otimes n}$ and curve class $\beta\in H^+_2(X)$
 \[
  \langle \delta_1,\ldots,\delta_n \rangle^X_{1,n,\beta}-\langle \delta_1,\ldots,\delta_n \rangle^{X,\mathrm{red}}_{1,n,\beta}=\begin{cases}
  0 & \text{if } \dim(X)=2, \\
  \frac{2-K_X\cdot\beta}{24}\langle \delta_1,\ldots,\delta_n \rangle^X_{0,n,\beta} & \text{if } \dim(X)=3.\end{cases}
 \]
-Li-Zinger's equation tells us that in the case of a threefold, which is the most natural one where to look for such a comparison result because the virtual dimension (hence the meaningful insertions) does not depend on the genus, the difference between ordinary and reduced genus one invariants is given by the corresponding genus zero invariant multiplied by a certain correction factor. The relation has been proved in algebraic geometry for the quintic threefold \cite{CL}, and it is an adaptation of their work that I am going to discuss in the next few sections. Together with Cristina Manolache and Tom Coates I am also working towards a different proof of the formula: the key issue is to prove that the components of the intrinsic normal cone supported on the boundary components compare well (as in \cite{Manolache-push}) to their genus zero relatives - or rather excluding those that do not contribute at all. I shall not attempt a detailed discussion here; I would rather work out the case of projective spaces of low dimension, which can be dealt with entirely by hand. Let me recall the following
+Li-Zinger's equation tells us that in the case of a threefold, which is the most natural one where to look for such a comparison result because the virtual dimension (hence the meaningful insertions) does not depend on the genus, the difference between ordinary and reduced genus one invariants is given by the corresponding genus zero invariant multiplied by a correction factor. The relation has been proved in algebraic geometry for the quintic threefold \cite{CL}, and it is an extension of this project that I am going to discuss in the next few sections. Together with Cristina Manolache and Tom Coates I am also working towards a different proof of the formula: the key issue is to prove that the components of the intrinsic normal cone supported on the boundary components compare well (as in \cite{Manolache-push}) to their genus zero relatives, excluding those that do not contribute at all. I shall not attempt a detailed discussion here; I will rather work out the case of projective spaces of low dimension, which can be dealt with entirely by hand. Let me recall the following
 \begin{lemma}\cite[Proposition 1.8]{Ful}
 Let $U\overset{j}{\hookrightarrow} X \overset{i}{\hookleftarrow} Z$ be complementary open and closed subvarieties. Then the following sequence is exact:
-\[A_k(Z)\overset{i^*}{\to} A_k(X)\overset{j^*}{\to} A_k(U)\to 0\]
+\[A_k(Z)\overset{i_*}{\to} A_k(X)\overset{j^*}{\to} A_k(U)\to 0\]
 \end{lemma}
-This means that, whenever we are looking for a virtual class of dimension $d$, we are welcome to discard any closed suscheme of dimension less than $d$. Furthermore cones and Gysin pullbacks behave well under restriction to open subsets \cite[Proposition 4.2(b) and Theorem 6.2(b)]{Ful}. Also $\tVZ{n}{\PP^N}{d}\to \M{1}{n}{\PP^N}{d}$ is virtually birational, and all insertions come from downstairs, so we do not really need to work on the Vakil-Zinger desingularisation if we do not want to.  
+This means that, whenever we are studying a virtual cycle of dimension $d$, we are allowed to disregard any closed substack of dimension less than $d$. Furthermore cones and Gysin pullbacks behave well under restriction to open subsets \cite[Proposition 4.2(b) and Theorem 6.2(b)]{Ful}. Also $\tVZ{n}{\PP^N}{d}\to \M{1}{n}{\PP^N}{d}$ is virtually birational, and all the insertions come from downstairs.  
 
 Let me start by loooking at $\M{1}{n}{\PP^1}{d}$. Except for $d=1$, where the main component is empty, there are $n+2$ components: the main one and a boundary component for every partition of $n$ into two parts, which is the image of gluing \[\oM_{1,k+1}\times\M{0}{n-k+1}{\PP^1}{d}.\]
-All components have the same dimension, which is also equal to the virtual dimension; this in particular means that we can discard all the intersections, thus every component is smooth. Notice that from the exact triangle
+All components have the same dimension, which is also equal to the virtual dimension; this in particular means that we can discard all the intersections, so that every component of what remains is smooth. From the exact triangle
 \[ E^\bullet_{\oM(\PP^1)/\MM}\to E^\bullet_{\oM(\PP^1)}\to \rho^*T^\bullet_{\MM}\overset{[1]}{\to}\]
-the relative obstruction space $\mathbb E^\vee\boxtimes \ev_q^*T_{\PP^1}$ - where $\mathbb E$ is the Hodge bundle and $q$ is the gluing node - cancels out with the normal bundle of the boundary divisor in the moduli space of curves, which is $\mathbb L_{q,E}^\vee\boxtimes \mathbb L_{q,R}^\vee$: notice that the difference between $\lambda_1$ and $\psi_1$ (when there are markings on the elliptic tail) is supported precisely on the intersections between two boundary components, while $\operatorname{d}\!f_q$ gives an isomoprhism $\mathbb L_{q,R}^\vee\xrightarrow{\sim}\ev_q^*T_{\PP^1}$, except when the gluing node is a ramification point for the map, which happens at the intersection with main by Proposition \ref{prop:components}. This shows that the virtual class is the sum of the fundamental classes of all the components. Clearly no boundary component will contribute to the primary invariants. On the other hand it is also clear that any descendant invariant will determine (at most) one boundary component contributing to it.
+observe that the relative obstruction space $\mathbb E^\vee\boxtimes \ev_q^*T_{\PP^1}$ - where $\mathbb E$ is the Hodge bundle and $q$ is the gluing node - cancels out with the normal bundle of the boundary divisor in the moduli space of curves, which is $\mathbb L_{q,E}^\vee\boxtimes \mathbb L_{q,R}^\vee$ - where $\mathbb L_{p,C}$ denotes the cotangent line of the curve $C$ at the smooth point $p$. Notice that the difference between $\lambda_1$ and $\psi_1$ (when there are markings on the elliptic tail) is supported precisely on the intersection with the other boundary components, while $\operatorname{d}\!f_q$ gives an isomoprhism $\mathbb L_{q,R}^\vee\xrightarrow{\sim}\ev_q^*T_{\PP^1}$, except when the gluing node is a ramification point for the map, which only happens at the intersection with \emph{main} by Proposition \ref{prop:components}. This shows that the virtual class is the sum of the fundamental classes of all the components. Clearly no boundary component will contribute to the primary invariants.
 
-The case of $\PP^2$ is slightly more complicated: the boundary component $D^1$ has excess dimension $1$, and two irreducible components $D^{\lambda=(d),\mu=(A_0,A_1)}$ and $D^{\lambda,\mu'}$ intersect if and only if $A_0\subseteq A_0'$ and $A_1'\subseteq A_1$, or viceversa; in this case the dimension of the intersection is equal to the virtual dimension. Finally $D^2$ also has dimension equal to the virtual one. Notice that the restriction of the intrinsic normal cone to $D^1\setminus \M{1}{n}{\PP^2}{d}^{\mathrm{main}}$ is pulled back from the boundary divisor in $\MM_{1,n}^{\mathrm{wt}}$, hence it is a line bundle and its components are in bijection with those of $D^1$; we may therefore study it componentwise. It is an easy Chern class computation that \[c_1\left(\frac{\mathbb E^\vee\boxtimes \ev_q^*T_{\PP^2}}{\mathbb L_{q,E}^\vee\boxtimes \mathbb L_{q,R}^\vee}\right)=3\cdot1\boxtimes\ev_q^*H+2\cdot\lambda_1\boxtimes1-\psi\boxtimes1-1\boxtimes\psi\]
-It follows from arguments similar to the above ones that $D^2$ contributes with its fundamental class. We may wrap it all up in the following formula:
+The case of $\PP^2$ is slightly more complicated: the boundary component $D^1$ has excess dimension $1$, and two irreducible components $D^{\lambda=(d),\mu=(A_0,A_1)}$ and $D^{\lambda,\mu'}$ intersect if and only if $A_0\subseteq A_0'$ and $A_1'\subseteq A_1$, or viceversa; in this case the dimension of the intersection is equal to the virtual dimension. Remark that $\operatorname{d}\!f_q\equiv 0$ along the intersection. Finally $D^2$ has dimension equal to the virtual one as well. Notice that $D^1$ is the pull back of the boundary divisor $\mathfrak{D}^1$ in $\MM_{1,n}^{\mathrm{wt}}$, and the projection $D^1\to \mathfrak{D}^1$ is smooth, so in particular the intrinsic normal cone of $D^1\setminus \M{1}{n}{\PP^2}{d}^{\mathrm{main}}$ is a vector bundle stack; we may therefore work componentwise on $D^1\setminus \M{1}{n}{\PP^2}{d}^{\mathrm{main}}$. Comparing the normal bundle of $\mathfrak{D}^1$ in $\MM_{1,n}^{\mathrm{wt}}$ with the obstruction bundle of $D^1$, it follows from an easy Chern class computation that \[c_1\left(\frac{\mathbb E^\vee\boxtimes \ev_q^*T_{\PP^2}}{\mathbb L_{q,E}^\vee\boxtimes \mathbb L_{q,R}^\vee}\right)=3\cdot1\boxtimes\ev_q^*H+2\cdot\lambda_1\boxtimes1-\psi\boxtimes1-1\boxtimes\psi\]
+From arguments similar to the above ones we see that $D^2$ contributes with its fundamental class. We may wrap it all up in the following formula:
 \begin{multline*}
  \langle \tau_{h_1}(H^{k_1}),\ldots,\tau_{h_n}(H^{k_n})\rangle^{\PP^2}_{1,n,d}= \langle \tau_{h_1}(H^{k_1}),\ldots,\tau_{h_n}(H^{k_n})\rangle^{\PP^2,\mathrm{red}}_{1,n,d}+\\
- \hspace{-2cm}\sum_{A_0\coprod A_1=[n]}\biggr(\langle \psi^{h^0_1},\ldots,\psi^{h^0_{n_0}},1\rangle^{\{*\}}_{1,A_0\cup \{q_E\}}\langle 3H^{\sum _{i\in A_0}k_i+1}-\tau_1(H^{\sum_{i\in A_0}k_i}),\tau_{h^1_1}(H^{k^1_1}),\ldots,\tau_{h^1_{n_1}}(H^{k^1_{n_1}})\rangle^{\PP^2}_{0,\{q_R\}\cup A_1,d}\\
- + \langle \psi^{h^0_1},\ldots,\psi^{h^0_{n_0}},2\lambda_1-\psi\rangle^{\{*\}}_{1,A_0\cup \{q_E\}}\langle H^{\sum _{i\in A_0}k_i},\tau_{h^1_1}(H^{k^1_1}),\ldots,\tau_{h^1_{n_1}}(H^{k^1_{n_1}})\rangle^{\PP^2}_{0,\{q_R\}\cup A_1,d}\biggr)+\\
+ \hspace{-2cm}\sum_{A_0\coprod A_1=[n]}\biggr(\langle \psi^{h^0_1},\ldots,\psi^{h^0_{n_0}},1\rangle^{\{*\}}_{1,A_0\cup \{q_E\}}\langle 3H^{\sum _{i\in A_0}k_i+1}-\tau_1(H^{\sum_{i\in A_0}k_i}),\tau_{h^1_1}(H^{k^1_1}),\ldots,\tau_{h^1_{n_1}}(H^{k^1_{n_1}})\rangle^{\PP^2}_{0,\{q_R\}\cup A_1,d}+\\
+  \langle \psi^{h^0_1},\ldots,\psi^{h^0_{n_0}},2\lambda_1-\psi\rangle^{\{*\}}_{1,A_0\cup \{q_E\}}\langle H^{\sum _{i\in A_0}k_i},\tau_{h^1_1}(H^{k^1_1}),\ldots,\tau_{h^1_{n_1}}(H^{k^1_{n_1}})\rangle^{\PP^2}_{0,\{q_R\}\cup A_1,d}\biggr)+\\
  \hspace{-4.3cm}\sum_{\substack{A_0\coprod A_1\coprod A_2=[n]\\ d_1+d_2=d:\ d_1,d_2>0}}\sum_{j=0}^2\langle \psi^{h^0_1},\ldots,\psi^{h^0_{n_0}},1,1\rangle^{\{*\}}_{1,n_0+2}\langle H^{j+\sum _{i\in A_0}k_i},\tau_{h^1_1}(H^{k^1_1}),\ldots,\tau_{h^1_{n_1}}(H^{k^1_{n_1}})\rangle^{\PP^2}_{0,1+n_1,d_1}\langle H^{2-j},\tau_{h^2_1}(H^{k^2_1}),\ldots,\tau_{h^2_{n_2}}(H^{k^2_{n_2}})\rangle^{\PP^2}_{0,1+n_2,d_2}
 \end{multline*}
 Notice in particular that ordinary and reduced invariants coincide for primary insertions (using the string equation).
 
-Analogous computations work for $\PP^3$: $D^1$ has excess dimension two and the obstruction bundle is \[\frac{\mathbb E^\vee\boxtimes \ev_q^*T_{\PP^3}}{\mathbb L^\vee_{q,E}\boxtimes \mathbb L^\vee_{q,R}}\]
-$D^2$ has excess dimension one and obstructions \[\frac{\mathbb E^\vee\boxtimes \ev_q^*T_{\PP^3}}{\mathbb L^\vee_{q_1,E}\boxtimes \mathbb L^\vee_{q,R_1}\oplus\mathbb L^\vee_{q_2,E}\boxtimes \mathbb L^\vee_{q,R_2}}\]
-while $D^3$ has dimension equal to the virtual dimension. A Chern class computation implies (schematic notation suggested by N. Nabijou):
+The case of $\PP^3$ is even more complicated: $D^1$ has excess dimension two, and $D^1$ has excess dimension $1$. They intersect in the locus of ``Mickey Mouse with an earring is eating a doughnut with a fly'' (the configuration of points is admittedly arbitrary).
+\begin{figure}[h]
+\begin{tikzpicture}[scale=.7]
+\draw (0,0) circle (.5cm);
+\draw[radius=2pt, fill=black] (.2,.2) circle;
+\draw[radius=2pt, fill=black] (.2,-.2) circle;
+\draw[radius=2pt, fill=black] (-.1,0) circle;
+
+\draw[radius=2pt, fill=black] (-1.2,-.5) circle;
+\draw[fill=gray!50] (.7,.7) circle (.5cm);
+\draw[fill=gray!50] (.7,-.7) circle (.5cm);
+\draw (-1,0) ellipse (.5cm and 1cm);
+\draw (-1.05,.7) .. controls (-.85,.5) and (-.85,-.5) .. (-1.05,-.7);
+\draw (-.95,.5) .. controls (-1.2,.5) and (-1.2,-.5) .. (-.95,-.5);
+\draw[radius=2pt, fill=black] (.6,-.9) circle;
+\end{tikzpicture}
+\end{figure}
+The local model for the space near such a boundary point is $V(xy,xz)\subseteq\Aaff^3_{x,y,z}$, where $D^1=\{x=0\}$ and $D^2={y=z=0}$. The normal cone \[\Spec\left(\kk[x,y,z][A,B]/(xy,xz,zA-yB)\right)\] has two components defined by $(y,z)$ (this is a rank-two vector bundle on $D^2$, coinciding with its normal bundle) and $(x,zA-yB)$: the latter is \emph{not} a line bundle on $D^1$, as it has rank two over the origin, so in particular it is not its normal bundle; on the other hand the cycle of this cone has dimension three, and its restriction to the origin has dimension two, so we may effectively delete it, and behave \emph{as if} it were just the normal bundle of $D^1$. We may therefore argue similarly as before, and we find that the relevant bundles are \[\frac{\mathbb E^\vee\boxtimes \ev_q^*T_{\PP^3}}{\mathbb L^\vee_{q,E}\boxtimes \mathbb L^\vee_{q,R}}\]
+on $D^1$, of which we take $c_2$, while on $D^2$ we compute $c_1$ of \[\frac{\mathbb E^\vee\boxtimes \ev_q^*T_{\PP^3}}{\mathbb L^\vee_{q_1,E}\boxtimes \mathbb L^\vee_{q,R_1}\oplus\mathbb L^\vee_{q_2,E}\boxtimes \mathbb L^\vee_{q,R_2}}.\]
+$D^3$ has dimension equal to the virtual dimension. A Chern class calculation implies (with schematic notation suggested by N. Nabijou):
 \begin{multline*}
  \virt{\M{1}{n}{\PP^3}{d}}=[\reduced]+ 4[\Dunouno]+4[\Dunodue]+\\
  -3[\Dunotre]-3[\Dunoquat]+[\Dunocin]+2[\Dunosei]+\\
@@ -380,12 +397,12 @@ while $D^3$ has dimension equal to the virtual dimension. A Chern class computat
  4[\Ddueuno]-3[\Dduedue]+[\Dduetre]+[\Dduequat]+\\
  [\Dduecin]+[\Dduesei]+[\Dtre]
 \end{multline*}
-If we restrict our attention to primary invariants, the only surviving terms are:
+If we restrict our attention to primary invariants, the only survivors are:
 \begin{multline*}
  [\reduced]+ 4[\Dunouno]-3[\Dunotre]-3[\Dunoquat]+\\
  [\Dunocin]+2[\Dunosei]+3[\Dunoott]-8[\Dunonov]
 \end{multline*}
-We may then compute the following contributions:
+They contribute tidily as follows:
 \begin{enumerate}
  \item gives the reduced invariants,
  \item $4\langle\psi\rangle_{1,1}\langle H,-\rangle^{\PP^3}_{0,n+1,d}=\frac{4d}{24} GW_0$ by divisor,
@@ -397,7 +414,7 @@ We may then compute the following contributions:
  \item $-8\langle\lambda_1\rangle_{1,1}\langle H,-\rangle^{\PP^3}_{0,n+1,d}=\frac{-8d}{24} GW_0$ by divisor.
 \end{enumerate}
 Summing up we obtain the following:
-\begin{prop}[Li-Zinger formula for $\PP^3$] \[\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3}_{1,n,d}=\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3,\mathrm{red}}_{1,n,d}+\frac{2-4d-3n}{24}\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3}_{0,n,d}.\] \end{prop}
+\begin{prop}[Li-Zinger formula for primary insertions on $\PP^3$] \[\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3}_{1,n,d}=\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3,\mathrm{red}}_{1,n,d}+\frac{2-4d-3n}{24}\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3}_{0,n,d}.\] \end{prop}
 Notice that this is slightly different from Li-Zinger's original formula. An alternative approach would be comparing every boundary component to its genus zero relative by virtual pushforward: if we are only interested in primary insertions, notice that the components of $D^1$ such that more than one marking dwells on the elliptic curve will not contribute, since the excess bundle has rank two.
 
 \section{Genus one singularities}
@@ -819,7 +836,7 @@ We are going to show that:
  \item the other cones $\mathfrak C^k,\ k\geq 2,$ are enumeratively meaningless.
 \end{enumerate}
 \subsection{Comparison of components}
-In order to prove the first claim we proceed as in \cite[\S5]{CLpfields}; let us start by noticing that the obstruction theory $\mathbb E:=\mathbb E_{\tZp/\tXP}$ splits as $\mathbb E_1\oplus\mathbb E_2$ where $\mathbb E_1=\R^{\bullet}\hat\pi_*(\hL^{\oplus 5})$ and $\mathbb E_2=\R^{\bullet}\hat\pi_*(\widehat{\mathcal P})$. When we restrict to $\tZ^{p,\rm{main}}$ we see that $h^1/h^0(\mathbb E_1)$ is the closure of its own zero section; it follows that:
+In order to prove the first claim we proceed as in \cite[\S5]{CLpfields}; let us start by noticing that the obstruction theory $\mathbb E:=\mathbb E_{\tZp/\tXP}$ splits as $\mathbb E_1\oplus\mathbb E_2$ where $\mathbb E_1=\R\hat\pi_*(\hL^{\oplus 5})$ and $\mathbb E_2=\R\hat\pi_*(\widehat{\mathcal P})$. When we restrict to $\tZ^{p,\rm{main}}$ we see that $h^1/h^0(\mathbb E_1)$ is the closure of its own zero section; it follows that:
 \[
  \mathfrak C^{\rm{main}}=\overline{0}_{\mathbb E\rvert_{\tZ^{p,\rm{main}}}}=h^1/h^0(\mathbb E_1)\rvert_{\tZ^{p,\rm{main}}}\oplus \overline{0}_{\mathbb E_2\rvert_{\tZ^{p,\rm{main}}}}
 \]
@@ -838,7 +855,7 @@ $$0^![\mathbf{B}]=e(h^0(\mathbb E)^\vee)\in A_*(B).
 $$
 \end{lem}
 
-We apply this lemma to $\R^{\bullet}\hat{\pi}_*\hL^{\otimes 5}=\mathbb E_2^\vee$ on $\tZ^{p,\rm{main}}$. Notice that it satisfies the hypotheses by virtue of the equations in Remark \ref{rmk:eqn}: indeed the question may be addressed locally; looking at the resolution of $\mathbb E_2^\vee$:
+We apply this lemma to $\R\hat{\pi}_*\hL^{\otimes 5}=\mathbb E_2^\vee$ on $\tZ^{p,\rm{main}}$. Notice that it satisfies the hypotheses by virtue of the equations in Remark \ref{rmk:eqn}: indeed the question may be addressed locally; looking at the resolution of $\mathbb E_2^\vee$:
 \[
  \hat\pi_*\hL^{\otimes 5}(\A)\to \hat\pi_*\hL^{\otimes 5}(\A)\rvert_{\A}
 \]
@@ -868,7 +885,7 @@ The key point is that $\mathbb E:=\mathbb E\rvert_{\tZ^{p,\rm{gst}}}$ has locall
 
 When we fix a resolution by locally free sheaves $\mathbb E=[F_0\xrightarrow{d} F_1]$, the image sheaf $d(F_0)$, which is the kernel of $F_1\to h^1(\mathbb E)$, is a subbundle of $F_1$. Consider the projections:
 \[
- \beta\colon F_1\to h^1/h^0(\mathbb E) \quad \text{and} \quad \beta'\colon F_1\to \tilde{V}:=\R^1\hat{\pi}_*(\hL^{\oplus 5}\oplus\widehat{\mathcal P});
+ \beta\colon F_1\to h^1/h^0(\mathbb E) \quad \text{and} \quad \beta'\colon F_1\to \tilde{V}:=\operatorname{R}^1\hat{\pi}_*(\hL^{\oplus 5}\oplus\widehat{\mathcal P});
 \]
 the second is also flat since $d(F_0)$ is a vector bundle. The cone stack $\mathfrak C^{\rm{gst}}$ can be descended to a cone $C^{\rm{gst}}\subseteq \tilde{V}$ by taking the quotient of $\beta^{-1}\mathfrak C^{\rm{gst}}$ by the free action of $d(F_0)$; $C^{\rm{gst}}$ should then be thought of as the coarse moduli of $\mathfrak C^{\rm{gst}}$. Recall that we started with a cosection $\sigma_1$ of $V$ (see Eq. \eqref{eqn:cosection}) and pulled it back to all relevant spaces. 
 It follows from the commutativity of localised Gysin pullback with flat pullback that:
@@ -881,7 +898,7 @@ See \cite[Proposition 6.3]{CLpfields}.
 
 \subsection*{Step II: from cosection localised to standard Gysin map}
 Recall that the construction of a localised virtual class refines the standard one, namely:
-\[\iota_*\virloc{Y}=\vir{Y},\]
+\[\iota_*\virloc{Y}=\virt{Y},\]
 where $\iota\colon Y(\sigma)\hookrightarrow Y$ is the degeneray locus of the cosection. In particular, when $Y$ itself is a proper Deligne-Mumford stack, the degree of the localised virtual class can be computed after pushing it forward to $Y$.
 
 Then to compute $s^!_{\tilde V,\tilde\sigma_1}[C^{\rm{gst}}]$ we are going to compactify $\tZ^{p,\rm{gst}},$ extend the cone, the vector bundle and the cosection to it, and then make use of the fact we just recalled.
@@ -908,7 +925,7 @@ We are now able to extend the cosection and get:
  
  \subsection*{Step III: homogeneous cones}
 Chang an Li introduce the notion of \emph{homogeneity} for substacks of $\tilde V$ on $\tZ^{p,\rm{gst}}$: write 
-\[\tilde V=\tilde V_1\oplus\tilde V_2\;\;\text{ with} \;\;\tilde V_1=\R^1\hat{\pi}_*(\hL^{\oplus 5})\;\; \text{and}\;\; \tilde V_2=\R^1\hat{\pi}_*(\widehat{\mathcal P}),\]
+\[\tilde V=\tilde V_1\oplus\tilde V_2\;\;\text{ with} \;\;\tilde V_1=\operatorname{R}^1\hat{\pi}_*(\hL^{\oplus 5})\;\; \text{and}\;\; \tilde V_2=\operatorname{R}^1\hat{\pi}_*(\widehat{\mathcal P}),\]
  and $\gamma\colon \tZ^{p,\rm{gst}}\to\tZ^{\rm{gst}}$ the projection. Since $\tZ^{p,\rm{gst}}$ is the total space of a line bundle over $\tZ^{\rm{gst}}$, it comes with a natural $\Gm$-action on the fibers of $\gamma$. Moreover, since the highest pushforwards satisfy cohomology and base-change:
  \[\tilde V_i=\gamma^*V_i\]
  for the corresponding vector bundles $V_i$ on $\tZ^{\rm{gst}}$, so the total space of $\tilde V_i$ can be endowed with a $\Gm$-action that makes the projection to $\tZ^{p,\rm{gst}}$ equivariant. We say that a closed substack of $\tilde V$ is $0$-homogeneous if it is the pullback of a closed substack of $V$ along $\gamma$. In fact there are different $\Gm$-actions on $\tilde V$ that make the projection to $\tZ^{p,\rm{gst}}$ equivariant: namely, we can twist the trivial action on the fibers by two characters of $\Gm$, one for each $\tilde V_i$. Then we say that a substack of $\tilde V$ is $(l_1,l_2)$-homogeneous if it is invariant with respect to such an action. Here is how we are going to use the homogeneity:
