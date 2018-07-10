@@ -415,10 +415,10 @@ They contribute tidily as follows:
 \end{enumerate}
 Summing up we obtain the following:
 \begin{prop}[Li-Zinger formula for primary insertions on $\PP^3$] \[\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3}_{1,n,d}=\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3,\mathrm{red}}_{1,n,d}+\frac{2-4d-3n}{24}\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3}_{0,n,d}.\] \end{prop}
-Notice that this is slightly different from Li-Zinger's original formula. An alternative approach would be comparing every boundary component to its genus zero relative by virtual pushforward: if we are only interested in primary insertions, notice that the components of $D^1$ such that more than one marking dwells on the elliptic curve will not contribute, since the excess bundle has rank two.
+Notice that this differs from Li-Zinger's original formula by the contribution of the markings (which is not of interest in the CY3 case). An alternative approach would be comparing every boundary component to its genus zero relative by virtual pushforward: if we are only interested in primary insertions, notice that the components of $D^1$ such that more than one marking dwells on the elliptic curve will not contribute, since the excess bundle has rank two.
 
 \section{Genus one singularities}
-A different approach to reducing the complexity of $\M{1}{n}{\PP^N}{d}$ is the one followed by M. Viscardi in \cite{VISC}, building on work of D.I. Smyth on the minimal model program for $\oM_{1,n}$ \cite{SMY1}. Rather than blowing up and desingularising the main component, the idea is to collapse a number of boundary components, only keeping their intersection with main and the boundary components of smaller dimension. Vakil's description of the smoothable elements of $\M{1}{n}{\PP^N}{d}$ (see Proposition \ref{prop:components}(2)) suggests to do so by allowing maps from more singular (than nodal) curves, and simultaneously making their semistable models unstable, in order to preserve the separatedness of the moduli space.
+A different approach to reducing the complexity of $\M{1}{n}{\PP^N}{d}$ is the one followed by M. Viscardi in \cite{VISC}, building on work of D.I. Smyth on the minimal model program for $\oM_{1,n}$ \cite{SMY1}. Rather than blowing up and desingularising the main component, the idea is to collapse a number of boundary components, filling in their intersection with main and the boundary components of smaller dimension. Vakil's description of the smoothable elements of $\M{1}{n}{\PP^N}{d}$ (see Proposition \ref{prop:components}(2)) suggests to do so by allowing maps from more singular (than nodal) curves, and simultaneously making their semistable models unstable, in order to preserve the separatedness of the moduli space.
 
 The easiest example is the following: the cusp
 \[\kk[\![x,y]\!]/(y^2-x^3)\]
@@ -426,7 +426,7 @@ is the only unibranch singularity of genus one (meaning that there exists a flat
 \begin{dfn}
  The moduli space of $1$-stable maps $\Mone{n}{X}{\beta}$ parametrises $f\colon (C,\mathbf p)\to X$ such that
  \begin{enumerate}
-  \item $(C,p_1,\ldots,p_n)$ is at worst cuspidal, of arithmetic genus one, and $\mathbf p$ is an $n$-tuple of smooth and disjoint sections;
+  \item $C$ is an at worst cuspidal, projective curve of arithmetic genus one, and $\mathbf p$ is an $n$-tuple of smooth and disjoint sections of $C$;
   \item if $C_0$ is a minimal connected subcurve of $C$ contracted by $f$, the number of markings on $C_0$ added to the number of intersections of $C_0$ with $\overline{C\setminus C_0}$ is at least $3$ if $p_a(C)=0$ and \emph{at least $2$} if $p_a(C)=1$;
   \item $f_*[C]=\beta\in H^+_2(X)$ and $\Aut(C,f)$ is finite.
  \end{enumerate}
@@ -434,7 +434,7 @@ is the only unibranch singularity of genus one (meaning that there exists a flat
 \begin{lemma}
  $\Mone{n}{X}{\beta}$ is a proper DM stack of finite type over $\kk$.
 \end{lemma}
-For example $\oM^{(1)}(\PP^2,3)$ has only two components, since $D^1$ is gone! On the other hand the intersection of $D^1$ with main and with $D^2$ has been filled up by maps from cuspidal curves. This is the main instance of Smyth-Viscardi's spaces that I am going to be concerned with, but there is a well-developed theory which I shall quickly review here.
+For example $\oM^{(1)}_1(\PP^2,3)$ only has two irreducible components, since there is no $D^1$ anymore. Yet the intersection of $D^1$ with main and with $D^2$ has been filled in with maps from cuspidal curves. This is the main instance of Smyth-Viscardi's spaces that I am going to be concerned with, but there is a well-developed theory which I shall quickly review here.
 \subsection{Gorenstein singularities of genus one and $1$-stabilisation}
 \begin{dfn}
  Let $(C,p)$ be the germ of a curve singularity, with normalisation $\nu\colon\tilde{C}\to C$. Let me denote by $m$ the number of branches of $C$ at $p$ (i.e. irreducible components of $\tilde{C}$) and by $\delta=\dim_{\kk}(\nu_*\OO_{\tilde{C}}/\OO_C)$. The \emph{genus} of $(C,p)$ is defined by \[g=\delta-m+1.\]
@@ -444,9 +444,9 @@ For example $\oM^{(1)}(\PP^2,3)$ has only two components, since $D^1$ is gone! O
  \[\hat\OO_{C,p}\simeq\begin{cases} \kk[\![x,y]\!]/(y^2-x^3) & \text{(cusp) if } m=1, \\ \kk[\![x,y]\!]/y(y-x^2) &  \text{(tacnode) if } m=2,\end{cases}\]
  and the germ of $m$ generic lines through the origin in $\Aaff^{m-1}$ for $m\geq 3$. It is called the \emph{elliptic $m$-fold point}.
 \end{prop}
-All these singularities are smoothable (see the proof of \cite[Theorem 3.8]{SMY1}). Smyth studied their semistable models: pick a smoothing $\bar{\mathcal C}$ of the $m$-fold elliptic point and consider its semistable model with \emph{regular} total space $\tilde{\mathcal C}$; let $(E,q_1,\ldots,q_m)$ be the exceptional locus of the contraction (the fiber over the $m$-fold elliptic point) marked with its intersection with the rest of the curve ($m$ rational trees). Call a semistable genus one curve $(E,q_1,\ldots,q_m)$ a \emph{semistable tail} if it arises in this way. Smyth shows \cite[Proposition 2.12]{SMY1} that semistable tails can be characterised combinatorially as those curves such that the distance (on the dual graph) from $q_i$ to the core of $E$ is constant for all $i=1,\ldots,m$ (\emph{balancing condition}). The idea is that $\bar{\mathcal C}$ is a normal surface, and it is Gorenstein if and only if the central fiber is. In this case, denoting by $\phi\colon \tilde{\mathcal C}\to\bar{\mathcal C}$ the contraction, $\phi^*\omega_{\bar{\mathcal C}}=\omega_{\tilde{\mathcal C}}(D)$ for some divisor $D$ supported on the exceptional locus $E$ and such that $\omega_{\tilde{\mathcal C}}(D)_{|E}\simeq\OO_E$; we can find appropriate weights on the components of $E$ such that this holds precisely in the balanced case. On the other hand, if balancing holds, we may contract $E$ by applying the Proj construction to $\omega_{\tilde{\mathcal C}}(D)$ (possibly twisted by some sections of $\tilde{\mathcal C}$ far away from $E$) as above, and then show that the resulting $\bar{\mathcal C}$ is Gorenstein by relating its dualising sheaf to the $\OO_{\bar{\mathcal C}}(1)$ from the Proj construction. The Smyth singularity one gets when contracting a balanced curve is determined by the number of rational trees attached from it, i.e. the number of branches of the singularity itself. These singularities have no moduli (on the other hand the global configuration of the curve may have moduli, i.e. the positioning of special points). This discussion indicates what are the stable curves/maps that we should make unstable in order to keep the moduli space separated. Before passing to maps, let me make the following:
+All these singularities are smoothable (see the proof of \cite[Theorem 3.8]{SMY1}). Smyth studied their semistable models: pick a smoothing $\bar{\mathcal C}$ of the $m$-fold elliptic point and consider its semistable model with \emph{regular} total space $\tilde{\mathcal C}$; let $(E,q_1,\ldots,q_m)$ be the exceptional locus of the contraction (the fiber over the $m$-fold elliptic point) marked with its intersection with the rest of the curve ($m$ rational trees). Call a semistable genus one curve $(E,q_1,\ldots,q_m)$ a \emph{semistable tail} if it arises in this way. Smyth shows \cite[Proposition 2.12]{SMY1} that semistable tails can be characterised combinatorially as those curves such that the distance (on the dual graph) from $q_i$ to the core of $E$ is constant for all $i=1,\ldots,m$ (\emph{balancing condition}). The idea is that $\bar{\mathcal C}$ is a normal surface, and it is Gorenstein if and only if the central fiber is. In this case, denoting by $\phi\colon \tilde{\mathcal C}\to\bar{\mathcal C}$ the contraction, $\phi^*\omega_{\bar{\mathcal C}}=\omega_{\tilde{\mathcal C}}(D)$ for some divisor $D$ supported on the exceptional locus $E$ and such that $\omega_{\tilde{\mathcal C}}(D)_{|E}\simeq\OO_E$; we can find appropriate weights on the components of $E$ such that this holds precisely in the balanced case. On the other hand, if balancing holds, we may contract $E$ by applying the Proj construction to $\omega_{\tilde{\mathcal C}}(D)$ (possibly twisted by some horizontal divisor away from $E$) as above, and then show that the resulting $\bar{\mathcal C}$ is Gorenstein by relating its dualising sheaf to the $\OO_{\bar{\mathcal C}}(1)$ given by the Proj construction. The Smyth's singularity one gets when contracting a balanced curve is determined by the number of rational trees attached to it,  which is exactly the number of branches of the singularity. These singularities have no moduli (on the other hand the global configuration of the curve may have moduli, i.e. the positioning of special points). This discussion indicates what are the stable curves/maps that we should make unstable in order to keep the moduli space separated. Before passing to maps, let me make the following:
 \begin{rmk}
- The operation of collapsing elliptic tails to cusps ($1$-stabilisation) works well in families (in fact, even when the elliptic tail is a component of a curve of higher genus \cite{Schubert}). On the other hand, $(m)$-stabilisation is not well-defined. Here is an example from \cite[Remark 4.12]{BCM}:
+ The operation of collapsing elliptic tails to cusps ($1$-stabilisation) works well in families (in fact, even when the elliptic tail is a component of a curve of higher genus \cite{Schubert}). On the other hand, the $m$-stabilisation is not well-defined. Here is an example from \cite[Remark 4.12]{BCM}:
  \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=.8]
@@ -500,21 +500,20 @@ All these singularities are smoothable (see the proof of \cite[Theorem 3.8]{SMY1
 \end{tikzpicture}
 \caption{Two different plausible $3$-stabilisations.}
 \end{figure}
-the point is that the maximal unpointed genus one subcurve is not balanced; on the other hand, say we could consistently contract the minimal genus one subcurve: by smoothing the node $q$ and doing so, we would get a family of $3$-fold elliptic points specialising to the tacnode, which can be excluded by studying the miniversal deformation of the latter. This problem is studied in \cite[\S 4.1]{SMY2}. I will discuss a specific variation \cite[Theorem 4.4]{BCM} that I am going to need later on.
-\end{rmk}
+thic curve is not $3$-stable. We could contract the maximal unpointed subcurve of genus one, but it is not balanced; on the other hand, say we could consistently contract the minimal genus one subcurve: by smoothing the node $q$ and doing so, we would get a family of $3$-fold elliptic points specialising to the tacnode, which can be excluded by studying the miniversal deformation of the latter. This problem is studied in \cite[\S 4.1]{SMY2}. \end{rmk}
+I will discuss a specific variation on this \cite[Theorem 4.4]{BCM} that I am going to need later. Recall that $\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}$ is the open and bounded substack within the Artin stack of prestable curves with a weight assignment, defined by the conditions that the total weight is $d$ and the curve is weighted-stable; similarly $\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}(1)$ is the stack of weighted $1$-stable (at worst cuspidal) curves.
 \begin{prop}\label{prop:1-stab}
 There exists a morphism $\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}\to\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}(1)$ which extends the identity on the smooth locus.
 \end{prop}
-Recall that $\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}$ is the open and bounded substack within the Artin stack of prestable curves with a weight assignment, defined by the conditions that the total weight is $d$ and the curve is weighted-stable; similarly $\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}(1)$ is the stack of weighted $1$-stable (at worst cuspidal) curves.
 
-The proof is inspired by \cite[\S2]{HassettHyeon} and \cite[\S3.7]{RSPW}. We construct the contraction over $\MM_1^{\rm{div}}$ (the moduli space of nodal curves of genus one with a simple smooth divisor of total degree $d$ that makes them weighted-stable) first, and then show that it descends to $\MM_1^{\rm{wt,st}}$. We do this in order to have a natural polarisation.
+The proof is inspired by \cite[\S2]{HassettHyeon} and \cite[\S3.7]{RSPW}. We construct the contraction over $\MM_1^{\rm{div}}$ (the moduli space of nodal curves of genus one with a simple smooth divisor of total degree $d$ that makes them weighted-stable) first, and then show that it descends to $\MM_1^{\rm{wt,st}}$. We do so in order to have a natural polarisation.
 
 Let $\pazocal E$ be the locus inside the universal curve over $\MM^{\rm{wt,st}}_1$ spanned by elliptic tails of weight $0$; this is a Cartier divisor, and abusing notation I will denote by $\pazocal E$ all its pullbacks. Moreover let $\mathfrak D^1$ be its image in $\MM^{\rm{wt,st}}_1$, which is a Cartier divisor as well.
 
 Consider the following line bundle on the universal curve over $\MM_1^{\rm{div}}$: 
-\begin{equation}\label{eq:linebundlecontraction}
+\begin{equation*}\label{eq:linebundlecontraction}
 \mathcal N:=\omega_{\pi}(\pazocal E)\otimes\mathcal O_{\cC}(2\pazocal D),
-\end{equation} where $\pazocal D$ is the universal Cartier divisor over $\MM_1^{\rm{div}}$.
+\end{equation*} where $\pazocal D$ is the universal Cartier divisor over $\MM_1^{\rm{div}}$.
 
 \begin{prop}\label{1-stabilization-div}
 Let $\hC=\underline{\operatorname{Proj}}_{\MM_1^{\rm{div}}}(\bigoplus_{n\geq 0}\pi_*\mathcal N^{\otimes n})$. Then $\hC$ is a family of weighted $1$-stable curves and $\phi$ is a regular morphism:
@@ -526,7 +525,7 @@ Let $\hC=\underline{\operatorname{Proj}}_{\MM_1^{\rm{div}}}(\bigoplus_{n\geq 0}\
 This defines the $1$-stabilisation morphism $\MM_1^{\rm{div}}\to\MM_1^{\rm{div}}(1)$.
 \end{prop}
 
-Notice that $\mathcal N$ is trivial on the locus of elliptic tails, so this will be contracted by $\phi$. We need to prove that $\mathcal N$ is $\pi$-semiample (regularity of $\phi$) and that $\pi_*\mathcal N$ is locally free (flatness of $\bar{\pi}$). This is clear on the smooth locus, but to prove it along $\mathfrak D^1$ we use \cite[Lemmma~3.7.2.2]{RSPW}.
+Notice that $\mathcal N$ is trivial on the locus of elliptic tails, so this will be contracted by $\phi$. We need to prove that $\mathcal N$ is $\pi$-semiample (regularity of $\phi$) and that $\pi_*\mathcal N$ is locally free (flatness of $\bar{\pi}$). This is clear on the smooth locus; to prove it along $\mathfrak D^1$ we use \cite[Lemmma~3.7.2.2]{RSPW}.
 \begin{lem}[Pullback with a boundary]\label{DVR}
 Let $\pi\colon\cC\to S$ be a proper family of curves over a smooth basis, and let $\mathcal N$ be a line bundle on $\cC$ such that $\operatorname{R}^1\pi_*\mathcal N$ is a line bundle supported on a Cartier divisor $\mathfrak D\subseteq S$. Then for every DVR scheme $\dvr$ with closed point $0$ and generic point $\eta$, and for every morphism $f\colon \dvr\to S$ such that $f(0)\in\mathfrak D$ and $f(\eta)\in S\setminus\mathfrak D$ we have
 \[f^*\pi_*\mathcal N\cong \pi_{\dvr,*}f_\cC^*\mathcal N.\]
@@ -538,7 +537,7 @@ The line bundle $\mathcal N$ is $\pi$-semi-ample, i.e. the natural map
 is surjective for $n\gg 0$.
 \end{lem}
 \begin{proof}
-Outside the locus of elliptic tails $\mathcal N$ is $\pi$-ample. We are left with checking at points of an elliptic tail; thanks to the above Lemma we can reduce to the case that $C$ is the central fiber of a one-parameter smoothing with regular total space. This is proved in Smyth's contraction lemma \cite[Lemma~2.12]{SMY1}.
+Outside the locus of elliptic tails $\mathcal N$ is $\pi$-ample. We are left with checking at points of an elliptic tail; thanks to the above Lemma we can reduce to the case that $C$ is the central fiber of a one-parameter smoothing with regular total space. The fact is then proved within Smyth's contraction lemma \cite[Lemma~2.12]{SMY1}.
 \end{proof}
 
 \begin{lem}
@@ -550,14 +549,14 @@ On $\MM_1^{\rm{div}}\setminus \mathfrak{D}^1$, $\operatorname{R}^1\pi_*\mathcal 
 Given a point $x$ on the boundary $\mathfrak{D}^1$, we can pick a one-parameter smoothing as above, and we can check the rank at $x$ by looking at $\pi_*f^*\mathcal N$ over $\dvr.$ Now $f^*\mathcal N$ is flat over $\dvr$, so $\pi_*f^*\mathcal N$ is as well, which implies torsion-free and thus constant rank.
 \end{proof}
 
-\begin{proof}\ref{1-stabilization-div}
+\begin{proof}\eqref{1-stabilization-div}
 Let $S\to \MM_1^{\rm{div}}$ be a smooth atlas, then we have:
  \bcd
  (\cC_S,\pazocal D_S)\ar[rr,"\phi_S"]\ar[dr,"\pi_S"] & & (\hC_S,\phi(\pazocal D_S))\ar[ld,"\bar{\pi}_S" above left] \\
  & S &
  \ecd
 where $\hC_S=\underline{\operatorname{Proj}}_{S}(\bigoplus_{n\geq 0}\pi_{S,*}\mathcal N^{\otimes n})$, $\phi_S$ is a proper and birational, and $\bar{\pi}_S$ is a flat family. 
-To verify that this defines a morphism $S\to \MM_1^{\rm{div}}(1)$ we have to argue that $\hC_S$ has reduced fibers and only nodes and cusps as singularities. After pulling back to a generic $\dvr$, this is again Smyth's contraction lemma \cite[Lemma~2.13]{SMY1}. $\mathfrak D$ is pushed forward along $\phi$ and it satisfies weighted-stability, since $\phi$ is an isomorphism outside of the locus of elliptic tails. To conclude that this defines a morphism $\MM_1^{\rm{div}}\to \MM_1^{\rm{div}}(1)$ it is enough to verify that there is an isomorphism
+To verify that this defines a morphism $S\to \MM_1^{\rm{div}}(1)$ we have to argue that $\hC_S$ has reduced fibers and only nodes and cusps as singularities. After pulling back to a generic $\dvr$, this is again Smyth's contraction lemma \cite[Lemma~2.13]{SMY1}. $\mathcal D$ is pushed forward along $\phi$ and it satisfies weighted-stability, since $\phi$ is an isomorphism outside the locus of elliptic tails. To conclude that this defines a morphism $\MM_1^{\rm{div}}\to \MM_1^{\rm{div}}(1)$ it is enough to verify that there is an isomorphism
  $\rm{pr}_1^*\hC_S\cong\rm{pr}_2^*\hC_S$ satisfying the cocycle condition, where $\rm{pr}_i\colon S'= S\times_{\MM_1^{\rm{div}}} S\rightrightarrows S$.%and that $\rm{pr}_{ij}\colon S\times_{\MM_1^{\rm{div}}} S\times_{\MM_1^{\rm{div}}} S\to  S\times_{\MM_1^{\rm{div}}} S $ satisfy the cocycle condition.
 
  Now $\pr_i^*\hC_S$ is obtained by applying the Proj construction to 
@@ -574,12 +573,12 @@ The $1$-stabilisation for curves with a divisor induces an analogous morphism at
 \end{lemma}
 \begin{proof}
 {\'E}tale locally on $\MM_1^{\rm{wt,st}}$ we can choose smooth sections $s_i$ of the universal curve so that the Cartier divisor $\pazocal D=\sum s_i$ has degree compatible with the weight function, so in particular it makes $\mathcal N=\omega_{\pi}(\pazocal E)\otimes\mathcal O_{\cC}(2\pazocal D)$ trivial on the elliptic tails and $\pi$-ample elsewhere.
-For a smooth atlas $S\to \MM_1^{\rm{wt,st}}$, this observation allows us to define a lifting $S\to \MM_1^{\rm{div}}$, and thus a morphism $\xi\colon S\to  \MM_1^{\rm{wt,st}}(1)$ through the construction of Proposition \ref{1-stabilization-div}.
+For a smooth atlas $S\to \MM_1^{\rm{wt,st}}$, this observation allows us to define a lifting $S\to \MM_1^{\rm{div}}$, and thus a morphism $\xi\colon S\to  \MM_1^{\rm{wt,st}}(1)$ via the construction of Proposition \ref{1-stabilization-div}.
 
 In order to show that this descends to a morphism $\MM_1^{\rm{wt,st}}\rightarrow \MM_1^{\rm{wt,st}}(1)$ we need to verify that there exists $\rm{pr}_1^*(\xi)\cong\rm{pr}_2^*(\xi)$ satisfying the cocycle condition, where $\rm{pr}_i\colon S'= S\times_{\MM_1^{\rm{wt,st}}} S\rightrightarrows S$.
 
 This boils down to checking that for two different choices of a lifting $\pazocal D_1,\pazocal D_2\colon S\to\MM_1^{\rm{div}}$ there exists a unique isomorphism 
-\[\hC_1=\underline{\operatorname{Proj}}_S\left(\bigoplus_{n\geq 0}\pi_*(\mathcal N_1))^{\otimes n}\right)\cong \underline{\operatorname{Proj}}_S\left(\bigoplus_{n\geq 0}\pi_*(\mathcal N_2))^{\otimes n}\right)=\hC_2. \]
+\[\hC_1=\underline{\operatorname{Proj}}_S\left(\bigoplus_{n\geq 0}\pi_*(\mathcal N_1^{\otimes n})\right)\cong \underline{\operatorname{Proj}}_S\left(\bigoplus_{n\geq 0}\pi_*(\mathcal N_2^{\otimes n})\right)=\hC_2. \]
 By construction there is a birational map $\psi$:
  \bcd
 &\cC_S \ar[dl,"\phi_1" above left]\ar[dr,"\phi_2"]  \\
@@ -592,7 +591,8 @@ By construction $\operatorname{Exc}(\phi_1)=\operatorname{Exc}(\phi_2)$ is the l
 implies that $\phi_2$ factors through $\phi_1$, and viceversa. This proves the regularity of $\psi$ and its inverse. Notice that $\psi$ is unique as it is the only extension of $\phi_2\circ\phi_1^{-1}$.
 \end{proof} 
 
-This concludes the proof of Proposition \ref{prop:1-stab}. 
+This concludes the proof of Proposition \ref{prop:1-stab}. I will record here a useful fact for the study of maps to $\PP^N$. Observe that, if $\nu\colon\PP^1\to \overline{C}$ is the normalisation of a Gorenstein genus one singularity, then $\nu^*\colon \Pic^d(\overline{C})\to \{\OO_{\PP^1}(d)\}$ has kernel isomorphic to $\mathbb G_a$; on the other hand the pullback of sections of a line bundle $\mathcal L$ on $\overline{C}$ gives a hyperplane in $H^0(\PP^1,\OO_{\PP^1}(d))$ by Riemann-Roch.
+
 \subsection{Viscardi's moduli spaces of maps} I finally come to M. Viscardi's definition of alternative compactification of the space of maps \cite[Definition 2.15]{VISC}.
 
 \begin{dfn}
