@@ -1121,7 +1121,103 @@ Summarising:
 
 \end{proof}
 \section{On the relative problem}
+I will outline here a joint work in progress with N. Nabijou and D. Ranganathan. In part I we have seen that Gathmann's formula for relative invariants (and consequently his proof of quantum Lefschetz) to a very ample divisor is based on a deep understanding of the case of $(\PP^N|H)$, and a good deal of virtual intersection theory; in particular it is essential that $\M{0}{n}{\PP^N}{d}$ is unobstructed in order to have a perfect obstruction theory and apply virtual pullback. We are working towards an extension of the same techniques to the Vakil-Zinger desingularisation.
 
+\begin{dfn}
+ Let $\alpha$ be an $n$-tuple of tangency conditions at the markings, with $\sum\alpha\leq d$. The relative space for $(\PP^N|H)$ is \[\VZ{\alpha}{\PP^N|H}{d}=\overline{\left\{f\colon (E,\mathbf x)\to \PP^N| E\text{ sm. ell.}, f(E)\nsubseteq H, f^*H\geq\sum\alpha_ix_i\right\}}\]
+\end{dfn}
+\begin{rmk}
+ $\VZ{\alpha}{\PP^N|H}{d}$ is irreducible. A parametrisation of the nice locus can be given from the vector bundle:
+\[ \operatorname{Vb}\left(\pi_*\OO_{\mathcal E}(\sum_{j=n+1}^{n+\delta}\sigma_j)\oplus\pi_*\OO_{\mathcal E}(\sum_{j=1}^{n+\delta}\sigma_j)^{\oplus N}\right) \quad \text{on} \quad \mathcal{M}_{1,n+\delta}\]
+where $\pi\colon\mathcal E\to\mathcal M$ is the universal curve and $\delta=d-\sum\alpha_i$. It also has the expected codimension by deformation theory.
+\end{rmk}
+\textbf{Question:} how can the boundary elements be characterised?
+They will certainly satisfy \emph{Vakil's criterion for smoothability} (Proposition \ref{prop:components}), and \emph{Gathmann's relative condition}: for every connected component $Z$ of $f^{-1}(Y)$, either:
+\begin{enumerate}
+\item $Z$ is a single point of $C$, in which case if $Z=x_i$ is a marking then we require that the multiplicity of $f$ at $x_i$ along $H$ is at least $\alpha_i$ (if $Z$ is not a marking then there is no condition);
+\item $Z$ is a subcurve $Z \subseteq C$, in which case we require that
+\begin{equation*} f^*[H]|_Z -\sum_{x_i\in Z}\alpha_ix_i\end{equation*}
+is an effective class in $\Achow_0(Z)$.
+\end{enumerate}
+\begin{rmk}[Explaining Gathmann]
+If $Z$ is a smooth elliptic curve, recall that every line bundle of positive degree on it is effective, hence the relative condition can be rephrased as the following numerical criterion:
+\begin{equation*} f_*[Z]\cdot [H]+\sum_{j=1}^r m^{(j)}\geq \sum_{x_i\in Z}\alpha_i \end{equation*}
+together with the additional requirement that, when the above is an equality, there is an isomorphism of line bundles:
+\begin{equation}\label{eqn:eq_in_Pic}
+(f|_{Z})^*\OO_{\PP^N}(1) \otimes \OO_Z\left(\sum_{j=1}^r m^{(j)}y_j\right)=\OO_Z\left(\sum_{x_i\in Z}\alpha_ix_i\right) 
+\end{equation}
+ 
+ If $Z$ is reducible, the correct extension is not to impose the same condition componentwise; rather, we should ask the numerical condition for the total degree, and, if $Z$ is obtained by gluing a smooth elliptic curve $E$ with a forest of rational trees $T_i$ at roots $q^E_i$, then the line bundle equality \eqref{eqn:eq_in_Pic} should be required in $\Pic(E)$ after counting each $q^E_i$ towards the left hand side with multiplicity
+ \[f_*[T_i]\cdot [H]+\sum_{\text{external components attached to $T_i$}} m^{(j)}- \sum_{x_j\in T_i}\alpha_j.\]
+ 
+ %That this is the right thing to do follows from the proof that Gathmann's relative space is the projection of Jun Li's moduli space of maps to the expanded pair after contracting the higher levels of the accordion.
+\end{rmk}
+Will this be enough? There are at least two subtleties one should be careful with: first of all, the Vakil-Zinger blow-up introduces a number of exceptional divisors, and we have to understand how the closure of the nice locus intersects them (we are taking a strict transform); second, it may not be enough for a map to be smoothable, and to satisfy the relative condition, in order to be \emph{smoothable as a relative map}. In fact the first issue is clear even by dimensional reasons.
+\begin{example}
+Consider $\VZ{(3)}{\PP^1|H}{3}$. It has (virtual) dimension $4$. Here is a parametrisation of the nice locus: choose an object $(E,p) \in \mathcal{M}_{1,1}$, fix $s_0 \colon\OO_E\hookrightarrow\OO_E(3p)$, and let $s_1$ be any other section of $\OO_E(3p)$ not vanishing at $p$ (notice that $\h^0(E,\OO_E(3p))=3$). Then $(E,p,[\lambda s_0,s_1])$ gives a well-defined element of the nice locus for $\lambda \neq 0$.
+
+Consider now the following weighted graph for a map in the boundary
+\begin{center}
+\begin{tikzpicture}
+\draw[color=brown] (0,0) node[left]{$E$} -- (4,0);
+\draw[fill=black] (1,0) circle[radius=2pt] node[above]{$x_1$};
+\draw[fill=black] (2,0) circle[radius=2pt] node[below right]{$y_1$};
+\draw[fill=black] (3,0) circle[radius=2pt] node[below right]{$y_2$};
+\draw (2,1.5) node[left]{$R_1$} (3,1.5) node[left]{$R_2$};
+\draw (2,-1) -- (2,2) node[above]{$2$} (3,-1) -- (3,2) node[above]{$1$};
+\draw[->] (5,0.5) -- (8,0.5);
+\draw (9,-1) -- (9,2) node[above]{$\PP^1$};
+\draw[fill=black] (9,0) circle[radius=2pt] node[right]{$H$};
+\end{tikzpicture}
+\end{center}
+where the brown line represents a contracted genus $1$ curve. It satisfies Vakil's criterion. $(E,x_1,y_1,y_2)$ is a point of $\mathcal{M}_{1,3}$ subject to the divisorial condition $3x_1-2y_1-y_2=0\in \Achow_0(E)$; furthermore we have to choose the second branch point of the $2:1$ map from $R_1$ to $\PP^1$. This already makes up for a $3$-dimensional moduli space of degenerate relative maps corresponding to such a graph. On the other hand tha Vakil-Zinger's blow-up introduces a $\PP^1$-bundle over this locus, so overall the boundary has the same dimension as the nice locus.
+\end{example}
+We use aligned log structures in order to shed some light on the interaction between the relative space and the boundary of the Vakil-Zinger desingularisation.
+
+\textbf{Claim}: there is a desingularisation of main component of the space of log stable maps to $(\PP^N|H)$, which is obtained by imposing an alignment on the log structure of the curve, and requiring factorisation of the map from the resulting Smyth's singularity.
+
+This space is proper, and its image is precisely the closure of the nice locus; we may therefore characterise the latter as those centrally aligned maps that lift to the log space. We introduce the following:
+
+\emph{Compatibility condition:} when the core is contracted to a point in $H$, we require that the following diagram of minimal monoids admits a completion
+\bcd
+Q_{\rm{min}}^{\rm{prestable}}\ar[r]\ar[d] & Q_{\rm{min}}^{\rm{log.map}}\ar[r,"\exists"] & \N \\
+Q_{\rm{min}}^{\rm{cen.align}}\ar[dashed,urr]
+\ecd
+Choosing a morphism $Q_{\rm{min}}^{\rm{log.map}}\to \N$ is the same as testing with the standard log point, or picking a one-parameter family.
+\begin{example}
+ Start with an elliptic curve $E$ contracted to $Y$, with two external components $R_1, R_2$ attached to it and a single marking $x\in E$. The tropical picture would be:
+\begin{center}
+ \begin{tikzpicture}[radius=2pt,scale=0.5]
+ \draw[fill=black] (0,0) circle;
+ \draw (0,0) -- (4,0);
+ \draw[fill=black] (0,2) circle;
+ \draw[fill=black] (0,4) circle;
+ \draw (0,2) -- (2,3);
+ \draw (0,4) -- (2,3);
+ \draw (2,3) -- (4,3);
+ \draw[fill=white] (2,3) circle;
+ \draw[->] (2,1.5) -- (2,.5);
+ \end{tikzpicture}
+\end{center}
+The dual monoids in the compatibility condition give us the picture:
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+ \draw (0,0) -- (0,2)  (0,0)--(2,0);
+ \draw[->] (1,-1.3) -- (1,-.5);
+ \fill[gray!30] (0,-4) -- (0,-2) -- (2,-2) -- (0,-4);
+ \fill[gray!50] (0,-4) -- (2,-4) -- (2,-2) -- (0,-4);
+ \draw (0,-4) -- (0,-2) (0,-4) -- (2,-4) (0,-4) -- (2,-2) node[above right]{$e_1=e_2$};
+ \draw (1,-2) node[above]{$e_2>e_1$} (2,-3) node[right]{$e_1>e_2$};
+ \draw[<-] (2.5,1)--(3.5,1);
+ \draw[gray!=30] (4,0) -- (4,2)  (4,0)--(6,0);
+ \draw (4,0) -- (4.6,2) node[above right]{$m_1/m_2$};
+ \draw[<-,dashed] (2.7,-1.3)--(3.5,-.5);
+\end{tikzpicture}
+\end{center}
+So, for example, the factorisation exists for the subcone $e_2>e_1$ only when $m_1>m_2$, which is compatible with the fact that $\mathbb N^2=Q_{\rm{min}}^{\rm{prestable}}\to Q_{\rm{min}}^{\rm{log.map}}=\mathbb N$ is given by
+$e_1\mapsto m_2, e_2\mapsto m_1$.
+
+\end{example}
 
 \bibliographystyle{alpha}
 \bibliography{the}
