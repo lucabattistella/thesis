@@ -159,6 +159,7 @@
 \fill (1,.5) circle (2pt) (1,-.5) circle (2pt) (1.2,.2) circle (2pt)}
 }
 \newcommand{\pazocal}{\mathcal}
+\newcommand{\plC}{\scalebox{0.8}[1.3]{$\sqsubset$}}
 \newcommand{\TT}{\operatorname{T}}
 \newcommand{\oM}{\overline{\mathcal{M}}}
 \newcommand{\tM}{\widetilde{\mathcal{M}}}
@@ -191,6 +192,7 @@
 \newcommand{\EE}{\mathbf{E}}
 \renewcommand{\L}{\mathcal L}
 \newcommand{\LL}{\mathbf{L}}
+\newcommand{\pM}{\pazocal M}
 \newcommand{\MM}{\mathfrak M}
 \newcommand{\Mwt}{\mathfrak M_1^{\textrm{wt}}}
 \newcommand{\Aaff}{\mathbb{A}}
@@ -1139,7 +1141,7 @@ They will certainly satisfy \emph{Vakil's criterion for smoothability} (Proposit
 \begin{equation*} f^*[H]|_Z -\sum_{x_i\in Z}\alpha_ix_i\end{equation*}
 is an effective class in $\Achow_0(Z)$.
 \end{enumerate}
-\begin{rmk}[Explaining Gathmann]
+\begin{rmk}
 If $Z$ is a smooth elliptic curve, recall that every line bundle of positive degree on it is effective, hence the relative condition can be rephrased as the following numerical criterion:
 \begin{equation*} f_*[Z]\cdot [H]+\sum_{j=1}^r m^{(j)}\geq \sum_{x_i\in Z}\alpha_i \end{equation*}
 together with the additional requirement that, when the above is an equality, there is an isomorphism of line bundles:
@@ -1170,11 +1172,11 @@ Consider now the following weighted graph for a map in the boundary
 \draw[fill=black] (9,0) circle[radius=2pt] node[right]{$H$};
 \end{tikzpicture}
 \end{center}
-where the brown line represents a contracted genus $1$ curve. It satisfies Vakil's criterion. $(E,x_1,y_1,y_2)$ is a point of $\mathcal{M}_{1,3}$ subject to the divisorial condition $3x_1-2y_1-y_2=0\in \Achow_0(E)$; furthermore we have to choose the second branch point of the $2:1$ map from $R_1$ to $\PP^1$. This already makes up for a $3$-dimensional moduli space of degenerate relative maps corresponding to such a graph. On the other hand tha Vakil-Zinger's blow-up introduces a $\PP^1$-bundle over this locus, so overall the boundary has the same dimension as the nice locus.
+where the brown line represents a contracted genus $1$ curve. It satisfies Vakil's criterion. $(E,x_1,y_1,y_2)$ is a point of $\mathcal{M}_{1,3}$ subject to the divisorial condition $3x_1-2y_1-y_2=0\in \Achow_0(E)$; furthermore we have to choose the second branch point of the $2:1$ map from $R_1$ to $\PP^1$. This already makes up a $3$-dimensional moduli space of degenerate relative maps corresponding to such a graph. On the other hand the Vakil-Zinger's blow-up introduces a $\PP^1$-bundle over this locus, so overall the boundary has the same dimension as the nice locus.
 \end{example}
 We use aligned log structures in order to shed some light on the interaction between the relative space and the boundary of the Vakil-Zinger desingularisation.
 
-\textbf{Claim}: there is a desingularisation of main component of the space of log stable maps to $(\PP^N|H)$, which is obtained by imposing an alignment on the log structure of the curve, and requiring factorisation of the map from the resulting Smyth's singularity.
+\textbf{Claim}: there is a desingularisation of the main component of the space of log stable maps to $(\PP^N|H)$, which is obtained by imposing an alignment on the log structure of the curve, and requiring factorisation of the map from the resulting Smyth's singularity.
 
 This space is proper, and its image is precisely the closure of the nice locus; we may therefore characterise the latter as those centrally aligned maps that lift to the log space. We introduce the following:
 
@@ -1183,7 +1185,7 @@ This space is proper, and its image is precisely the closure of the nice locus; 
 Q_{\rm{min}}^{\rm{prestable}}\ar[r]\ar[d] & Q_{\rm{min}}^{\rm{log.map}}\ar[r,"\exists"] & \N \\
 Q_{\rm{min}}^{\rm{cen.align}}\ar[dashed,urr]
 \ecd
-Choosing a morphism $Q_{\rm{min}}^{\rm{log.map}}\to \N$ is the same as testing with the standard log point, or picking a one-parameter family.
+Choosing a morphism $Q_{\rm{min}}^{\rm{log.map}}\to \N$ is the same as testing with the standard log point. In the presence of a one-parameter smoothing (over a DVR scheme) the morphism to $\N$ is determined by the valuation of the smoothing parameters of the nodes.
 \begin{example}
  Start with an elliptic curve $E$ contracted to $Y$, with two external components $R_1, R_2$ attached to it and a single marking $x\in E$. The tropical picture would be:
 \begin{center}
@@ -1216,9 +1218,93 @@ The dual monoids in the compatibility condition give us the picture:
 \end{center}
 So, for example, the factorisation exists for the subcone $e_2>e_1$ only when $m_1>m_2$, which is compatible with the fact that $\mathbb N^2=Q_{\rm{min}}^{\rm{prestable}}\to Q_{\rm{min}}^{\rm{log.map}}=\mathbb N$ is given by
 $e_1\mapsto m_2, e_2\mapsto m_1$.
-
 \end{example}
 
+In fact we plan to work around the problem by directly looking at the desingularisation of the main component of Kim's moduli space of logarithmic maps to expansions.
+
+I will recall the basic definitions from \cite{KimLog,ChenDeg}; see also \cite{OlsCurves,AbramovichMarcusWiseComparison}. Essentially Kim's moduli space parametrises log morphisms to an expansion, where the minimal log structure on the base is locally free, twisted (in the sense that the irreducible elements are allowed to be roots of the smoothing parameters of the nodes in both the source and target), and identifies all the smoothing paramaters of the distinguished nodes of $C$ that map to the same component of the singular locus of $X^{\rm{exp}}=W$ (corank condition). Kim's moduli space should be thought of as the saturation of J. Li's moduli space. In the following $\pM_S^{C/S}$ denotes the log structure on the base $S$ pulled back from the canonical one on the moduli space of (pre)stable curves (i.e. the minimal log structure on the base of a family of log smooth curves), and similarly $\pM_S^{W/S}$.
+
+\begin{definition}
+ An \emph{extended log twisted expansion} of $(X,Y)$ is a quadruple $(\pi\colon W\to S, \pi_X\colon W\to X, D\subseteq W, \pM_S^{W/S}\to\pM_S)$ such that:
+ \begin{enumerate}
+  \item $\pi$ makes $W$ into a flat, proper algebraic space over $S$, with fibers at worst nodal in codimension 1, admitting a lifting to a special log morphism $\pi\colon (W,\pM_W^{W/S})\to(S,\pM_S^{W/S})$, such that:
+  \begin{enumerate}
+   \item $\pM_W^{W/S}$ and $\pM_S^{W/S}$ are locally free log structures;
+   \item for every geometric point $\bar{w}\to W$, either $\bar{w}$ is in the smooth locus of $\pi_S$ and $\pi^\flat\colon \pi^*\overline{\pM}_{S,\bar{w}}^{W/S}\to \overline{\pM}_{W,\bar{w}}^{W/S}$ is an isomorphism, or $\bar{w}$ is in the nodal locus and the following diagram is cocartesian:
+   \bcd
+   \N\ar[r,"{(1,1)}"]\ar[d,"h"]\ar[dr,phantom,"\lrcorner"] & \N^2\ar[d] \\
+   \pi^*\overline{\pM}_{S,\bar{w}}^{W/S}\ar[r] & \overline{\pM}_{W,\bar{w}}^{W/S}
+   \ecd
+   with $h(1)$ irreducible;
+   \item for every geometric point $\bar{s}\to S$ there is a bijection between the irreducible elements of $\overline{\pM}_{S,\bar{s}}^{W/S}$ and the irreducible components of $W_{\bar{s}}^{\text{sing}}$.
+  \end{enumerate}
+  \item $D\subseteq W$ is a Cartier divisor, smooth over $S$, and such that $\pi_X(D)=Y$;
+ \item $\pM_S$ is twisted by integers $(r_1,\ldots,r_l)$ and expanded with respect to $\pM_S^{W/S}$, namely \'{e}tale locally at every point $s\in S$ the morphism of log structures $\pM_S^{W/S}\to\pM_S$ admits a chart:
+ \bcd
+ \N^l\ar[d]\ar[r,"{(r_1,\cdots,r_l)}"] &\N^l\ar[r,"{(id,0)}"]&\N^l\oplus\N^k\ar[d] \\
+ \pM_S^{W/S}\ar[rr] & & \pM_S
+ \ecd
+  
+ \end{enumerate}
+\end{definition}
+ The log structure on $W$ is then given by
+ \[ \pM_W=\pi^*\pM_S\oplus_{\pi^*\pM_S^{W/S}}\pM_W^{W/S}\oplus_{\OO^*_W}\pM^D\]
+ where $\pM_D$ is the divisorial log structure associated to $D$. 
+Notice that with this definition $(W,\pM_W)\to(S,\pM_S)$ is log smooth.
+
+Similarly a \emph{log twisted curve} is $((C,p_1,\ldots,p_n)\to S, \pM_S^{C/S}\to\pM_S)$ with
+\[\pM_C=\pi^*\pM_S\oplus_{\pi^*\pM_S^{C/S}}\pM_C^{C/S}\oplus_{\OO^*_C}\bigoplus_{i=1}^n\pM^{p_i}\]
+A log twisted curve is \emph{minimal} if the log structure $\pM_S$ is locally free, and for every geometric point $\bar{s}\to S$ and irreducible element $b\in\overline{\pM}_S$, we can find an irreducible $a\in\overline{\pM}^{C/S}_S$ and a positive integer $l$ such that $a\mapsto lb$ (by definition this means that the morphism of log structures $\pM_S^{C/S}\to\pM_S$ is \emph{simple}).
+
+Finally, fix an $n$-tuple of non-negative contact orders $(c_1,\ldots,c_n)$.
+\begin{definition}
+ A \emph{relative log prestable map} with tangency condition $\mathbf{c}$ is given by a diagram of log morphisms:
+ \bcd
+ ((C,\mathbf p),\pM_C)\ar[rr,"f"]\ar[dr] & & ((W,D),\pM_W)\ar[rr,"\pi_X"]\ar[dl] & & (X,Y)\times S \\
+  & (S,\pM_S) & & &
+ \ecd
+ \begin{enumerate}
+  \item $(C,\mathbf p),\pM_C)\to (S,\pM_S)$ is a minimal log twisted curve;
+  \item $((W,\pM_W)\to (S,\pM_S),(W,D)\to(X,Y))$ is an extended twisted log expansion of $(X,Y)$;
+  \item (\emph{corank condition}) for every geometric point $\bar{s}\in S$, the rank of \[\operatorname{Coker}(\pM^{W/S}_{S,\bar{s}}\to \pM_{S,\bar{s}})\] is equal to the number of non-distinguished nodes of $C_{\bar{s}}$; recall that a node of $C_{\bar{s}}$ is \emph{distinguished} if it is mapped under $f$ to the singular locus of $W_{\bar{s}}$.
+  \item (\emph{log admissibility}) the morphism of log structures $f^\flat\colon f^*\pM_W\to\pM_C$ is simple at every distinguished node;
+  \item (\emph{tangency condition}) the underlying map $\underline{f}\colon C\to (W,D)$ is non-degenerate, namely no component of $C$ is mapped entirely into $D$, and locally around every marking $p_i$ we can find a chart
+  \bcd
+  \N\ar[r,"\cdot c_i"]\ar[d] & \N\ar[d] \\
+  f^*\pM^D\ar[r] & \pM^{p_i}
+  \ecd
+  for the restriction of $f^\flat$ to the $f^*\pM^D$ factor.
+  \end{enumerate}
+\end{definition}
+\begin{definition}
+ A relative log prestable map as above is \emph{stable} if for every geometric point $\bar{s}\in S$ the group of automorphisms $(\sigma,\tau)$ is finite, where:
+ \begin{enumerate}
+  \item $\sigma$ is an automorphism of $((C,\pM_C)\to (S,\pM_S))_{\bar{s}}$ preserving the markings $\mathbf p$;
+  \item $\tau$ is an automorphism of $((W,\pM_W)\to (S,\pM_S))_{\bar{s}}$ preserving $D$ and $\pi_X\colon W_{\bar{s}}\to X$;
+  \item $\tau\circ f_{\bar{s}}=f_{\bar{s}}\circ \sigma$.
+ \end{enumerate}
+\end{definition}
+\begin{rmk}
+ The corank and simplicity condition imply the following: the rank of the locally free log structure $\pM_S$ at $\bar{s}$ amounts to the number of irreducible components of $W_{\bar{s}}^{\text{sing}}$ plus the number of non-distinguished nodes of $C_{\bar{s}}$; all the smoothing parameters of the distinguished nodes mapping to the same component of $W_{\bar{s}}^{\text{sing}}$ have been identified \emph{up to twisting}. Indeed, at a distinguished node $q$ of $C$, letting $R$ be the local ring of $S$ at $\pi(q)$, we can find \'{e}tale local charts
+ \bcd
+ \N^2\oplus_{\N} \pM_{S}\ar[r,"{(id,\cdot m_q)}" below]\ar[d] & \N^2\oplus_{\N} \pM_{S}\ar[d] \\
+ f^*\pM_W \ar[r,"f^\flat" below]\ar[d] & \pM_C\ar[d] \\
+ R[z_1,\ldots,z_{\dim(X)-1},x,y]/(xy-t)\ar[r,"\left(\substack{x\mapsto a^{m_q}\\ y\mapsto b^{m_q}\\ t\mapsto s^{m_q}}\right)" below=.2cm] & R[a,b]/(ab-s)
+ \ecd
+ where the twist at $f(q)$ is given by $l$, the one at $q$ is given by $r_q$, and the equality $l=r_qm_q$ has to hold.
+\end{rmk}
+The following is a variation on \cite[\S 3.3]{RSPW2}. I will focus on the case of $(\PP^N|H)$.
+\begin{definition}
+ Let $(C,\mathbf p)\to (W,D)$ be a radially aligned Kim's log map to $(\PP^N|H)$, and let $\varphi\colon \plC\to\mathbb R_{\geq 0}$ be its tropicalisation, with circuit $\plC_0$. If $\varphi$ does not contract the circuit, set the contraction radius $\delta_f=0$. Otherwise let $\delta_f$ be the minimal distance from the circuit to a vertex supporting a flag that is not contracted by $\varphi$.
+\end{definition}
+To every Kim's log map we can associate an ordinary (not expanded) log map by \cite[Proposition 6.1]{GrossSiebertLog}. Furthermore, by choosing generic hyperplanes that meet the image of the curve transversally at smooth points of the latter, and by pulling back the resulting log structures on $\PP^N$, we may lift any log map to $(\PP^N|H)$ to one to $(\PP^N|\Delta)$, where $\Delta$ denotes the toric boundary of $\PP^N$. Notice that, when looking at the tropicalisation, any generic choice of hyperplanes will add flags only to vertices that already have a non-contracted flag, hence the resulting $\delta_f^{\Delta}$ is the same as $\delta_f$, and does not depend on this choice.
+
+It is discussed in \cite[Proposition 2.4.2.1]{RSPW2} how log morphisms from an fs log scheme $C\to Z$, where $Z$ is a toric variety with the log structure associated to its boundary, are equivalent to the data of $M\to H^0(C,\pM_C^{\rm{gp}})$, such that for every $x\in C$ we can find a cone $\sigma$ in the fan of $Z$ such that there is a factorisation:
+\bcd
+M\ar[r] & H^0(C,\pM_C^{\rm{gp}})\ar[r] & \overline{\pM}_{C,x}^{\rm{gp}} \\
+S_\sigma\cap M\ar[u,hook]\ar[rr,dashed] & & \overline{\pM}_{C,x}\ar[u,hook]
+\ecd
+where $M$ is the character lattice of the torus $T\subseteq Z$, and $S_\sigma$ is the dual cone of $\sigma$. This is useful because it allows them to impose factorisation of $C\to Z\dashrightarrow \PP^1$ to the Smyth's singularity determined by $\delta_f^\Delta$ without having to modify $Z$ (and $C$, and $S$).
 \bibliographystyle{alpha}
 \bibliography{the}
 
