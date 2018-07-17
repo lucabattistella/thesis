@@ -1,0 +1,486 @@
+\documentclass[a4paper,11pt,twoside]{book}
+
+%pacchetti
+
+\usepackage[english]{babel}
+\usepackage{appendix}
+\usepackage{amsmath,amssymb,amscd,amsthm}
+\usepackage{dsfont}
+\usepackage{bbm}
+%\usepackage{hyperref}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+%\usepackage{yfonts}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{faktor}
+\usepackage[table]{xcolor}
+\usepackage{xfrac}
+\usepackage{tikz,tikz-cd}
+\usetikzlibrary{arrows,decorations.pathmorphing,decorations.pathreplacing,patterns}
+\usepackage[all]{xy}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage[alphabetic,initials]{amsrefs}
+%\usepackage{amsrefs}
+
+%\usepackage{fix-cm}
+%\usepackage{caption}
+%\captionsetup{format=hang}
+%\usepackage{subcaption}
+%\usepackage{keyval}
+%\usepackage[lofdepth,lotdepth]{subfig}
+%\usepackage[10pt]{type1ec} %per avere i caratteri greci non bitmapped
+
+\usepackage{setspace} %pacchetto per l'interlinea
+\onehalfspacing %interlinea 1.5
+
+%MARGINI
+\usepackage{geometry} %per i margini
+\geometry{a4paper, top=3cm, bottom=3cm, left=3cm, right=3cm} %bindingoffset e' per la rilegatura
+
+%INTESTAZIONI
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\fancyhead[LE,RO]{\small \thepage} %mette il numero di pagina in grassetto e carattere piccolo nelle intestazioni a sinistra nelle pagine even e a destra nelle pagine odd
+\fancyhead[CE]{\small  \raggedleft \nouppercase{\leftmark}}
+\fancyhead[CO]{\small  \raggedright \nouppercase{\rightmark}}
+%\scshape
+
+\fancypagestyle{plain}{%
+\fancyhf{}\fancyfoot[C]{\small \thepage}} %modifica lo stile plain che e' quello dell'apertura dei capitoli
+
+
+%dobbiamo dirgli di fare la pagina bianca, senza intestazioni quando finisce un capitolo
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+\vspace{\fill}
+\thispagestyle{empty}
+\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+%%%%%%%%%%%%%%%%
+%controllo dei titoli
+\usepackage{titlesec}
+
+\titlelabel{\thetitle. } %etichetta prima del nome del titolo. \thetitle dovrebbe essere il numero
+
+
+\newcommand{\chapnumfont}{%     % define font for chapter number
+  \usefont{T1}{pnc}{b}{n}%      % choose New Chancery, bold, normal shape
+  \fontsize{100}{100}%          % font size 100pt, baselineskip 100pt
+  \selectfont%                  % activate font
+}
+\colorlet{chapnumcol}{gray!75}  % color for chapter number
+
+\titleformat{\chapter}[display]
+{\filleft\bfseries}
+{\filleft\chapnumfont\textcolor{chapnumcol}{\thechapter}}
+{-24pt}
+{\Huge}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{comment}
+\usepackage{stackrel}
+
+\usepackage[colorlinks=false,  pdftex,   pdfpagemode=UseOutlines]{hyperref} %collegamenti interni
+
+%\usepackage{tabularx}
+%\usepackage{booktabs}
+%\usepackage{longtable}
+%\usepackage{colortbl}
+%\definecolor{light-gray}{gray}{0.85}
+
+%\usepackage{rotating}
+
+%comandi
+
+\newcommand{\ilemph}[1]{\emph{#1}}
+\newcommand{\pazocal}{\mathcal}
+\newcommand{\plC}{\scalebox{0.8}[1.3]{$\sqsubset$}}
+\newcommand{\TT}{\operatorname{T}}
+\newcommand{\oM}{\overline{\mathcal{M}}}
+\newcommand{\tM}{\widetilde{\mathcal{M}}}
+\newcommand{\M}[4]{\overline{\mathcal{M}}_{#1,#2}(#3,#4)}
+\newcommand{\MK}[4]{\overline{\mathcal{M}}^{\rm{Kim}}_{#1,#2}(#3,#4)}
+\newcommand{\Mone}[3]{\overline{\pazocal M}^{(1)}_{1,#1}(#2,#3)}
+\newcommand{\VZ}[3]{\mathcal{V\!Z}_{1,#1}(#2,#3)}
+\newcommand{\VZK}[3]{\mathcal{V\!Z}^{\rm{Kim}}_{1,#1}(#2,#3)}
+\newcommand{\VZa}[3]{\mathcal{V\!Z}^{\rm{ACGS}}_{1,#1}(#2,#3)}
+\newcommand{\VZdrc}[3]{\mathcal{V\!Z}^{\rm{DRC}}_{1,#1}(#2,#3)}
+\newcommand{\tVZ}[3]{\widetilde{\mathcal{V\!Z}}_{1,#1}(#2,#3)}
+\newcommand{\Zp}{\pazocal Z^p}
+\newcommand{\tZ}{\widetilde{\pazocal Z}}
+\newcommand{\tZp}{\widetilde{\pazocal Z}^p}
+\newcommand{\oZp}{\overline{\mathcal Z}^{p,\rm{gst}}}
+\newcommand{\XP}{\mathfrak Z}
+\newcommand{\tXP}{\widetilde{\mathfrak Z}}
+\newcommand{\Q}[4]{\mathcal{Q}_{#1,#2}(#3,#4)}
+\newcommand{\Qe}[4]{\mathcal{Q}^{\epsilon}_{#1,#2}(#3,#4)}
+\newcommand{\Qt}[4]{\widetilde{\mathcal Q}_{#1,#2}(#3,#4)}
+\newcommand{\QG}[4]{\mathcal{QG}_{#1,#2}(#3,#4)}
+\newcommand{\QGe}[4]{\mathcal{QG}^{\epsilon}_{#1,#2}(#3,#4)}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\OO}{\mathcal{O}}
+\renewcommand{\to}{\rightarrow}
+\newcommand{\A}{\mathcal A}
+\newcommand{\B}{\mathcal B}
+\newcommand{\C}{\mathfrak C}
+\newcommand{\F}{\mathcal F}
+\newcommand{\EE}{\mathbf{E}}
+\renewcommand{\L}{\mathcal L}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\pM}{\pazocal M}
+\newcommand{\MM}{\mathfrak M}
+\newcommand{\Mwt}{\mathfrak M_1^{\textrm{wt}}}
+\newcommand{\Aaff}{\mathbb{A}}
+\newcommand{\kk}{\Bbbk}
+\newcommand{\comp}{\chi}
+\newcommand{\sst}{\sigma^{\operatorname{ss}}}
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\Def}{\operatorname{Def}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Proj}{\operatorname{Proj}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\val}{\operatorname{val}}
+\newcommand{\Gm}{\mathbb{G}_{\text{m}}}
+\newcommand{\virt}[1]{[#1]^{\mathrm{vir}}}
+\newcommand{\virloc}[1]{[#1]^{\mathrm{vir}}_{\mathrm{loc}}}
+\newcommand{\vip}[1]{[#1]^{\operatorname{prod}}}
+\newcommand{\redu}[1]{[#1]^{\operatorname{red}}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\HH}{\operatorname{H}}
+\newcommand{\Achow}{\operatorname{A}}
+\newcommand{\pt}{\operatorname{pt}}
+\newcommand{\m}{\mathfrak m}
+\newcommand{\tR}{\widetilde{R}}
+\newcommand{\tm}{\widetilde{\mathfrak m}}
+\newcommand{\lala}{\langle\!\langle}
+\newcommand{\rara}{\rangle\!\rangle}
+\newcommand{\bq}{\begin{equation}}
+\newcommand{\eq}{\end{equation}}
+\newcommand{\ba}{\begin{aligned}}
+\newcommand{\ea}{\end{aligned}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bsm}{\left(\begin{smallmatrix}}
+\newcommand{\esm}{\end{smallmatrix}\right)}                   
+\newcommand{\bpm}{\begin{pmatrix}}
+\newcommand{\epm}{\end{pmatrix}}
+\newcommand{\barr}{\begin{displaymath}\begin{array}{cccc}}
+\newcommand{\earr}{\end{array}\end{displaymath}}
+\newcommand{\barrl}{\begin{displaymath}\begin{array}{lcl}}
+\newcommand{\earrl}{\end{array}\end{displaymath}}
+\newcommand{\barl}{\begin{displaymath}\begin{array}{l}}
+\newcommand{\earl}{\end{array}\end{displaymath}}
+\newcommand{\bxym}{ \begin{displaymath}\xymatrix }
+\newcommand{\exym}{\end{displaymath}}
+\newcommand{\bcd}{\begin{center}\begin{tikzcd}}
+\newcommand{\ecd}{\end{tikzcd}\end{center}}
+\newcommand{\R}{\operatorname{R}^{\bullet}}
+%\newcommand{\sslash}{\mathbin{/\mkern-6mu/}}
+\newcommand{\tr}{{\rm tr}}
+\newcommand{\Isom}{\text{Isom}}
+\newcommand{\pr}{\operatorname{pr}}
+\newcommand{\fgt}{\operatorname{fgt}}
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\vdim}{\operatorname{vdim}}
+\newcommand{\Bl}{\operatorname{Bl}}
+\newcommand{\ildef}[1]{\emph{#1}}
+\newcommand{\om}[1]{\mathcal{#1}}
+\newcommand{\h}{\operatorname{h}}
+\newcommand{\vv}{\operatorname{v}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\operatorname{N}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\dvr}{\Delta}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\hC}{\overline{\mathcal{C}}}
+\newcommand{\hP}{\overline{\mathfrak{P}}}
+\newcommand{\hL}{\overline{\mathcal{L}}}
+\newcommand{\w}{\mathbf{w}}
+
+%figurine
+
+\def\reduced{\tikz[baseline=-3pt]{
+\draw (0,0) circle[radius=2pt]}
+}
+\def\Dunouno{\tikz[baseline=-3pt]{
+\draw (0,0)node[above]{$\psi$} -- (1,0)node[above]{$H$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\def\Dunodue{\tikz[baseline=-3pt]{
+\draw (0,0)-- (1,0)node[above]{$\psi H$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\def\Dunotre{\tikz[baseline=-3pt]{
+\draw (0,0)node[above]{$\lambda_1\psi$} -- (1,0);
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\def\Dunoquat{\tikz[baseline=-3pt]{
+\draw (0,0)node[above]{$\lambda_1$} -- (1,0)node[above]{$\psi$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\def\Dunocin{\tikz[baseline=-3pt]{
+\draw (0,0)node[above]{$\psi^2$} -- (1,0);
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\def\Dunosei{\tikz[baseline=-3pt]{
+\draw (0,0)node[above]{$\psi$} -- (1,0)node[above]{$\psi$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\def\Dunoset{\tikz[baseline=-3pt]{
+\draw (0,0) -- (1,0)node[above]{$\psi^2$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\def\Dunoott{\tikz[baseline=-3pt]{
+\draw (0,0)node[above]{$\lambda_1^2$} -- (1,0);
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\def\Dunonov{\tikz[baseline=-3pt]{
+\draw (0,0)node[above]{$\lambda_1$} -- (1,0)node[above]{$H$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\def\Dunodiec{\tikz[baseline=-3pt]{
+\draw (0,0) -- (1,0)node[above]{$H^2$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\def\Ddueuno{\tikz[baseline=-3pt]{
+\draw (0,0) -- (1,.3)node[above]{$H$} (0,0)--(1,-.3);
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,.3) circle (2pt) (1,-.3) circle (2pt)}
+}
+\def\Dduedue{\tikz[baseline=-3pt]{
+\draw (0,0)node[above]{$\lambda_1$} -- (1,.3) (0,0)--(1,-.3);
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,.3) circle (2pt) (1,-.3) circle (2pt)}
+}
+\def\Dduetre{\tikz[baseline=-3pt]{
+\draw (0,0)node[above]{$\psi$} -- (1,.3) (0,0)--(1,-.3);
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,.3) circle (2pt) (1,-.3) circle (2pt)}
+}
+\def\Dduequat{\tikz[baseline=-3pt]{
+\draw (0,0)node[below]{$\psi$} -- (1,.3) (0,0)--(1,-.3);
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,.3) circle (2pt) (1,-.3) circle (2pt)}
+}
+\def\Dduecin{\tikz[baseline=-3pt]{
+\draw (0,0) -- (1,.3)node[above]{$\psi$} (0,0)--(1,-.3);
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,.3) circle (2pt) (1,-.3) circle (2pt)}
+}
+\def\Dduesei{\tikz[baseline=-3pt]{
+\draw (0,0) -- (1,.3) (0,0)--(1,-.3)node[below]{$\psi$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,.3) circle (2pt) (1,-.3) circle (2pt)}
+}
+\def\Dtre{\tikz[baseline=-3pt]{
+\draw (0,0) -- (1,.5) (0,0)--(1,-.5) (0,0) -- (1.3,0);
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,.5) circle (2pt) (1,-.5) circle (2pt) (1.3,0) circle (2pt)}
+}
+
+\def\Dk{\tikz[baseline=-3pt]{
+\draw (0,0)node[left]{\scriptsize $g=2,d=0$} -- (1,.5) node[right]{\scriptsize $g=0,d_1$} (0,0)--(1,-.5)node[right]{\scriptsize $g=0,d_k$} (0,0) -- (1.2,.2)node[right]{\scriptsize $g=0,d_2$};
+\draw (1.2,-.2) node[right]{\scriptsize $\ldots$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,.5) circle (2pt) (1,-.5) circle (2pt) (1.2,.2) circle (2pt)}
+}
+
+\def\Ek{\tikz[baseline=-3pt]{
+\draw (-1.5,0) node[left]{\scriptsize $g=1,d_0$} -- (0,0);
+\draw (0,0)node[above]{\scriptsize \begin{tabular}{c} $g=1,$ \\ $d=0$ \end{tabular}} -- (1,.5) node[right]{\scriptsize $g=0,d_1$} (0,0)--(1,-.5)node[right]{\scriptsize $g=0,d_k$} (0,0) -- (1.2,.2)node[right]{\scriptsize $g=0,d_2$};
+\draw (1.2,-.2) node[right]{\scriptsize $\ldots$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (-1.5,0) circle (2pt) (1,.5) circle (2pt) (1,-.5) circle (2pt) (1.2,.2) circle (2pt)}
+}
+
+\def\Ekk{\tikz[baseline=-3pt]{
+\draw (-3,0)node[above]{\scriptsize \begin{tabular}{c} $g=1,$ \\ $d=0$ \end{tabular}} -- (-4,.5) node[left]{\scriptsize $g=0,d_{1,1}$} (-3,0)--(-4,-.5)node[left]{\scriptsize $g=0,d_{1,k_1}$} (-3,0) -- (-4.2,.2)node[left]{\scriptsize $g=0,d_{1,2}$};
+\draw (-3,0) -- (-1.5,0) node[below]{\scriptsize $g=0,d_0$} -- (0,0);
+\draw (0,0)node[above]{\scriptsize \begin{tabular}{c} $g=1,$ \\ $d=0$ \end{tabular}} -- (1,.5) node[right]{\scriptsize $g=0,d_{2,1}$} (0,0)--(1,-.5)node[right]{\scriptsize $g=0,d_{2,k_2}$} (0,0) -- (1.2,.2)node[right]{\scriptsize $g=0,d_{2,2}$};
+\draw (1.2,-.2) node[right]{\scriptsize $\ldots$} (-4.2,-.2) node[right]{\scriptsize $\ldots$};
+\draw (0,0) circle(2pt)[fill=white] (-3,0) circle(2pt)[fill=white];
+\fill (-1.5,0) circle (2pt) (1,.5) circle (2pt) (1,-.5) circle (2pt) (1.2,.2) circle (2pt) (-4,.5) circle (2pt) (-4,-.5) circle (2pt) (-4.2,.2) circle (2pt)}
+}
+
+\def\pacman{\tikz[baseline=-3pt]{
+\draw (0,0)node[left]{\scriptsize $g=0,d$} to[out=20,in=160] (1,0) node[right]{\scriptsize $g=1,d=0$};
+\draw (0,0) to[out=-20,in=-160] (1,0);
+\fill (0,0) circle (2pt);
+\draw[fill=white] (1,0) circle (2pt)}
+}
+
+\def\hypell{\tikz[baseline=-3pt]{
+\draw (0,0)node[left]{\scriptsize $g=2,d_0=2$} -- (1,.5) node[right]{\scriptsize $g=0,\bar d_1$} (0,0)--(1,-.5)node[right]{\scriptsize $g=0,\bar d_k$} (0,0) -- (1.2,.2)node[right]{\scriptsize $g=0,\bar d_2$};
+\draw (1.2,-.2) node[right]{\scriptsize $\ldots$};
+\draw (0,0) circle(2pt)[fill=gray!50];
+\fill (1,.5) circle (2pt) (1,-.5) circle (2pt) (1.2,.2) circle (2pt)}
+}
+
+\def\Yagraph{\tikz[baseline=-3pt]{
+\draw (2,0) -- (0,1) (2,0) -- (0,.5) (2,0) -- (0,-1);
+\draw (2,0) circle(2pt)[fill=black];
+\draw (0,1) circle(2pt)[fill=white];
+\draw (0,.5) circle(2pt)[fill=black];
+\draw (0,-.5) node{$\ldots$};
+\draw (0,-1) circle(2pt)[fill=black];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}
+
+\def\Ybgraph{\tikz[baseline=-3pt]{
+\draw (2,0) to[out=120,in=0] (0,1) (2,0) -- (0,1) (2,0) -- (0,.5) (2,0) -- (0,-1);
+\draw (2,0) circle(2pt)[fill=black];
+\draw (0,1) circle(2pt)[fill=black];
+\draw (0,.5) circle(2pt)[fill=black];
+\draw (0,-.5) node{$\ldots$};
+\draw (0,-1) circle(2pt)[fill=black];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}
+
+\def\Ycgraph{\tikz[baseline=-3pt]{
+\draw (2,0) -- (0,1) (2,0) -- (0,.5) (2,0) -- (0,-1);
+\draw (2,0) circle(2pt)[fill=white];
+\draw (0,1) circle(2pt)[fill=black];
+\draw (0,.5) circle(2pt)[fill=black];
+\draw (0,-.5) node{$\ldots$};
+\draw (0,-1) circle(2pt)[fill=black];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}
+
+%ambienti teoremi e definizioni
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem*{teo*}{Theorem}
+\newtheorem{ipotesi}{ipotesi}
+\newtheorem*{nota}{Nota}
+\newtheorem{claim}{Claim}
+\newtheorem{question}[thm]{Question}
+\newtheorem{conj}[thm]{Conjecture}
+
+\newtheorem{innercustomthm}{Theorem}
+\newenvironment{customthm}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}
+
+\theoremstyle{definition}
+\newtheorem{example}[thm]{Example}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{aside}[thm]{Aside}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{com}[thm]{Comment}
+\newtheorem{num}{Number}
+\newtheorem*{sketch}{Sketch}
+\newtheorem*{rem}{Remark}
+\newtheorem*{aside*}{Aside}
+\newtheorem*{acknowledgements}{Acknowledgements}
+
+\numberwithin{equation}{chapter}    %numerazione equazioni
+\numberwithin{section}{chapter} %numerazione sezioni
+
+%\makeindex %indice analitico
+
+\setcounter{tocdepth}{2} %depth dell'indice; cioe' quanti sottosezioni visualizzare?
+
+
+\hyphenation{sche-ma-tic co-do-main noe-the-ria-ni-ty ge-nus Gro-then-dieck noe-the-rian group-oids} %sillabazione a capo
+
+%\setlength{\epigraphrule}{0pt} %toglie la linea nelle epigrafi
+
+\usepackage{newpxtext,newpxmath}
+
+\begin{document}
+
+
+
+\input{title.tex}
+\input{copyright.tex}
+%\input{Roba_iniziale/Ringraziamenti.tex}
+%\input{Roba_iniziale/Dedica.tex}
+%\input{Roba_iniziale/Abstract.tex}
+
+\tableofcontents
+\input{I-relative_quasimaps.tex}
+\input{II-higher_genus.tex}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\backmatter %d'ora in poi sono nel'ultima parte della tesi
+
+
+\cleardoublepage
+%\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{alpha}
+\bibliography{the}
+
+
+
+%\printindex %stampa l'indice analitico. ricordarsi di compilare anche MakeIndex
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}} %d'ora in poi nascondo tutti i capitoli e tutte le sezioni
+
+
+
+%\begin{comment}
+
+%\chapter*{Ringraziamenti}
+
+
+
+%\end{comment}
+
+%\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
+\end{document}
