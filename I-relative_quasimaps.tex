@@ -1,6 +1,6 @@
-\chapter{On quasimaps}
+\chapter{On quasimaps}\label{ch:qm}
 
-\section{Review of toric varieties and quasimaps}
+\section{Review of toric varieties and quasimaps}\label{sec:qm_review}
 
 \subsection{Definitions} Let $N$ be a lattice with dual $M=\Hom_{\ZZ}(N,\ZZ)$, $\Sigma\subseteq N_{\RR}$ a rational polyhedral fan with associated toric variety $X_{\Sigma}$, with primitive generators $v_{\rho}$ of the rays $\rho\in\Sigma(1)$. I assume throughout this text that $X=X_{\Sigma}$ is smooth and projective (equivalently every cone is spanned by a $\Z$-basis and the support of the fan is the whole of $N_{\RR}$).
 
@@ -254,7 +254,7 @@ In particular the two rings do not coincide on the nose, but rather only after a
 
 One more comment is in order: since Witten's genus $0$ topological recursion relation holds for $\epsilon$-quasimaps by \cite[Corollary 2.3.4]{CF-K-higher-genus}, it follows from the same proof as in \cite[Theorem 10.3.1]{MS} that a quantum differential operator annihilating $I(q,t_{|H^{\leq 2}(X)},z)$ determines a relation in quasimap quantum cohomology. It is instead not true that $I(q,t_{|H^{\leq 2}(X)},z)=e^{t/z}I(q,0,z)$ due to the failure of the divisor equation. Hence $I(q,t_{|H^{\leq 2}(X)},z)$ does not necessarily satisfy the GKZ system as in \cite[\S 5.5.3]{MS}, the relations associated to which give back precisely the Batyrev's quantum ring.
 
-\section{The localisation formula for toric quasimaps}
+\section{The localisation formula for toric quasimaps}\label{sec:loc_formula}
 The localisation formula is discussed in \cite[\S 5]{CF-K-higher-genus}, as it is a fundamental tool in the extension of the wall-crossing formulae to higher genus. I review it here and make a further step towards explicitness by expressing the various contributions combinatorially in terms of weights, following \cite{HolgerSpielberg}.
 
 \subsection{Notation and weights} Fix a bijection of $\Sigma(1)$ and $[N]$. The (non-effective) action of the big torus $T=\Gm^N$ on $X$ induces an action on $\Q{g}{n}{X}{\beta}$, by scaling the sections. Let me denote by $\lambda_1,\ldots,\lambda_N$ the corresponding weights, i.e. generators of $H^*_T(\{*\})$. For this section let $d$ denote the dimension of $X$.
@@ -326,7 +326,7 @@ the corresponding quasimap is given by:
 
 Gluing along flags $f\in F$ is possible by the required compatibilities.
 
-\subsection{The obstruction theory.} Recall that the obstruction theory of $\Q{g}{n}{X}{\beta}$ relative to $\mathfrak M_{g,n}$ is given by $\R\pi_*\F_X$, where $\F_X$ is defined on the universal curve
+\subsection{The obstruction theory} Recall that the obstruction theory of $\Q{g}{n}{X}{\beta}$ relative to $\mathfrak M_{g,n}$ is given by $\R\pi_*\F_X$, where $\F_X$ is defined on the universal curve
 \begin{equation}\label{eqn:F}
  0\to\OO_{\mathcal C_\mathcal Q}\otimes \mathfrak t\to\bigoplus_{\rho\in\Sigma(1)}\mathcal L_\rho\to\F_X\to 0,
 \end{equation}
@@ -486,7 +486,7 @@ The white circle indicates a basepoint component. It can be verified that:
 
 
 
-\section{Relative quasimaps}
+\section{Relative quasimaps}\label{sec:rel_qm}
 The relative problem in Gromov-Witten theory consists in studying maps satisfying not only incidence conditions, but also a tangency requirement to a divisor. It has seen great advancements in the past twenty years, of which I will sample some most relevant ones in algebraic geometry (there is an almost parallel and similarly rich story in symplectic geometry):
 \begin{itemize}
  \item R. Vakil's pioneering work on rational and elliptic curves in projective space, satisfying tangency conditions to a hyperplane \cite{Vre};
