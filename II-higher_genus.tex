@@ -1,6 +1,6 @@
-\chapter{On genus one}
+\chapter{On genus one}\label{ch:hg}
 
-\section{Reduced invariants and the Li-Zinger's formula}
+\section{Reduced invariants and the Li-Zinger's formula}\label{sec:redinv}
 Contrary to the genus zero case, $\M{1}{n}{\PP^N}{d}$ is not a smooth stack; in fact it is not even equidimensional. A classical example is given by $\M{1}{0}{\PP^2}{3}$:
 \begin{itemize}
  \item smooth planar cubics are elliptic curves by the degree-genus formula; viewing them as $E\hookrightarrow \PP^2$ gives a component of dimension $9$ of $\M{1}{0}{\PP^2}{3}$, often referred to as the \emph{main} component;
@@ -132,7 +132,7 @@ Summing up we obtain the following:
 \begin{prop}[Li-Zinger formula for primary insertions on $\PP^3$] \[\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3}_{1,n,d}=\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3,\mathrm{red}}_{1,n,d}+\frac{2-4d-3n}{24}\langle \delta_1,\ldots,\delta_n \rangle^{\PP^3}_{0,n,d}.\] \end{prop}
 Notice that this differs from Li-Zinger's original formula by the contribution of the markings (which is not of interest in the CY3 case). An alternative approach would be comparing every boundary component to its genus zero relative by virtual pushforward: if we are only interested in primary insertions, notice that the components of $D^1$ such that more than one marking dwells on the elliptic curve will not contribute, since the excess bundle has rank two.
 
-\section{Maps from curve singularities}
+\section{Maps from curve singularities}\label{sec:singularities}
 A different approach to reducing the complexity of $\M{1}{n}{\PP^N}{d}$ is the one followed by M. Viscardi in \cite{VISC}, building on work of D.I. Smyth on the minimal model program for $\oM_{1,n}$ \cite{SMY1}. Rather than blowing up and desingularising the main component, the idea is to collapse a number of boundary components, filling in their intersection with main and the boundary components of smaller dimension. Vakil's description of the smoothable elements of $\M{1}{n}{\PP^N}{d}$ (see Proposition \ref{prop:components}(2)) suggests to do so by allowing maps from more singular (than nodal) curves, and simultaneously making their semistable models unstable, in order to preserve the separatedness of the moduli space.
 
 The easiest example is the following: the cusp
@@ -345,7 +345,7 @@ Checking the valuative criterion for properness goes as follows: assume the gene
 \begin{prop}
  There exists an $m_0=m_0(d,n)$ such that, for $m\geq m_0$, $\oM^{(m)}_{1,n}(\PP^N,d)$ is irreducible.
 \end{prop}
-\subsection{Aligned log structures} Finally, I would like to discuss how these two lines of thought (Li-Vakil-Zinger desingularisation and reduced invariants, compared to Smyth-Viscardi alternative compactifications) are not unrelated. A main issue with the Vakil-Zinger desingularisation is that the iterated blow-up procedure makes the modular interpretation of the resulting space not immediately clear. This has been fixed recently by D. Ranganathan, K. Santos-Parker and J. Wise with the introduction of the notion of an \emph{aligned} log curve. Recall the description of log smooth curves, due to F. Kato \cite{KatoF}, and the parallel with marked prestable curves. Let us work over a geometric point $S=\Spec(\kk=\bar\kk)$. In the genus one case, we can modify the usual dual graph construction by collapsing all the vertices corresponding to components of the core (in case the latter is a circle of $\PP^1$) to one vertex, called the \emph{circuit} and denoted by $\circ$. Define an $\oM_S$-valued function on the dual graph $\Gamma(C)$ by \[\lambda(v)=\sum_{e\in[\circ,v]}\rho_e,\] i.e. by associating to a vertex/component the sum of all the smoothing parameters of the edges/nodes separating it from the circuit.
+\subsection{Aligned log structures and factorisation} Finally, I would like to discuss how these two lines of thought (Li-Vakil-Zinger desingularisation and reduced invariants, compared to Smyth-Viscardi alternative compactifications) are not unrelated. A main issue with the Vakil-Zinger desingularisation is that the iterated blow-up procedure makes the modular interpretation of the resulting space not immediately clear. This has been fixed recently by D. Ranganathan, K. Santos-Parker and J. Wise with the introduction of the notion of an \emph{aligned} log curve. Recall the description of log smooth curves, due to F. Kato \cite{KatoF}, and the parallel with marked prestable curves. Let us work over a geometric point $S=\Spec(\kk=\bar\kk)$. In the genus one case, we can modify the usual dual graph construction by collapsing all the vertices corresponding to components of the core (in case the latter is a circle of $\PP^1$) to one vertex, called the \emph{circuit} and denoted by $\circ$. Define an $\oM_S$-valued function on the dual graph $\Gamma(C)$ by \[\lambda(v)=\sum_{e\in[\circ,v]}\rho_e,\] i.e. by associating to a vertex/component the sum of all the smoothing parameters of the edges/nodes separating it from the circuit.
 \begin{dfn}
  Let $S$ be a log scheme and $C\to S$ a family of log smooth curves of genus one. We say that $C$ is \emph{radially aligned} if for every geometric point $s\in S$ the values of $\lambda(v)$ are \emph{comparable} in $\oM_{S,s}$ for every vertex $v$ of $\Gamma(C_s)$.
 \end{dfn}
@@ -459,7 +459,7 @@ Finally, the components of $\M{2}{n}{\PP^N}{d}$ are included in the following li
 \end{enumerate}
 Here is a funny example: consider $\oM_2(\PP^1,3)$. From the theory of limit linear series, no element of $\mathcal D^{\rm{hypell},1}$ is smoothable: let the underlying curve be $Z\coprod_q R$, where $Z$ has genus two and $R\simeq\PP^1$. The aspect supported on $Z$ is $\omega_Z(q)$, with vanishing sequence $(1,3)$ (if $q$ Weierstrass) and $(1,2)$ (otherwise), so the aspect $\mathcal L$ supported on $R$ has vanishing sequence $(0,2)$ or $(1,2)$; in any case $\mathcal L(-2Z)$ has only one section, so it cannot give a map to $\PP^1$. On the other hand $\mathcal D^{\rm{hypell},1}$ intersects $\mathcal D^2$, $\mathcal D^3$, $\mathcal E^1$, $\mathcal E^{0,1}$, $\mathcal E^{0,2}$, and $\mathcal E^{1,1}$. 
 
-\section{p-fields, local equations and a splitting of the cone}
+\section{p-fields, local equations and a splitting of the cone}\label{sec:techniques}
 
 The indirect approach to the proof of Theorem \ref{thm:redvscusp} can be outlined as follows: we introduce the moduli space of $1$-stable maps with $p$-fields, $\oM_1^{(1)}(\PP^4,d)^p$, the geometry of which is closely related to that of $\oM_1^{(1)}(\PP^4,d)$ (in fact, it is a line bundle over the boundary, while the open main components are isomorphic); $\oM_1^{(1)}(\PP^4,d)^p$ is endowed with a cosection localised virtual class carrying the same information as $\virt{\oM_1^{(1)}(X,d)}$. By pulling back along the $1$-stabilisation as above, we may define $\mathcal Z_{\PP^4}$ and $\mathcal Z^p$; unfortunately $\mathcal Z^p$ does not compare directly with $\oM_1(\PP^4,d)^p$. On the other hand, after studying local equations for the moduli space and a Vakil-Zinger blow-up, we are able to split the normal cone of $\tZp$ directly, and show that the only non-trivial contribution to the invariants comes from the main component.
 
@@ -794,7 +794,7 @@ Summarising:
 
 
 \end{proof}
-\section{On the relative problem}
+\section{On the relative problem}\label{sec:relativeone}
 I will outline here a joint work in progress with N. Nabijou and D. Ranganathan. In part I we have seen that Gathmann's formula for relative invariants (and consequently his proof of quantum Lefschetz) to a very ample divisor is based on a deep understanding of the case of $(\PP^N|H)$, and a good deal of virtual intersection theory; in particular it is essential that $\M{0}{n}{\PP^N}{d}$ is unobstructed in order to have a perfect obstruction theory and apply virtual pullback. We are working towards an extension of the same techniques to the Vakil-Zinger desingularisation.
 \subsection{The na\"ive definition}
 \begin{dfn}
@@ -1007,4 +1007,4 @@ where $(I)$ and $(II)$ range over all the splittings $(A,B,M)$ such that $\alpha
  \item $d_0+\sum m^{(i)}=\sum A^{(0)}+1$.
 \end{enumerate}
 
-\subsection{Examples}
+\subsection{Sample computations}

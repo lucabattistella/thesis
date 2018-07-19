@@ -1370,7 +1370,138 @@ where $(I)$ and $(II)$ range over all the splittings $(A,B,M)$ such that $\alpha
  \item $d_0+\sum m^{(i)}=\sum A^{(0)}+1$.
 \end{enumerate}
 
-\subsection{Sample computations}
+\subsection{Sample computations} I will exemplify the use of the recursion in some low-dimensional examples. Let me introduce the following shorthand notation: I will write $H_k$ for $\ev_k^* H$ and $\psi_k^{\{n_1,\ldots,n_h\}}$ for $\fgt_{\{n_1,\ldots,n_h\}}^*\psi_k$.
+\begin{ex}
+ Consider the following step of the recursion:
+ \begin{multline*} (2\psi_1+H_1)\cdot [\VZ{(2,0)}{\PP^1|\infty}{2}]= 2{\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1,x_2\}$} -- (0,0)node[above]{$d=2$};
+\draw (2,0) circle(2pt)[fill=black];
+\draw (0,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}+
+{\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1\}$} to[out=210,in=-30] (0,0)node[above,align=center]{$d=2$,\\ $\{x_2\}$} (2,0) -- (0,0);
+\draw (2,0) circle(2pt)[fill=black];
+\draw (0,0) circle(2pt)[fill=black];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}+\\
+2{\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1\}$} -- (0,0)node[above,align=center]{$d=2$,\\ $\{x_2\}$};
+\draw (2,0) circle(2pt)[fill=white];
+\draw (0,0) circle(2pt)[fill=black];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}+
+{\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1\}$} -- (0,.5)node[above]{$d=1$} (2,0)--(0,-.5)node[above]{$d=1$};
+\draw (2,0) circle(2pt)[fill=white];
+\draw (0,0.5) circle(2pt)[fill=black] (0,-0.5) circle(2pt)[fill=black];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}
+\end{multline*}
+Notice that in the $\mathcal Y_a$ term $x_2$ has to be at level one to ensure stability (yet this results in a positive dimensional moduli space with no insertions at level zero); in the $\mathcal Y_b$ and in the first $\mathcal Y_c$ term it has to be at level zero, otherwise there would be a positive dimensional moduli space with no insertions; while I have remained agnostic as to where $x_2$ is in the second $\mathcal Y_c$ term. Now choosing $\psi_1\psi_2H_2$ as insertion, we see that the only contributing term on the right hand side is the first $\mathcal Y_c$ term, so we get the following equality:
+\[\langle \psi(2\psi +H),\psi H\rangle^{\PP^1|\infty,\rm{red}}_{1,(2,0),2}=2\langle \psi H,1\rangle^{\PP^1|\infty}_{0,(2,0),2}\langle\psi,1\rangle^{\rm{DRC}}_{1,(-2,2)}\]
+The next step of the recursion involves an auxiliary marking $x_3$. Knowing the insertion, the only non-trivial contributions are
+ \begin{multline*} (\psi_1+H_1)\cdot [\VZ{(1,0,1)}{\PP^1|\infty}{2}]= 2{\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1,x_3\}$} -- (0,0)node[above,align=center]{$d=2$,\\$\{x_2\}$};
+\draw (2,0) circle(2pt)[fill=black];
+\draw (0,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}+
+2{\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1,x_3\}$} -- (0,0)node[above,align=center]{$d=2$,\\ $\{x_2\}$};
+\draw (2,0) circle(2pt)[fill=white];
+\draw (0,0) circle(2pt)[fill=black];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}+\ldots
+\end{multline*}
+
+By comparing $\psi_1$ with $\psi_1^{\{3\}}$ on the left hand side, a term appears cancelling with the $\mathcal Y_a$ on the right hand side; after forgetting $x_3$, we recognise $\VZ{(2,0)}{\PP^1|\infty}{2}$ in the latter. By substituting in the above we get:
+\[\langle \psi(2\psi +H)(\psi+H),\psi H\rangle^{\PP^1|\infty,\rm{red}}_{1,(1,0),2}=2\langle \psi H,1\rangle^{\PP^1|\infty}_{0,(2,0),2}\left(\langle\psi,1\rangle^{\rm{DRC}}_{1,(-2,2)}+\langle2\psi^2,1\rangle_{1,2}\right)\]
+Finally
+\[H_1\cdot[\VZ{(0,0,1,1)}{\PP^1|\infty}{2}]={\tikz[baseline=-3pt,scale=.7]{
+\draw (2,.5) node[above]{$\{x_1,x_i\}$} -- (0,0)node[above,align=center]{$d=2$,\\$\{x_2\}$}  (2,-.5)node[above]{$\{x_{7-i}\}$} -- (0,0);
+\draw (2,.5) circle(2pt)[fill=black];
+\draw (2,-.5) circle(2pt)[fill=black];
+\draw (0,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}} (i=3,4) +\ldots\]
+from which, forgetting $\{x_3,x_4\}$ and substituting, we get:
+\[\langle \psi(2\psi +H)(\psi+H)H,\psi H\rangle^{\PP^1|\infty,\rm{red}}_{1,2,2}=2\langle \psi H,1\rangle^{\PP^1|\infty}_{0,(2,0),2}\left(\langle\psi,1\rangle^{\rm{DRC}}_{1,(-2,2)}+\langle2\psi^2,1\rangle_{1,2}\right)\]
+It is easy to see from the discussion at the end of Section \ref{sec:redinv} that the reduced invariant on the right hand side coincides with the ordinary one, since the boundary does not contribute in this case. The left hand side, as well as the genus zero relative invariant on the right hand side, can be then computed using Gathmann's software GROWI; the right hand side can be computed using the string and dilaton equations, together with the genus one DRC formula of \cite[\S 0.5.2]{JPPZ} with $A=(-2,2)$:
+\[\operatorname{DR}_1(A)=\frac{1}{2}\left(\sum_{i=1}^n a_i^2\psi_i-\sum_{I\subseteq [n],\lvert I\rvert\geq2}a_I^2\delta_I-\frac{1}{12}\xi_*[\oM_{0,n+2}]\right)\]
+where $A$ is a zero-sum $n$-tuple of integers, $a_I=\sum_{i\in I}a_i$, and $\delta_I=\delta_{0,I|1,I^c}$.
+\end{ex}
+
+It may seem hopeless to use the recursion to compute the invariants of $H$ in terms of those of $\PP^N$, because degree $d$, genus one invariants of $H$ will appear both at the $d$-th and at the $(d+1)$-st step of the recursion, but in the latter they will come mingled with a range of admissible DR conditions. Instead looking at one specific DR condition seems to be the key to success.
+\begin{ex}
+ Assume we want to compute $\psi_1^5\cdot[\VZ{1}{\PP^1}{2}]$ by thinking of $\PP^1$ as a line in $\PP^2$ and applying the recursion. There is a $4:1$ cover of $\VZ{1}{\PP^1}{2}$ by $\VZ{(0,2)}{\PP^2|H}{2}^\thicksim$, forgetting the second marking. Hence we may start from
+ \[
+ H_1\cdot[\VZ{(0,2)}{\PP^2|H}{2}]=
+ 2{\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1,x_2\}$} -- (0,0)node[above]{$d=2$};
+\draw (2,0) circle(2pt)[fill=black];
+\draw (0,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}+
+{\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above,align=center]{$d=2$,\\$\{x_1,x_2\}$};
+\draw (2,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}+\ldots
+ \]
+by multiplying both sides with $(\psi_1^{\{2\}})^5$ and rearranging we obtain:
+\[\langle \psi^5\rangle^{\PP^1,\rm{red}}_{1,1,2}=\frac{1}{4}(\psi_1^{\{2\}})^5H_1[\VZ{(0,2)}{\PP^2|H}{2}]-\frac{1}{2}\psi_1^5[\VZ{(2)}{\PP^2|H}{2}]\]
+ Applying the recursion again to the terms on the right hand side we get:
+ \begin{multline*}\frac{1}{4}(\psi_1^{\{2\}})^5H_1[\VZ{(0,2)}{\PP^2|H}{2}]=\frac{1}{4}(\psi_1^{\{2,3\}})^5H_1(\psi_2^{\{3\}}+H_2)[\VZ{(0,1,1)}{\PP^2|H}{2}]\\ -\frac{1}{4}(\psi_1^{\{2\}})^5H_1[\VZ{(1,1)}{\PP^2|H}{2}]\end{multline*}
+ \begin{multline*}-\frac{1}{2}\psi_1^5[\VZ{(2)}{\PP^2|H}{2}]=-\frac{1}{2}(\psi_1^{\{2\}})^5(\psi_1^{\{2\}}+H_1)[\VZ{(1,1)}{\PP^2|H}{2}]\\+\frac{1}{2}(\psi_1^{\{2\}})^5[\VZ{(1,1)}{\PP^2|H}{2}^\thicksim]\end{multline*}
+ Notice that the last term appearing reduces to $\frac{1}{2}\langle \psi^5\rangle^{\PP^1,\rm{red}}_{1,1,2}$; luckily the scalar factor is not the same as in the left hand side above. So we get
+ \begin{multline*}
+  \frac{1}{2}\langle \psi^5\rangle^{\PP^1,\rm{red}}_{1,1,2}=\frac{1}{4}(\psi_1^{\{2,3\}})^5H_1(\psi_2^{\{3\}}+H_2)[\VZ{(0,1,1)}{\PP^2|H}{2}] \\ -\frac{1}{4}(\psi_1^{\{2\}})^5(2\psi_1^{\{2\}}+3H_1)[\VZ{(1,1)}{\PP^2|H}{2}]
+ \end{multline*}
+After further manipulations using $\psi_1^{\{2\}}=\psi_1-D_{1,2}$ we rewrite the right hand side as:
+\[\frac{1}{4}\langle\psi^5H,(\psi+H)H\rangle^{\PP^2,\rm{red}}_{1,2,2}-\frac{1}{4}\langle\psi^4H(\psi+H)H\rangle^{\PP^2,\rm{red}}_{1,1,2}-\frac{1}{4}\langle\psi^5(2\psi+3H)H\rangle^{\PP^2,\rm{red}}_{1,1,2}\]
+According to the formulae at the end of Section \ref{sec:redinv}, the relation with ordinary invariants is the following:
+\begin{align*}
+ \langle\psi^5H,\psi H\rangle^{\PP^2,\rm{red}}_{1,2,2}&=\langle\psi^5H,\psi H\rangle^{\PP^2}_{1,2,2}+\frac{1}{24}\langle\psi^5H,\psi H,1\rangle^{\PP^2}_{0,3,2}-\langle\psi,\psi\rangle_{1,2}\langle\psi^5H,\psi H\rangle^{\PP^2}_{0,2,2}\\
+ \langle\psi^5H,H^2\rangle^{\PP^2,\rm{red}}_{1,2,2}&=\langle\psi^5H, H^2\rangle^{\PP^2}_{1,2,2}+\frac{1}{24}\langle\psi^5H, H^2,1\rangle^{\PP^2}_{0,3,2}
+\end{align*}
+\noindent etc. where the first correction terms comes from $\oM_{1,1}\times\M{0}{n+1}{\PP^2}{2}$ (with obstruction bundle $-\lambda_1$ on the first factor), and the second correction term (only relevant when computing the first of the invariants) comes from $\oM_{1,2}\times\M{0}{2}{\PP^2}{2}$. Instead $\langle \psi^5\rangle^{\PP^1,\rm{red}}_{1,1,2}=\langle \psi^5\rangle^{\PP^1}_{1,1,2}$ because $\psi$ appears to the power $5$ while on the boundary we find $\oM_{1,2}$ at most. Again the equality can be checked using GROWI.
+\end{ex}
+
+You may be worried that it was just a lucky coincidence that the integral we were interested in appeared on different sides of the equality with different coefficients, instead it seems to be a general feature.
+\begin{rmk}
+ Assume we want to compute $\langle\tau_{h_1}H^{k_1},\ldots,\tau_{h_1}H^{k_1}\rangle^{\PP^{N-1},\rm{red}}_{1,n,d}$ by writing it as $\frac{1}{d^2}(\psi_1^{\{n+1\}})^{h_1}H^{k_1}\cdots(\psi_n^{\{n+1\}})^{h_n}H^{k_n}\cdot[\VZ{(0,\ldots,0,d)}{\PP^N|H}{d}^\thicksim]$. Let me start from the recursion step $H_1\cdot[\VZ{(0,\ldots,0,d)}{\PP^N|H}{d}]=\ldots:$
+ 
+ \begin{description}
+  \item[$\mathcal Y_a$] $d{\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1,x_{n+1}\}$} -- (0,0)node[above]{$d$};
+\draw (2,0) circle(2pt)[fill=black];
+\draw (0,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}$ contributes $\frac{1}{d}\psi_1^{h_1}H^{k_1}\cdots\psi_n^{h_n}H^{k_n}\cdot[\VZ{(0,\ldots,d)}{\PP^N|H}{d}]$; if the curve configuration is this, while there is any other marking at level one, then $\fgt_{n+1}$ has positive dimensional fibers; otherwise there must be another component of positive horizontal degree (these contribution are computed inductively on $d$);
+\item[$\mathcal Y_b$] is an entirely rational story;
+\item[$\mathcal Y_c$] {\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above,align=center]{$d$,\\$\{x_1,\ldots,x_{n+1}\}$};
+\draw (2,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}} is the term we are meant to compute, while all other terms will include a DR integral of lower degree.
+ \end{description}
+ 
+
+\end{rmk}
+
+
 \bibliographystyle{alpha}
 \bibliography{the}
 
