@@ -1488,7 +1488,7 @@ You may be worried that it was just a lucky coincidence that the integral we wer
 \draw (0,0) circle(2pt)[fill=white];
 \draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
 \draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
-}}$ contributes $\frac{1}{d}\psi_1^{h_1}H^{k_1}\cdots\psi_n^{h_n}H^{k_n}\cdot[\VZ{(0,\ldots,d)}{\PP^N|H}{d}]$; if the curve configuration is this, while there is any other marking at level one, then $\fgt_{n+1}$ has positive dimensional fibers; otherwise there must be another component of positive horizontal degree (these contribution are computed inductively on $d$);
+}}$ contributes $\frac{1}{d}\psi_1^{h_1}H^{k_1}\cdots\psi_n^{h_n}H^{k_n}\cdot[\VZ{(d,\ldots,0)}{\PP^N|H}{d}]$; if the curve configuration is this, while there is any other marking at level one, then $\fgt_{n+1}$ has positive dimensional fibers; otherwise there must be another component of positive horizontal degree (these contribution are computed inductively on $d$);
 \item[$\mathcal Y_b$] is an entirely rational story;
 \item[$\mathcal Y_c$] {\tikz[baseline=-3pt,scale=.7]{
 \draw (2,0) node[above,align=center]{$d$,\\$\{x_1,\ldots,x_{n+1}\}$};
@@ -1497,9 +1497,84 @@ You may be worried that it was just a lucky coincidence that the integral we wer
 \draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
 }} is the term we are meant to compute, while all other terms will include a DR integral of lower degree.
  \end{description}
- 
-
+I shall look one step further into the recursion for computing $[\VZ{(0,\ldots,0,d)}{\PP^N|H}{d}]$: in order to see this term consider the recursion at $((d-1)\psi_{n+1}+H_{n+1})\cdot[\VZ{(0,\ldots,0,d-1,1)}{\PP^N|H}{d}]$. This produces:
+\begin{description}
+  \item[$\mathcal Y_a$] $d{\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_{n+1},x_{n+2}\}$} -- (0,0)node[above]{$d$};
+\draw (2,0) circle(2pt)[fill=black];
+\draw (0,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}$ this is the one we are after; while
+$(d-1){\tikz[baseline=-3pt,scale=.7]{
+\draw (2,.5) node[above]{$\{x_{k},x_{n+1}\}$} -- (0,0)node[above]{$d$};
+\draw (2,-.5) node[above]{$\{x_{n+2}\}$} -- (0,0);
+\draw (2,.5) circle(2pt)[fill=black];
+\draw (2,-.5) circle(2pt)[fill=black];
+\draw (0,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}$ gives lower tangency condition $[\VZ{(0,\ldots,d-1,\ldots,0)}{\PP^N|H}{d}]$; and all other terms have lower degree.
+\item[$\mathcal Y_c$] {\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above,align=center]{$d$,\\$\{x_1,\ldots,x_{n+1},x_{n+2}\}$};
+\draw (2,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}} has positive dimensional fibers for $\fgt_{n+1,n+2}$, and all other terms have lower degree.
+ \end{description}
+ Finally let's look one step further into the reduction of $[\VZ{(d,\ldots,0)}{\PP^N|H}{d}]$: we have $((d-1)\psi_1^{n+1}+H_1)\cdot[\VZ{(d-1,\ldots,0,1)}{\PP^N|H}{d}]=\ldots:$
+ \begin{description}
+  \item[$\mathcal Y_a$] ${\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_{1},x_{n+1}\}$} -- (0,0)node[above]{$d$};
+\draw (2,0) circle(2pt)[fill=black];
+\draw (0,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}$ is the one we care about;
+$(d-1){\tikz[baseline=-3pt,scale=.7]{
+\draw (2,.5) node[above]{$\{x_{k},x_{1}\}$} -- (0,0)node[above]{$d$};
+\draw (2,-.5) node[above]{$\{x_{n+1}\}$} -- (0,0);
+\draw (2,.5) circle(2pt)[fill=black];
+\draw (2,-.5) circle(2pt)[fill=black];
+\draw (0,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}}$ has lower number of markings (indeed $\psi_1^{\{n+1\}}$ and $\psi_k^{\{n+1\}}$ restrict to $0$ on this locus, and $\ev_1=\ev_k$); while all other terms have lower degree.
+\item[$\mathcal Y_c$] {\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above,align=center]{$d$,\\$\{x_1,\ldots,x_{n+1}\}$};
+\draw (2,0) circle(2pt)[fill=white];
+\draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
+\draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
+}} contributes $\frac{1}{d}\psi_1^{h_1}H^{k_1}\cdots\psi_n^{h_n}H^{k_n}\cdot[\VZ{(0,\ldots,0,d)}{\PP^N|H}{d}^\thicksim]$ so \emph{there is no cancellation}, while all other terms have lower degree.
+ \end{description}
+ To sum up, it is possible to determine the reduced genus one restricted invariants of $H$ in terms of those of $\PP^N$ and the genus zero theory, by induction on the degree, number of markings, and total tangency order.
 \end{rmk}
+The last example is meant to show the factorisation condition in action.
+\begin{ex}
+ Let me apply the recursion at $x_1$ on $\VZ{(2,0)}{\PP^2|H}{2}$ with insertion $\psi_1\psi_2^2H_2^2$. The only surviving boundary term is of type $\mathcal Y^c_0$ and it is isomorphic to $2\oM^{DRC}_{1,(-2,2)}\times\M{0}{(0,2)}{\PP^2|H}{2}^{\rm{ramif}}$ with $x_1$ sitting in the first factor, and $x_2$ in the second. In this case the factorisation condition is simply asking that the genus zero map is ramified at the second marking: since we already know that $\operatorname{d}\! f_q\colon T_{C,q}\to N_{H/\PP^2,f(q)}$ vanishes, it is enough to require that $\operatorname{d}\! f_q\colon T_{C,q}\to T_{H,f(q)}$ also does. This is the tautological class $\psi_q+2H_q$. Summing up we have:
+ \[\langle\psi\rangle^{DRC}_{1,(-2,2)}\langle\psi^2H^2,\psi+2H\rangle^{\PP^2|H}_{0,(0,2),2}=\langle\psi(2\psi+H),\psi^2H^2\rangle^{\PP^2|H,\rm{red}}_{1,(2,0),2}\]
+ Applying the recursion twice more we may rewrite the right hand side as
+ \[\langle\psi(2\psi+H)(\psi+H)H,\psi^2H^2\rangle^{\PP^2,\rm{red}}_{1,2,2}-2\langle2\psi^2\rangle_{1,2}\langle\psi^2H^2,\psi+2H\rangle^{\PP^2|H}_{0,(0,2),2}\]
+ Finally
+\begin{multline*}
+ \langle\psi(2\psi+H)(\psi+H)H,\psi^2H^2\rangle^{\PP^2,\rm{red}}_{1,2,2}=\langle\psi(2\psi+H)(\psi+H)H,\psi^2H^2\rangle^{\PP^2}_{1,2,2}+\\ \frac{1}{24}\langle1,\psi(2\psi+H)(\psi+H)H,\psi^2H^2\rangle^{\PP^2}_{0,3,2}-\frac{3}{24}\langle\psi H^2,\psi^2H^2\rangle^{\PP^2}_{0,2,2}+\\
+ -\frac{1}{24}\langle\psi H(3\psi H+2\psi^2),\psi H^2\rangle^{\PP^2}_{0,2,2}
+\end{multline*}
+where the last three terms are the boundary corrections \[{\tikz[baseline=-3pt]{
+\draw (0,0)node[above left]{$\psi-2\lambda_1$} -- (1,0)node[above right]{$\{x_1,x_2\}$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}+ {\tikz[baseline=-3pt]{
+\draw (0,0)node[below]{$x_1$} -- node[above right]{$\psi$}(1,0)node[below]{$x_2$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}+ {\tikz[baseline=-3pt]{
+\draw (0,0)node[below]{$x_2$} -- node[above right]{$\psi$}(1,0)node[below]{$x_1$};
+\draw (0,0) circle(2pt)[fill=white];
+\fill (1,0) circle (2pt)}
+}
+\]
+\end{ex}
 
 
 \bibliographystyle{alpha}
