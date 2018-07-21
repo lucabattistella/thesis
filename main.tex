@@ -29,7 +29,6 @@
 \usepackage{mathtools}
 \usepackage{mathrsfs}
 \usepackage[alphabetic,initials]{amsrefs}
-%\usepackage{amsrefs}
 
 %\usepackage{fix-cm}
 %\usepackage{caption}
@@ -56,8 +55,8 @@
 \fancyhead[CO]{\small  \raggedright \nouppercase{\rightmark}}
 %\scshape
 
-\fancypagestyle{plain}{%
-\fancyhf{}\fancyfoot[C]{\small \thepage}} %modifica lo stile plain che e' quello dell'apertura dei capitoli
+%\fancypagestyle{plain}{%
+%\fancyhf{}\fancyfoot[C]{\small \thepage}} %modifica lo stile plain che e' quello dell'apertura dei capitoli
 
 
 %dobbiamo dirgli di fare la pagina bianca, senza intestazioni quando finisce un capitolo
@@ -74,22 +73,25 @@
 %%%%%%%%%%%%%%%%
 %controllo dei titoli
 \usepackage{titlesec}
+\titleformat{\section}[block]{\normalfont\large\bfseries}{\S\ \thesection.}{1em}{}[]
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thetitle.}{.5em}{}[.]
+%\titlelabel{\thetitle. } %etichetta prima del nome del titolo. \thetitle dovrebbe essere il numero
 
-\titlelabel{\thetitle. } %etichetta prima del nome del titolo. \thetitle dovrebbe essere il numero
+%CHAPTER
 
+\usepackage[Glenn]{fncychap}
+%\newcommand{\chapnumfont}{%     % define font for chapter number
+%  \usefont{T1}{pnc}{b}{n}%      % choose New Chancery, bold, normal shape
+%  \fontsize{100}{100}%          % font size 100pt, baselineskip 100pt
+%  \selectfont%                  % activate font
+%}
+%\colorlet{chapnumcol}{gray!75}  % color for chapter number
 
-\newcommand{\chapnumfont}{%     % define font for chapter number
-  \usefont{T1}{pnc}{b}{n}%      % choose New Chancery, bold, normal shape
-  \fontsize{100}{100}%          % font size 100pt, baselineskip 100pt
-  \selectfont%                  % activate font
-}
-\colorlet{chapnumcol}{gray!75}  % color for chapter number
-
-\titleformat{\chapter}[display]
-{\filleft\bfseries}
-{\filleft\chapnumfont\textcolor{chapnumcol}{\thechapter}}
-{-24pt}
-{\Huge}
+%\titleformat{\chapter}[display]
+%{\filleft\bfseries}
+%{\filleft\chapnumfont\textcolor{chapnumcol}{\thechapter}}
+%{-24pt}
+%{\Huge}
 
 
 
