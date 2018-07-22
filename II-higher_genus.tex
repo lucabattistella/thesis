@@ -136,7 +136,7 @@ Summing up we obtain the following:
 Notice that this differs from Li-Zinger's original formula by the contribution of the markings (which is not of interest in the CY3 case). An alternative approach would be to compare every boundary component to its genus zero relative by virtual pushforward: if we are only interested in primary insertions, notice that the components of $D^1$ such that more than one marking dwells on the elliptic curve will not contribute, since the excess bundle has rank two.
 
 \section{Maps from curve singularities}\label{sec:singularities}
-A different approach to reducing the complexity of $\M{1}{n}{\PP^N}{d}$ is the one followed by M. Viscardi in \cite{VISC}, building on work of D.I. Smyth on the minimal model program for $\oM_{1,n}$ \cite{SMY1}. Rather than blowing up and desingularising the main component, the idea is to collapse a number of boundary components, filling in their intersection with main and the boundary components of smaller dimension. Vakil's description of the smoothable elements of $\M{1}{n}{\PP^N}{d}$ (see Proposition \ref{prop:components}(2)) suggests to do so by allowing maps from more singular (than nodal) curves, and simultaneously making their semistable models unstable, in order to preserve the separatedness of the moduli space.
+A different approach to reduce the complexity of $\M{1}{n}{\PP^N}{d}$ is the one followed by M. Viscardi in \cite{VISC}, building on work of D.I. Smyth on the minimal model program for $\oM_{1,n}$ \cite{SMY1}. Rather than blowing up and desingularising the main component, the idea is to collapse a number of boundary components, filling in their intersection with \emph{main} and the boundary components of smaller dimension. Vakil's description of the smoothable elements of $\M{1}{n}{\PP^N}{d}$ (see Proposition \ref{prop:components}(2)) suggests to do so by allowing maps from more singular (than nodal) curves, and simultaneously making their semistable models unstable, in order to preserve the separatedness of the moduli space.
 
 The easiest example is the following: the cusp
 \[\kk[\![x,y]\!]/(y^2-x^3)\]
@@ -145,24 +145,24 @@ is the only unibranch singularity of genus one (meaning that there exists a flat
  The moduli space of $1$-stable maps $\Mone{n}{X}{\beta}$ parametrises $f\colon (C,\mathbf p)\to X$ such that
  \begin{enumerate}
   \item $C$ is an at worst cuspidal, projective curve of arithmetic genus one, and $\mathbf p$ is an $n$-tuple of smooth and disjoint sections of $C$;
-  \item if $C_0$ is a minimal connected subcurve of $C$ contracted by $f$, the number of markings on $C_0$ added to the number of intersections of $C_0$ with $\overline{C\setminus C_0}$ is at least $3$ if $p_a(C)=0$ and \emph{at least $2$} if $p_a(C)=1$;
+  \item if $C_0$ is a minimal subcurve of $C$ contracted by $f$, the number of markings on $C_0$ added to the number of intersections of $C_0$ with $\overline{C\setminus C_0}$ is at least $3$ if $p_a(C_0)=0$, and \emph{at least $2$} if $p_a(C_0)=1$;
   \item $f_*[C]=\beta\in H^+_2(X)$ and $\Aut(C,f)$ is finite.
  \end{enumerate}
 \end{dfn}
 \begin{lemma}
  $\Mone{n}{X}{\beta}$ is a proper DM stack of finite type over $\kk$.
 \end{lemma}
-For example $\oM^{(1)}_1(\PP^2,3)$ only has two irreducible components, since there is no $D^1$ anymore. Yet the intersection of $D^1$ with main and with $D^2$ has been filled in with maps from cuspidal curves. This is the main instance of Smyth-Viscardi's spaces that I am going to be concerned with, but there is a well-developed theory which I shall quickly review here.
+For example $\oM^{(1)}_1(\PP^2,3)$ only has two irreducible components, since there is no $D^1$ anymore. The intersection of $D^1$ with \emph{main} and with $D^2$ has been filled in with maps from cuspidal curves. This is the main instance of Smyth-Viscardi's spaces that I am going to be concerned with, but there is a well-developed theory which I shall quickly review here.
 \subsection{Gorenstein singularities of genus one and $1$-stabilisation}
 \begin{dfn}\label{def:genus}
- Let $(C,p)$ be the germ of a curve singularity, with normalisation $\nu\colon\tilde{C}\to C$. Let me denote by $m$ the number of branches of $C$ at $p$ (i.e. irreducible components of $\tilde{C}$) and by $\delta=\dim_{\kk}(\nu_*\OO_{\tilde{C}}/\OO_C)$. The \emph{genus} of $(C,p)$ is defined by \[g=\delta-m+1.\]
+ Let $(C,p)$ be the germ of a curve singularity, with normalisation $\nu\colon\widetilde{C}\to C$. Let me denote by $m$ the number of branches of $C$ at $p$ (i.e. irreducible components of $\widetilde{C}$) and by $\delta=\dim_{\kk}(\nu_*\OO_{\widetilde{C}}/\OO_C)$. The \emph{genus} of $(C,p)$ is defined by \[g=\delta-m+1.\]
 \end{dfn}
 \begin{prop}\cite[Proposition A.3]{SMY1}
  There is up to isomorphism only one germ of Gorenstein curve singularity $(C,p)$ of genus one with $m$ branches, namely
  \[\hat\OO_{C,p}\simeq\begin{cases} \kk[\![x,y]\!]/(y^2-x^3) & \text{(cusp) if } m=1, \\ \kk[\![x,y]\!]/y(y-x^2) &  \text{(tacnode) if } m=2,\end{cases}\]
  and the germ of $m$ generic lines through the origin in $\Aaff^{m-1}$ for $m\geq 3$. It is called the \emph{elliptic $m$-fold point}.
 \end{prop}
-All these singularities are smoothable (see the proof of \cite[Theorem 3.8]{SMY1}). Smyth studied their semistable models: pick a smoothing $\bar{\mathcal C}$ of the $m$-fold elliptic point and consider its semistable model with \emph{regular} total space $\tilde{\mathcal C}$; let $(E,q_1,\ldots,q_m)$ be the exceptional locus of the contraction (the fiber over the $m$-fold elliptic point) marked with its intersection with the rest of the curve ($m$ rational trees). Call a semistable genus one curve $(E,q_1,\ldots,q_m)$ a \emph{semistable tail} if it arises in this way. Smyth shows \cite[Proposition 2.12]{SMY1} that semistable tails can be characterised combinatorially as those curves such that the distance (on the dual graph) from $q_i$ to the core of $E$ is constant for all $i=1,\ldots,m$ (\emph{balancing condition}). The idea is that $\bar{\mathcal C}$ is a normal surface, and it is Gorenstein if and only if the central fiber is. In this case, denoting by $\phi\colon \tilde{\mathcal C}\to\bar{\mathcal C}$ the contraction, $\phi^*\omega_{\bar{\mathcal C}}=\omega_{\tilde{\mathcal C}}(D)$ for some divisor $D$ supported on the exceptional locus $E$ and such that $\omega_{\tilde{\mathcal C}}(D)_{|E}\simeq\OO_E$; we can find appropriate weights on the components of $E$ such that this holds precisely in the balanced case. On the other hand, if balancing holds, we may contract $E$ by applying the Proj construction to $\omega_{\tilde{\mathcal C}}(D)$ (possibly twisted by some horizontal divisor away from $E$) as above, and then show that the resulting $\bar{\mathcal C}$ is Gorenstein by relating its dualising sheaf to the $\OO_{\bar{\mathcal C}}(1)$ given by the Proj construction. The Smyth's singularity one gets when contracting a balanced curve is determined by the number of rational trees attached to it,  which is exactly the number of branches of the singularity. These singularities have no moduli (on the other hand the global configuration of the curve may have moduli, i.e. the positioning of special points). This discussion indicates what are the stable curves/maps that we should make unstable in order to keep the moduli space separated. Before passing to maps, let me make a few remarks.
+All these singularities are smoothable (see the proof of \cite[Theorem 3.8]{SMY1}). Smyth studied their semistable models: pick a smoothing $\overline{\mathcal C}$ of the $m$-fold elliptic point and consider its semistable model with \emph{regular} total space $\widetilde{\mathcal C}$; let $(E,q_1,\ldots,q_m)$ be the exceptional locus of the contraction (the fiber over the $m$-fold elliptic point) marked with its intersection with the rest of the curve ($m$ rational trees). Call a semistable genus one curve $(E,q_1,\ldots,q_m)$ a \emph{semistable tail} if it arises in this way. Smyth shows \cite[Proposition 2.12]{SMY1} that semistable tails can be characterised combinatorially as those curves such that the distance (on the dual graph) from $q_i$ to the core of $E$ is constant for all $i=1,\ldots,m$ (\emph{balancing condition}). The idea is that $\overline{\mathcal C}$ is a normal surface, and it is Gorenstein if and only if the central fiber is. In this case, denoting by $\phi\colon \widetilde{\mathcal C}\to\overline{\mathcal C}$ the contraction, $\phi^*\omega_{\overline{\mathcal C}}=\omega_{\widetilde{\mathcal C}}(D)$ for some divisor $D$ supported on the exceptional locus $E$ and such that $\omega_{\widetilde{\mathcal C}}(D)_{|E}\simeq\OO_E$; we can find appropriate weights on the components of $E$ such that this holds precisely in the balanced case. On the other hand, if balancing holds, we may contract $E$ by applying the Proj construction to $\omega_{\widetilde{\mathcal C}}(D)$ (possibly twisted by some horizontal divisor away from $E$) as above, and then show that the resulting $\overline{\mathcal C}$ is Gorenstein by relating its dualising sheaf to the $\OO_{\overline{\mathcal C}}(1)$ given by the Proj construction. The Smyth's singularity one gets when contracting a balanced curve is determined by the number of rational trees attached to it,  which is exactly the number of branches of the singularity. These singularities have no moduli (on the other hand the global configuration of the curve may have moduli, i.e. the positioning of special points). This discussion indicates what are the stable curves/maps that we should make unstable in order to keep the moduli space separated. Before passing to maps, let me make a few remarks.
 
 \begin{rmk}
  It is well known that the cusp is obtained by collapsing the double point in $\PP^1$, i.e. it is the pushout of the following diagram:
@@ -170,10 +170,10 @@ All these singularities are smoothable (see the proof of \cite[Theorem 3.8]{SMY1
  \Spec k[\epsilon]\ar[r]\ar[d]\ar[dr,phantom,"\lrcorner"] & \Spec k\ar[d] \\
  (\PP^1,0)\ar[r] & (\overline C, \bar 0)
  \ecd
- In fact a similar statement is true for every elliptic $m$-fold, which is the collapsing of a generic tangent vector at the \emph{rational} $m$-fold. At the level of algebra, this boils down to the statement that $\widehat\OO_{\overline C,\bar 0}= R\times_{k[\epsilon]} k$, where $R\subseteq \kk[\![t_1]\!]\oplus\ldots\oplus \kk[\![t_m]\!]$ is the subalgebra $\{(p_1,\ldots,p_m):\ p_1(0)=\ldots=p_m(0)\}$ and the map $R\to \kk[\epsilon]$ sends $(p_1,\ldots,p_m)$ to $\epsilon\sum_{i=1}^m p_i^\prime(0)$.
+ where the vertical arrow on the left is any but the zero tangent vector. In fact a similar statement is true for every elliptic $m$-fold, which is the collapsing of a generic tangent vector at the \emph{rational} $m$-fold. At the level of algebra, this boils down to the statement that $\widehat\OO_{\overline C,\bar 0}= R\times_{k[\epsilon]} k$, where $R\subseteq \kk[\![t_1]\!]\oplus\ldots\oplus \kk[\![t_m]\!]$ is the subalgebra $\{(p_1,\ldots,p_m):\ p_1(0)=\ldots=p_m(0)\}$ and the map $R\to \kk[\epsilon]$ sends $(p_1,\ldots,p_m)$ to $\epsilon\sum_{i=1}^m p_i^\prime(0)$.
 \end{rmk}
 
-I will record here a useful fact for the study of maps to $\PP^N$ that descend to a Smyth's singularity. Observe that, if $\nu\colon (C,0)\to (\overline{C},\bar{0})$ is the semi-normalisation of a Gorenstein genus one singularity (i.e. $(C,0)$ is a \emph{rational} $m$-fold point, or the pushout of a point in $m$ copies of $\PP^1$). Then $\nu^*\colon \Pic^{(d_1,\ldots,d_m)}(\overline{C})\to \{\OO_{C}(d_1,\ldots,d_m)\}$ has kernel isomorphic to $\mathbb G_a$. On the other hand the pullback of sections of a line bundle $\mathcal L$ on $\overline{C}$ gives a hyperplane in $H^0(C,\OO_{C}(d_1,\ldots,d_m))$ by Riemann-Roch.
+I will record here a useful fact for the study of maps to $\PP^N$ that descend to a Smyth's singularity. Observe that, if $\nu\colon (C,0)\to (\overline{C},\bar{0})$ is the semi-normalisation of a Gorenstein genus one singularity (i.e. $(C,0)$ is a \emph{rational} $m$-fold point, or the pushout of a point in $m$ copies of $\PP^1$), then $\nu^*\colon \Pic^{(d_1,\ldots,d_m)}(\overline{C})\to \{\OO_{C}(d_1,\ldots,d_m)\}$ has kernel isomorphic to $\mathbb G_a$. On the other hand the pullback of sections of a line bundle $\mathcal L$ of non-negative multidegree on $\overline{C}$ gives a hyperplane in $H^0(C,\OO_{C}(d_1,\ldots,d_m))$ by Riemann-Roch.
 \begin{lemma}\label{lem:fundamental}
  Two sections $s$ and $t$ of $H^0(C,\OO_{C}(d_1,\ldots,d_m))$ descend to the same line bundle $\mathcal L$ on $\overline{C}$ if and only if they satisfy: \begin{equation}\label{eq:descending}s(0)\sum_{i=1}^m t_i^\prime(0)=t(0)\sum_{i=1}^m s_i^\prime(0).\end{equation}
 \end{lemma}
@@ -236,13 +236,13 @@ I will record here a useful fact for the study of maps to $\PP^N$ that descend t
 \end{tikzpicture}
 \caption{Two different plausible $3$-stabilisations.}
 \end{figure}
-this curve is not $3$-stable. We could contract the maximal unpointed subcurve of genus one, but it is not balanced; on the other hand, say we could consistently contract the minimal genus one subcurve: by smoothing the node $q$ and doing so, we would get a family of $3$-fold elliptic points specialising to the tacnode, which can be excluded by studying the miniversal deformation of the latter. This problem is studied in \cite[\S 4.1]{SMY2}. \end{rmk}
+the curve on the left is not $3$-stable. We could contract the maximal unpointed subcurve of genus one, but it is not balanced; on the other hand, say we could consistently contract the minimal genus one subcurve: by smoothing the node $q$ and doing so, we would get a family of $3$-fold elliptic points specialising to the tacnode, which can be excluded by studying the miniversal deformation of the latter. This problem is studied in \cite[\S 4.1]{SMY2}. \end{rmk}
 I will discuss a specific variation on this \cite[Theorem 4.4]{BCM} that I am going to need later. Recall that $\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}$ is the open and bounded substack within the Artin stack of prestable curves with a weight assignment, defined by the conditions that the total weight is $d$ and the curve is weighted-stable; similarly $\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}(1)$ is the stack of weighted $1$-stable (at worst cuspidal) curves.
 \begin{prop}\label{prop:1-stab}
 There exists a morphism $\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}\to\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}(1)$ which extends the identity on the smooth locus.
 \end{prop}
 
-The proof is inspired by \cite[\S2]{HassettHyeon} and \cite[\S3.7]{RSPW}. We construct the contraction over $\MM_1^{\rm{div}}$ (the moduli space of nodal curves of genus one with a simple smooth divisor of total degree $d$ that makes them weighted-stable) first, and then show that it descends to $\MM_1^{\rm{wt,st}}$. We do so in order to have a natural polarisation.
+The proof is inspired by \cite[\S2]{HassettHyeon} and \cite[\S3.7]{RSPW}. We construct the contraction over $\MM_1^{\rm{div}}$ (the moduli space of nodal curves of genus one with a simple smooth divisor of total degree $d$ that makes them weighted-stable) first, and then show that it descends to $\MM_1^{\rm{wt,st}}$. We work on $\MM_1^{\rm{div}}$ in order to have a natural polarisation.
 
 Let $\pazocal E$ be the locus inside the universal curve over $\MM^{\rm{wt,st}}_1$ spanned by elliptic tails of weight $0$; this is a Cartier divisor, and abusing notation I will denote by $\pazocal E$ all its pullbacks. Moreover let $\mathfrak D^1$ be its image in $\MM^{\rm{wt,st}}_1$, which is a Cartier divisor as well.
 
@@ -339,25 +339,27 @@ This concludes the proof of Proposition \ref{prop:1-stab}.
                                                                                                                                      \end{enumerate}
 
 \end{dfn}
-The usual Behrend-Fantechi's construction \cite[Proposition 6.2]{BF} endows $\oM^{(m)}_{1,n}(X,\beta)$ of the usual dimension. Setting $m=0$ recovers the usual space of Kontsevich's stable maps.
+The usual Behrend-Fantechi's construction \cite[Proposition 6.2]{BF} endows $\oM^{(m)}_{1,n}(X,\beta)$ with a virtual class of the usual dimension. Setting $m=0$ recovers the usual space of Kontsevich's stable maps.
 
 \begin{prop}\cite[Theorem 3.6]{VISC}
  $\oM^{(m)}_{1,n}(X,\beta)$ is a proper DM stack of finite type over $\kk$.
 \end{prop}
-Checking the valuative criterion for properness goes as follows: assume the generic fiber is smooth (in general we may work componentwise on the generic fiber); we may first complete the family over $\dvr$ as an ordinary stable map. If $f$ contracts the core and it does not satisfy $m$-stability, we can make it into doing so by a sequence of operations: alternate between contracting the core to a Smyth's singularity and \emph{sprouting}, i.e. blowing up at markings or nodes along the core. Notice that more sprouting may be required in order for the map to descend to the singularity (see \cite[Remark 2.6]{BCM}). As anticipated, Viscardi's moduli space of $m$-stable maps to $\PP^N$ ``collapses'' the boundary components $D^k_1(\PP^N,d)$ for $k\leq m$ (the pointed case is subtler, as usual), hence the following result \cite[Corollary 5.10]{VISC}.
+Checking the valuative criterion for properness goes as follows: assume the generic fiber is smooth (in general we may work componentwise on the generic fiber); we may first complete the family over $\dvr$ as an ordinary stable map. If $f$ contracts the core and it does not satisfy $m$-stability, we can make it into doing so by a sequence of operations: alternate between contracting the core to a Smyth's singularity and \emph{sprouting}, i.e. blowing up at markings or nodes along the core. Notice that more sprouting may be required in order for the map to descend to the singularity (see \cite[Remark 2.6]{BCM}).
+
+As anticipated, Viscardi's moduli space of $m$-stable maps to $\PP^N$ ``collapses'' the boundary components $D^k_1(\PP^N,d)$ for $k\leq m$ (the pointed case is subtler, as usual), hence the following result \cite[Corollary 5.10]{VISC}.
 \begin{prop}
  There exists an $m_0=m_0(d,n)$ such that, for $m\geq m_0$, $\oM^{(m)}_{1,n}(\PP^N,d)$ is irreducible.
 \end{prop}
-\subsection{Aligned log structures and factorisation} Finally, I would like to discuss how these two lines of thought (Li-Vakil-Zinger desingularisation and reduced invariants, compared to Smyth-Viscardi alternative compactifications) are not unrelated. A main issue with the Vakil-Zinger desingularisation is that the iterated blow-up procedure makes the modular interpretation of the resulting space not immediately clear. This has been fixed recently by D. Ranganathan, K. Santos-Parker and J. Wise with the introduction of the notion of an \emph{aligned} log curve. Recall the description of log smooth curves, due to F. Kato \cite{KatoF}, and the parallel with marked prestable curves. Let us work over a geometric point $S=\Spec(\kk=\bar\kk)$. In the genus one case, we can modify the usual dual graph construction by collapsing all the vertices corresponding to components of the core (in case the latter is a circle of $\PP^1$) to one vertex, called the \emph{circuit} and denoted by $\circ$. Define an $\oM_S$-valued function on the dual graph $\Gamma(C)$ by \[\lambda(v)=\sum_{e\in[\circ,v]}\rho_e,\] i.e. by associating to a vertex/component the sum of all the smoothing parameters of the edges/nodes separating it from the circuit.
+\subsection{Aligned log structures and factorisation} Finally, I would like to discuss how these two lines of thought (Li-Vakil-Zinger's desingularisation and reduced invariants, compared to Smyth-Viscardi's alternative compactifications) are not unrelated. A main issue with the Vakil-Zinger desingularisation is that the iterated blow-up procedure makes the modular interpretation of the resulting space not so immediately clear. This has been recently fixed by D. Ranganathan, K. Santos-Parker and J. Wise with the introduction of the notion of an \emph{aligned} log curve. Recall the description of log smooth curves, due to F. Kato \cite{KatoF}, and the parallel with marked prestable curves. Let us work over a geometric point $S=\Spec(\kk=\bar\kk)$, and assume we have a log smooth curve of genus one $(C,\mathcal M_C)\to(S,\mathcal M_S)$. We can modify the usual dual graph construction by collapsing all the vertices corresponding to components of the core (in case the latter is a circle of $\PP^1$) to one vertex, called the \emph{circuit} and denoted by $\circ$. Define a piecewise-linear $\oM_S$-valued function on the dual graph $\Gamma(C)$ by \[\lambda(v)=\sum_{e\in[\circ,v]}\rho_e,\] i.e. by associating to a vertex/component the sum of all the smoothing parameters of the edges/nodes separating it from the circuit.
 \begin{dfn}
- Let $S$ be a log scheme and $C\to S$ a family of log smooth curves of genus one. We say that $C$ is \emph{radially aligned} if for every geometric point $s\in S$ the values of $\lambda(v)$ are \emph{comparable} in $\oM_{S,s}$ for every vertex $v$ of $\Gamma(C_s)$.
+ Let $S$ be a log scheme and $C\to S$ a family of log smooth curves of genus one. We say that $C$ is \emph{radially aligned} if for every geometric point $s\in S$ the values of $\lambda(v)$ are \emph{comparable} in $\oM_{S,s}$ for every vertex $v$ of $\Gamma(C_s)$, with respect to the partial order $m_1\leq m_2$ if there is $m_{1-2}\in\oM_{S,s}$ such that $m_1+m_{1-2}=m_2$.
 \end{dfn}
 There exist \emph{minimal} radially aligned log structures, hence the moduli problem over $(LogSch)$ is the enhancement of a moduli stack over $(Sch)$ endowed with a log structure, after work of D. Gillam \cite{Gillam}. At this level
 \[\MM^{\mathrm{rad}}_{1,n}\to\MM_{1,n}\]
 is a log modification, due to the key observation that a log blow-up along a log ideal $K$ determines on every one of its charts a minimal element among the generators of $K$, hence a sequence of log blow-ups will serve the goal of ordering a collection of sections of $\oM_S$ \cite[Lemma 3.36]{Kelithesis}. Pictorially, it corresponds to a subdivision of the dual minimal monoid (see \cite[\S 3.3-3.4]{RSPW}). On the other hand, for every \emph{stable} radially aligned curve over a geometric point $S$, and for every integer $m\geq0$, we may find a section $\delta_m$ of $\oM_S$ such that $\delta_m=\lambda(v)$ for some vertex of $\Gamma(C)$, and the circle of radius $\delta_m$ has inner valence less than $m$ and outer valence strictly larger than $m$. $\delta_m$ behaves well under specialisation/generisation, by semicontinuity of the inner and outer valence \cite[Proposition 3.5.2]{RSPW}, hence it can be defined over any base. The power of log structures is two-fold at this point:
 \begin{enumerate}
  \item it produces a log-modification $\widetilde{C}\to C$ by subdividing the edges where they meet the circle of radius $\delta_m$ (i.e. blowing up some nodes and markings on the components with $\lambda(v)<\delta_m$) \cite[Proposition 3.6.1]{RSPW};
- \item by combining $\lambda$ and $\delta_m$, it produces a $\tilde{\pi}$-semiample line bundle on $\widetilde{C}$, the morphism associated to which contracts the strict interior of the circle of radius $\delta_m$, producing a diagram as follows, with $\bar{\pi}\colon\overline{C}\to S$ an $m$-stable Smyth's curve \cite[Proposition 3.7.3.1]{RSPW}.
+ \item by combining $\lambda$ and $\delta_m$, it produces a $\tilde{\pi}$-semiample line bundle on $\widetilde{C}$, the morphism associated to which contracts the strict interior of the circle of radius $\delta_m$, producing a diagram, with $\bar{\pi}\colon\overline{C}\to S$ an $m$-stable Smyth's curve \cite[Proposition 3.7.3.1]{RSPW}:
  \bcd[cramped]
  & \widetilde{C}\ar[dl]\ar[dr] & \\
  C\ar[dr,"\pi"] & & \overline{C}\ar[dl,"\bar{\pi}"] \\
@@ -372,11 +374,11 @@ This construction in the stable case provides a resolution of indeterminacy of t
 & \oM_{1,n}^{\mathrm{rad}}\ar[dr]\ar[dl] & \\
 \oM_{1,n} \ar[rr,dashed] & & \oM_{1,n}^{(m)}
 \ecd
-More to the point, there is an important extension of this construction to the realm of maps.
+More to the point, there is an extension of this construction to the realm of maps.
 \begin{dfn}
- A \emph{centrally aligned map} $f\colon(C,\mathbf p)\to X$ over $S$ is a log morphism (where $X$ has the trivial log structure) with a section $\delta_0$ of $\oM_S$, such that $\delta_0=\lambda(v)$ for $v$ of minimal distance to the circuit among the non-contracted components, $\lambda(w)$ is comparable with $\delta_0$ for every $w$, and the $\lambda(w)$ are comparable with one another whenever they are less than $\delta_0$.
+ A \emph{centrally aligned map} $f\colon(C,\mathbf p)\to X$ over $S$ is a log morphism (where $X$ has the trivial log structure) with a section $\delta_0$ of $\oM_S$, such that $\delta_0=\lambda(v)$ for $v$ of minimal distance to the circuit among the non-contracted components, $\lambda(w)$ is comparable with $\delta_0$ for every $w$, and the $\lambda(w)$ are comparable with one another whenever they are smaller than $\delta_0$.
 \end{dfn}
-The section $\delta_0$ together with $\lambda$ defines a modification $\widetilde{C}$ and a contraction to $\overline{C}$ with a Smyth's singularity as aboce.
+The section $\delta_0$ together with $\lambda$ defines a modification $\widetilde{C}$ and a contraction to $\overline{C}$ with a Smyth's singularity as above.
 \begin{dfn}
  A centrally aligned map satisfies the \emph{factorisation property} if its pullback to $\widetilde{C}$ descends to $\overline{C}$:
  \bcd[cramped]
@@ -388,12 +390,12 @@ The section $\delta_0$ together with $\lambda$ defines a modification $\widetild
 \begin{thm}\cite[Theorems 4.6.3.2 and 4.5.1]{RSPW}
  The moduli space of centrally aligned maps to projective space is isomorphic to the Vakil-Zinger blow-up. The factorisation property identifies the main component.
 \end{thm}
-Notice that by construction $\bar{f}$ is non-constant on at least one branch of the core. For every Gorenstein curve of genus one with no separating nodes, the dualising sheaf is trivial \cite[Lemma 3.3]{SMY1}. Therefore $H^1(\overline{C},\bar{f}^*\OO_{\PP^N}(1))=0$ by Serre duality, and the projection to $\MM^{\mathrm{cen}}$ is unobstructed (a perfect obstruction theory is given by $\R\bar{\pi}_*\bar{f}^*T_{\PP^N}$), so every element satisfying factorisation is smoothable; on the other hand factorisation is a closed condition \cite[Theorem 4.3]{RSPW}. This proves the second claim above.
+Notice that by construction $\bar{f}$ is non-constant on at least one branch of the core. For every Gorenstein curve of genus one with no separating nodes, the dualising sheaf is trivial \cite[Lemma 3.3]{SMY1}. Therefore $H^1(\overline{C},\bar{f}^*\OO_{\PP^N}(1))=0$ by Serre duality, and the projection to $\MM^{\mathrm{cen}}_{1,n}$ is unobstructed (a perfect obstruction theory is given by $\R\bar{\pi}_*\bar{f}^*T_{\PP^N}$), so every element satisfying factorisation is smoothable; on the other hand factorisation is a closed condition \cite[Theorem 4.3]{RSPW}. This proves the second claim.
 
 \begin{rmk}
- From the discussion above we see that the construction in \cite{RSPW} might be suitable to extend the definition of reduced invariants to a larger class of varieties than projective complete intersections. It would be enough that $\VZ{n}{X}{\beta}$ is irreducible and $Y\subseteq X$ is such that $N_{Y/X}$ is an ample vector bundle, so that $\operatorname R^1\bar{\pi}_*\bar{f}^*N_{Y/X}=0$ and the inclusion $\VZ{n}{Y}{\beta}\hookrightarrow\VZ{n}{X}{\beta}$ admits a perfect obstruction theory. On the other hand if we want to prove that $\VZ{n}{X}{\beta}$ is smooth following in the steps above, we need $T_X$ ample, which is quite a restrictive condition (the only smooth variety with ample tangent bundle is the projective space, by a theorem of Mori \cite{Mori}, on the other hand it could be possible e.g. to extend to the orbifold theory of weighted projective spaces).
+ From the discussion above we see that the construction in \cite{RSPW} might be suitable to extend the definition of reduced invariants to a larger class of varieties than projective complete intersections. It is enough that $\VZ{n}{X}{\beta}$ is irreducible and $Y\subseteq X$ is such that $N_{Y/X}$ is an ample vector bundle, so that $\operatorname R^1\bar{\pi}_*\bar{f}^*N_{Y/X}=0$ and the inclusion $\VZ{n}{Y}{\beta}\hookrightarrow\VZ{n}{X}{\beta}$ admits a perfect obstruction theory. On the other hand if we want to prove that $\VZ{n}{X}{\beta}$ is smooth following in the steps above, we need $T_X$ ample, which is quite a restrictive condition (the only smooth variety with ample tangent bundle is the projective space, by a theorem of Mori \cite{Mori}, on the other hand it could be possible e.g. to extend to the orbifold theory of weighted projective spaces).
 \end{rmk}
-\subsection{Reduced vs cuspidal invariants} In the next section I am going to discuss a result that I have obtained with F. Carocci and C. Manolache, which illustrates the relation between the Li-Vakil-Zinger's and the Smyth-Viscardi's projects under a slightly different light: namely, the idea is that the reduced invariants may be recovered as $m$-stable invariants, when $m$ is big enough that all the boundary components contributing non-trivially to the right hand side of the Li-Zinger's formula have been deleted. We demonstrate this principle in the case of the quintic threefold, for which only $D^1$ matters, so that it is enough to allow maps from cuspidal curves.
+\subsection{Reduced vs cuspidal invariants} In the next section I am going to discuss a result that I have obtained with F. Carocci and C. Manolache, which illustrates the relation between the Li-Vakil-Zinger's and the Smyth-Viscardi's projects under a slightly different light: namely, the idea is that the reduced invariants may be recovered as $m$-stable invariants, whenever $m$ is big enough that all the boundary components contributing non-trivially to the right hand side of the Li-Zinger's formula have been collapsed. We demonstrate this principle in the case of the quintic threefold, for which only $D^1$ matters, so that it is enough to allow maps from cuspidal curves.
 
 \begin{thm}\cite{BCM}\label{thm:redvscusp}
  For a smooth quintic threefold $X_5=V(\mathbf w)\subseteq \PP^4$, \[GW_1^{\mathrm{red}}(X_5)=GW_1^{(1)}(X_5).\]
@@ -403,7 +405,7 @@ This is really a result about the virtual cycles, hence it holds for any (descen
 \mathcal Z_X\ar[r,"\alpha"]\ar[d]\ar[dr,phantom,"\Box"] & \oM^{(1)}(X_5,d)\ar[d] \\
 \mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}\ar[r] & \mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}(1)
 \ecd
-is endowed with a class $\virt{\mathcal Z_X}$ by virtual pullback, such that $\alpha_*\virt{\mathcal Z_X}=\virt{\oM^{(1)}(X_5,d)}$, because $\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}\to \mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}(1)$ is proper \cite[Lemma 4.19]{BCM} and birational, and by commutativity of virtual pullbacks with proper pushforward \cite{Manolache-Pull}. On the other hand there is a closed embedding of $\mathcal Z_X$ into ordinary stable maps $\oM_1(X,d)$ \cite[Lemma 4.13]{BCM}; it is an isomorphism with the substack of maps satisfying factorisation through $1$-stabilisation of the underlying weighted curve. In particular $\mathcal Z_X$ has a main component, and all the boundary components except $D^1(X,d)$. Unfortunately it is hard to study the intrinsic normal cone of $\oM_1(X,d)$ directly, hence we resort to an indirect approach, extending work of H.L. Chang, Y. Hu, Y.-H. Kiem and J. Li to the situation at hand.
+is endowed with a class $\virt{\mathcal Z_X}$ by virtual pullback, such that $\alpha_*\virt{\mathcal Z_X}=\virt{\oM^{(1)}(X_5,d)}$, because $\mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}\to \mathfrak M_{1}^{\operatorname{wt}=d,\text{st}}(1)$ is proper \cite[Lemma 4.19]{BCM} and birational, and by commutativity of virtual pullbacks with proper pushforward \cite{Manolache-Pull}. On the other hand there is a closed embedding of $\mathcal Z_X$ into ordinary stable maps $\oM_1(X,d)$ \cite[Lemma 4.13]{BCM}; it is an isomorphism with the substack of maps satisfying factorisation through the $1$-stabilisation of the underlying weighted curve. In particular $\mathcal Z_X$ has a main component, and all the boundary components except $D^1(X,d)$. Unfortunately it is hard to study the intrinsic cone of $\oM_1(X,d)$ directly, hence we resort to an indirect approach, extending work of H.L. Chang, Y. Hu, Y.-H. Kiem and J. Li to the situation at hand.
 
 \subsection{A word on genus two}
 
@@ -411,7 +413,7 @@ This section is based on discussions I have had with F. Carocci. The geometry of
 
 Following Smyth's procedure in \cite[Appendix A]{SMY1}, we are able to classify the unibranch singularities of genus two. Let $(R,\m)$ be the completion of the local ring of the curve at the singularity, with normalisation:
 \[(\tR,\tm)\simeq\left(\kk[\![t_1]\!]\oplus\ldots\oplus\kk[\![t_m]\!],\langle t_1,\ldots,t_m\rangle\right).\]
-So $m$ is the number of branches, and $\delta=m+1$ for $g=2$ (compare with Definition \ref{def:genus}). It is an observation of Smyth that $\tR/R$ is graded by:
+So $m$ is the number of branches, and $\delta=m+1$ for $g=2$ (compare with Definition \ref{def:genus}). It is an observation of Smyth's that $\tR/R$ is graded by:
 \[ (\tR/R)_i:=\tm^i/(\tm^i\cap R)+\tm^{i+1};\]
 furthermore he notices that:
 \begin{enumerate}
@@ -442,7 +444,7 @@ The idea is again that the normal surface you get after contracting is Gorenstei
 
 \begin{rmk}
  It was pointed out by D.I. Smyth that we cannot always construct simultaneous smoothings of the singularity and a semistable curve mapping to it (compare with \cite[Lemma 2.11]{BCM}). In particular it will not be true that any map that factors through a genus two singularity (and does not contract all of its branches) is automatically smoothable. Consider the map $f_0\colon\PP^1\to\PP^3$ given in coordinates by \[ [s:t]\mapsto[s^3t^2:t^5:st^4:s^5].\]
- It is the normalisation of a curve with a singularity of type (2) above. Now attach a genus two curve with a non-Weierstrass point to $(\PP^1_{[s:t]},[1,0])$, and let it be collapsed by the map. Assume the resulting genus two stable map were smoothable: then, by pulling back $\OO_{\PP^3}(1)$ and taking the relative Proj construction, we would get a family $\overline{\mathcal C}$ with central fiber of type (1), and such that the map $f\colon\mathcal C\to\PP^3$ factors through $\overline{\mathcal C}$. But this map should restrict to an isomorphism of the central fiber with its image (because the map is birational, and the two curves have same normalisation and $\delta$-invariant), which is a contradiction.
+ It is the normalisation of a curve with a singularity of type (2) above. Now attach a genus two curve with a non-Weierstrass point to $(\PP^1_{[s:t]},[1,0])$, and let it be collapsed by the map. Assume the resulting genus two stable map were smoothable: then, by pulling back $\OO_{\PP^3}(1)$ and taking the relative Proj construction, we would get a family $\overline{\mathcal C}$ with central fiber of type (1), and such that the map $f\colon\mathcal C\to\PP^3$ factors through $\overline{\mathcal C}$. But this map should restrict to an isomorphism of the central fiber with its image (because it is birational, and the two curves have the same normalisation and $\delta$-invariant), which is a contradiction.
 \end{rmk}
 
 \begin{rmk}
@@ -451,35 +453,35 @@ The idea is again that the normal surface you get after contracting is Gorenstei
  the first partial normalisation corresponds to separating the branches. Algebraically, this can be achieved by considering the quotient $K^{\rm{br}}$ of $\widetilde{R}/R$ generated by those conditions involving only one branch at the time, and then taking the kernel of $\widetilde{R}\to K^{\rm{br}}.$ For example $\kk[\![x,y]\!]/(y(x^3-y))$ is obtained by gluing two smooth branches. Compare with \cite[Appendix A]{SMYtowards}.
 \end{rmk}
 
-Finally, the components of $\M{2}{n}{\PP^N}{d}$ are included in the following list (I will not mention the various possible distributions of the markings, and I will represent the decorated dual graph of a general element of each component):
+Finally, the components of $\M{2}{n}{\PP^N}{d}$, $d\geq 3$, are included in the following list (I will not mention the various possible distributions of the markings, and I will represent the decorated dual graph of a general element of each component):
 \begin{enumerate}
- \item the main component is the closure of the locus of maps from a smooth curve of genus two;
+ \item \emph{main} is the closure of the locus of maps from a smooth curve of genus two;
  \item $\mathcal D^k=\left\{\Dk\right\}$
   \item $\mathcal D^{\rm{hypell},k}=\left\{\hypell\right\}$
  \item $\mathcal E^k=\left\{\Ek\right\}$
  \item $\mathcal E^{(k_1,k_2)}=\left\{\Ekk\right\}$
  \item $\mathcal E^{\rm{nct}}=\left\{\pacman\right\}$
 \end{enumerate}
-Here is a funny example: consider $\oM_2(\PP^1,3)$. From the theory of limit linear series, no element of $\mathcal D^{\rm{hypell},1}$ is smoothable: let the underlying curve be $Z\coprod_q R$, where $Z$ has genus two and $R\simeq\PP^1$. The aspect supported on $Z$ is $\omega_Z(q)$, with vanishing sequence $(1,3)$ (if $q$ Weierstrass) and $(1,2)$ (otherwise), so the aspect $\mathcal L$ supported on $R$ has vanishing sequence $(0,2)$ or $(1,2)$; in any case $\mathcal L(-2Z)$ has only one section, so it cannot give a map to $\PP^1$. On the other hand $\mathcal D^{\rm{hypell},1}$ intersects $\mathcal D^2$, $\mathcal D^3$, $\mathcal E^1$, $\mathcal E^{0,1}$, $\mathcal E^{0,2}$, and $\mathcal E^{1,1}$. 
+Here is a funny example: consider $\oM_2(\PP^1,3)$. From the theory of limit linear series \cite{EH}, no element of $\mathcal D^{\rm{hypell},1}$ is smoothable: let the underlying curve be $Z\coprod_q R$, where $Z$ has genus two and $R\simeq\PP^1$. The aspect of the linear series supported on $Z$ is $\omega_Z(q)$, with vanishing sequence $(1,3)$ (if $q$ Weierstrass) and $(1,2)$ (otherwise), so the aspect $\mathcal L$ supported on $R$ has vanishing sequence $(0,2)$ or $(1,2)$; in any case $\mathcal L(-2Z)$ has only one section, so it cannot give a map to $\PP^1$. On the other hand $\mathcal D^{\rm{hypell},1}$ intersects $\mathcal D^2$, $\mathcal D^3$, $\mathcal E^1$, $\mathcal E^{0,1}$, $\mathcal E^{0,2}$, and $\mathcal E^{1,1}$. 
 
 \section{p-fields, local equations and a splitting of the cone}\label{sec:techniques}
 
-The indirect approach to the proof of Theorem \ref{thm:redvscusp} can be outlined as follows: we introduce the moduli space of $1$-stable maps with $p$-fields, $\oM_1^{(1)}(\PP^4,d)^p$, the geometry of which is closely related to that of $\oM_1^{(1)}(\PP^4,d)$ (in fact, it is a line bundle over the boundary, while the open main components are isomorphic); $\oM_1^{(1)}(\PP^4,d)^p$ is endowed with a cosection localised virtual class carrying the same information as $\virt{\oM_1^{(1)}(X,d)}$. By pulling back along the $1$-stabilisation as above, we may define $\mathcal Z_{\PP^4}$ and $\mathcal Z^p$; unfortunately $\mathcal Z^p$ does not compare directly with $\oM_1(\PP^4,d)^p$. On the other hand, after studying local equations for the moduli space and a Vakil-Zinger blow-up, we are able to split the normal cone of $\tZp$ directly, and show that the only non-trivial contribution to the invariants comes from the main component.
+The indirect approach to the proof of Theorem \ref{thm:redvscusp} can be outlined as follows: we introduce the moduli space of $1$-stable maps with $p$-fields, $\oM_1^{(1)}(\PP^4,d)^p$, the geometry of which is closely related to that of $\oM_1^{(1)}(\PP^4,d)$ (in fact, it is a line bundle over the boundary, while the open main components are isomorphic); $\oM_1^{(1)}(\PP^4,d)^p$ is endowed with a cosection localised virtual class carrying the same information as $\virt{\oM_1^{(1)}(X,d)}$. By pulling back along the $1$-stabilisation as above, we may define $\mathcal Z_{\PP^4}$ and $\mathcal Z^p$; unfortunately $\mathcal Z^p$ does not compare directly with $\oM_1(\PP^4,d)^p$. After studying local equations for the moduli space and a Vakil-Zinger blow-up, we are able to split the normal cone of $\tZp$ directly, and show that the only non-trivial contribution to the invariants comes from the main component.
 
-\subsection{$1$-stable maps with $p$-fields} In \cite{CL-pfields}, Chang and Li develop a general theory of moduli spaces of sections: let us work over a base $B$ - an algebraic stack - and let $\pi\colon \cC\to B$ be a family of proper l.c.i. curves (they restrict to the nodal case, but all their arguments carry through unchanged, as we have checked in \cite[\S 3]{BCM}). Let $\mathcal V$ be representable, quasi-projective, and smooth over $\cC$. The \emph{space of sections} of $\mathcal V$ over $\cC$ is a $B$-stack $\mathfrak S$ defined by:
+\subsection{$1$-stable maps with $p$-fields} In \cite{CL-pfields}, Chang and Li developed a general theory of moduli spaces of sections: let us work over a base $B$ - an algebraic stack - and let $\pi\colon \cC\to B$ be a family of proper l.c.i. curves (they restrict to the nodal case, but all their arguments carry through unchanged, as we have checked in \cite[\S 3]{BCM}). Let $\mathcal V$ be representable, quasi-projective, and smooth over $\cC$. The \emph{moduli space of sections} of $\mathcal V$ over $\cC$ is a $B$-stack $\mathfrak S$ defined by:
  \[\mathfrak{S}(S\to B)=\left\{\text{sections of}\ \mathcal V_S\to\cC_S\right\};\]
 it has a dual perfect obstruction theory relative to $B$ \cite[Proposition 2.5]{CL-pfields}:
 \[ \phi_{\mathfrak S/B}\colon T^{\bullet}_{\mathfrak S/B}\to E^{\bullet}_{\mathfrak S/B}:=\R\pi_{\mathfrak S,*}\mathfrak e^* T_{\mathcal V/\cC}.\]
-This applies in particular when $\mathcal V$ is a vector bundle over $\mathcal C$ (or an open within one), and in this case we get a \emph{cone} of sections $C(\mathcal V)$; in fact by Serre duality \[C(\mathcal V)=\underline{\Spec}_B\operatorname{Sym}^\bullet(\operatorname{R}^1\pi_* (V^\vee\otimes \omega_{\mathcal C/B})).\] If we let $B=\mathfrak{P}$ be the universal Picard stack over $\MM$, we recover the moduli space of stable maps to $\PP^N$ as an open (defined by stability and the fact that the section do not vanish simultaneously) inside $C(\pi_*(\mathcal L)^{\oplus N+1})$; the relative obstruction theory $\R\pi_*\mathcal L^{\oplus N+1}$ over $\mathfrak{P}$ is compatible with the usual one $\R\pi_*f^*T_{\PP^N}$  over $\MM$, by the Euler sequence and $T^{\bullet}_{\mathfrak P/\MM}\simeq\R\pi_*\OO_{\mathcal C}[1]$ \cite[Lemma 2.8]{CL-pfields}. This is familiar from the theory of quasimaps (it is just a change in the stability condition cutting a different open within the Artin stack of sections).
+This applies in particular when $\mathcal V$ is a vector bundle over $\mathcal C$ (or an open within one), and in this case we get a \emph{cone} of sections $C(\mathcal V)$; in fact by Serre duality \[C(\mathcal V)=\underline{\Spec}_B\operatorname{Sym}^\bullet(\operatorname{R}^1\pi_* (V^\vee\otimes \omega_{\mathcal C/B})).\] If we let $B=\mathfrak{P}$ be the universal Picard stack over $\MM$, we recover the moduli space of stable maps to $\PP^N$ as an open (defined by stability and the fact that the sections do not vanish simultaneously) inside $C(\pi_*(\mathcal L)^{\oplus N+1})$; the relative obstruction theory $\R\pi_*\mathcal L^{\oplus N+1}$ over $\mathfrak{P}$ is compatible with the usual one $\R\pi_*f^*T_{\PP^N}$  over $\MM$, by the Euler sequence and $T^{\bullet}_{\mathfrak P/\MM}\simeq\R\pi_*\OO_{\mathcal C}[1]$ \cite[Lemma 2.8]{CL-pfields}. This is familiar from the theory of quasimaps (a variation of the stability condition cuts a different open within the Artin stack of sections).
 \begin{dfn}
  The moduli space of $1$-stable maps with $p$-fields $\oM_1^{(1)}(\PP^4,d)^p$ parametrises $1$-stable maps $\bar{f}\colon\overline{C}\to\PP^4$ together with a \emph{$p$-field}: \[\psi \in  H^0(\overline{C},\bar{f}^*\OO_{\PP^4}(-5)\otimes\omega_{\bar{\pi}}).\]
 \end{dfn}
- \noindent It is the cone of sections of the line bundle $\overline{\mathcal P}=\bar{f}^*\OO_{\PP^4}(-5)\otimes\omega_{\bar{\pi}}$ over $\oM_1^{(1)}(\PP^4,d)$. Notice that it is isomorphic to $\oM_1^{(1)}(\PP^4,d)$ on the open locus of the main component, while it is a line bundle over the boundary components; in particular it is not a proper space. It has a perfect obstruction theory relative to $\overline{\mathfrak P}=\mathfrak{Pic}(\overline{\mathcal C}\to\MM_1(1))$ given by $\R\bar{\pi}_*(\overline{\mathcal L}^{\oplus 5}\oplus \overline{\mathcal P}),$
+ \noindent It is the cone of sections of the line bundle $\overline{\mathcal P}=\bar{f}^*\OO_{\PP^4}(-5)\otimes\omega_{\bar{\pi}}$ over $\oM_1^{(1)}(\PP^4,d)$. Notice that it is isomorphic to $\oM_1^{(1)}(\PP^4,d)$ on the open locus of the main component, while it is a line bundle over the boundary components; in particular it is not proper. It has a perfect obstruction theory relative to $\overline{\mathfrak P}=\mathfrak{Pic}(\overline{\mathcal C}\to\MM_1(1))$ given by $\R\bar{\pi}_*(\overline{\mathcal L}^{\oplus 5}\oplus \overline{\mathcal P}),$
  where $\overline{\mathcal P}$ is defined as above replacing $\bar{f}^*\OO_{\PP^4}(1)$ by the universal line bundle $\overline{\mathcal L}$.
 
-The quintic polynomial $\mathbf w$ determines a cosection of the obstruction bundle as follows: there is a morphism of vector bundles on the universal curve over $\hP$:
-$ h_1\colon\rm{Vb}(\hL^{\oplus 5}\oplus\overline{\mathcal P})\to \rm{Vb}(\omega_{\bar\pi}),\quad h_1(\mathbf{x},p)=p\w(x_0,\ldots,x_4).$
-By differentiating it and pulling it back along the universal evaluation
+The quintic polynomial $\mathbf w$ determines a cosection of the obstruction bundle as follows: there is a morphism of vector bundles on the universal curve over $\hP$,
+$ h_1\colon\rm{Vb}(\hL^{\oplus 5}\oplus\overline{\mathcal P})\to \rm{Vb}(\omega_{\bar\pi})$, given by $h_1(\mathbf{x},p)=p\w(x_0,\ldots,x_4).$
+By differentiating it and pulling back along the universal section/evaluation
 \bcd
 & \rm{Vb}(\hL^{\oplus 5})\setminus\{0\}\oplus\rm{Vb}(\overline{\mathcal P})\ar[d] \\
 \hC\ar[ru,bend left,start anchor=north, end anchor=west,"\mathfrak e"]\ar[d,"\bar\pi"]\ar[r] & \hC\ar[d,"\bar\pi"] \\
@@ -497,7 +499,7 @@ The degeneracy locus of this cosection is precisely $\oM_1^{(1)}(X,d)$ by Serre 
 \begin{thm}\label{thm:p-fields-quintic}
  \[\deg[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc}}= (-1)^{5d}\deg[\oM_1^{(1)}(X,d)]^{\rm{vir}}\]
 \end{thm}
-This is proved by deforming to the normal cone and then working out explicitly the localised virtual pullback along $\oM_1^{(1)}(N_{X/\PP^4},d)^p\to \oM_1^{(1)}(X,d)$, which has a symmetric obstruction theory. All the details are spelled out in \cite{CL-pfields} and summarised in \cite[\S 3]{BCM}.
+This is proved by deforming to the normal cone, and working out explicitly the localised virtual pullback along $\oM_1^{(1)}(N_{X/\PP^4},d)^p\to \oM_1^{(1)}(X,d)$, which has a symmetric obstruction theory, at the level of $0$-cycles. All the details are spelled out in \cite{CL-pfields} and summarised in \cite[\S 3]{BCM}.
 \subsection{Auxiliary spaces} Consider now the fiber diagram:
 \bcd
 \mathcal Z^p \ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \overline{\mathcal M}_1^{(1)}(\PP^4,d)^p \ar[d] \\
@@ -508,14 +510,14 @@ This is proved by deforming to the normal cone and then working out explicitly t
 \begin{rmk}\label{rmk:Zp}
 The stack $\XP$ parametrises $\cC\to \hC$ with a line bundle $\hL$ on $\hC$. By pulling back $\hL$ to $\cC$ we obtain a morphism $\XP\to \mathfrak{P}$. This is generically an isomorphism, but has $1$-dimensional fibers over the locus of elliptic tails, due to the fact that $\Pic(\overline{C})\to\Pic(C)$ has kernel $\mathbb G_{\rm a}$ when $\overline{C}$ has a cusp; on the other hand the line bundle thus obtained is always trivial on the elliptic tail, therefore $\XP\to \mathfrak{P}$ is not surjective, as it misses the non-trivial line bundles of degree $0$ on elliptic tails.
 
-Similarly the stack $\mathcal Z^p$ parametrises $C\xrightarrow{\phi}\overline{C}\xrightarrow{\bar{f}} \PP^4$ with a $p$-field $\psi\in H^0(\hC_S,f_S^*\OO_{\PP^4}(-5)\otimes\omega_{\bar\pi_S})$. We were not able to compare $\Zp$ with $\oM_1(\PP^4,d)^p$ directly, since denoting by $\hL=f^*\OO_{\PP^4}(1)$ and by $\mathcal L=\phi^*\hL$ we only have a map $\operatorname{R}^1\bar\pi_*\hL\to\operatorname{R}^1\pi_*\mathcal L$ on $\Zp$ which is not an isomorphism.
+Similarly the stack $\mathcal Z^p$ parametrises $C\xrightarrow{\phi}\overline{C}\xrightarrow{\bar{f}} \PP^4$ with a $p$-field $\psi\in H^0(\hC_S,f_S^*\OO_{\PP^4}(-5)\otimes\omega_{\bar\pi_S})$. We were not able to compare $\Zp$ with $\oM_1(\PP^4,d)^p$ directly, since, denoting by $\hL=\bar{f}^*\OO_{\PP^4}(1)$ and by $\mathcal L=\phi^*\hL$, we only have a map $\operatorname{R}^1\bar\pi_*\hL\to\operatorname{R}^1\pi_*\mathcal L$ on $\Zp$ which is not an isomorphism (while we would need the inverse).
 \end{rmk}
 
-$\mathcal Z^p$ is endowed with a localised virtual cycle that has the same degree as $[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc}}$, by commutativity of localised virtual pullback with proper pushforward \cite[Lemma 4.17]{BCM}.
+$\mathcal Z^p$ has a localised virtual cycle of the same degree as $[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc}}$, by commutativity of localised virtual pullback with proper pushforward \cite[Lemma 4.17]{BCM}.
 
-\subsection{Local equations} In order to study the intrinsic cone of $\Zp$ we need to embed it, at least locally, in a smooth space, and understand the equations of the embedding. Since locally $\Zp$ sits inside $\mathcal Z_{\PP^4}\times \Aaff^1$, it is enough to find local equations for $\mathcal Z_{\PP^4}$. Recall that $\mathcal Z_{\PP^4}$ is an open inside the cone of sections $\bar{\pi}_*\hL^{\oplus 5}$ over $\hP$. It is standard to resolve $\R\bar{\pi}_*\hL$ twisting by a sufficiently $\bar{\pi}$-ample line bundle on $\hC$, but in the genus one case this can be performed very efficiently by twisting with a local section $\mathcal A$ passing through the core (a line bundle of positive degree on a Gorenstein genus one curve has no $h^1$); $\bar{\pi}_*\hL$ is then the kernel of the restriction map $\bar{\pi}_*\hL(\mathcal A)\to \bar{\pi}_*\hL(\mathcal A)_{|\mathcal A}$. Furthermore this map can be expressed very explicitly in local coordinates.
+\subsection{Local equations} In order to study the intrinsic cone of $\Zp$ we need to embed it, at least locally, in a smooth space, and understand the equations of the embedding. Since locally $\Zp$ sits inside $\mathcal Z_{\PP^4}\times \Aaff^1$, it is enough to find local equations for $\mathcal Z_{\PP^4}$. Recall that $\mathcal Z_{\PP^4}$ is an open inside the cone of sections $\bar{\pi}_*\hL^{\oplus 5}$ over $\hP$. As already discussed, it is standard to resolve $\R\bar{\pi}_*\hL$ twisting by a sufficiently $\bar{\pi}$-ample line bundle on $\hC$, but in the genus one case this can be performed very efficiently by twisting with a local section $\mathcal A$ passing through the smooth locus of the core (a line bundle of positive degree on a Gorenstein genus one curve has no $h^1$); $\bar{\pi}_*\hL$ is the kernel of the restriction map $\bar{\pi}_*\hL(\mathcal A)\to \bar{\pi}_*\hL(\mathcal A)_{|\mathcal A}$. Furthermore the latter can be expressed very explicitly in local coordinates.
 
-For technical reasons we work over $\mathfrak Z^{\rm{div}}:=\mathfrak Z\times_{\MM_1(1)}\MM_1^{\textrm{div}}(1)$: locally on $\mathcal Z_{\PP^4}$ we can choose a hyperplane $H_0\subseteq\PP^4$ that pulls back to a simple divisor contained in the smooth locus of the curve, say $D=\sum_{i=1}^d \delta_i$, and choose coordinates on $\PP^4$ such that $H_0=\{x_0=0\}$. Locally we thus get a map $\mathcal Z_{\PP^4}\to \mathfrak Z^{\rm{div}}$ by associating $(C\to\overline{C}\supseteq D=\bar{f}^{-1}(H_0))$ to $(C\to \overline{C}\xrightarrow{\bar{f}}\PP^4)$. By choosing a distinct local section $\mathcal B$ through the core, and by possibly restricting the chart $\mathcal U\to\mathcal Z_{\PP^4}$ we may write:
+For technical reasons we work over $\mathfrak Z^{\rm{div}}:=\mathfrak Z\times_{\MM_1(1)}\MM_1^{\textrm{div}}(1)$: locally on $\mathcal Z_{\PP^4}$ we can choose a hyperplane $H_0\subseteq\PP^4$ that pulls back to a simple divisor contained in the smooth locus of the curve, say $D=\sum_{i=1}^d \delta_i$, and choose coordinates on $\PP^4$ such that $H_0=\{x_0=0\}$. Locally we thus get a map $\mathcal Z_{\PP^4}\to \mathfrak Z^{\rm{div}}$ by associating $(C\to\overline{C}\supseteq D=\bar{f}^{-1}(H_0))$ to $(C\to \overline{C}\xrightarrow{\bar{f}}\PP^4)$. By choosing a distinct local section $\mathcal B$ through the core, and possibly by restricting the chart $\mathcal U\to\mathcal Z_{\PP^4}$, we may write \cite[Lemma 4.10]{HL}:
 \begin{enumerate}
  \item $\bar{\pi}_*\hL=\bar{\pi}_*\hL(-\mathcal B)\oplus\OO_{\mathcal U}$,
  \item $\bar{\pi}_*\hL(-\mathcal B)=\operatorname{Ker}\left(\bar{\pi}_*\hL(\mathcal A-\mathcal B)\xrightarrow{\rm{res}_{\mathcal A}}\bar{\pi}_*\OO_{\mathcal A}(\mathcal A)\right)$, and
@@ -579,10 +581,10 @@ Summing up, we get:
 \widetilde{\MM}^{\rm{wt,st}}_1 & \widetilde{\MM}^{\rm{wt,st}}_1\ar[equal]{l}\ar[r] & \widetilde{\MM}_1^{\rm{wt,st}}(1)
 \ecd
 
-Notice that the components of $\tZp$ are in bijection with those of $\Zp$, however all the boundary ones have the same dimension $5d+4$, and their intersection with main is a divisor in the latter.
+Notice that the components of $\tZp$ are in bijection with those of $\Zp$, however all the boundary ones have the same dimension $5d+4$, and their intersection with \emph{main} is a divisor in the latter.
 The blow-up procedure does not affect the invariants:
 \begin{lem}\label{lem:tilding}\cite[Proposition~2.5]{CL}
-We have the identity:
+The following identity holds:
 \[\deg\virloc{\tZp}=\deg\virloc{\Zp}.\]
 \end{lem}
 
@@ -798,7 +800,7 @@ Summarising:
 
 \end{proof}
 \section{On the relative problem}\label{sec:relativeone}
-I will outline here a joint work in progress with N. Nabijou and D. Ranganathan. In part I we have seen that Gathmann's formula for relative invariants (and consequently his proof of quantum Lefschetz) to a very ample divisor is based on a deep understanding of the case of $(\PP^N|H)$, and a good deal of virtual intersection theory; in particular it is essential that $\M{0}{n}{\PP^N}{d}$ is unobstructed in order to have a perfect obstruction theory and apply virtual pullback. We are working towards an extension of the same techniques to the Vakil-Zinger desingularisation.
+I will outline here a joint work in progress with N. Nabijou and D. Ranganathan. In Chapter \ref{ch:qm} we have seen that Gathmann's formula (and consequently his proof of quantum Lefschetz) for invariants relative to a smooth, very ample divisor is based on a deep understanding of the case of $(\PP^N|H)$, and a good deal of virtual intersection theory; in particular it is essential that $\M{0}{n}{\PP^N}{d}$ is unobstructed in order to have a perfect obstruction theory and apply virtual pullback. We are working towards an extension of the same techniques to the Vakil-Zinger desingularisation of $\M{1}{n}{\PP^N}{d}^{\rm{main}}$.
 \subsection{The na\"ive definition}
 \begin{dfn}
  Let $\alpha$ be an $n$-tuple of tangency conditions at the markings, with $\sum\alpha\leq d$. The relative space for $(\PP^N|H)$ is \[\VZ{\alpha}{\PP^N|H}{d}=\overline{\left\{f\colon (E,\mathbf x)\to \PP^N| E\text{ sm. ell.}, f(E)\nsubseteq H, f^*H\geq\sum\alpha_ix_i\right\}}\]
@@ -811,15 +813,15 @@ where $\pi\colon\mathcal E\to\mathcal M$ is the universal curve and $\delta=d-\s
 \textbf{Question:} how can the boundary elements be characterised?
 They will certainly satisfy \emph{Vakil's criterion for smoothability} (Proposition \ref{prop:components}), and \emph{Gathmann's relative condition}: for every connected component $Z$ of $f^{-1}(Y)$, either:
 \begin{enumerate}
-\item $Z$ is a single point of $C$, in which case if $Z=x_i$ is a marking then we require that the multiplicity of $f$ at $x_i$ along $H$ is at least $\alpha_i$ (if $Z$ is not a marking then there is no condition);
-\item $Z$ is a subcurve $Z \subseteq C$, in which case we require that
+\item if $Z=x_i$ is a marking, then we require that the multiplicity of $f$ at $x_i$ along $H$ is at least $\alpha_i$ (if $Z$ is a single point, but not a marking then there is no condition);
+\item if $Z \subseteq C$ is a subcurve, we require that
 \begin{equation*} f^*[H]|_Z -\sum_{x_i\in Z}\alpha_ix_i\end{equation*}
 is an effective class in $\Achow_0(Z)$.
 \end{enumerate}
 \begin{rmk}
 If $Z$ is a smooth elliptic curve, recall that every line bundle of positive degree on it is effective, hence the relative condition can be rephrased as the following numerical criterion:
 \begin{equation*} f_*[Z]\cdot [H]+\sum_{j=1}^r m^{(j)}\geq \sum_{x_i\in Z}\alpha_i \end{equation*}
-together with the additional requirement that, when the above is an equality, there is an isomorphism of line bundles:
+where $m^{(j)}$ is the multiplicity of the external tail $R_j$ at the node $y_j$, with the additional requirement that, when the above is an equality, there is an isomorphism of line bundles:
 \begin{equation}\label{eqn:eq_in_Pic}
 (f|_{Z})^*\OO_{\PP^N}(1) \otimes \OO_Z\left(\sum_{j=1}^r m^{(j)}y_j\right)=\OO_Z\left(\sum_{x_i\in Z}\alpha_ix_i\right) 
 \end{equation}
@@ -829,14 +831,14 @@ together with the additional requirement that, when the above is an equality, th
  
  %That this is the right thing to do follows from the proof that Gathmann's relative space is the projection of Jun Li's moduli space of maps to the expanded pair after contracting the higher levels of the accordion.
 \end{rmk}
-Will this be enough? There are at least two subtleties one should be careful with: first of all, the Vakil-Zinger blow-up introduces a number of exceptional divisors, and we have to understand how the closure of the nice locus intersects them (we are taking a strict transform); second, it may not be enough for a map to be smoothable, and to satisfy the relative condition, in order to be \emph{smoothable as a relative map}. In fact the first issue is clear even by dimensional reasons.
+Will this be enough? There are at least two subtleties one should be careful with: first of all, the Vakil-Zinger blow-up introduces a number of exceptional divisors, and we have to understand how the closure of the nice locus intersects them (we are taking a strict transform); second, it may not be enough for a map to be smoothable, and to satisfy the relative condition, in order to be \emph{smoothable as a relative map}. Indeed the first issue is clear even only by dimensional reasons.
 \begin{example}
-Consider $\VZ{(3)}{\PP^1|H}{3}$. It has (virtual) dimension $4$. Here is a parametrisation of the nice locus: choose an object $(E,p) \in \mathcal{M}_{1,1}$, fix $s_0 \colon\OO_E\hookrightarrow\OO_E(3p)$, and let $s_1$ be any other section of $\OO_E(3p)$ not vanishing at $p$ (notice that $\h^0(E,\OO_E(3p))=3$). Then $(E,p,[\lambda s_0,s_1])$ gives a well-defined element of the nice locus for $\lambda \neq 0$.
+Consider $\VZ{(3)}{\PP^1|H}{3}$. It has (virtual) dimension $4$. Here is a parametrisation of the nice locus: choose an object $(E,p) \in \mathcal{M}_{1,1}$, fix $s_0 \colon\OO_E\hookrightarrow\OO_E(3p)$, and let $s_1$ be any other section of $\OO_E(3p)$ not vanishing at $p$ (notice that $\h^0(E,\OO_E(3p))=3$). Then $(E,p,[\lambda s_0,s_1])$ gives a well-defined element of the nice locus for $\lambda \in \Gm$.
 
 Consider now the following weighted graph for a map in the boundary
 \begin{center}
 \begin{tikzpicture}
-\draw[color=brown] (0,0) node[left]{$E$} -- (4,0);
+\draw[color=gray!50] (0,0) node[left]{$E$} -- (4,0);
 \draw[fill=black] (1,0) circle[radius=2pt] node[above]{$x_1$};
 \draw[fill=black] (2,0) circle[radius=2pt] node[below right]{$y_1$};
 \draw[fill=black] (3,0) circle[radius=2pt] node[below right]{$y_2$};
@@ -847,9 +849,9 @@ Consider now the following weighted graph for a map in the boundary
 \draw[fill=black] (9,0) circle[radius=2pt] node[right]{$H$};
 \end{tikzpicture}
 \end{center}
-where the brown line represents a contracted genus $1$ curve. It satisfies Vakil's criterion. $(E,x_1,y_1,y_2)$ is a point of $\mathcal{M}_{1,3}$ subject to the divisorial condition $3x_1-2y_1-y_2=0\in \Achow_0(E)$; furthermore we have to choose the second branch point of the $2:1$ map from $R_1$ to $\PP^1$. This already makes up a $3$-dimensional moduli space of degenerate relative maps corresponding to such a graph. On the other hand the Vakil-Zinger's blow-up introduces a $\PP^1$-bundle over this locus, so overall the boundary has the same dimension as the nice locus.
+where the gray line represents a contracted elliptic curve. It satisfies Vakil's criterion. $(E,x_1,y_1,y_2)$ is a point of $\mathcal{M}_{1,3}$ subject to the divisorial condition $3x_1-2y_1-y_2=0\in \Achow_0(E)$; furthermore we have to choose the second branch point of the $2:1$ map from $R_1$ to $\PP^1$. This already makes up a $3$-dimensional moduli space of degenerate relative maps corresponding to such a graph. The Vakil-Zinger's blow-up introduces a $\PP^1$-bundle over this locus, so overall the boundary has the same dimension as the nice locus.
 \end{example}
-We use aligned log structures in order to shed some light on the interaction between the relative space and the boundary of the Vakil-Zinger desingularisation.
+We use aligned log structures in order to shed some light on the interaction between the relative space and the boundary of the Vakil-Zinger's desingularisation.
 
 \textbf{Claim}: there is a desingularisation of the main component of the space of log stable maps to $(\PP^N|H)$, which is obtained by imposing an alignment on the log structure of the curve, and requiring factorisation of the map from the resulting Smyth's singularity.
 
@@ -862,7 +864,7 @@ Q_{\rm{min}}^{\rm{cen.align}}\ar[dashed,urr]
 \ecd
 Choosing a morphism $Q_{\rm{min}}^{\rm{log.map}}\to \N$ is the same as testing with the standard log point. In the presence of a one-parameter smoothing (over a DVR scheme) the morphism to $\N$ is determined by the valuation of the smoothing parameters of the nodes.
 \begin{example}
- Start with an elliptic curve $E$ contracted to $Y$, with two external components $R_1, R_2$ attached to it and a single marking $x\in E$. The tropical picture would be:
+ Start with an elliptic curve $E$ contracted to $H$, with two external components $R_1, R_2$ attached to it and a single marking $x\in E$. The tropical picture is:
 \begin{center}
  \begin{tikzpicture}[radius=2pt,scale=0.5]
  \draw[fill=black] (0,0) circle;
@@ -891,13 +893,13 @@ The dual monoids in the compatibility condition give us the picture:
  \draw[<-,dashed] (2.7,-1.3)--(3.5,-.5);
 \end{tikzpicture}
 \end{center}
-So, for example, the factorisation exists for the subcone $e_2>e_1$ only when $m_1>m_2$, which is compatible with the fact that $\mathbb N^2=Q_{\rm{min}}^{\rm{prestable}}\to Q_{\rm{min}}^{\rm{log.map}}=\mathbb N$ is given by
-$e_1\mapsto m_2, e_2\mapsto m_1$.
+So e.g. the factorisation exists for the subcone $e_2>e_1$ only when $m_1>m_2$, which is compatible with the fact that $\mathbb N^2=Q_{\rm{min}}^{\rm{prestable}}\to Q_{\rm{min}}^{\rm{log.map}}=\mathbb N$ is given by
+$e_1\mapsto m_2, e_2\mapsto m_1.$
 \end{example}
 
-In fact we plan to work around the problem by directly looking at the desingularisation of the main component of Kim's moduli space of logarithmic maps to expanded targets.
+In fact we plan to work around the problem by directly looking at the desingularisation of the main component of Kim's moduli space of logarithmic maps to expanded targets. We do so because on one hand we are able to carry out Gathmann's recursion in the expanded setting (Remark \ref{rmk:expandedGathmann}), and on the other Kim's approach blends nicely the condition for being smoothable as a relative map into that of being a log morphism.
 
-\subsection{Logarithmic maps with expansions, alignments, factorisations} I will recall the basic definitions from \cite{KimLog,ChenDeg}; see also \cite{OlsCurves,AbramovichMarcusWiseComparison}. Essentially Kim's moduli space parametrises log morphisms to an expansion, where the minimal log structure on the base is locally free, twisted (in the sense that the irreducible elements are allowed to be roots of the smoothing parameters of the nodes in both the source and target), and identifies all the smoothing paramaters of the distinguished nodes of $C$ that map to the same component of the singular locus of $X^{\rm{exp}}=W$ (corank condition). Kim's moduli space should be thought of as the saturation of J. Li's moduli space. In the following $\pM_S^{C/S}$ denotes the log structure on the base $S$ pulled back from the canonical one on the moduli space of (pre)stable curves (i.e. the minimal log structure on the base of a family of log smooth curves), and similarly $\pM_S^{W/S}$.
+\subsection{Logarithmic maps with expansions, alignments, factorisations} I will recall the basic definitions from \cite{KimLog,ChenDeg}; see also \cite{OlsCurves,AbramovichMarcusWiseComparison}. Kim's moduli space parametrises log morphisms to an expansion, where the target has the nodal+divisorial log structure, and the minimal log structure on the base is locally free, twisted (in the sense that the irreducible elements are allowed to be roots of the smoothing parameters of the nodes in both the source and target), and identifies all the smoothing parameters of the distinguished nodes of $C$ that map to the same component of the singular locus of $X^{\rm{exp}}=W$ (corank condition). Kim's moduli space should be thought of as the saturation of J. Li's moduli space. In the following $\pM_S^{C/S}$ denotes the log structure on $S$ pulled back from the canonical one on the moduli space of prestable curves (i.e. the minimal log structure on $S$ viewed as the base of a family of log smooth curves), and similarly $\pM_S^{W/S}$.
 
 \begin{definition}
  An \emph{extended log twisted expansion} of $(X,Y)$ is a quadruple $(\pi\colon W\to S, \pi_X\colon W\to X, D\subseteq W, \pM_S^{W/S}\to\pM_S)$ such that:
@@ -924,7 +926,7 @@ In fact we plan to work around the problem by directly looking at the desingular
 \end{definition}
  The log structure on $W$ is then given by
  \[ \pM_W=\pi^*\pM_S\oplus_{\pi^*\pM_S^{W/S}}\pM_W^{W/S}\oplus_{\OO^*_W}\pM^D\]
- where $\pM_D$ is the divisorial log structure associated to $D$. 
+ where $\pM^D$ is the divisorial log structure associated to $D$. 
 Notice that with this definition $(W,\pM_W)\to(S,\pM_S)$ is log smooth.
 
 Similarly a \emph{log twisted curve} is $((C,p_1,\ldots,p_n)\to S, \pM_S^{C/S}\to\pM_S)$ with
@@ -939,8 +941,7 @@ Finally, fix an $n$-tuple of non-negative contact orders $(c_1,\ldots,c_n)$.
   & (S,\pM_S) & & &
  \ecd
  \begin{enumerate}
-  \item $(C,\mathbf p),\pM_C)\to (S,\pM_S)$ is a minimal log twisted curve;
-  \item $((W,\pM_W)\to (S,\pM_S),(W,D)\to(X,Y))$ is an extended twisted log expansion of $(X,Y)$;
+  \item $((C,\mathbf p),\pM_C)\to (S,\pM_S)$ is a minimal log twisted curve; $((W,\pM_W)\to (S,\pM_S), \\ (W,D)\to(X,Y))$ is an extended twisted log expansion of $(X,Y)$;
   \item (\emph{corank condition}) for every geometric point $\bar{s}\in S$, the rank of \[\operatorname{Coker}(\pM^{W/S}_{S,\bar{s}}\to \pM_{S,\bar{s}})\] is equal to the number of non-distinguished nodes of $C_{\bar{s}}$; recall that a node of $C_{\bar{s}}$ is \emph{distinguished} if it is mapped under $f$ to the singular locus of $W_{\bar{s}}$.
   \item (\emph{log admissibility}) the morphism of log structures $f^\flat\colon f^*\pM_W\to\pM_C$ is simple at every distinguished node;
   \item (\emph{tangency condition}) the underlying map $\underline{f}\colon C\to (W,D)$ is non-degenerate, namely no component of $C$ is mapped entirely into $D$, and locally around every marking $p_i$ we can find a chart
@@ -960,19 +961,19 @@ Finally, fix an $n$-tuple of non-negative contact orders $(c_1,\ldots,c_n)$.
  \end{enumerate}
 \end{definition}
 \begin{rmk}
- The corank and simplicity condition imply the following: the rank of the locally free log structure $\pM_S$ at $\bar{s}$ amounts to the number of irreducible components of $W_{\bar{s}}^{\text{sing}}$ plus the number of non-distinguished nodes of $C_{\bar{s}}$; all the smoothing parameters of the distinguished nodes mapping to the same component of $W_{\bar{s}}^{\text{sing}}$ have been identified \emph{up to twisting}. Indeed, at a distinguished node $q$ of $C$, letting $R$ be the local ring of $S$ at $\pi(q)$, we can find \'{e}tale local charts
+ The corank and simplicity condition imply the following: the rank of the locally free log structure $\pM_S$ at $\bar{s}$ amounts to the number of irreducible components of $W_{\bar{s}}^{\text{sing}}$ plus the number of non-distinguished nodes of $C_{\bar{s}}$; all the smoothing parameters of the distinguished nodes mapping to the same component of $W_{\bar{s}}^{\text{sing}}$ are identified \emph{up to twisting}. Indeed, at a distinguished node $q$ of $C$, letting $R$ be the local ring of $S$ at $\pi(q)$, we can find \'{e}tale local charts
  \bcd
  \N^2\oplus_{\N} \pM_{S}\ar[r,"{(id,\cdot m_q)}" below]\ar[d] & \N^2\oplus_{\N} \pM_{S}\ar[d] \\
  f^*\pM_W \ar[r,"f^\flat" below]\ar[d] & \pM_C\ar[d] \\
  R[z_1,\ldots,z_{\dim(X)-1},x,y]/(xy-t)\ar[r,"\left(\substack{x\mapsto a^{m_q}\\ y\mapsto b^{m_q}\\ t\mapsto s^{m_q}}\right)" below=.2cm] & R[a,b]/(ab-s)
  \ecd
- where the twist at $f(q)$ is given by $l$, the one at $q$ is given by $r_q$, and the equality $l=r_qm_q$ has to hold.
+ where the twist at $f(q)$ is given by $l$, the one at $q$ is given by $r_q$, and the equality $l=r_qm_q$ must be satisfied.
 \end{rmk}
 The following is a variation on \cite[\S 3.3]{RSPW2}. I will focus on the case of $(\PP^N|H)$.
 \begin{definition}
  Let $(C,\mathbf p)\to (W,D)$ be a radially aligned Kim's log map to $(\PP^N|H)$, and let $\varphi\colon \plC\to\mathbb R_{\geq 0}$ be its tropicalisation, with circuit $\plC_0$. If $\varphi$ does not contract the circuit, set the contraction radius $\delta_f=0$. Otherwise let $\delta_f$ be the minimal distance from the circuit to a vertex supporting a flag that is not contracted by $\varphi$.
 \end{definition}
-To every Kim's log map we can associate an ordinary (not expanded) log map by collapsing the target and stabilising the curve \cite[Proposition 6.1]{GrossSiebertLog}. Furthermore, by choosing generic hyperplanes that meet the image of the curve transversally at smooth points of the latter, and by pulling back the resulting log structures on $\PP^N$, we may lift any log map to $(\PP^N|H)$ to one to $(\PP^N|\Delta)$, where $\Delta$ denotes the toric boundary of $\PP^N$. Notice that, when looking at the tropicalisation, any generic choice of hyperplanes will add flags only to vertices that already have a non-contracted flag, hence the resulting $\delta_f^{\Delta}$ is the same as $\delta_f$, and does not depend on this choice.
+To every Kim's log map we can associate an ordinary (not expanded) log map by collapsing the target and stabilising the curve \cite[Proposition 6.1]{GrossSiebertLog}. Furthermore, by choosing generic hyperplanes that meet the image of the curve transversally at smooth points of the latter, and by pulling back to $C$ the resulting (toric) log structure on $\PP^N$, we may lift any log map to $(\PP^N|H)$ to one to $(\PP^N|\Delta)$, where $\Delta$ denotes the toric boundary of $\PP^N$. Notice that, when looking at the tropicalisation, any generic choice of hyperplanes will add flags only to vertices that already have a non-contracted flag, hence the resulting $\delta_f^{\Delta}$ is the same as $\delta_f$, and does not depend on this choice.
 
 It is discussed in \cite[Proposition 2.4.2.1]{RSPW2} how log morphisms from an fs log scheme $C\to Z$, where $Z$ is a toric variety with the log structure associated to its boundary, are equivalent to the data of $M\xrightarrow{\alpha} H^0(C,\pM_C^{\rm{gp}})$, such that for every $x\in C$ we can find a cone $\sigma$ in the fan of $Z$ and a factorisation:
 \bcd
@@ -981,16 +982,16 @@ S_\sigma\cap M\ar[u,hook]\ar[rr,dashed] & & \overline{\pM}_{C,x}\ar[u,hook]
 \ecd
 where $M$ is the character lattice of the torus $T\subseteq Z$, and $S_\sigma$ is the dual cone of $\sigma$. This is useful because it allows them to impose factorisation of $C\to Z\dashrightarrow \PP^1$ to the Smyth's singularity determined by $\delta_f^\Delta$ without having to modify $Z$ (and $C$, and $S$), see \cite[Definition 3.3.3]{RSPW2}.
 \begin{dfn}
- A log map $f\colon C\to Z$ from an aligned curve to a toric variety satisfies the factorisation property for a subtorus $H\subseteq T$ if the associated composition \[M_{T/H}\to M\xrightarrow{\alpha} H^0(C,{\pM}_C^{\rm{gp}})\to H^0(\widetilde{C},\pM_{\widetilde{C}}^{\rm{gp}})\] descends to $M_{T/H}\to H^0(\overline{C},\pM_{\overline{C}}^{\rm{gp}})$, where the modification and contraction $C\leftarrow \widetilde{C}\to \overline{C}$ are determined by the contraction radius $\delta_{\alpha}$, that is the largest distance of a vertex to the circuit such that the line bundle associated to $\bar\alpha$ is trivial on the interior of the circle of radius $\delta_\alpha$.
+ A log map $f\colon C\to Z$ from an aligned curve to a toric variety satisfies the factorisation property for a subtorus $H\subseteq T$ if the associated composition \[M_{T/H}\to M\xrightarrow{\alpha} H^0(C,{\pM}_C^{\rm{gp}})\to H^0(\widetilde{C},\pM_{\widetilde{C}}^{\rm{gp}})\] descends to $M_{T/H}\to H^0(\overline{C},\pM_{\overline{C}}^{\rm{gp}})$, where the modification and contraction $C\leftarrow \widetilde{C}\to \overline{C}$ are determined by the contraction radius $\delta_{\alpha}$, that is the largest distance of a vertex from the circuit such that the line bundle associated to $\bar\alpha$ is trivial on the interior of the circle of radius $\delta_\alpha$.
  
- A map $f\colon C\to Z$ is called well-spaced if it satisfies factorisation for every subtorus $H\subseteq T$.
+ A map $f\colon C\to Z$ is \emph{well-spaced} if it satisfies factorisation for every subtorus $H\subseteq T$.
 \end{dfn}
 
 \begin{dfn}
  Let $\alpha\in\N^n$ be a maximal tangency condition. The space $\VZK{\alpha}{\PP^N|H}{d}$ parametrises Kim's log maps from an aligned curve to an expansion such that the associated log map to $(\PP^N|\Delta)$ (for any generic choice of hyperplanes $H_1,\ldots,H_N$) satisfies well-spacedness.
 \end{dfn}
 
-I claim that this construction provides a desingularisation of the main component of Kim's space in genus one: indeed it includes the locus of maps from a smooth elliptic curve whose image is not contained in $H$, and on the other hand its smoothness can be argued as follows. The morphism $\VZK{\alpha}{\PP^N|H}{d}\to \VZa{\alpha}{\PP^N|H}{d}$ is toroidal (this can be argued from \cite[Lemma A and \S 4.3]{AbramovichMarcusWiseComparison} and the analogous statement for the universal target). On the other hand, locally we may find $U_{\VZK{\alpha}{\PP^N|\Delta}{d}}\to U_{\VZK{\alpha}{\PP^N|H}{d}}$ which is \'etale by the infinitesimal criterion (lifting is tantamount to deforming the extra hyperplanes $H_1,\ldots,H_n$). We are then reduced to \cite[Theorem 3.5.1]{RSPW2}.
+I claim that this construction provides a desingularisation of the main component of Kim's space in genus one: indeed it includes the locus of maps from a smooth elliptic curve whose image is not contained in $H$, and its smoothness can be argued as follows. The morphism $\VZK{\alpha}{\PP^N|H}{d}\to \VZa{\alpha}{\PP^N|H}{d}$ is toroidal (this can be argued from \cite[Lemma A and \S 4.3]{AbramovichMarcusWiseComparison} and the analogous statement for the universal target). On the other hand, locally we may find $U_{\VZK{\alpha}{\PP^N|\Delta}{d}}\to U_{\VZK{\alpha}{\PP^N|H}{d}}$ which is \'etale by the infinitesimal criterion (lifting is tantamount to deforming the extra hyperplanes $H_1,\ldots,H_n$). We are then reduced to \cite[Theorem 3.5.1]{RSPW2}.
 
 \subsection{Description of the boundary} As in Gathmann's work, there is a line bundle with section that forces the $k$-th marked point to have tangency of order $\alpha_k+1$ to $H$, which in the maximal tangency situation and in the expanded setup (as is the case for us) really forces the target to break, and the $k$-th marking $x_k$ to lie on a non-trivial component mapped to the highest level of the accordion. The line bundle and section $(\mathcal L_{\alpha,k},s_{\alpha,k})$ are the pullback of $(x_k^*\Omega_{C}^{\otimes \alpha_k+1}\otimes\ev_1^*\OO_\PP^N(1),\ev_k^*(d^{\alpha_k+1}s))$ from the collapsed and stabilised map. The description of the boundary in the case of $(\PP^N|H)$ boils down to a dimension computation, and is already present in the work of Vakil \cite{Vre}. There are three relevant combinatorial types, corresponding to bipartite graphs:
 \begin{enumerate}[label=(\alph*)]
@@ -1000,9 +1001,11 @@ I claim that this construction provides a desingularisation of the main componen
 \end{enumerate}
 A few remarks on the notation are in order: a white circle in the graphs always stands for a genus one component; the tilde denotes moduli spaces of rubber maps, which were introduced in \cite{GraberVakil} (material on how they compare to the ordinary moduli space of maps to the underlying $H$ can be found in \cite[Chapter 5]{GathmannThesis}). DRC stands for ``double ramification cycle'', i.e. for the extra equation in $\Pic$ that needs to be satisfied:
 \[f_{|E}^*\mathcal O_H(1)\cong\mathcal O_E\left(\sum_{x_j\in E}\alpha_jx_j-\sum_{i=1}^r m^{(i)}y_i\right).\]
-In genus one this is a divisorial condition, and an explicit tautological formula was already known to R. Hain \cite{Hain} (later confirmed and generalised in \cite{JPPZ}); what we can do exploiting Gathmann's argument is computing (relating) a number of $\psi$-integrals against the DRC, more in the spirit of \cite{BSZ}. It is worth subdividing case (c) above into $\mathcal Y^c_+$ (for $d_0>0$) and $\mathcal Y^c_0$ (for $d_0=0$): notice that the generic element of the latter is already aligned (indeed the minimal monoid is $\N$, since all the nodes are distinguished and map to the same component of the singular locus of the target); on the other hand we need to impose the well-spacedness condition, which will hopefully be expressible as a tautological integral, based on the analysis of Lemma \ref{lem:fundamental}. The data above depend on a splitting $(A,B,M)$ of the markings, degree, and external multiplicities, such that $d_0+\sum m^{(i)}=\sum A^{(0)}$, and factorisation should impose $N-1$ independent conditions, unless all the $m^{(i)}\geq 2$, in which case there are only $N-2$ conditions (this would be the dimensionally relevant case). Finally, let me observe that all the insertions that we are interested in are pulled back from the moduli space of maps to the collapsed target, hence any locus with positive-dimensional fibers for the collapsing may be overlooked; this is the case when there is more than one non-trivial component mapping to higher level in the accordion, which is the reason why only the three graph types above appear. All the boundary divisors appear in the vanishing locus of $s_{\alpha,k}$ with positive multiplicity $\frac{m^{(1)}\cdots m^{(r)}}{r!}$ (the $r!$ is only there to make the gluing nodes unordered), as already predicated in \cite{Vre} and discussed in Remark \ref{rmk:expandedGathmann}.
+In the genus one case, this is a divisorial condition. When the left hand side is trivial, e.g. when $H=\{\infty\}\subseteq \PP^1$, an explicit tautological formula was already known to R. Hain \cite{Hain} (later confirmed and generalised in \cite{JPPZ}). What we can do exploiting Gathmann's argument is computing (relating) a number of $\psi$-integrals against the DRC, more in the spirit of \cite{BSZ}.
 
-The formula in the case of non-maximal tangency can be proven by adding $h=d-\sum\alpha$ auxiliary markings of multiplicity $(1,\ldots,1)$, and then forgetting them (which is generically a $h!\colon 1$ cover), pretty much along the lines of \cite[Corollary 3.5]{Ga}. Importantly, the difference between $\psi_k$ on the space with auxiliary markings and $\fgt_{n+1,\ldots,n+h}^*\psi_k$ can be expressed in terms of boundary classes. It may be useful to notice that as soon as there is more than one non-trivial component at higher level, or the only such component has zero horizontal degree and contains more than one of the auxiliary markings, then the corresponding locus has positive-dimensional fibers for forgetting $x_{n+1},\ldots,x_{n+h}$ and collapsing. Also, forgetting a point on the genus one component at level one in case (c) may make the difference between having to impose the DRC condition or not. So after all the general formula takes the following shape:
+It is worth subdividing case (c) above into $\mathcal Y^c_+$ (for $d_0>0$) and $\mathcal Y^c_0$ (for $d_0=0$): notice that the generic element of the latter is already aligned (indeed the minimal monoid is $\N$, since all the nodes are distinguished and map to the same component of the singular locus of the target); on the other hand we need to impose the well-spacedness condition, which will hopefully be expressible as a tautological integral, by expanding on the analysis of Lemma \ref{lem:fundamental}. The data above depend on a splitting $(A,B,M)$ of the markings, degree, and external multiplicities, such that $d_0+\sum m^{(i)}=\sum A^{(0)}$, and factorisation should impose $N-1$ independent conditions, unless all the $m^{(i)}\geq 2$, in which case there are only $N-2$ conditions (this would be the dimensionally relevant case). Finally, let me observe that all the insertions that we are interested in are pulled back from the moduli space of maps to the collapsed target, hence any locus with positive-dimensional fibers for the collapsing may be overlooked; this is the case when there is more than one non-trivial component mapping to higher level in the accordion, which is the reason why only the three graph types above appear. All the boundary divisors appear in the vanishing locus of $s_{\alpha,k}$ with positive multiplicity $\frac{m^{(1)}\cdots m^{(r)}}{r!}$ (the $r!$ is only there to make the gluing nodes unordered), as already predicated in \cite{Vre} and discussed in Remark \ref{rmk:expandedGathmann}.
+
+The formula in the case of non-maximal tangency can be proven by adding $h=d-\sum\alpha$ auxiliary markings of multiplicity $(1,\ldots,1)$, and then forgetting them (which is generically an $h!\colon 1$ cover), pretty much along the lines of \cite[Corollary 3.5]{Ga}. Importantly, the difference between $\psi_k$ on the space with auxiliary markings and $\fgt_{n+1,\ldots,n+h}^*\psi_k$ can be expressed in terms of boundary classes. It may be useful to notice that as soon as there is more than one non-trivial component at higher level, or the only such component has zero horizontal degree and contains more than one of the auxiliary markings, then the corresponding locus has positive-dimensional fibers for forgetting $x_{n+1},\ldots,x_{n+h}$ and collapsing. Also, forgetting a point on the genus one component at level one in case (c) may make the difference between having to impose the DRC condition or not. So after all the general formula takes the following shape:
 \begin{multline*}(\alpha_k\psi_k+\ev_k*H)\cap[\VZ{\alpha}{\PP^N|H}{d}]=[\VZ{\alpha+e_k}{\PP^N|H}{d}]+\\ \sum_{(I)}[\mathcal Y_a]+\sum_{(I)}[\mathcal Y_b]+\sum_{(I)}[\mathcal Y_c]+\sum_{(II)}[\mathcal Y_c^{\rm{no DRC}}]\end{multline*}
 where $(I)$ and $(II)$ range over all the splittings $(A,B,M)$ such that $\alpha_k\in A^{(0)}$ and
 \begin{enumerate}[label=(\Roman*)]
@@ -1010,50 +1013,50 @@ where $(I)$ and $(II)$ range over all the splittings $(A,B,M)$ such that $\alpha
  \item $d_0+\sum m^{(i)}=\sum A^{(0)}+1$.
 \end{enumerate}
 
-\subsection{Sample computations} I will exemplify the use of the recursion in some low-dimensional examples. Let me introduce the following shorthand notation: I will write $H_k$ for $\ev_k^* H$ and $\psi_k^{\{n_1,\ldots,n_h\}}$ for $\fgt_{\{n_1,\ldots,n_h\}}^*\psi_k$.
+\subsection{Sample computations} I will exemplify the use of the recursion in some low-dimensional situations. Let me introduce the following shorthand notation: I will write $H_k$ for $\ev_k^* H$ and $\psi_k^{\{n_1,\ldots,n_h\}}$ for $\fgt_{\{n_1,\ldots,n_h\}}^*\psi_k$.
 \begin{ex}
  Consider the following step of the recursion:
- \begin{multline*} (2\psi_1+H_1)\cdot [\VZ{(2,0)}{\PP^1|\infty}{2}]= 2{\tikz[baseline=-3pt,scale=.7]{
-\draw (2,0) node[above]{$\{x_1,x_2\}$} -- (0,0)node[above]{$d=2$};
+ \begin{multline*} (2\psi_1+H_1)\cdot [\VZ{(2,0)}{\PP^1|\infty}{2}]=\\ 2\ {\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1,x_2\}$} -- (0,0)node[below]{$d=2$};
 \draw (2,0) circle(2pt)[fill=black];
 \draw (0,0) circle(2pt)[fill=white];
 \draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
 \draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
 }}+
 {\tikz[baseline=-3pt,scale=.7]{
-\draw (2,0) node[above]{$\{x_1\}$} to[out=210,in=-30] (0,0)node[above,align=center]{$d=2$,\\ $\{x_2\}$} (2,0) -- (0,0);
+\draw (2,0) node[above]{$\{x_1\}$} to[out=210,in=-30] (0,0)node[above]{$\{x_2\}$}node[below=.15cm]{$d=2$} (2,0) -- (0,0);
 \draw (2,0) circle(2pt)[fill=black];
 \draw (0,0) circle(2pt)[fill=black];
 \draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
 \draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
-}}+\\
-2{\tikz[baseline=-3pt,scale=.7]{
-\draw (2,0) node[above]{$\{x_1\}$} -- (0,0)node[above,align=center]{$d=2$,\\ $\{x_2\}$};
+}}+
+2\ {\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1\}$} -- (0,0)node[above]{$\{x_2\}$}node[below]{$d=2$};
 \draw (2,0) circle(2pt)[fill=white];
 \draw (0,0) circle(2pt)[fill=black];
 \draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
 \draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
 }}+
 {\tikz[baseline=-3pt,scale=.7]{
-\draw (2,0) node[above]{$\{x_1\}$} -- (0,.5)node[above]{$d=1$} (2,0)--(0,-.5)node[above]{$d=1$};
+\draw (2,0) node[above]{$\{x_1\}$} -- (0,.5)node[above]{$d=1$} (2,0)--(0,-.5)node[below]{$d=1$};
 \draw (2,0) circle(2pt)[fill=white];
 \draw (0,0.5) circle(2pt)[fill=black] (0,-0.5) circle(2pt)[fill=black];
 \draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
 \draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
 }}
 \end{multline*}
-Notice that in the $\mathcal Y_a$ term $x_2$ has to be at level one to ensure stability (yet this results in a positive dimensional moduli space with no insertions at level zero); in the $\mathcal Y_b$ and in the first $\mathcal Y_c$ term it has to be at level zero, otherwise there would be a positive dimensional moduli space with no insertions; while I have remained agnostic as to where $x_2$ is in the second $\mathcal Y_c$ term. Now choosing $\psi_1\psi_2H_2$ as insertion, we see that the only contributing term on the right hand side is the first $\mathcal Y_c$ term, so we get the following equality:
+Notice that in the $\mathcal Y_a$ term $x_2$ has to be at level one to ensure stability (yet this results in a positive dimensional moduli space with no insertions at level zero, so this term will never contribute to the invariants); in the $\mathcal Y_b$ and in the first $\mathcal Y_c$ term it has to be at level zero, otherwise there would be a positive dimensional moduli space with no insertions; while I have remained agnostic as to where $x_2$ lies in the second $\mathcal Y_c$ term. Now choosing $\psi_1\psi_2H_2$ as insertion, we see that the only contributing term on the right hand side is the first $\mathcal Y_c$ term, so we get the following equality:
 \[\langle \psi(2\psi +H),\psi H\rangle^{\PP^1|\infty,\rm{red}}_{1,(2,0),2}=2\langle \psi H,1\rangle^{\PP^1|\infty}_{0,(2,0),2}\langle\psi,1\rangle^{\rm{DRC}}_{1,(-2,2)}\]
 The next step of the recursion involves an auxiliary marking $x_3$. Knowing the insertion, the only non-trivial contributions are
- \begin{multline*} (\psi_1+H_1)\cdot [\VZ{(1,0,1)}{\PP^1|\infty}{2}]= 2{\tikz[baseline=-3pt,scale=.7]{
-\draw (2,0) node[above]{$\{x_1,x_3\}$} -- (0,0)node[above,align=center]{$d=2$,\\$\{x_2\}$};
+ \begin{multline*} (\psi_1+H_1)\cdot [\VZ{(1,0,1)}{\PP^1|\infty}{2}]= 2\ {\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1,x_3\}$} -- (0,0)node[above]{$\{x_2\}$} node[below]{$d=2$};
 \draw (2,0) circle(2pt)[fill=black];
 \draw (0,0) circle(2pt)[fill=white];
 \draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
 \draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
 }}+
-2{\tikz[baseline=-3pt,scale=.7]{
-\draw (2,0) node[above]{$\{x_1,x_3\}$} -- (0,0)node[above,align=center]{$d=2$,\\ $\{x_2\}$};
+2\ {\tikz[baseline=-3pt,scale=.7]{
+\draw (2,0) node[above]{$\{x_1,x_3\}$} -- (0,0)node[above]{$\{x_2\}$} node[below]{$d=2$};
 \draw (2,0) circle(2pt)[fill=white];
 \draw (0,0) circle(2pt)[fill=black];
 \draw (-1,1.5) -- (1,1.5) -- (1,-1.5) -- (-1,-1.5) -- (-1,1.5);
@@ -1061,11 +1064,11 @@ The next step of the recursion involves an auxiliary marking $x_3$. Knowing the 
 }}+\ldots
 \end{multline*}
 
-By comparing $\psi_1$ with $\psi_1^{\{3\}}$ on the left hand side, a term appears cancelling with the $\mathcal Y_a$ on the right hand side; after forgetting $x_3$, we recognise $\VZ{(2,0)}{\PP^1|\infty}{2}$ in the latter. By substituting in the above we get:
+By comparing $\psi_1$ with $\psi_1^{\{3\}}$ on the left hand side, a term appears cancelling with the $\mathcal Y_a$ on the right hand side; after forgetting $x_3$, we recognise $\VZ{(2,0)}{\PP^1|\infty}{2}$ in the latter. Also, the $\mathcal Y_c$ term has no DRC condition. By substituting in the above we get:
 \[\langle \psi(2\psi +H)(\psi+H),\psi H\rangle^{\PP^1|\infty,\rm{red}}_{1,(1,0),2}=2\langle \psi H,1\rangle^{\PP^1|\infty}_{0,(2,0),2}\left(\langle\psi,1\rangle^{\rm{DRC}}_{1,(-2,2)}+\langle2\psi^2,1\rangle_{1,2}\right)\]
 Finally
 \[H_1\cdot[\VZ{(0,0,1,1)}{\PP^1|\infty}{2}]={\tikz[baseline=-3pt,scale=.7]{
-\draw (2,.5) node[above]{$\{x_1,x_i\}$} -- (0,0)node[above,align=center]{$d=2$,\\$\{x_2\}$}  (2,-.5)node[above]{$\{x_{7-i}\}$} -- (0,0);
+\draw (2,.5) node[above]{$\{x_1,x_i\}$} -- (0,0)node[above]{$\{x_2\}$} node[below]{$d=2$}  (2,-.5)node[above]{$\{x_{7-i}\}$} -- (0,0);
 \draw (2,.5) circle(2pt)[fill=black];
 \draw (2,-.5) circle(2pt)[fill=black];
 \draw (0,0) circle(2pt)[fill=white];
@@ -1073,13 +1076,13 @@ Finally
 \draw (1,1.5) -- (3,2) -- (3,-1) -- (1,-1.5);
 }} (i=3,4) +\ldots\]
 from which, forgetting $\{x_3,x_4\}$ and substituting, we get:
-\[\langle \psi(2\psi +H)(\psi+H)H,\psi H\rangle^{\PP^1|\infty,\rm{red}}_{1,2,2}=2\langle \psi H,1\rangle^{\PP^1|\infty}_{0,(2,0),2}\left(\langle\psi,1\rangle^{\rm{DRC}}_{1,(-2,2)}+\langle2\psi^2,1\rangle_{1,2}\right)\]
-It is easy to see from the discussion at the end of Section \ref{sec:redinv} that the reduced invariant on the right hand side coincides with the ordinary one, since the boundary does not contribute in this case. The left hand side, as well as the genus zero relative invariant on the right hand side, can be then computed using Gathmann's software GROWI; the right hand side can be computed using the string and dilaton equations, together with the genus one DRC formula of \cite[\S 0.5.2]{JPPZ} with $A=(-2,2)$:
+\[\langle \psi(2\psi +H)(\psi+H)H,\psi H\rangle^{\PP^1,\rm{red}}_{1,2,2}=2\langle \psi H,1\rangle^{\PP^1|\infty}_{0,(2,0),2}\left(\langle\psi,1\rangle^{\rm{DRC}}_{1,(-2,2)}+\langle2\psi^2,1\rangle_{1,2}\right)\]
+It is easy to see from the discussion at the end of Section \ref{sec:redinv} that the reduced invariant on the left hand side coincides with the ordinary one, since the boundary does not contribute in this case. The left hand side, as well as the genus zero relative invariant on the right hand side, can be computed using Gathmann's software GROWI; the right hand side can be computed using the string and dilaton equations, together with the genus one DRC formula of \cite[\S 0.5.2]{JPPZ} with $A=(-2,2)$:
 \[\operatorname{DR}_1(A)=\frac{1}{2}\left(\sum_{i=1}^n a_i^2\psi_i-\sum_{I\subseteq [n],\lvert I\rvert\geq2}a_I^2\delta_I-\frac{1}{12}\xi_*[\oM_{0,n+2}]\right)\]
 where $A$ is a zero-sum $n$-tuple of integers, $a_I=\sum_{i\in I}a_i$, and $\delta_I=\delta_{0,I|1,I^c}$.
 \end{ex}
 
-It may seem hopeless to use the recursion to compute the invariants of $H$ in terms of those of $\PP^N$, because degree $d$, genus one invariants of $H$ will appear both at the $d$-th and at the $(d+1)$-st step of the recursion, but in the latter they will come mingled with a range of admissible DR conditions. Instead looking at one specific DR condition seems to be the key to success.
+It may seem hopeless to exploit the recursion to compute the invariants of $H$ in terms of those of $\PP^N$, because degree $d$, genus one invariants of $H$ will appear both at the $d$-th and at the $(d+1)$-st step of the recursion, but in the latter they will come mingled in a range of admissible DRC conditions. Instead writing invariants of $H$ as one well-chosen DRC integral seems to be the key to success.
 \begin{ex}
  Assume we want to compute $\psi_1^5\cdot[\VZ{1}{\PP^1}{2}]$ by thinking of $\PP^1$ as a line in $\PP^2$ and applying the recursion. There is a $4:1$ cover of $\VZ{1}{\PP^1}{2}$ by $\VZ{(0,2)}{\PP^2|H}{2}^\thicksim$, forgetting the second marking. Hence we may start from
  \[
