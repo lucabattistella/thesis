@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,twoside]{book}
+\documentclass[a4paper,11pt,twoside,final]{book}
 
 %pacchetti
 
@@ -7,13 +7,10 @@
 \usepackage{amsmath,amssymb,amscd,amsthm}
 \usepackage{dsfont}
 \usepackage{bbm}
-%\usepackage{hyperref}
 \usepackage{stmaryrd}
 \usepackage{enumitem}
-%\usepackage{yfonts}
 \usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc}
-%\usepackage{enumerate}
 \usepackage{verbatim}
 \usepackage{graphicx}
 \usepackage{faktor}
@@ -29,9 +26,10 @@
 \usepackage{mathtools}
 \usepackage{mathrsfs}
 \usepackage[alphabetic,initials]{amsrefs}
+\usepackage{multicol}
 
 %\usepackage{fix-cm}
-%\usepackage{caption}
+\usepackage{caption}
 %\captionsetup{format=hang}
 %\usepackage{subcaption}
 %\usepackage{keyval}
@@ -102,7 +100,7 @@
 %\usepackage{comment}
 \usepackage{stackrel}
 
-\usepackage[colorlinks=false,  pdftex,   pdfpagemode=UseOutlines]{hyperref} %collegamenti interni
+\usepackage[pdftex,   pdfpagemode=UseOutlines,hidelinks]{hyperref} %collegamenti interni
 
 %\usepackage{tabularx}
 %\usepackage{booktabs}
@@ -114,6 +112,7 @@
 
 %comandi
 
+\newcommand{\lams}[2]{\lambda^{\sigma_{#1}}_{\sigma_{#2}}}
 \newcommand{\ilemph}[1]{\emph{#1}}
 \newcommand{\pazocal}{\mathcal}
 \newcommand{\plC}{\scalebox{0.8}[1.3]{$\sqsubset$}}
@@ -444,7 +443,28 @@
 
 
 \input{title.tex}
+\newpage
 \input{copyright.tex}
+\cleardoublepage
+
+{\thispagestyle{empty}
+\null
+\vfill
+\noindent {\bf \large Abstract}
+
+\medskip
+
+\noindent In this thesis I explore the usefulness of alternative compactifications as a tool for answering some questions in Gromov-Witten theory, as well as the beautiful - and often simpler - geometry they exhibit, which is of independent interest.
+
+After a tour of quasimap theory with applications - including an explicit localisation formula in the toric setting, and an investigation of the quasimap quantum product in the semipositive case -, I discuss joint work with N. Nabijou in which we introduce the notion of relative quasimaps (in genus zero, when the target is toric, and the divisor is smooth and very ample), extend Gathmann's formula, and exploit it in the semipositive case to obtain a quantum Lefschetz theorem for quasimaps.
+
+I describe a number of different approaches to the genus one Gromov-Witten theory of projective complete intersections, and hint at the relationship between them. I prove that the Li-Vakil-Zinger's reduced invariants of the quintic threefold can be recovered from Viscardi's moduli space of maps from at worst cuspidal curves (joint with F. Carocci and C. Manolache). Finally, I give a sketch of joint work in progress with N. Nabijou and D. Ranganathan on reduced genus one invariants relative to a smooth and very ample divisor, and show by means of examples how Gathmann's recursion exhibits some non-trivial relations between the reduced invariants of the ambient space and those of the divisor (possibly with a double ramification condition).
+
+\vspace{5cm}
+\begin{flushright}
+ {\it A chi col suo passaggio ha lasciato \\ una voragine nel mio cuore, pulsante di mancanza; \\ e a chi ogni giorno si sforza di colmarla, \\ mai stanchi di dare amore laddove tanto abbisogna.}
+\end{flushright}
+}
 %\input{Roba_iniziale/Ringraziamenti.tex}
 %\input{Roba_iniziale/Dedica.tex}
 %\input{Roba_iniziale/Abstract.tex}

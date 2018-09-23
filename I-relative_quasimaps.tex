@@ -23,9 +23,9 @@ Recall that the rays $\rho\in\Sigma(1)$ correspond to toric divisors $D_{\rho}$ 
  The isomorphisms $\varphi_m$ can be used to reduce the number of line bundles down to the Picard rank of $X$.
 \end{rmk}
 
-Based on this and on previous work of A. Marian, D. Oprea and R. Pandharipande \cite{MOP} (similar ideas had in fact already appeared in the work of Drinfeld, Morrison-Plesser, Givental, and many others), I. Ciocan-Fontanine and B. Kim introduced the following notion, which gives rise to an alternative compactification of the space of maps from smooth curves to a smooth projective toric variety, by strengthening the stability requirement and weakening the concept of map (with respect to Kontsevich's space of stable maps). For this let me fix a polarisation $\OO_X(1)$ and an expression thereof as a combination of toric line bundles $\OO_X(1)=\bigotimes_{\rho\in\Sigma(1)}\OO(D_\rho)^{\otimes \alpha_\rho}$.
+Based on this and on previous work of A. Marian, D. Oprea and R. Pandharipande \cite{MOP} (similar ideas had in fact already appeared in the work of Drinfeld, Morrison-Plesser, Givental, and many others), I. Ciocan-Fontanine and B. Kim introduced the following notion, which gives rise to an alternative compactification of the space of maps from smooth curves to a smooth projective toric variety, by strengthening the stability requirement and weakening the concept of map (with respect to Kontsevich's space of stable maps). For this let me fix a polarisation $\OO_X(1)$ and an expression thereof as an integral combination of toric line bundles $\OO_X(1)=\bigotimes_{\rho\in\Sigma(1)}\OO(D_\rho)^{\otimes \alpha_\rho}$.
 
-\begin{definition}\cite[Definition 3.1.1]{CF-K} Let $X$ be as above. We fix the following numerical invariants: a genus $g \geq 0$, a number of marked points $n \geq 0$, an effective curve class $\beta \in \HH_2^+(X)$, and a positive rational number $\epsilon$. A \ilemph{quasimap} is given by the data
+\begin{definition}\cite{CF-K}*{Definition 3.1.1} Let $X$ be as above. We fix the following numerical invariants: a genus $g \geq 0$, a number of marked points $n \geq 0$, an effective curve class $\beta \in \HH_2^+(X)$, and a positive rational number $\epsilon$. A \ilemph{quasimap} is given by the data
 \begin{equation*} \Big((C,x_1,\ldots,x_n), (L_\rho,u_\rho)_{\rho \in \Sigma(1)}, (\varphi_m)_{m \in M}\Big) \end{equation*}
 where:
 \begin{enumerate}
@@ -37,41 +37,45 @@ where:
 Furthermore a quasimap is said to be $\epsilon$-\ilemph{stable} if:
 \begin{enumerate}[resume]
  \item the line bundle $ \omega_C(x_1 + \ldots + x_n)\otimes L^{\otimes \epsilon}$ is ample, where $L = \otimes_\rho L_\rho^{\otimes \alpha_\rho}$ is determined by the chosen polarisation,
- \item $\epsilon \ell(x)\leq 1$, where $\ell(x)$ is the order of the basepoint:
+ \item for every $x\in C$ $\epsilon \ell(x)\leq 1$, where $\ell(x)$ is the order as a basepoint:
 \[\ell(x)=\min\left\{\operatorname{ord}_x\left(\prod_{\rho\in\Sigma(1)\setminus \sigma(1)}u_\rho\right)\ |\ \sigma\in\Sigma_{\operatorname{max}}\right\}.\]
 \end{enumerate}
 An isomorphism between two quasimaps is given by an isomorphism $\psi\colon (C,\mathbf x)\simeq(C',\mathbf x')$ of the underlying prestable curves, together with isomorphisms of the line bundles $\lambda_\rho\colon L_\rho\simeq \psi^* L_\rho'$ preserving the sections and the trivialisations.
 \end{definition}
 
-The above definitions make sense in families over arbitrary base schemes, and therefore determine the moduli space of $\epsilon$-stable quasimaps as a cfg over $(Sch)$, denoted by $\Qe{g}{n}{X}{\beta}$, which comes with universal structures, such as a curve, markings, line bundles and sections; note in particular that, since the basepoints cannot coincide with the markings, it comes with well-defined evaluation maps $\ev\colon \Qe{g}{n}{X}{\beta}\to X^n$.
+The above definitions make sense in families over arbitrary base schemes, and therefore determine the moduli space of $\epsilon$-stable quasimaps as a category fibered in groupoids over $(Sch)$, denoted by $\Qe{g}{n}{X}{\beta}$, which comes with universal structures, such as a curve, markings, line bundles and sections; note in particular that, since the basepoints cannot coincide with the markings, it comes with well-defined evaluation maps $\ev\colon \Qe{g}{n}{X}{\beta}\to X^n$.
 
 \begin{rmk}
  There is a more general notion of quasimaps when the target belongs to a certain class of GIT quotients $W\sslash G$ \cite{CFKM}; smooth toric varieties fit nicely in this framework, as they can always be described as a quotient $\Aaff^{\Sigma(1)}\sslash\Gm^r$, where $r$ is the Picard rank of $X$. In this light, quasimaps can be thought of as maps to the stack quotient $[W/G]$, such that the preimage of the unstable locus is finite and disjoint from the special points. Also, GIT quotients come with a preferred polarisation over the affine quotient $W/G$. The theory deals effectively with non-projective targets in the presence of a well-behaved torus action, and with complete intersections defined by homogeneous bundles as well.
 \end{rmk}
 \begin{rmk}
- The $\epsilon$-stability condition is introduced in order to interpolate between Kontsevich's stable maps (for $\epsilon\gg 0$, hence denoted by $\epsilon=\infty$) and what in the sequel I will refer to just as quasimaps (for $\epsilon\ll1$, denoted by $\epsilon=0+$). Note that in the latter case necessarily $2g-2+n \geq 0$, and there cannot be \ilemph{rational tails} by stability. In between these two extrema one should imagine that rational tails of higher and higher degree are exchanged for basepoints of order lower and lower; see \S \ref{sec:collapsing} below. Notice that the stability condition does not depend on the choice of the polarisation in the chambers $\epsilon=0+$ \cite[Lemma 3.1.3]{CF-K} and $\epsilon=\infty$.
+ The $\epsilon$-stability condition is introduced in order to interpolate between Kontsevich's stable maps (for $\epsilon\gg 0$, hence denoted by $\epsilon=\infty$) and what in the sequel I will refer to just as quasimaps (for $\epsilon\ll1$, denoted by $\epsilon=0+$). Note that in the latter case necessarily $2g-2+n \geq 0$ holds for every component, hence there cannot be any \ilemph{rational tails} (components isomorphic to $\PP^1$, and with no special points other than the node by which they are attached to the rest of the curve). In between these two extrema one should imagine that rational tails of higher and higher degree are exchanged for basepoints of order lower and lower; see \S \ref{sec:collapsing} below. Notice that the stability condition does not depend on the choice of the polarisation in the chambers $\epsilon=0+$ \cite[Lemma 3.1.3]{CF-K} and $\epsilon=\infty$.
 \end{rmk}
 
 \begin{ex}\label{ex:qm_to_pt}
- Quasimaps to a point recover Hassett's moduli space of weighted pointed curves \cite{Hassett}. In particular, to set notation, $\Q{g}{n}{\{*\}}{d}\simeq \oM_{g,n|d}/S_d$ where the first $n$-markings have weight $1$, and the last $d$ (which correspond to the basepoints) have weight $0+$ and are unordered.
+ Quasimaps to a point recover Hassett's moduli space of weighted pointed curves \cite{Hassett}. Thinking of $\{*\}$ as the GIT quotient of $\Aaff^1$ by $\Gm$, we find $\Q{g}{n}{\{*\}}{d}\simeq \oM_{g,n|d}/S_d$ where the first $n$-markings have weight $1$, and the last $d$ (which correspond to the basepoints) have weight $0+$ and are unordered. Notice that quasimaps \emph{do depend} on the presentation of the target as a GIT quotient.
 \end{ex}
 
 \subsection{Basic properties}\begin{thm}\cite[Theorems 3.2.1 and 4.0.1]{CF-K}
  $\Q{g}{n}{X}{\beta}$ is a proper and virtually smooth DM stack of finite type over $\Spec(\kk)$.
 \end{thm}
 
-Here is a brief sketch of their argument. Let me examine properness first: assume we have a stable quasimap \[\left((C_K,\mathbf x_K), (L_{i,K})_{i=1,\ldots,\rk\Pic(X)},(u_{\rho,K})_{\rho\in\Sigma(1)})\right)\] over a discretely valued field $K$, such that $C_K$ is smooth; we would like to extend it over the trait $\dvr=\Spec(R)$, where $K=\operatorname{Frac}(R)$, possibly after base-change. By semistable reduction for curves and Castelnuovo's criterion, we may find a regular model $C$ over $\dvr$ with no $(-1)$-curves. Note that we may not appeal to the properness of the relative Picard functor in order to extend the line bundles (unless we restrict to genus $0$). We exploit properness of the relative Quot functor instead: after twisting with a sufficiently ample polarisation $\OO_{C_K}(m)$ on $C_K$, we find an exact sequence
+Here is a brief sketch of their argument. Let me examine properness first: assume we have a stable quasimap \[\left((C_K,\mathbf x_K), (L_{i,K})_{i=1,\ldots,\rk\Pic(X)},(u_{\rho,K})_{\rho\in\Sigma(1)})\right)\] over a discretely valued field $K$, such that $C_K$ is smooth; we can do so by working componentwise on the generic fiber, after changing base to avoid self-nodes and monodromy issues. We would like to extend it over the trait $\dvr=\Spec(R)$, where $K=\operatorname{Frac}(R)$, possibly after base-change. By semistable reduction for curves and Castelnuovo's criterion, we may find a regular model $C$ over $\dvr$ with no $(-1)$-curves. Note that we may not appeal to the properness of the relative Picard functor in order to extend the line bundles (unless we restrict to genus $0$), since the central fiber might not be of compact type. We exploit properness of the relative Quot functor instead: after twisting with a sufficiently ample polarisation $\OO_{C_K}(m)$ on $C_K$, we find an exact sequence
 \[ 0 \to L_{i,K} \to \OO_{C_K}(m)^{\oplus N_i} \to Q_{i,K}\to 0 \]
-which may be extended to the whole of $C$; up to taking double duals, $L_i$ is a line bundle for every $i$. Now the $u_\rho$ are only rational sections of the relevant line bundles. But observe that the given quasimap induces a bona fide map outside the base locus, i.e. from $C_K\setminus B_K$ to $X_K$. By normality of $C$ and properness of $X$, this can be extended to a map from $C\setminus(\overline{B_K}\cup B_0)$, where $B_0$ is a finite set of points on the central fiber; we thus get that the pullback of the toric line bundles are defined everywhere, and so are the corresponding sections (by Hartogs). By twisting back with $\OO_C(\overline{B_K})$ we obtain an extension of the quasimap we started with. There may be two (fixable) issues at this point: basepoints may coincide with nodes or markings in the central fiber, which can be resolved by blowing-up (the process terminates because the newly created rational components have nontrivial quasimap degree); finally unstable components, that are $(-2)$-curves on which the line bundles and sections are constant, may be contracted by Artin's theory and all the data descend.
+which may be extended to the whole of $C$. By normality of the later, and up to taking double duals, $L_i$ is a line bundle for every $i$. Now the $u_\rho$ are only rational sections of the relevant line bundles. But observe that the given quasimap induces a bona fide map outside the base locus, i.e. from $C_K\setminus B_K$ to $X_K$. By normality of $C$ and properness of $X$, this can be extended to a map from $C\setminus(\overline{B_K}\cup B_0)$, where $B_0$ is a finite set of points on the central fiber; we thus get that the pullback of the toric line bundles are defined everywhere, and so are the corresponding sections (by Hartogs). By twisting back with $\OO_C(\overline{B_K})$ we obtain an extension of the quasimap we started with. There may be two (fixable) issues at this point: basepoints may coincide with nodes or markings in the central fiber, which can be resolved by blowing-up (the process terminates because the newly created rational components have nontrivial quasimap degree); finally unstable components, that are $(-2)$-curves on which the line bundles and sections are constant, may be contracted by Artin's theory and all the data descend.
 
-As for the (dual) perfect obstruction theory, the morphism to the universal Picard stack that forgets the sections $(u_\rho)$,
-\[\Q{g}{n}{X}{\beta} \to \bigtimes_{i=1}^{\rk\Pic(X)}{}_{\MM_{g,n}}\left(\mathfrak{Pic}^{d_{\rho_i}}_{g,n}\right)\]
-admits a perfect obstruction theory given by $\bigoplus_{\rho\in\Sigma(1)} \operatorname R^\bullet\pi_*\mathcal L_\rho$, where $\pi\colon \mathcal C\to \Q{g}{n}{X}{\beta}$ is the universal curve and $\mathcal L_\rho$ are (linear combinations of) the universal line bundles (see also \cites{Jie, CL-pfields}). On the other hand the Euler sequence for $X$ induces an exact sequence
+As for the (dual) perfect obstruction theory, the morphism to the fiber product of universal Picard stacks over $\MM_{g,n}$ that forgets the sections $(u_\rho)$,
+\[\Q{g}{n}{X}{\beta} \to \bigtimes_{\rho\in\Sigma(1),\MM_{g,n}}\left(\mathfrak{Pic}^{d_{\rho}}_{g,n}\right)\]
+admits a virtual tangent bundle given by $\bigoplus_{\rho\in\Sigma(1)} \operatorname R^\bullet\pi_*\mathcal L_\rho$, where $\pi\colon \mathcal C\to \Q{g}{n}{X}{\beta}$ is the universal curve and $\mathcal L_\rho$ are (linear combinations of) the universal line bundles (see also \cites{Jie, CL-pfields}). On the other hand the Euler sequence for $X$ induces an exact sequence
 \[ 0\to \OO_{\mathcal C}^{\oplus\rk\Pic(X)}\to \bigoplus_{\rho\in\Sigma(1)}\mathcal L_\rho\to\mathcal F_X\to 0\]
 on the universal curve, which shows that a compatible perfect obstruction theory relative to $\MM_{g,n}$ is given by $\operatorname R^\bullet\pi_*\mathcal F_X$. Notice that the latter agrees with $\operatorname R^\bullet\pi_*f^*T_X$ on the open locus of quasimaps with no basepoints (i.e. maps).
 
 In particular $\Qe{g}{n}{X}{\beta}$ is endowed with a virtual class of the same dimension as $\virt{\M{g}{n}{X}{\beta}}$. For cohomology classes $\delta_i\in H^*(X,\QQ)$ and natural numbers $a_i,\ i=1,\ldots,n$, we may therefore define descendant $\epsilon$-quasimap invariants by:
 \[\langle \tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n)\rangle^{X,\epsilon}_{g,n,\beta}=\int_{\virt{\Qe{g}{n}{X}{\beta}}}\prod_{i=1}^n \ev_i^*(\delta_i)\psi_i^{a_i}.\]
+
+\begin{rmk}
+ A fully-basepoint quasimap in case $g=1,\ n=0$ may generate some confusion as to whether it has a finite automorphism group or not. Notice though that the translation action is non-trivial on the line bundles.
+\end{rmk}
 
 \subsection{The collapsing morphism}\label{sec:collapsing} I shall start this section with an example.
 \begin{ex}\label{ex:lines_in_p2}
@@ -82,54 +86,58 @@ In particular $\Qe{g}{n}{X}{\beta}$ is endowed with a virtual class of the same 
  There is a birational \ilemph{collapsing} morphism $\chi\colon \M{0}{n}{\PP^N}{d}\to \Q{0}{n}{\PP^N}{d}$.
 \end{lem}
 
-The idea is to find a line bundle on the universal curve that will give us the contraction $q\colon\mathcal C\to\hat{\mathcal C}$: if we work over $\mathfrak{Pic}^d_{0,n}=\MM_{0,n}^{\rm{wt}=d}$, the locus $\mathfrak T^\delta$ spanned by rational tails (trees) of (total) degree $\delta$ is a Cartier divisor in the universal curve $\mathfrak C\to\mathfrak{Pic}^d_{0,n}$. By pulling back to the universal curve over $\M{0}{n}{\PP^N}{d}$, we find that the line bundle \[\omega_\mathcal C\left(\sum_{i=1}^n x_i\right)\otimes f^*\OO_{\PP^N}(1)\otimes \bigotimes_{0<\delta\leq d}\OO_\mathcal C\left((\delta-1)\mathfrak T^\delta\right) \] is semiample and trivial precisely on the rational tails. On the other hand the universal sections $u_0,\ldots,u_N$ of $f^*\OO_{\PP^N}(1)$ induce sections $\tilde{u}_0,\ldots,\tilde{u}_N$ of $\tilde{\mathcal L}:=f^*\OO_{\PP^N}(1)\otimes \bigotimes_{0<\delta\leq d}\OO_\mathcal C\left(\delta\mathfrak T^\delta\right)$, that are constant along the rational tails by degree reasons, hence descend to sections $\bar{u}_0,\ldots,\bar{u}_N$ of $\hat{\mathcal L}=q_*(\tilde{\mathcal L})$ (with basepoints appearing there used to be a rational tail).
+Here is an outline of the proof. We need to find a line bundle on the universal curve that gives us the contraction $q\colon\mathcal C\to\hat{\mathcal C}$. If we work over $\mathfrak{Pic}^d_{0,n}=\MM_{0,n}^{\rm{wt}=d}$, the locus $\mathfrak T^\delta$ spanned by rational tails (trees) of (total) degree $\delta$ is a Cartier divisor in the universal curve $\mathfrak C\to\mathfrak{Pic}^d_{0,n}$. By pulling back to the universal curve over $\M{0}{n}{\PP^N}{d}$, we see that the line bundle \[\omega_\mathcal C\left(\sum_{i=1}^n x_i\right)\otimes f^*\OO_{\PP^N}(1)\otimes \bigotimes_{0<\delta\leq d}\OO_\mathcal C\left((\delta-1)\mathfrak T^\delta\right) \] is semiample and trivial precisely on the rational tails. On the other hand the universal sections $u_0,\ldots,u_N$ of $f^*\OO_{\PP^N}(1)$ induce sections $\tilde{u}_0,\ldots,\tilde{u}_N$ of $\tilde{\mathcal L}:=f^*\OO_{\PP^N}(1)\otimes \bigotimes_{0<\delta\leq d}\OO_\mathcal C\left(\delta\mathfrak T^\delta\right)$, that are constant along the rational tails by degree reasons, hence descend to sections $\bar{u}_0,\ldots,\bar{u}_N$ of $\hat{\mathcal L}=q_*(\tilde{\mathcal L})$ (with basepoints appearing where there used to be a rational tail).
 
 \begin{rmk}
  A proof attributed to Jun Li can be found in \cite[Lemma 2.6]{LLY1} for the parametrised/graph space; a more careful weighting of the line bundles shows that the collapsing can be performed step-by-step, i.e. for every $\epsilon_1<\epsilon_2$ there is a proper morphism:
- \[ \mathcal{Q}^{\epsilon_2}_{0,n}(\PP^N,d) \to \mathcal{Q}^{\epsilon_1}_{0,n}(\PP^N,d),\] which was exploited for example in \cite{Mustata} to study the Chow ring of such spaces, and is at the core of the study of wall-crossing phenomena in \cite{TodaStableQuotient} and \cite{CF-K-wallcrossing}. The statement generalises well to higher genus - where it is only a virtually birational morphism, see \cite[Theorem 3]{MOP} and \cite[Proposition 4.21]{Manolache-Push}; instead it does not extend to the case that the target is any toric variety. The problem is that there could be some toric line bundle of negative degree along a rational tail; examples arise already from the Hirzebruch surface $\mathbb F_1$. A lengthier discussion can be found in \cite[Appendix A]{BN}.
+ \[ \mathcal{Q}^{\epsilon_2}_{0,n}(\PP^N,d) \to \mathcal{Q}^{\epsilon_1}_{0,n}(\PP^N,d),\] which was exploited for example in \cite{Mustata} to study the Chow ring of such spaces, and is at the core of the wall-crossing formulae of \cite{TodaStableQuotient} and \cite{CF-K-wallcrossing}. The statement generalises well to higher genus - where it is only a virtually birational morphism, see \cite[Theorem 3]{MOP} and \cite[Proposition 4.21]{Manolache-Push}; instead it does not extend to the case that the target is any toric variety. The problem is that there could be some toric line bundle of negative degree along a rational tail; examples arise already from the Hirzebruch surface $\mathbb F_1$. A lengthier discussion can be found in \cite[Appendix A]{BN}.
 \end{rmk}
 
 \subsection{Generating functions and $\epsilon$-wallcrossing}\label{subsec:gf_and_wc} If we fix $X$ and the numerical invariants $g,n,\beta$, the quasimap spaces determine a finite wall-and-chamber structure on $\QQ_{>0}$, such that $\Qe{g}{n}{X}{\beta}$ is constant for $\epsilon$ in a fixed chamber, and changes across finitely many values of $\epsilon$. I will briefly report on the beautiful results of Ciocan-Fontanine and Kim \cites{CF-K-wallcrossing,CF-K-higher-genus,CF-K-MirrorSymmetry} entailing relationships between the virtual classes and the resulting invariants when crossing an $\epsilon$-wall.
 
-Let me introduce some more notation. Fix a homogeneous basis $\eta_0,\ldots,\eta_l$ of $H^*(X)=H^*(X,\QQ)$, with dual basis $\eta^0,\ldots,\eta^l$ with respect to the intersection product $\langle\cdot,\cdot\rangle$, and let $\mathbf{t}=\sum_{i=0}^lt_i\eta_i$ be a general element of $H^*(X)$. Let $\Lambda$ be the Novikov ring obtained by completing $ H_2^+(X)_\QQ$ along the maximal ideal of non-zero classes. Adopting double bracket notation:
-\[\lala\delta_1\psi_1^{a_1},\ldots,\delta_n\psi_n^{a_n}\rara^\epsilon_{g,n}(\mathbf{t})=\sum_{\substack{\beta\in H_2^+(X) \\ m\geq 0}}\frac{q^\beta}{m!}\langle \delta_1\psi_1^{a_1},\ldots,\delta_n\psi_n^{a_n},\mathbf t,\ldots,\mathbf t\rangle^{\epsilon}_{g,n+m,\beta} \]
+Let me introduce some more notation. Fix a homogeneous basis $\eta_0,\ldots,\eta_l$ of $H^*(X)=H^*(X,\QQ)$, with dual basis $\eta^0,\ldots,\eta^l$ with respect to the intersection product $\langle\cdot,\cdot\rangle$, and let $\mathbf{t}=\sum_{i=0}^lt_i\eta_i$ be a general element of $H^*(X)$. Let $\Lambda$ be the Novikov ring obtained by completing the polynomial $\QQ$-algebra associated to the monoid $ H_2^+(X)$ along the maximal ideal of non-invertible elements. Adopting double bracket notation:
+\[\lala\tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n)\rara^\epsilon_{g,n}(\mathbf{t})=\sum_{\substack{\beta\in H_2^+(X) \\ m\geq 0}}\frac{q^\beta}{m!}\langle \delta_1\psi_1^{a_1},\ldots,\delta_n\psi_n^{a_n},\mathbf t,\ldots,\mathbf t\rangle^{\epsilon}_{g,n+m,\beta} \]
 we may consider the \ilemph{big $J^\epsilon$-function} as a generating series for genus $0$ $\epsilon$-quasimap invariants assuming the following form:
 \begin{equation}\label{eq:J-form} J^\epsilon(q,t,z)=\mathds{1}+\frac{\mathbf{t}}{z}+\sum_{i=0}^l\eta_i\sum_{\beta> 0,\OO_X(1)\cdot\beta\leq 1/\epsilon}q^\beta J^\epsilon_{i,\beta}(z)+\sum_{i=1}^l\eta_i\lala\frac{\eta^i}{z(z-\psi_1)}\rara^\epsilon_{0,1}(\mathbf{t}).\end{equation}
-Among the variations on the notion of quasimaps, that of \ilemph{parametrised} quasimaps is relevant here:
+\begin{rmk} Among the variations on the notion of quasimaps, that of \ilemph{parametrised} quasimaps is relevant here:
 $\QGe{g}{n}{X}{\beta}$ involves the extra data of a map of degree $1$ to $\PP^1$, singling out a specific rational component $C_0$ of $C$, which is exempt from satisfying the $\epsilon$-stability condition; the $\epsilon=\infty$ case recovers the well-known construction of the graph space $\M{g}{n}{X\times\PP^1}{(\beta,1)}$ in Gromov-Witten theory. The $\Gm$-action on $\PP^1$, fixing two points $0$ and $\infty$, lifts to an action on $\QGe{g}{n}{X}{\beta}$, and the $J^\epsilon$-function is defined as a sum of residue integrals along some special $\Gm$-fixed loci $F_0$, namely those where all the curve class is supported over $0\in\PP^1$:
 \[J^\epsilon(q,t,z)=\sum_{m\geq0,\beta\geq0}q^\beta \ev_{0,*}\left(\frac{\prod_{i=1}^m \ev_i(\mathbf{t})}{m!}\cap\operatorname{Res}_{F_0}\virt{\QGe{0}{m}{X}{\beta}}\right);\]
-it is understood that the first three terms in the expression \eqref{eq:J-form} correspond to theunstable $F_0$ terms in the above sum, i.e. $(m,\beta)=(0,0), (1,0),$ and $m=0,\beta\neq 0$ but $\OO_X(1)\cdot\beta\leq 1/\epsilon$ respectively. $J^\infty(q,t,z)$ coincides with Givental's big J-function; on the other hand Ciocan-Fontanine and Kim denote $J^{0+}(q,t,z)$ by $I(q,t,z)$.
+it is understood that the first three terms in the expression \eqref{eq:J-form} correspond to the unstable $F_0$ terms in the above sum, i.e. $(m,\beta)=(0,0), (1,0),$ and $m=0,\beta\neq 0$ but $\OO_X(1)\cdot\beta\leq 1/\epsilon$ respectively. $J^\infty(q,t,z)$ coincides with Givental's big J-function; on the other hand Ciocan-Fontanine and Kim denote $J^{0+}(q,t,z)$ by $I(q,t,z)$. \end{rmk}
 
-The \ilemph{small $J^\epsilon$-function} is obtained by restricting to $\mathbf t=0$; the small I-function plays a central role in the theory and it turns out that all small $J^\epsilon$-functions are polynomial $q$-truncations of the small $I$-function.
+\begin{definition} 
+ The \ilemph{small $J^\epsilon$-function} is obtained by restricting to $\mathbf t=0$.
+\end{definition}
+The small I-function plays a central role in the theory, and it turns out that all small $J^\epsilon$-functions are polynomial $q$-truncations of the small $I$-function.
 The latter has been computed by Givental for toric targets and it is given by the following expression:
-\begin{equation}\label{eq:GiventalI} I(q,0,z)=\sum_{\beta\geq 0}q^\beta \frac{\prod_{\rho\in\Sigma(1)}\prod_{i=0}^{D_\rho\cdot\beta}(D_\rho+iz)}{\prod_{\rho\in\Sigma(1)}\prod_{i=-\infty}^{D_\rho\cdot\beta}(D_\rho+iz)}\end{equation}
+\begin{equation}\label{eq:GiventalI} I(q,0,z)=\sum_{\beta\geq 0}q^\beta \frac{\prod_{\rho\in\Sigma(1)}\prod_{i=0}^{D_\rho\cdot\beta}(D_\rho+iz)}{\prod_{\rho\in\Sigma(1)}\prod_{i=-\infty}^{D_\rho\cdot\beta}(D_\rho+iz)}.\end{equation}
 
 Define $I_0(q)= 1+O(q)\in \Lambda$ and $I_1(q)\in qH^{\leq 2}(X,\Lambda)$ as the following coefficients in the $\frac{1}{z}$-expansion
 \[I(q,0,z)=I_0(q)\mathds{1}+I_1(q)\frac{1}{z}+O(\frac{1}{z^2}).\]
-In the \ilemph{toric semipositive} case ($-K_X$ nef), it can be computed from \eqref{eq:GiventalI} that $I_0(q)=1$, and $I_1(q)$ is a sum over those curve classes $\beta\in \operatorname{Ker}(-K_X\cdot )$ such that there is exactly one ray $\rho_\beta\in\Sigma(1)$ satisfying $D_{\rho_\beta}\cdot\beta <0$:
-\[I_1(q)=\sum_{\substack{K_X\cdot\beta=0 \\ \exists!\rho_\beta:D_{\rho_\beta}\cdot\beta<0}}q^\beta D_{\rho_\beta}\frac{(-1)^{D_{\rho_\beta}\cdot\beta+1}(-D_{\rho_\beta}\cdot\beta-1)!}{\prod_{\rho^\prime\neq\rho_\beta}(D_{\rho^\prime}\cdot\beta)!}.\]
+\begin{rmk} In the \ilemph{toric semipositive} case ($-K_X$ nef), it can be computed from \eqref{eq:GiventalI} that $I_0(q)=1$, and $I_1(q)$ is a sum over those curve classes $\beta\in \operatorname{Ker}(-K_X\cdot )$ such that there is exactly one ray $\rho_\beta\in\Sigma(1)$ satisfying $D_{\rho_\beta}\cdot\beta <0$:
+\[I_1(q)=\sum_{\substack{K_X\cdot\beta=0 \\ \exists!\rho_\beta:D_{\rho_\beta}\cdot\beta<0}}q^\beta D_{\rho_\beta}\frac{(-1)^{D_{\rho_\beta}\cdot\beta+1}(-D_{\rho_\beta}\cdot\beta-1)!}{\prod_{\rho^\prime\neq\rho_\beta}(D_{\rho^\prime}\cdot\beta)!}.\]\end{rmk}
 
 Let me introduce one more generating function: the $S^\epsilon$-operator is defined by
 \[S^\epsilon(q,t,z)(\eta)=\sum_{i=0}^l \eta_i \lala \frac{\eta^i}{z-\psi_1},\eta\rara^\epsilon_{0,2}(\mathbf{t}).\]
 
 \begin{lem}[Birkhoff factorisation] \cite[Theorem 1.3.1]{CF-K-wallcrossing} In the toric semipositive case $J^\epsilon(q,t,z)=S^\epsilon(q,t,z)(\mathds{1})$. \end{lem}
 
-$S^\infty(q,t,z)(\mathds{1})$ recovers Givental's fundamental solution matrix in Gromov-Witten theory.
+\begin{rmk} $S^\infty(q,t,z)(\mathds{1})$ recovers Givental's fundamental solution matrix in Gromov-Witten theory. \end{rmk}
 
-\begin{thm}\label{thm:wcf}
- In the toric semipositive case \cite[Theorem 1.2.2]{CF-K-wallcrossing}
+\begin{thm}\label{thm:wcf}\cite[Theorem 1.2.2]{CF-K-wallcrossing}
+ In the toric semipositive case 
  \[ J^\epsilon(q,t,z)=J^\infty(q,t+J^\epsilon_1(q),z)\]
  and in particular
- \begin{multline*} \sum_{\beta\in H_2^+(X)}q^\beta\langle\tau_{a_1}(\delta_1),\delta_2,\ldots,\delta_n\rangle^\epsilon_{0,n,\beta}= \\ \sum_{\beta^\prime\in H_2^+(X)}q^{\beta^\prime}\sum_{m\geq 0}\frac{1}{m!}\langle\tau_{a_1}(\delta_1),\delta_2,\ldots,\delta_n,J^\epsilon_1(q),\ldots,J^\epsilon_1(q)\rangle^\epsilon_{0,n+m,\beta^\prime}\end{multline*}
+ \begin{multline*} \sum_{\beta\in H_2^+(X)}q^\beta\langle\tau_{a_1}(\delta_1),\delta_2,\ldots,\delta_n\rangle^\epsilon_{0,n,\beta}= \\ \sum_{\beta^\prime\in H_2^+(X)}q^{\beta^\prime}\sum_{m\geq 0}\frac{1}{m!}\langle\tau_{a_1}(\delta_1),\delta_2,\ldots,\delta_n,J^\epsilon_1(q),\ldots,J^\epsilon_1(q)\rangle^\epsilon_{0,n+m,\beta^\prime}.\end{multline*}
  More generally \cite[Theorem 1.3.2]{CF-K-higher-genus}
- \begin{multline*} \sum_{\beta\in H_2^+(X)}q^\beta\langle\tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n)\rangle^\epsilon_{g,n,\beta}= \\ \sum_{\beta^\prime\in H_2^+(X)}q^{\beta^\prime}\sum_{m\geq 0}\frac{1}{m!}\langle\tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n),J^\epsilon_1(q),\ldots,J^\epsilon_1(q)\rangle^\epsilon_{g,n+m,\beta^\prime}\end{multline*}
+ \begin{multline*} \sum_{\beta\in H_2^+(X)}q^\beta\langle\tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n)\rangle^\epsilon_{g,n,\beta}= \\ \sum_{\beta^\prime\in H_2^+(X)}q^{\beta^\prime}\sum_{m\geq 0}\frac{1}{m!}\langle\tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n),J^\epsilon_1(q),\ldots,J^\epsilon_1(q)\rangle^\epsilon_{g,n+m,\beta^\prime}.\end{multline*}
 \end{thm}
 \begin{rmk} $0+\leq \epsilon_1<\epsilon_2\leq\infty$ wall-crossing follows from the formulae above and the invertibility of $\mathbf t\mapsto \mathbf t+J^\epsilon_1$.
 \end{rmk}
-Ciocan-Fontanine and Kim proved the genus $0$ formulae in greater generality for semipositive GIT quotients admitting a torus action with isolated fixed points - in which case, though, the formula I have written above is not quite right: some $J^\epsilon_0(q)$ factors must be introduced.
+\begin{rmk} Ciocan-Fontanine and Kim proved the genus $0$ formulae in greater generality for semipositive GIT quotients admitting a torus action with isolated fixed points - in which case, though, the formula I have written above is not quite right: some $J^\epsilon_0(q)$ factors must be introduced.
             
-The proof of the genus $0$ result follows from a careful analysis of the fixed loci of the $T$-action on $\Qe{0}{2+m}{X}{\beta}$ and how they change under embedding of $X$ in projective space postcomposed with the collapsing morphism. The more general statement follows from an extension of Dubrovin's reconstruction that allows one to reduce any invariant to one-pointed descendant invariants. The higher genus result for semipositive toric varieties follows from an application of the localisation formula, which expresses the residue integrals as products of vertex, edge, and flag contributions, and the genus-invariance of certain universal polynomials appearing at the vertices, a lemma inspired by \cite[\S 7.6]{MOP}.
-  
+Their proof of the genus $0$ result follows from a careful analysis of the fixed loci of the $T$-action on $\Qe{0}{2+m}{X}{\beta}$ and how they change under embedding of $X$ in projective space postcomposed with the collapsing morphism. The more general statement follows from an extension of Dubrovin's reconstruction that allows one to reduce any invariant to one-pointed descendant invariants. The higher genus result for semipositive toric varieties follows from an application of the localisation formula, which expresses the residue integrals as products of vertex, edge, and flag contributions, and the genus-invariance of certain universal polynomials appearing at the vertices, a lemma inspired by \cite[\S 7.6]{MOP}.
+\end{rmk}
+
 \smallskip
 
 I will now review a number of basic properties of quasimap spaces and comment on those that differ from ordinary Gromov-Witten theory.
@@ -164,7 +172,7 @@ The left hand side can be expanded as $q_*\left(\bigotimes_{\rho\in\Sigma_X(1)}L
 
 Finally, notice that the basepoint set of \[\xi':=\left((\bar C,\bar{\mathbf x}),(\bar L_\tau,\bar u_\tau)_{\tau\in\Sigma_Y(1)},(\varphi_{m_Y})_{m_Y\in M_Y}\right)\] is the image of that of $\xi$ under $q$, hence it is a finite set of non-special points by construction; also, $\xi'$ is stable by the very construction of $q$. We may therefore set $Q(f)(\xi)=\xi'$.
 
-We have also proved in \cite[Lemma B.5]{BN} that if $f$ is finite onto its image (i.e. it does not contract any effective curve class in $X$) and $\Q{g}{n}{Y}{f_*\beta}$ is unobstructed, then $Q(f)$ admits a perfect obstruction theory compatible with the ones concerned, hence $Q(f)^!\virt{\Q{g}{n}{Y}{f_*\beta}}=\virt{\Q{g}{n}{X}{\beta}}$, i.e. the virtual classes behave well under virtual pullback.
+\begin{rmk} We have proved in \cite[Lemma B.5]{BN} that if $f$ is finite onto its image (i.e. it does not contract any effective curve class in $X$) and $\Q{g}{n}{Y}{f_*\beta}$ is unobstructed, then $Q(f)$ admits a perfect obstruction theory compatible with the ones concerned, hence $Q(f)^![\Q{g}{n}{Y}{f_*\beta}]=\virt{\Q{g}{n}{X}{\beta}}$, i.e. the virtual classes behave well under virtual pullback. \end{rmk}
 
 \begin{rmk}
 I. Ciocan-Fontanine has kindly pointed out that, contrary to the case of stable maps, $k$ might not be a closed embedding, even if $i$ is. Consider the Segre embedding:
@@ -221,7 +229,7 @@ and extend by linearity to all of $H^*(X,\Lambda)$. The \emph{small} product is 
  
  Similarly they prove that the dilaton equation is satisfied by the class $(J_0^\epsilon(q)\mathds{1})\psi-J_1^\epsilon(q)$ \cite[Lemma 3.4.3]{CF-K-higher-genus}. We collect these results in the following lemma, restricting to the special case of semipositive toric varieties.
  \begin{lemma}
-  In the tori semipositivec case, the following equations hold.
+  In the tori semipositive case, the following equations hold.
   \begin{multline}\tag{string}
    \langle \tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n), \mathds{1}\rangle_{g,n+1,\beta}= \\
    \sum_{i=1}^n\langle \tau_{a_1}(\delta_1),\ldots,\tau_{a_i-1}(\delta_i),\ldots,\tau_{a_n}(\delta_n)\rangle_{g,n,\beta}
@@ -243,7 +251,7 @@ It is a consequence of the wall-crossing formulae that the big $J$ and $I$ funct
  
  Every primitive collection $\mathcal P$ gives rise to an effective curve class as follows: the sum of $\mathcal P$ lies in the interior of some cone $\sigma^\prime$, hence we may write $v_{\rho_1}+\ldots+v_{\rho_k}=c_{1}v_{\rho'_1}+\ldots+c_{h}v_{\rho'_h}$ for some positive integers $\{c_j\}$. Dualising the exact sequence \eqref{eq:toric_Pic_es}, we obtain \[0\to\ H_2(X)\to \Z^{\Sigma(1)}\to N\to 0,\] hence the above relation among the $v_\rho$ determines a curve class, which Batyrev showed to be effective, and which is denoted by $\beta(\mathcal P)$.
  
- \emph{Batyrev's quantum ring} is a $q$-deformation of ordinary cohomology, defined as $\mathbb C[x_\rho]_{\rho\in\Sigma(1)}/(P(\Sigma)+SR_\omega(\Sigma))$, where \[SR_\omega(\Sigma)=\langle x_{\rho_1}\cdots x_{\rho_k}-q^{\beta(\mathcal P)}x_{\rho'_1}^{c_1}\cdots x_{\rho'_h}^{c_h} : \mathcal P\text{ is a primitive collection}\rangle.\]
+ \emph{Batyrev's quantum ring} is a $q$-deformation of ordinary cohomology, defined as \[\mathbb C[x_\rho]_{\rho\in\Sigma(1)}/(P(\Sigma)+SR_\omega(\Sigma)),\] where \[SR_\omega(\Sigma)=\langle x_{\rho_1}\cdots x_{\rho_k}-q^{\beta(\mathcal P)}x_{\rho'_1}^{c_1}\cdots x_{\rho'_h}^{c_h} : \mathcal P\text{ is a primitive collection}\rangle.\]
 \end{definition}
 
 Since Batyrev's ring naively accounts for smooth rational curves in the toric variety, roughly speaking the difference resides in the count of nodal curves (see \cite{HScounting} for a discussion that motivated this remark); on the other hand quasimaps make rational tails unstable, so it might be tempting to wonder whether the small quasimap cohomology is always isomorphic to the Batyrev's ring in the semipositive case.
@@ -257,7 +265,7 @@ One more comment is in order: since Witten's genus $0$ topological recursion rel
 \section{The localisation formula for toric quasimaps}\label{sec:loc_formula}
 The localisation formula is discussed in \cite[\S 5]{CF-K-higher-genus}, as it is a fundamental tool in the extension of the wall-crossing formulae to higher genus. I review it here and make a further step towards explicitness by expressing the various contributions combinatorially in terms of weights, following \cite{HolgerSpielberg}.
 
-\subsection{Notation and weights} Fix a bijection of $\Sigma(1)$ and $[N]$. The (non-effective) action of the big torus $T=\Gm^N$ on $X$ induces an action on $\Q{g}{n}{X}{\beta}$, by scaling the sections. Let me denote by $\lambda_1,\ldots,\lambda_N$ the corresponding weights, i.e. generators of $H^*_T(\{*\})$. For this section let $d$ denote the dimension of $X$.
+\subsection{Notation and weights} Fix a bijection of $\Sigma(1)$ and $[N]$. The (non-effective) action of the big torus $T=\Gm^N$ on $X$ induces an action on $\Q{g}{n}{X}{\beta}$, by scaling the sections. Let me denote by $\lambda_1,\ldots,\lambda_N$ the corresponding weights, i.e. generators of the $T$-equivariant cohomology of a point $H^*_T(\{*\})$. For this section let $d$ denote the dimension of $X$.
 
 Let me denote by $\{\sigma_i\}_{i\in\Sigma^\text{max}}$ the $T$-fixed points on $X$ (corresponding to maximal cones of $\Sigma$) and by $\{\tau_{i,j}\}_{i,j\in\Sigma^\text{max}}$ the $1$-dimensional orbits (corresponding to facets of the maximal cones; if it exists, $\tau_{i,j}$ connects $\sigma_i$ and $\sigma_j$).
 Write $\sigma_i\diamond\sigma_j$ if $\sigma_i$ and $\sigma_j$ are two adjacent maximal cones; since $X$ is smooth, $\{v_\rho\}_{\rho\prec\tau_{i,j}}\cup\{v_d\}$ is a $\ZZ$-basis of $N$ (where $v_d$ is the only ray in $\sigma_i$, but not in $\tau_{i,j}$), so we can find the dual basis $\{m_1,\ldots,m_d\}$ of $M$. Define: \[\lambda^{\sigma_i}_{\sigma_j}=\sum_{\rho\in\Sigma(1)}\langle m_d,v_\rho\rangle\lambda_\rho \quad \text{and} \quad \lambda^{\sigma}_{\text{tot}}=\prod_{\sigma'\in\Sigma^{\text{max}}\colon\sigma'\diamond\sigma}\lambda^\sigma_{\sigma'}\] Notice that there is a correspondence between rays of $\sigma$ and adjacent maximal cones, via the complementary facet, resp. the intersection; I will denote by $\sigma(\rho)$ the adjacent maximal cone corresponding to $\rho\prec\sigma$. Compare with \cite[\S\S 6.4 and 7.3]{HolgerSpielberg}.
@@ -289,7 +297,7 @@ $\left(\Gamma, v, \gamma, b,\varepsilon,\delta,\mu\right)$
 where:
 \begin{enumerate}
  \item $\Gamma=(V,E)$ is a connected graph with vertex set $V$ and edge set $E$ (no self-edges allowed); let me denote by $F$ the set of flags $f=(v,e)$ such that $v$ is adjacent to $e$;
- \item $\vv\colon V\to \{\sigma_i\}_{i\in\Sigma^\text{max}}$ assigns a fix point to each vertex;
+ \item $\vv\colon V\to \{\sigma_i\}_{i\in\Sigma^\text{max}}$ assigns a fixed point to each vertex;
  \item $\gamma\colon V\to \N$ is a genus assignment;
  \item $b\colon V\to H^+_2(X,\ZZ)$ assigns an effective curve class to each vertex;
  \item $\varepsilon\colon E\to \{\tau_{i,j}\}_{i,j\in\Sigma^\text{max}}$ assigns a one-dimensional orbit to each edge;
@@ -337,10 +345,10 @@ For a quasimap $\left((C,\mathbf p),(L_{\rho},u_{\rho})\right)$ there is therefo
  0&\to \Ext^0(\Omega_C(\mathbf p),\OO_C)\to H^0(C,\F_X)\to \mathcal T^0_{|C}\to \\
   &\to \Ext^1(\Omega_C(\mathbf p),\OO_C)\to H^1(C,\F_X)\to \mathcal T^1_{|C}\to 0
 \end{align*}
-where $\mathcal T^0-\mathcal T^1$ is the tangent-obstruction bundle.
+where $\mathcal T^0-\mathcal T^1$ is the class of the tangent-obstruction bundle in $K$-theory.
 Denote by $B_1,\ldots, B_6$ the terms appearing in the above exact sequence, by $(-)^f$ and $(-)^m$ their fixed and moving parts respectively. We can study them by means of the (partial) normalisation sequence, which displays their contributions as a product of vertex, edge, and flag factors.
 
-Recall that an object is fixed if we can find an isomorphism between it and its image under the torus action (for every element of the torus). Observe that the edge factors are just the same as in the stable maps case. On the other hand, a vertex contribution may come from a totally basepoint quasimap; in this case, write $\sigma_i:=\vv(v)=\langle \rho_{i_1},\ldots,\rho_{i_d}\rangle$, and notice that the $d$ (zero) sections $u_{i_1},\ldots,u_{i_d}$ are going to be unaffected by the torus action, while the non-trivial action on $\{u_\rho\}_{\rho\nprec\sigma_i}$ can be adjusted by taking an appropriate automorphism of the corresponding line bundles (of which there are precisely $\rk\Pic(X)$); the underlying curve $C_v$ is not altered by the action, i.e. we can take $\id_{C_v}$.
+Recall that an object is fixed if, for every element of the torus, we can find an isomorphism between it and its image under the torus action. Observe that the edge factors are just the same as in the stable maps case. On the other hand, a vertex contribution may come from a totally basepoint quasimap; in this case, write $\sigma_i:=\vv(v)=\langle \rho_{i_1},\ldots,\rho_{i_d}\rangle$, and notice that the $d$ (zero) sections $u_{i_1},\ldots,u_{i_d}$ are going to be unaffected by the torus action, while the non-trivial action of a torus element on $\{u_\rho\}_{\rho\nprec\sigma_i}$ can be adjusted by taking an appropriate automorphism of the corresponding line bundles (of which there are precisely $\rk\Pic(X)$); the underlying curve $C_v$ is not altered by the action, i.e. we can take $\id_{C_v}$.
 
 Focussing on the \emph{fixed part} first, observe that $B_1^f$ comprises a $1$-dimensional contribution from both the edges and the genus $0$, $\deg(v)=2$ ($b(v)\neq 0$) components. \begin{comment}, which cancels out with a corresponding term in $B_4^f$; this corresponds to the automorphism of a two-pointed rational curve. The remaining part of \end{comment} 
 $B_4^f$ corresponds to deformations of the contracted components. On the other hand the fixed part of $B_2$ and $B_5$ may be simultaneously studied from the normalisation exact sequence:
@@ -359,7 +367,7 @@ $B_4^f$ corresponds to deformations of the contracted components. On the other h
 \end{equation}
 The fixed part of $B_2-B_5$ results in $\oplus_{\rho\nprec\sigma_i}H^0(C,\OO_C(\mathbf q)_{|\mathbf q})$, which coincides with the relative tangent of $\overline{\mathcal M}_{g(v),\val(v)|\sum_{\rho\nprec\sigma_i}D_\rho\cdot b(v)}$ over $\mathfrak M_{g(v),\val(v)}$. This discussion proves that the fixed part of the restriction of the perfect obstruction theory to the fixed loci corresponds to their tangent bundle. Let us move on to the \emph{moving part}.
 
-As compared to the case of stable maps, the stability condition implies that there are no rational tails, hence $B_1^m=0$ (see \cite[Lemma 7.2]{HolgerSpielberg}). 
+As compared to the case of stable maps, the stability condition implies that there are no rational tails of any degree, hence $B_1^m=0$ (see \cite[Lemma 7.2]{HolgerSpielberg}). 
 One more convention: for a flag $f=(v,e)$, if $\vv(v)=\sigma_i$ and $\varepsilon(e)=\tau_{i,j}$, denote by $\lambda_f:=\frac{1}{\delta(e)}\lambda^{\sigma_i}_{\sigma_j}$.
 Since deformations of contracted components are $T$-fixed, $B_4^m$ comes from smoothing nodes between a non-contracted component and:
 \begin{itemize}
@@ -386,11 +394,11 @@ The computation for the edge contributions is the same as in the stable maps cas
 \begin{lem}
 The edge contribution to the moving part is given by
 \[
- e^T(H^0(C_e,f_e^*TX)^m)=(-1)^{\delta_e}\frac{(\delta_e!)^2}{\delta_e^{2\delta_e}}(\lambda^{\sigma_1}_{\sigma_2})^{2\delta_e}\prod_{\substack{\sigma'\in\Sigma^{\text{max}}: \\ \sigma_2\neq\sigma'\diamond\sigma_1,d'\geq0}}\prod_{k=0}^{d'}(\lambda^{\sigma_1}_{\sigma'}-\frac{k}{\delta_e}\lambda^{\sigma_1}_{\sigma_2})
+ e^T(H^0(C_e,f_e^*TX)^m)=(-1)^{\delta_e}\frac{(\delta_e!)^2}{\delta_e^{2\delta_e}}(\lambda^{\sigma_1}_{\sigma_2})^{2\delta_e}\prod_{\substack{\sigma'\in\Sigma^{\text{max}}: \\ \sigma_2\neq\sigma'\diamond\sigma_1,d'\geq0}}\prod_{k=0}^{d'}(\lambda^{\sigma_1}_{\sigma'}-\frac{k}{\delta_e}\lambda^{\sigma_1}_{\sigma_2}),
 \]
 and by Serre duality
 \[
- e^T(H^1(C_e,f_e^*TX)^m)=\prod_{\substack{\sigma'\in\Sigma^{\text{max}}: \\ \sigma_2\neq\sigma'\diamond\sigma_1,d'\leq -2}}\prod_{k=d'}^{-2}(\lambda^{\sigma_1}_{\sigma'}-\frac{k+1}{\delta_e}\lambda^{\sigma_1}_{\sigma_2})
+ e^T(H^1(C_e,f_e^*TX)^m)=\prod_{\substack{\sigma'\in\Sigma^{\text{max}}: \\ \sigma_2\neq\sigma'\diamond\sigma_1,d'\leq -2}}\prod_{k=d'}^{-2}(\lambda^{\sigma_1}_{\sigma'}-\frac{k+1}{\delta_e}\lambda^{\sigma_1}_{\sigma_2}),
 \]
 with notation as above. Notice that these expressions are independent of the ordering of $\{\sigma_1,\sigma_2\}$.
 \end{lem}
@@ -398,11 +406,11 @@ with notation as above. Notice that these expressions are independent of the ord
 \begin{lem}
  The vertex contribution to the moving part is given by
  \[
-  e^T(H^0(C_v,\F_{X|C_v})^m-H^1(C_v,\F_{X|C_v})^m)=\prod_{j=1}^d(\lambda^{\sigma_i}_{\sigma_{i_j}})^{d_{i_j}-\gamma(v)+1}
+  e^T(H^0(C_v,\F_{X|C_v})^m-H^1(C_v,\F_{X|C_v})^m)=\prod_{j=1}^d(\lambda^{\sigma_i}_{\sigma_{i_j}})^{d_{i_j}-\gamma(v)+1},
  \]
 \noindent where $\sigma_i=\vv(v)$, $\sigma_{i_j}\diamond\sigma_i$, and $d_{i_j}=\OO_X(D_{i_j})\cdot b(v)$ for the divisor associated to $\sigma_{i_j}$. In particular when $\gamma(v)=b(v)=0$ this reduces to
 \[
- e^T(TX_{\sigma_i})=\lambda^{\sigma_i}_{\text{tot}}
+ e^T(TX_{\sigma_i})=\lambda^{\sigma_i}_{\text{tot}}.
 \]
 
 \end{lem}
@@ -427,7 +435,7 @@ and the weight of the virtual normal bundle is given by
  \begin{aligned}
   \frac{1}{e^T(N_\Gamma^{\text{vir}})}&=\prod_{f\in F\colon v(f)\in V^{\text{non-deg}}} \frac{1}{\lambda_f-\psi_f} \cdot \prod_{\substack{v\in V^\text{dgn}_{\val=2}\\ f_i:=(v,e_i)\in F, i=1,2}} \frac{1}{\lambda_{f_1}+\lambda_{f_2}} \cdot \\  
   &\prod_{\substack{e\in E, \delta_e:=\delta(e), \\ \{\sigma_1,\sigma_2\}:=\vv\{\partial e\}}}\left( \frac{(-1)^{\delta_e}\delta_e^{2\delta_e}}{(\delta_e!)^2(\lambda^{\sigma_1}_{\sigma_2})^{2\delta_e}}\prod_{\substack{\sigma'\in\Sigma^{\text{max}}\colon \\ \sigma_2\neq\sigma'\diamond\sigma_1,d'=\OO(D_{\rho'})\cdot \epsilon(e)}}\frac{\prod_{k=d'+1}^{-1}(\lambda^{\sigma_1}_{\sigma'}-\frac{k}{\delta_e}\lambda^{\sigma_1}_{\sigma_2})}{\prod_{k=0}^{d'}(\lambda^{\sigma_1}_{\sigma'}-\frac{k}{\delta_e}\lambda^{\sigma_1}_{\sigma_2})} \right) \cdot \\
-  & \prod_{\substack{v\in V \\ \sigma:=\vv(v)}} \prod_{\sigma'\in\Sigma^{\text{max}}\colon\sigma'\diamond\sigma}\frac{1}{(\lambda^{\sigma}_{\sigma'})^{D_{\rho'}\cdot b(v)}}\cdot \prod_{v\in V}(\lambda^{\vv(v)}_{\text{tot}})^{\val(v)+\gamma(v)-1}
+  & \prod_{\substack{v\in V \\ \sigma:=\vv(v)}} \prod_{\sigma'\in\Sigma^{\text{max}}\colon\sigma'\diamond\sigma}\frac{1}{(\lambda^{\sigma}_{\sigma'})^{D_{\rho'}\cdot b(v)}}\cdot \prod_{v\in V}(\lambda^{\vv(v)}_{\text{tot}})^{\val(v)+\gamma(v)-1}{}_.
  \end{aligned}
 \end{equation*}
 \end{prop}
@@ -442,7 +450,7 @@ The cohomology ring is given by:
 \[
  H^*(\mathbb F_2,\ZZ)\simeq\ZZ[Z_1,\ldots,Z_4]/\langle Z_1-Z_2,Z_4-Z_3-2Z_2, Z_1Z_2,Z_3Z_4\rangle
 \]
-We work out the following weights for the $\Gm^4$-action:
+The following are the weights of the $\Gm^4$-action:
 
 \begin{center}
  \begin{tabular}{||c|c||c|c||}
@@ -472,55 +480,158 @@ The relevant graphs in the stable maps case are:
   \draw (8,2) circle (.5cm) node{$\Gamma_2$};
  \end{tikzpicture}
 \end{center}
-For $\epsilon=0+$, $\Gamma_2$ is unstable, and we have instead to consider:
+For $\epsilon=0+$, $\Gamma_2$ is unstable, instead we have to consider:
 \begin{center}
  \begin{tikzpicture}[radius=2pt]
   \draw[fill=black] (0,2) circle node[above]{$\{p_2,p_3\}$};
-  \draw[fill=white] (0,0) circle node[below]{$\{p_1\},b=D_\infty$};
   \draw (0,2) --node[left]{$F$} (0,0);
+  \draw[fill=white] (0,0) circle node[below]{$\{p_1\},b=D_\infty$};
   \draw (2,2) circle (.5cm) node{$\tilde\Gamma_2$};
  \end{tikzpicture}
 \end{center}
-The white circle indicates a basepoint component. It can be verified that:
-\[ \langle Z_3,Z_4,Z_1Z_4\rangle^{\mathbb F_2,\infty}_{0,3,D_\infty+F}=-1 \quad \text{while} \quad \langle Z_3,Z_4,Z_1Z_4\rangle^{\mathbb F_2,0+}_{0,3,D_\infty+F}=-2.\]
+The white circle indicates a basepoint component. 
+
+Using the above formula (and \cite[Theorem 7.8]{HolgerSpielberg} to deal with $\Gamma_2$) we compute the following contributions:
+\begin{itemize}
+ \item $\Gamma_1$ - insertions: $\lams{2}{3}\cdot\lams{4}{1}\cdot(\lams{4}{1}\lams{4}{3})$;
+ 
+ inverse normal bundle: $\frac{1}{\lams{4}{1}}\cdot\frac{1}{\lams{1}{4}+\lams{1}{2}}\cdot\left(\frac{-1}{(\lams{1}{4})^2}\frac{1}{\lams{1}{2}}\right)\left(\frac{-1}{(\lams{1}{2})^2}(\lams{1}{4}+\lams{1}{2})\right)$.
+ 
+ \item $\Gamma_2$ - insertions: $\lams{1}{4}\cdot\lams{4}{1}\cdot(\lams{4}{1}\lams{4}{3})$;
+ 
+ inverse normal bundle: $(\lams{1}{2}\lams{1}{4})\cdot\frac{1}{\lams{4}{1}}\frac{1}{\lams{1}{2}\lams{1}{4}}\cdot\lams{2}{1}\cdot\left(\frac{-1}{(\lams{1}{4})^2}\frac{1}{\lams{1}{2}}\right)\left(\frac{-1}{(\lams{1}{2})^2}(\lams{1}{4}+\lams{1}{2})\right)$.
+ 
+ \item $\tilde\Gamma_2$ - insertions: $\lams{1}{4}\cdot\lams{4}{1}\cdot(\lams{4}{1}\lams{4}{3})$;
+ 
+ inverse normal bundle: $\frac{1}{\lams{4}{1}}\frac{1}{\lams{1}{4}}\cdot\frac{-1}{(\lams{1}{4})^2}\frac{1}{\lams{1}{2}}\cdot\frac{1}{\lams{1}{2}}(\lams{1}{4})^2$.
+ 
+\end{itemize}
+
+Putting everything together we find:
+\[ \langle Z_3,Z_4,Z_1Z_4\rangle^{\mathbb F_2,\infty}_{0,3,D_\infty+F}=\rm{cont}(\Gamma_1)+\rm{cont}(\Gamma_2)=\frac{\lams{4}{3}(-\lams{2}{3}+\lams{1}{4}+\lams{1}{2})}{(\lams{1}{2})^2}=-1,\]
+while
+\[\langle Z_3,Z_4,Z_1Z_4\rangle^{\mathbb F_2,0+}_{0,3,D_\infty+F}=\rm{cont}(\Gamma_1)+\rm{cont}(\tilde\Gamma_2)=\frac{-\lams{4}{3}(\lams{2}{3}+\lams{4}{1})}{(\lams{1}{2})^2}=-2.\]
 
 
 
 \section{Relative quasimaps}\label{sec:rel_qm}
-The relative problem in Gromov-Witten theory consists in studying maps satisfying not only incidence conditions, but also a tangency requirement to a divisor. It has seen great advancements in the past twenty years, of which I will sample some most relevant ones in algebraic geometry (there is an almost parallel and similarly rich story in symplectic geometry):
+The relative problem in Gromov-Witten theory consists in studying maps satisfying not only incidence conditions, but also a tangency (multiplicity) requirement to a divisor. It has seen great advancements in the past twenty years, of which I will sample some most relevant ones in algebraic geometry (there is an almost parallel and similarly rich story in symplectic geometry):
 \begin{itemize}
+ \item L. Caporaso and J. Harris' count of planar curves \cite{CH};
  \item R. Vakil's pioneering work on rational and elliptic curves in projective space, satisfying tangency conditions to a hyperplane \cite{Vre};
- \item A. Gathmnn's work in genus $0$, enhancing the previous one to the case of a smooth very ample divisor in any variety \cite{Ga};
- \item J. Li's moduli space of maps to expanded targets, removing the ampleness hypothesis on the divisor and developing the framework for the all important degeneration formula \cite{Li1,Li2}, which has been reviewed by B. Kim in a more explicitly logarithmic \cite{KimLog}, and by D. Abramovich and B. Fantechi in a more stacky \cite{AbramovichFantechi} context;
- \item a host of recent works around D. Abramovich, Q. Chen, M. Gross, and B. Siebert's space of logarithmic stable maps \cite{ChenLog,AbramovichChenLog,GrossSiebertLog}, which allows for example the divisor to be snc.
+ \item A. Gathmann's work in genus zero, enhancing the previous one to the case of a smooth very ample divisor in any variety \cite{Ga};
+ \item J. Li's moduli space of maps to expanded targets, removing the ampleness hypothesis on the divisor and developing the framework for the all important degeneration formula \cites{Li1,Li2};
+ \item the latter has been reviewed by B. Kim exploiting more explicitly the relevant logarithmic structures \cite{KimLog}, and by D. Abramovich and B. Fantechi, who replaced the cumbersome predeformability condition with a more tractable transversality condition, after passing to a root stack \cite{AbramovichFantechi};
+ \item a host of recent works around D. Abramovich, Q. Chen, M. Gross, and B. Siebert's space of logarithmic stable maps \cite{ChenLog,AbramovichChenLog,GrossSiebertLog}, which allows for example the divisor to be simple normal crossing.
 \end{itemize}
-It would be interesting to have a full relative theory for $\epsilon$-quasimaps, including a degeneration formula and wall-crossing formulae for relative invariants as well; one application (suggested by I. Ciocan-Fontanine) would be to the study of the higher genus $\epsilon$-quasimap invariants of the quintic threefold via Maulik-Pandharipande's degeneration scheme \cite{MauPan}. In \cite{BN} we have made a first step towards this program, namely we have introduced spaces of genus $0$ relative quasimaps to a smooth very ample divisor, extending the work of Gathmann. Among the peculiarities of this approach are the fact that the tangency needs not be maximal (i.e. not all intersection points of the curve with the divisor must be marked with the respective tangency order requirement), and the fact that the relative spaces are nested (they become smaller as the tangency requirement gets higher), with a nice formula expressing their virtual classes in terms of one another, corrected by a boundary term exhibiting a clear recursive structure. This led Gathmann to the discovery of an algorithm for computing relative invariants, or, even further, restricted invariants of the hyperplane section, recursively, starting from the descendant theory of the ambient space; under positivity assumptions, he was able to realise this in a different proof of what goes under the name of Givental's mirror theorem, or the quantum Lefschetz principle \cite{Ga-MF}. In this section I will report on my work with N. Nabijou.
-\subsection{Review of Gathmann's work} The starting point is the case of $\PP^N$ relative to a hyperplane $H$. The most down-to-earth approach works in this case: chosen a tangency condition $\alpha\in\N^n$ with $\sum\alpha\leq d$, Gathmann defines the relative space $\M{0}{\alpha}{\PP^N|H}{d}\subseteq \M{0}{n}{\PP^N}{d}$ as the closure of the ``nice'' locus of maps $f\colon(\PP^1,\mathbf x)\to \PP^N$ such that $f(\PP^1)\subsetneq H$ and $f^{-1}(H)-\sum\alpha_ix_i$ is an effective divisor. He then proves that the reducible maps that lie in the closure can be characterised combinatorially as follows:
+It would be interesting to have a full relative theory for $\epsilon$-quasimaps, including a degeneration formula and wall-crossing formulae for relative invariants as well; one application (suggested by I. Ciocan-Fontanine) would be to the study of the higher genus $\epsilon$-quasimap invariants of the quintic threefold via Maulik-Pandharipande's degeneration scheme \cite{MauPan}. In \cite{BN} we have made a first step towards this program, namely we have introduced spaces of genus $0$ relative quasimaps to a smooth very ample divisor, extending the work of Gathmann. Among the peculiarities of this approach are the fact that the tangency needs not be maximal (i.e. not all intersection points of the curve with the divisor must be marked with the respective tangency order requirement), and the fact that the relative spaces are nested (they become smaller as the tangency requirement gets higher), with a nice formula expressing their virtual classes in terms of one another, corrected by a boundary term exhibiting a clear recursive structure. This led Gathmann to the discovery of an algorithm for computing relative invariants, or, even further, restricted invariants of the hyperplane section, recursively, starting from the descendant theory of the ambient space; under positivity assumptions, he was able to realise this in a different proof of what goes under the name of Givental's mirror theorem, or the quantum Lefschetz principle \cite{Ga-MF}. In this section I will report on my joint work with N. Nabijou \cite{BN}.
+
+\subsection{Review of Gathmann's work} The starting point is the case of $\PP^N$ relative to a hyperplane $H$. The most down-to-earth approach works in this case: chosen a tangency condition $\alpha\in\N^n$ with $\sum\alpha\leq d$, Gathmann defines the relative space $\M{0}{\alpha}{\PP^N|H}{d}\subseteq \M{0}{n}{\PP^N}{d}$ as the closure of the ``nice'' locus of maps $f\colon(\PP^1,\mathbf x)\to \PP^N$ such that $f(\PP^1)\subsetneq H$ and $f^{-1}(H)-\sum\alpha_ix_i$ is an effective divisor.
+\begin{lem}\cite[Lemma 1.8]{Ga}
+ The nice locus is an irreducible locally closed substack of $\M{0}{n}{\PP^N}{d}$ of codimension $\sum\alpha$.
+\end{lem}
+\begin{proof}
+ It can be described as follows: there is a $\Gm$ torsor $\mathcal X$ over $\mathcal{M}_{0,n}$ that parametrises \[\left((\PP^1,x_1,\ldots,x_n),s\in H^0(\PP^1,\OO_{\PP^1}(\sum\alpha))\right)\]
+ such that the vanishing locus of $s$ is $\sum_{i=1}^n\alpha_ix_i$. Letting \[\mathcal Y=\left(\rm{Vect}_{\mathcal X}\left(\pi_*\OO_{\PP^1}(d-\sum\alpha)\right)\setminus 0_{\mathcal X}\right)\times_{\mathcal X} \rm{Vect}_{\mathcal X}\left(\pi_*\OO_{\PP^1}(d)^{\oplus N}\right)\] there is a morphism $\mathcal Y\to \M{0}{n}{\PP^N}{d}$ given by
+ \[\left((\PP^1,\mathbf x),s,t_0,t_1,\ldots,t_N\right)\mapsto \left((\PP^1,\mathbf x),f=[st_0:t_1:\ldots:t_N]\right),\]
+ which is a $\Gm^2$-torsor over the nice locus. The dimensional count is \[(n-3)+1+(d-\sum\alpha+1)+N(d+1)-2=\dim \M{0}{n}{\PP^N}{d}-\sum\alpha.\]
+\end{proof}
+
+Notice that this endows $\M{0}{\alpha}{\PP^N|H}{d}$ with a schematic structure.
+
+Gathmann then proves that the reducible maps that lie in the closure can be characterised combinatorially as follows:
  a stable map $(C,x_1, \ldots, x_n,f)$ is in $\M{0}{\alpha}{\PP^N|H}{d}$ if and only if, for each connected component $Z$ of $f^{-1}(H) \subseteq C$:
 \begin{enumerate}
 \item if $Z$ is a point and is equal to a marked point $x_i$, then $f$ is tangent to $H$ at $x_i$ to order $\alpha_i$ at least;
-\item if $Z$ is a curve, and if we let $C^{(i)}$ for $1 \leq i \leq r$ denote the irreducible components of $C$ adjacent to $Z$, and $m^{(i)}$ denote the multiplicity of $f|_{C^{(i)}}$ to $H$ at the node $Z \cap C^{(i)}$, then:
+\item if $Z$ is a curve - it is then a rational tree -, and if we let $C^{(i)}$ for $1 \leq i \leq r$ denote the irreducible components of $C$ adjacent to $Z$, and $m^{(i)}$ denote the multiplicity of $f|_{C^{(i)}}$ to $H$ at the node $Z \cap C^{(i)}$ (there is only one because $g=0$), then:
 \begin{equation} \label{Relative stable map internal component inequality} H \cdot f_* [Z] + \sum_{i=1}^r m^{(i)} \geq \sum_{x_i \in Z} \alpha_i \end{equation}
 \end{enumerate}
-Now this definition works well for every pair $(X|Y)$ of a variety with a smooth divisor, by just replacing $H$ with $Y$ in the description above. On the other hand, the definition as the closure of the nice locus makes it clear that $\M{0}{\alpha}{\PP^N|}{d}$ is irreducible of the expected dimension: \[\dim(\M{0}{\alpha}{\PP^N|H}{d})=\dim (\M{0}{n}{\PP^N}{d})-\sum\alpha.\]
-If we then assume that $Y$ is very ample, we may use the complete linear system associated to it in order to embed $\phi_{\lvert Y\rvert}\colon X\hookrightarrow\PP^N$ and find a hyperplane $H\subseteq \PP^N$ such that $H\cap X= Y$. Set $d=\phi_{\lvert Y\rvert,*}(\beta)$ for a curve class $\beta\in H_2^+(X)$. The following cartesian diagram holds true:
+
+More generally, if we assume that $Y$ is a very ample smooth divisor in the smooth variety $X$, we may use the complete linear system associated to $Y$ in order to embed $\phi_{\lvert Y\rvert}\colon X\hookrightarrow\PP^N$, and find a hyperplane $H\subseteq \PP^N$ such that $H\cap X= Y$. Set $d=\phi_{\lvert Y\rvert,*}(\beta)$ for a curve class $\beta\in H_2^+(X)$. Define $\M{0}{\alpha}{X|Y}{\beta}$ by the following cartesian diagram:
 \bcd
 \M{0}{\alpha}{X|Y}{\beta}\ar[d]\ar[r]\ar[dr,phantom,"\Box"] & \M{0}{n}{X}{\beta}\ar[d,"\Phi_{\lvert Y\rvert}"] \\
 \M{0}{\alpha}{\PP^N|H}{d} \ar[r] & \M{0}{n}{\PP^N}{d}
 \ecd
-Furthermore $\operatorname{R}^\bullet\pi_*f^*N_{X/\PP^N}$ provides a compatible perfect (by the unobstructedness of $\M{0}{n}{\PP^N}{d}$) obstruction theory for $\Phi_{\lvert Y\rvert}$, hence we may endow $\M{0}{\alpha}{X|Y}{\beta}$ with a virtual class
-\[ \virt{\M{0}{\alpha}{X|Y}{\beta}}=\Phi_{\lvert Y\rvert}^![\M{0}{\alpha}{\PP^N|H}{d}] \]
+
+\begin{multicols}{2}
+
+\vspace*{.1cm}
+
+\noindent The afore-mentioned combinatorial description of degenerate relative maps works as well for every such pair $(X|Y)$, by just replacing $H$ with $Y$ - in equation \eqref{Relative stable map internal component inequality} the first summand is the degree of $f_{|Z}^*N_{Y/X}$.
+
+\vspace{.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+  \draw [fill=gray!30] (-.5,-1) -- (6,-1) node[right]{$Y$} -- (4,2) -- (-2.5,2) -- (-.5,-1);
+  \draw (6,1.5) node[right]{$X$};
+  \draw [thick] (0,0) to [out=90,in=180] (1,1) to [out=0,in=180] (2.5,0) to [out=0,in=-135] (4,1) node[right]{$Z$};
+  \draw [thick] (2.5,0) to (4,3) node[right]{$C^{(2)}$};
+  \draw [thick,dashed] (2.5,0) to (2,-1);
+  \draw [thick] (2,-1) -- (1.5,-2);
+  \draw [thick] plot [smooth] coordinates {(0,2.8) (.3,3) (1,1) (1.7,3) (2,2.8)};
+  \draw (0,2.8) node[left]{$C^{(1)}$};
+ % \draw [fill] (3.75,2.5) circle [radius=2pt];
+  \draw [fill] (1.53,2.5) circle [radius=2pt];
+  \draw [fill] (.15,.5) circle [radius=2pt] node[above left]{$x_i$};
+  \draw [fill] (1,1) circle [radius=2pt] node[label={[label distance=.02cm]30:$m^{(1)}$}]{};
+  \draw [fill] (2.5,0.0) circle [radius=2pt] node[below right]{$m^{(2)}$};
+ % \draw [fill=white] (.41,2.7) circle [radius=2pt];
+ % \draw [fill=white] (3.7,.7) circle [radius=2pt] node[below right]{$Z$};
+ \end{tikzpicture}
+ \captionof{figure}{A degenerate relative map.}\label{fig:relmap}
+\end{center}
+\end{multicols}
+
+Furthermore $\operatorname{R}^\bullet\pi_*f^*N_{X/\PP^N}$ provides a compatible perfect dual obstruction theory for $\Phi_{\lvert Y\rvert}$ (since $H^1(\PP^1,f^*\OO_X(1))$, which surjects onto $H^1(\PP^1,f^*N_{X/\PP^N})$, vanishes - i.e. by the unobstructedness of $\M{0}{n}{\PP^N}{d}$), hence we may endow $\M{0}{\alpha}{X|Y}{\beta}$ with a virtual class
+\[ \virt{\M{0}{\alpha}{X|Y}{\beta}}=\Phi_{\lvert Y\rvert,\rm{vir}}^![\M{0}{\alpha}{\PP^N|H}{d}] \]
 which also has the expected codimension $\sum\alpha$ with respect to $\virt{\M{0}{n}{X}{\beta}}$.
 
-As anticipated, the combinatorial description shows that $\M{0}{\alpha+e_k}{X|Y}{\beta}\subseteq \M{0}{\alpha}{X|Y}{\beta}$, and it is a divisor. Gathmann finds a natural line bundle with section that cuts it out, together with a number of boundary correction terms.
+As a side remark, Gathmann did not talk about virtual pullback - which was introduced later in \cite{Manolache-Pull} - but defined $\virt{\M{0}{\alpha}{X|Y}{\beta}}$ as the refined intersection product of $[\M{0}{\alpha}{\PP^N|H}{d}]$ and $\virt{\M{0}{n}{X}{\beta}}$ in the smooth DM stack $\M{0}{n}{\PP^N}{d}$, i.e. \[\virt{\M{0}{\alpha}{X|Y}{\beta}}=\Delta^!\left([\M{0}{\alpha}{\PP^N|H}{d}]\times \virt{\M{0}{n}{X}{\beta}}\right)\] where $\Delta$ is the diagonal of $\M{0}{n}{\PP^N}{d}\times \M{0}{n}{\PP^N}{d}$. The two definitions coincide:
+ 
+\begin{lem}\cite[Lemma C.1]{BN}
+Let $f\colon Y\to X$ be a morphism of DM stacks over a smooth base $\mathfrak M$, such that $X\to\mathfrak M$ is smooth, and there is a compatible triple of obstruction theories
+\bcd
+ f^* \LL_{X/\mathfrak M} \ar[r] \ar[d,"\operatorname{Id}"] & \EE_{Y/\mathfrak M} \ar[r] \ar[d] & \EE_{Y/X} \ar[r,"{[1]}"] \ar[d] & \, \\
+ f^* \LL_{X/\mathfrak M} \ar[r] & \LL_{Y/\mathfrak M} \ar[r] & \LL_{Y/X} \ar[r,"{[1]}"] & \,
+\ecd
+Then, for every cartesian diagram
+ \bcd
+ G\ar[r,"g"]\ar[d,"q"]\ar[rd,phantom,"\Box"] & F\ar[d,"p"] \\
+ Y\ar[r,"f"] & X 
+ \ecd
+and every class $\alpha\in \Achow_*(F)$, the \emph{diagonal pull-back}
+\[
+ f^!_{\Delta}(\alpha)=\Delta_{X/\mathfrak M}^!([Y]^\text{vir}\times\alpha)\in \Achow_*(G)
+\]
+coincides with the virtual pullback of $\alpha$ along $(f,E_{Y/X})$ .
+
+\end{lem}
+\begin{proof}
+
+Consider the following cartesian diagram:
+\bcd
+G \ar[r,"q \times g"] \ar[d,"g"] \ar[rd,phantom,"\square"] & Y\times_{\mathfrak M}F \ar[r,"\pr_1"] \ar[d,"f \times \Id"] \ar[rd,phantom,"\square"] & Y \ar[d,"f"] \\
+F \ar[r,"p \times \Id"] \ar[d,"p"] \ar[rd,phantom,"\square"] & X\times_{\mathfrak M} F \ar[r,"\pr_1"] \ar[d,"\Id \times p"] & X \\
+X \ar[r,"\Delta_{X/\mathfrak M}"] & X\times_{\mathfrak M}X &
+\ecd
+Then, by commutativity of (virtual) pull-backs, we have
+\begin{align*} \Delta_{X/\mathfrak M}^!([Y]^\text{vir}\times\alpha) & = \Delta_{X/\mathfrak M}^!((f^!_{\operatorname{vir}}[X])\times\alpha) \\
+& = \Delta_{X/\mathfrak M}^!(f^!_{\operatorname{vir}}([X]\times\alpha)) \\
+& = f^!_{\operatorname{vir}}(\Delta_{X/\mathfrak M}^!([X]\times\alpha)) \\
+& = f^!_{\operatorname{vir}}(\alpha).
+\end{align*}
+\end{proof}                                   
+                                   
+Noticeably from the combinatorial description, Gathmann's relative spaces get smaller as we increase the tangency requirement, and in particular $\M{0}{\alpha+e_k}{X|Y}{\beta}\subseteq \M{0}{\alpha}{X|Y}{\beta}$ is a virtual divisor (where $e_k$ is the $k$-th standard basis vector of $\N^n$). Gathmann finds a line bundle on $\M{0}{\alpha}{X|Y}{\beta}$ with a section that vanishes along $\M{0}{\alpha+e_k}{X|Y}{\beta}$, together with a number of boundary correction terms.
 
 Let me start with some heuristic: assume $n=1$ for this. Let $Y=V(s)\subseteq X$. Then $\M{0}{(1)}{X|Y}{\beta}\subseteq \M{0}{1}{X}{\beta}$ is cut out by the section $\ev_1^*(s)$ of $\ev_1^*\OO_X(Y)$.
 
-Now the restriction of $\ev_1$ to $\M{0}{(1)}{X|Y}{\beta}$ lands into $Y$; by composing $df_{x_1}\colon TC_{x_1}\to TX_{f(x_1)}$ with the projection to $N_{Y/X,f(x_1)}$ we get a map that has to vanish if $f$ is tangent to $H$ at $x_1$. Rearranging we get a section $\ev_1^*(d^1s)$ of $x_1^*(T^*C)\otimes\ev_1^*\OO_X(Y)$ that defines $\M{0}{(2)}{X|Y}{\beta}$ within $\M{0}{(1)}{X|Y}{\beta}$.
+\textbf{Key relation: tangency and $\psi$-classes.} Now the restriction of $\ev_1$ to $\M{0}{(1)}{X|Y}{\beta}$ lands into $Y$; by composing $df_{x_1}\colon TC_{x_1}\to TX_{f(x_1)}$ with the projection to $N_{Y/X,f(x_1)}$ we get a map that has to vanish if $f$ is tangent to $H$ at $x_1$. Rearranging we get a section $\ev_1^*(d^1s)$ of $x_1^*(T^*C)\otimes\ev_1^*\OO_X(Y)$ that defines $\M{0}{(2)}{X|Y}{\beta}$ within $\M{0}{(1)}{X|Y}{\beta}$.
 
 More generally we may use the jet bundles (or bundles of principal parts) of $\OO_X(Y)$: there is an exact sequence
-\[ 0\to x_1^*\Omega_{C}^{\otimes m+1}\otimes\ev_1^*\OO_X(Y)\to ev_1^*\mathcal P^{m+1}(\OO_X(Y))\to ev_1^*\mathcal P^{m}(\OO_X(Y))\to 0\]
-and $s$ induces a section $\ev_1^*(d^{m+1}s)$ of the middle term (which should be thought of as the Taylor expansion of $s$ at $x_1$ up to order $m+1$), the image of which in the rightmost term (i.e. its truncation up to order $m$) vanishes on $\M{0}{(m)}{X|Y}{\beta}$, hence inducing a section of the line bundle $x_1^*\Omega_{C}^{\otimes m+1}\otimes\ev_1^*\OO_X(Y)$ which vanishes along $\M{0}{(m+1)}{X|Y}{\beta}$. Notice though that it also vanishes (for every $m$, really) on those maps such that the irreducible component containing $x_1$ is mapped entirely into $Y$. We have thus arrived to Gathmann's formula:
+\[ 0\to x_1^*\Omega_{C}^{\otimes \alpha}\otimes\ev_1^*\OO_X(Y)\to ev_1^*\mathcal P^{\alpha}(\OO_X(Y))\to ev_1^*\mathcal P^{\alpha-1}(\OO_X(Y))\to 0\]
+and $s$ induces a section $\ev_1^*(d^{\alpha}s)$ of the middle term (which should be thought of as the Taylor expansion of $s$ at $x_1$ up to order $\alpha$), the image of which in the rightmost term (i.e. its truncation up to order $\alpha-1$) vanishes on $\M{0}{(\alpha)}{X|Y}{\beta}$, hence inducing a section of the line bundle $x_1^*\Omega_{C}^{\otimes \alpha}\otimes\ev_1^*\OO_X(Y)$ which vanishes along $\M{0}{(\alpha+1)}{X|Y}{\beta}$. Notice though that it also vanishes (for every $\alpha$, really) on those maps such that the irreducible component of $C$ containing $x_1$ is mapped entirely into $Y$. We have thus arrived to Gathmann's formula:
 \begin{thm}\cite[Theorem 2.6]{Ga}\label{thm:Gathmann_formula} In the Chow group of $\M{0}{\alpha}{X|Y}{\beta}$
  \begin{equation*} (\alpha_k \psi_k + \ev_k^* \OO_X(Y)) \cap \virt{\M{0}{\alpha}{X|Y}{\beta}} = \virt{\M{0}{\alpha+e_k}{X|Y}{\beta}} + \virt{\mathcal{D}_{\alpha,k}(X,\beta)} \end{equation*}
 \end{thm}
@@ -528,16 +639,26 @@ where $\mathcal{D}_{\alpha,k}(X,\beta)$ is a sum over all
 \begin{itemize}
  \item $r\geq 0$ determining the number of adjacent external components $C^{(1)},\ldots,C^{(r)}$,
  \item $M=(m^{(1)},\ldots,m^{(r)})\in \N^r_{>0}$ determining the order of contact of $C^{(i)}$ with $Y$ at the intersection with the internal component $C^{(0)}$,
- \item $A=(\alpha^{(0)},\ldots,\alpha^{(r)})$ and $B=(\beta_0,\ldots,\beta_r)$ dictating the splitting of the markings/tangency requirements and curve class respectively,
+ \item $A=(\alpha^{(0)},\ldots,\alpha^{(r)})$ and $B=(\beta_0,\ldots,\beta_r)$ dictating the splitting of the tangency conditions at the markings, and of the curve class respectively,
 \end{itemize}
-   of the following ``comb loci'':
+   of the following ``comb loci'' (see Figure \ref{fig:relmap}):
 \[\mathcal{D}_{A,B,M}(X)=\M{0}{\lvert\alpha^{(0)}\rvert+r}{Y}{\beta_0}\times_{H^r}\prod_{i=1}^r
 \M{0}{\alpha^{(i)}\cup m^{(i)}}{X|Y}{\beta_i}\]
-These are endowed with the product virtual fundamental class, weighted by a factor $\frac{m^{(1)}\cdot\ldots\cdot m^{(r)}}{r!}$; the denominator is just there to make the auxiliary gluing markings unordered, while in a sense the numerator is the real content of Gathmann's formula. As noticed above the section $\ev_k^*(d^ms)$ vanishes whenever $x_k$ lies on an internal component; the sum must therefore run over all those splitting types such that $\mathcal{D}_{A,B,M}(X)$ lies in $\M{0}{\alpha}{X|Y}{\beta}$ but not in $\M{0}{\alpha+e_k}{X|Y}{\beta}$, namely those satisfying $\alpha_k\in\alpha^{(0)}$ and
-\[\OO_X(Y)\cdot\beta_0+\sum M=\sum \alpha^{(0)}.\]
-The proof goes roughly as follows: the reduction to the case of $(\PP^N|H)$ is just a matter of virtual intersection calculus; in the unobstructed case the shape of the formula follows simply from the above arguments and a(n actual) dimension computation, so the hard part is to get the coefficients right. Locally one may reduce further to $(\PP^1,\{\infty\})$ by projecting from a generic $(N-2)$-plane inside $H$; finally the proof for $\PP^1$ is based on Vakil's observation that, for maps from cuves to curves, the obstruction theory only sees the special loci (markings, nodes, ramification points, and contracted components), so that one can split the deformation space and reduce to a much simpler moduli problem.
+satisfying $\alpha_k\in\alpha^{(0)}$ and the equality in \eqref{Relative stable map internal component inequality}:
+\[\OO_X(Y)\cdot\beta_0+\sum M=\sum \alpha^{(0)},\]
+so that the corresponding stable maps belong to $\M{0}{\alpha}{X|Y}{\beta}$, but not to $\M{0}{\alpha+e_k}{X|Y}{\beta}$.
+
+These comb loci are endowed with the pullback of the product virtual fundamental class under the diagonal of $H^r$ as in
+\bcd
+\mathcal D_{A,B,M}(X)\ar[r]\ar[d]\ar[dr,phantom,"\Box"] & \M{0}{\lvert\alpha^{(0)}\rvert+r}{Y}{\beta_0}\times\prod_{i=1}^r
+\M{0}{\alpha^{(i)}\cup m^{(i)}}{X|Y}{\beta_i}\ar[d,"\ev"] \\
+H\ar[r,"\Delta"] & H^r
+\ecd
+weighted by a factor $\frac{m^{(1)}\cdot\ldots\cdot m^{(r)}}{r!}$; the denominator is there to make the auxiliary gluing markings unordered, while the numerator is the real content of Gathmann's formula.
+
+The proof goes roughly as follows: the reduction to the case of $(\PP^N|H)$ is just a matter of virtual intersection calculus. In the unobstructed case the shape of the formula simply follows from the above arguments and a dimensional computation (not virtual), so the hard part is to get the coefficients right. The general case follows from the case $\sum\alpha=d$: marking the extra intersections of the curve with $H$ induces a finite $(d-\sum\alpha)!-1$ cover (it is true on the nice locus, and this is dense); one needs some extra care in dealing with the $\psi$-classes and their pullbacks under forgetting the markings. Locally, one may further reduce to $(\PP^1,\{\infty\})$ by projecting from a generic $(N-2)$-plane inside $H$. Finally, the proof for $\PP^1$ is based on Vakil's observation that, for maps from curves to curves, the obstruction theory only sees the special loci (markings, nodes, ramification points, and contracted components), so that one can split the deformation space and reduce to a much simpler moduli problem (an orbi-$\PP^1$).
 \begin{rmk}\label{rmk:expandedGathmann}
- Gathmann's recursion can be recovered in the framework of Jun Li's spaces of maps to expansions (or rather Kim's logarithmic stable maps). This was suggested by J. Wise and D. Ranganathan. It may seem surprising but in fact the idea of reducing from non-maximal to maximal tangency order was already contained in the proof of Gathmann's formula. Here is the strategy to get Theorem \ref{thm:Gathmann_formula} for $(\PP^N|H)$ using maps to expansions: add $h=d-\sum\alpha$ auxiliary markings of multiplicity $1$, so consider $\MK{0}{\alpha\cup(1,\ldots,1)}{\PP^N|H}{d}$. Call $c_h$ the map forgetting the auxiliary markings and the log structures, collapsing the target, and stabilising the source curve, which is an $(h!:1)$ cover of $\M{0}{\alpha}{\PP^N|H}{d}$ (generically we are just marking the $h$ simple unmarked intersections of the image of $C$ with $H$, and endowing $C$ with the pullback of the divisorial log structure on $\PP^N$; here we use that $g=0$ and the target is $\PP^N$, but notice that the approach will work whenever the nice locus is dense in the relative space). Denote instead by $c\colon \MK{0}{\alpha\cup(1,\ldots,1)}{\PP^N|H}{d}\to \M{0}{\alpha\cup(1,\ldots,1)}{\PP^N}{d}$ the map that forgets the log structures, collapses the target, and stabilises the source curve; we may then pullback Gathmann's line bundle and section along $c$. The vanishing locus of the section thus obtained consists of maps such that the target is expanded, and $x_k$ lies on a non-trivial (i.e. having either positive horizontal degree, or at least three markings) component at higher level. Notice that, as soon as there is more than one non-trivial component at higher level, $c$ has positive-dimensional fibers. Hence we are reduced to a sum over bipartite graphs with only one vertex at higher level; we recognise in these the shape of the comb loci appearing in Gathmann's formula. Also, I claim that the only term that survives pushforward under $c_h$, and in which one of the auxiliary markings (say $x_{n+1}$) may lie on the component containing $x_k$, is when the latter has zero horizontal degree and contains only $x_k$ and $x_{n+1}$ among the markings - otherwise the map collapsing the target and forgetting the auxiliary markings will have positive dimensional fibers. This recovers $\M{0}{\alpha+e_k}{\PP^N|H}{d}$. 
+ Gathmann's recursion can be recovered in the framework of Jun Li's spaces of maps to expansions (or rather Kim's logarithmic stable maps). This was suggested by J. Wise and D. Ranganathan. It may seem surprising but in fact the idea of reducing from non-maximal to maximal tangency order was already contained in the proof of Gathmann's formula. Here is the strategy to get Theorem \ref{thm:Gathmann_formula} for $(\PP^N|H)$ using maps to expansions: add $h=d-\sum\alpha$ auxiliary markings of multiplicity $1$, so consider $\MK{0}{\alpha\cup(1,\ldots,1)}{\PP^N|H}{d}$. Call $c_h$ the map forgetting the auxiliary markings and the log structures, collapsing the target, and stabilising the source curve, which is an $(h!:1)$ cover of $\M{0}{\alpha}{\PP^N|H}{d}$ (generically we are just marking the $h$ simple unmarked intersections of the image of $C$ with $H$, and endowing $C$ with the pullback of the divisorial log structure on $\PP^N$; here we use that $g=0$ and the target is $\PP^N$, but notice that the approach will work whenever the nice locus is dense in the relative space). Denote instead by $c\colon \MK{0}{\alpha\cup(1,\ldots,1)}{\PP^N|H}{d}\to \M{0}{\alpha\cup(1,\ldots,1)}{\PP^N}{d}$ the map that forgets the log structures, collapses the target, and stabilises the source curve; we may then pullback Gathmann's line bundle and section along $c$. The vanishing locus of the section thus obtained consists of maps such that the target is expanded, and $x_k$ lies on a non-trivial (i.e. having either positive horizontal degree, or at least three markings) component at higher level. Notice that, as soon as there is more than one non-trivial component at higher level, $c$ has positive-dimensional fibers. Hence we are reduced to a sum over bipartite graphs with only one vertex at higher level; we recognise in these the shape of the comb loci appearing in Gathmann's formula. Also, I claim that the only term that survives pushforward under $c_h$, and in which one of the auxiliary markings (say $x_{n+1}$) lies on the component containing $x_k$, is when the latter has zero horizontal degree and contains only $x_k$ and $x_{n+1}$ among the markings - otherwise the map collapsing the target and forgetting the auxiliary markings will have positive dimensional fibers. This recovers $\M{0}{\alpha+e_k}{\PP^N|H}{d}$. 
  \begin{center}
  \begin{tikzpicture}
  \draw (0,0) -- (3,0) -- (3,3) -- node[above]{level $0$} (0,3) -- (0,0);
@@ -549,7 +670,7 @@ The proof goes roughly as follows: the reduction to the case of $(\PP^N|H)$ is j
 \end{tikzpicture}
 \end{center}
  
- The claim follows from the fact that the rubber space $\M{0}{\mu}{\PP_H(\OO\oplus\OO(1))}{\beta_0}^\thicksim$ has the same dimension as $\M{0}{\lvert\mu\rvert}{H}{\beta_0}$, see \cite[\S 2.4]{GraberVakil}. Now the coefficient with which each of these loci appears has been computed by several authors in the framework of the degeneration formula (see e.g. \cite[Remark 6.3.1.2]{KimLog} and \cite[Equation (1.7)]{KLR}):  the log structure is determined at the level of ghost sheaves by the underlying morphism, and the numerator counts the number of log liftings, while the denominator again clears out the ordering of the edges. There is one more subtelty, as noticed by Gathmann already \cite[Corollary 3.5]{Ga}: $\M{0}{\alpha+e_k}{\PP^N|H}{d}$ appears on one side with a coefficient $\alpha_k+1$, which is partially cancelled by an $\alpha_k$ on the other side, arising from the comparison between $\psi_k$ and $\fgt_{n+1,\ldots,n+h}^*\psi_k$. All the degeneracy loci that persist under $c_h$-pushforward cover $(h!:1)$ one of the comb loci in Gathmann's formula.
+ The claim follows from the fact that the rubber space $\M{0}{\mu}{\PP_H(\OO\oplus\OO(1))}{\beta_0}^\thicksim$ has the same dimension as $\M{0}{\lvert\mu\rvert}{H}{\beta_0}$, see \cite[\S 2.4]{GraberVakil}. Now the coefficient with which each of these loci appears has been computed by several authors in the framework of the degeneration formula (see e.g. \cite[Remark 6.3.1.2]{KimLog} and \cite[Equation (1.7)]{KLR}):  the log structure is determined at the level of ghost sheaves by the underlying morphism, and the numerator counts the number of log liftings, while the denominator again clears out the ordering of the edges. There is one more subtlety, as noticed by Gathmann already \cite[Corollary 3.5]{Ga}: $\M{0}{\alpha+e_k}{\PP^N|H}{d}$ appears on one side with a coefficient $\alpha_k+1$, which is partially cancelled by an $\alpha_k$ on the other side, arising from the comparison between $\psi_k$ and $\fgt_{n+1,\ldots,n+h}^*\psi_k$. All the degeneracy loci that persist under $c_h$-pushforward cover $(h!:1)$ one of the comb loci in Gathmann's formula.
 \end{rmk}
 
 \subsection{Definitions and propositions}
