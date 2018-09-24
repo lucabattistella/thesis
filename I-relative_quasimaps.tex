@@ -527,25 +527,27 @@ The relative problem in Gromov-Witten theory consists in studying maps satisfyin
 It would be interesting to have a full relative theory for $\epsilon$-quasimaps, including a degeneration formula and wall-crossing formulae for relative invariants as well; one application (suggested by I. Ciocan-Fontanine) would be to the study of the higher genus $\epsilon$-quasimap invariants of the quintic threefold via Maulik-Pandharipande's degeneration scheme \cite{MauPan}. In \cite{BN} we have made a first step towards this program, namely we have introduced spaces of genus $0$ relative quasimaps to a smooth very ample divisor, extending the work of Gathmann. Among the peculiarities of this approach are the fact that the tangency needs not be maximal (i.e. not all intersection points of the curve with the divisor must be marked with the respective tangency order requirement), and the fact that the relative spaces are nested (they become smaller as the tangency requirement gets higher), with a nice formula expressing their virtual classes in terms of one another, corrected by a boundary term exhibiting a clear recursive structure. This led Gathmann to the discovery of an algorithm for computing relative invariants, or, even further, restricted invariants of the hyperplane section, recursively, starting from the descendant theory of the ambient space; under positivity assumptions, he was able to realise this in a different proof of what goes under the name of Givental's mirror theorem, or the quantum Lefschetz principle \cite{Ga-MF}. In this section I will report on my joint work with N. Nabijou \cite{BN}.
 
 \subsection{Review of Gathmann's work} The starting point is the case of $\PP^N$ relative to a hyperplane $H$. The most down-to-earth approach works in this case: chosen a tangency condition $\alpha\in\N^n$ with $\sum\alpha\leq d$, Gathmann defines the relative space $\M{0}{\alpha}{\PP^N|H}{d}\subseteq \M{0}{n}{\PP^N}{d}$ as the closure of the ``nice'' locus of maps $f\colon(\PP^1,\mathbf x)\to \PP^N$ such that $f(\PP^1)\subsetneq H$ and $f^{-1}(H)-\sum\alpha_ix_i$ is an effective divisor.
-\begin{lem}\cite[Lemma 1.8]{Ga}
+\begin{lem}\cite[Lemma 1.8]{Ga}\label{lem:irr}
  The nice locus is an irreducible locally closed substack of $\M{0}{n}{\PP^N}{d}$ of codimension $\sum\alpha$.
 \end{lem}
 \begin{proof}
  It can be described as follows: there is a $\Gm$ torsor $\mathcal X$ over $\mathcal{M}_{0,n}$ that parametrises \[\left((\PP^1,x_1,\ldots,x_n),s\in H^0(\PP^1,\OO_{\PP^1}(\sum\alpha))\right)\]
- such that the vanishing locus of $s$ is $\sum_{i=1}^n\alpha_ix_i$. Letting \[\mathcal Y=\left(\rm{Vect}_{\mathcal X}\left(\pi_*\OO_{\PP^1}(d-\sum\alpha)\right)\setminus 0_{\mathcal X}\right)\times_{\mathcal X} \rm{Vect}_{\mathcal X}\left(\pi_*\OO_{\PP^1}(d)^{\oplus N}\right)\] there is a morphism $\mathcal Y\to \M{0}{n}{\PP^N}{d}$ given by
+ such that the vanishing locus of $s$ is $\sum_{i=1}^n\alpha_ix_i$. Letting \[\mathcal Y\subseteq\left(\rm{Vect}_{\mathcal X}\left(\pi_*\OO_{\PP^1}(d-\sum\alpha)\right)\setminus 0_{\mathcal X}\right)\times_{\mathcal X} \rm{Vect}_{\mathcal X}\left(\pi_*\OO_{\PP^1}(d)^{\oplus N}\right)\] be the open substack where $st_0$ and $t_1,\ldots,t_N$ do not have common zeroes, there is a morphism $\mathcal Y\to \M{0}{n}{\PP^N}{d}$ given by
  \[\left((\PP^1,\mathbf x),s,t_0,t_1,\ldots,t_N\right)\mapsto \left((\PP^1,\mathbf x),f=[st_0:t_1:\ldots:t_N]\right),\]
  which is a $\Gm^2$-torsor over the nice locus. The dimensional count is \[(n-3)+1+(d-\sum\alpha+1)+N(d+1)-2=\dim \M{0}{n}{\PP^N}{d}-\sum\alpha.\]
 \end{proof}
 
 Notice that this endows $\M{0}{\alpha}{\PP^N|H}{d}$ with a schematic structure.
 
-Gathmann then proves that the reducible maps that lie in the closure can be characterised combinatorially as follows:
+\begin{rmk}\label{rmk:combin}
+Gathmann then proves \cite[Proposition 1.14]{Ga} that the reducible maps that lie in the closure can be characterised combinatorially as follows:
  a stable map $(C,x_1, \ldots, x_n,f)$ is in $\M{0}{\alpha}{\PP^N|H}{d}$ if and only if, for each connected component $Z$ of $f^{-1}(H) \subseteq C$:
 \begin{enumerate}
 \item if $Z$ is a point and is equal to a marked point $x_i$, then $f$ is tangent to $H$ at $x_i$ to order $\alpha_i$ at least;
 \item if $Z$ is a curve - it is then a rational tree -, and if we let $C^{(i)}$ for $1 \leq i \leq r$ denote the irreducible components of $C$ adjacent to $Z$, and $m^{(i)}$ denote the multiplicity of $f|_{C^{(i)}}$ to $H$ at the node $Z \cap C^{(i)}$ (there is only one because $g=0$), then:
 \begin{equation} \label{Relative stable map internal component inequality} H \cdot f_* [Z] + \sum_{i=1}^r m^{(i)} \geq \sum_{x_i \in Z} \alpha_i \end{equation}
-\end{enumerate}
+\end{enumerate} 
+\end{rmk}
 
 More generally, if we assume that $Y$ is a very ample smooth divisor in the smooth variety $X$, we may use the complete linear system associated to $Y$ in order to embed $\phi_{\lvert Y\rvert}\colon X\hookrightarrow\PP^N$, and find a hyperplane $H\subseteq \PP^N$ such that $H\cap X= Y$. Set $d=\phi_{\lvert Y\rvert,*}(\beta)$ for a curve class $\beta\in H_2^+(X)$. Define $\M{0}{\alpha}{X|Y}{\beta}$ by the following cartesian diagram:
 \bcd
@@ -674,21 +676,48 @@ The proof goes roughly as follows: the reduction to the case of $(\PP^N|H)$ is j
 \end{rmk}
 
 \subsection{Definitions and propositions}
-I come now to the definition of relative quasimaps \cite[\S 2.3]{BN}. Let $X$ be a smooth toric variety, $Y=V(s)$ a smooth very ample divisor (not necessarily toric). As in the discussion of functoriality (Section \ref{sec:functoriality}), we may write $\OO_X(Y)=\bigotimes_{\rho\in\Sigma(1)}\OO_X(D_\rho)^{\otimes a_\rho}$ and 
-\[s=\sum_{\mathbf a:[\mathbf a]=\OO_X(Y)}\mu_{\mathbf a}\prod_{\rho\in\Sigma(1)}z_\rho^{a_\rho}\]
+I come now to the definition of relative quasimaps \cite[\S 2.3]{BN}. As in the case of stable maps, we start from the unobstructed situation $(\PP^N|H)$, with $H=\{z_0=0\}$.
+
+\begin{definition}
+ The space of relative quasimaps $\Q{0}{\alpha}{\PP^N|H}{d}$ is the closure inside $\Q{0}{n}{\PP^N}{d}$ of the nice locus of quasimaps \[\left\{\left((\PP^1,x_1,\ldots,x_n),u_0,\ldots,u_N\in H^0(\PP^1,\OO_{\PP^1}(d))\right)\right\}\] such that $u_0\nequiv 0$, $u_0^*(0)\geq\sum\alpha_ix_i$ and $(u_0,\ldots,u_N)$ do not vanish simultaneously on $\PP^1$.
+ 
+ More generally, if $X$ is a smooth toric variety and $Y\subseteq X$ a smooth and very ample divisor, the closed embedding $\phi_{\lvert Y\rvert}\colon X\hookrightarrow \PP^N$ induces $\Phi_{\lvert Y\rvert}\colon \Q{0}{n}{X}{\beta}\to \Q{0}{n}{\PP^N}{d}$ by functoriality (\S \ref{sec:functoriality}), and we may define the relative space as the fiber product:
+\bcd
+\Q{0}{\alpha}{X|Y}{\beta}\ar[d]\ar[r,hook]\ar[dr,phantom,"\Box"] & \Q{0}{n}{X}{\beta}\ar[d,"\Phi_{\lvert Y\rvert}"] \\
+\Q{0}{\alpha}{\PP^N|H}{d} \ar[r,hook] & \Q{0}{n}{\PP^N}{d}
+\ecd
+\end{definition}
+
+\begin{lem}
+ $\Q{0}{\alpha}{\PP^N|H}{d}$ is closed and irreducible of codimension $\sum\alpha$ in $\Q{0}{n}{\PP^N}{d}$.
+\end{lem}
+The proof is the same as in Lemma \ref{lem:irr} since the nice loci are isomorphic.
+
+\begin{lem}
+ The collapsing morphism $\chi$ restricts to a proper and birational morphism \[\chi_\alpha\colon \M{0}{\alpha}{\PP^N|H}{d}\to \Q{0}{\alpha}{\PP^N|H}{d}.\]
+\end{lem}
+\begin{proof}
+ Due to the definition as the closure of loci that are isomorphic under $\chi$, we obviously have $\chi(\M{0}{\alpha}{\PP^N|H}{d})\subseteq \Q{0}{\alpha}{\PP^N|H}{d}$, while the reverse inclusion follows from the properness of $\chi$. Notice that $\M{0}{\alpha}{\PP^N|H}{d}$ embeds as a closed substack of the fiber product $\chi^{-1}(\Q{0}{\alpha}{\PP^N|H}{d})$, hence $\chi_\alpha$ is also proper.
+\end{proof}
+
+Before discussing the virtual fundamental classes, I will give a set-theoretical description of $\Q{0}{\alpha}{X|Y}{\beta}$, entirely analogous to the one of Remark \ref{rmk:combin}. Let me start with some useful notation. Fix one way of writing $\OO_X(Y)=\bigotimes_{\rho\in\Sigma(1)}\OO_X(D_\rho)^{\otimes a_\rho}$, and let
+\[s=\sum_{\mathbf b:[\mathbf b]=\OO_X(Y)}\mu_{\mathbf b}\prod_{\rho\in\Sigma(1)}z_\rho^{b_\rho}\]
 in terms of Cox's homogeneous coordinates. For a quasimap 
 \[ \Big((C,x_1,\ldots,x_n), (L_\rho,u_\rho)_{\rho \in \Sigma(1)}, (\varphi_m)_{m \in M}\Big) \]
 set $L_Y=\bigotimes_{\rho\in\Sigma(1)}L_\rho^{\otimes a_\rho}$ and
-\[u_s=\mu_{\mathbf a}\prod_{\rho\in\Sigma(1)}u_\rho^{a_\rho}+\sum_{\mathbf a\neq \mathbf b:[\mathbf b]=\OO_X(Y)}\mu_{\mathbf b}\varphi_{\mathbf b-\mathbf a}\left(\prod_{\rho\in\Sigma(1)}u_\rho^{b_\rho}\right)\in H^0(C,L_Y).\]
-%\appendix
-\begin{definition}
- A quasimap belongs to \emph{the relative space} $\Q{0}{\alpha}{X|Y}{\beta}\subseteq \Q{0}{n}{X}{\beta}$ if for every connected component $Z$ of $u_s^{-1}(0)$, the following holds:
+\[u_s=\mu_{\mathbf a}\prod_{\rho\in\Sigma(1)}u_\rho^{a_\rho}+\sum_{\mathbf b\neq \mathbf a:[\mathbf b]=\OO_X(Y)}\mu_{\mathbf b}\varphi_{\mathbf b-\mathbf a}\left(\prod_{\rho\in\Sigma(1)}u_\rho^{b_\rho}\right)\in H^0(C,L_Y).\]
+\begin{lem}[Combinatorial description] A quasimap belongs to the relative space $\Q{0}{\alpha}{X|Y}{\beta}\subseteq \Q{0}{n}{X}{\beta}$ if and only if for every connected component $Z$ of $u_s^{-1}(0)$, the following holds:
 \begin{enumerate}
 \item if $Z$ is a point and is equal to a marking $x_i$, then $u_s^*(0)$ has order at least $\alpha_i$ at $x_i$;
-\item if $Z$ is a curve, and if we let $C^{(i)}$ for $1 \leq i \leq r$ denote the irreducible components of $C$ adjacent to $Z$, and $m^{(i)}$ denote the multiplicity of $f|_{C^{(i)}}$ to $H$ at the node $Z \cap C^{(i)}$, then:
+\item if $Z$ is a curve - it is then a rational tree -, and if we let $C^{(i)}$ for $1 \leq i \leq r$ denote the irreducible components of $C$ adjacent to $Z$, and $m^{(i)}$ denote the multiplicity of $f|_{C^{(i)}}$ to $H$ at the (unique) node $Z \cap C^{(i)}$, then:
 \begin{equation} \label{Relative quasimap internal component inequality} \deg(L_{Y}|_Z) + \sum_{i=1}^r m^{(i)} \geq \sum_{x_i \in Z} \alpha_i \end{equation}
 \end{enumerate}
-\end{definition}
+\end{lem}
+\begin{proof}
+ From the cartesian diagram that we used to define $\Q{0}{\alpha}{X|Y}{\beta}$, it is easy to see that it is enough to prove this characterisation in the case of $(\PP^N|H)$. Now every quasimap in $\Q{0}{\alpha}{\PP^N|H}{d}$ enjoys the property above thanks to the principle of conservation of number. On the other hand $\chi_\alpha$ is surjective, being proper and birational. For what we need, we can be more explicit: let $\xi'$ be a quasimap satisfying the combinatorial description, with a basepoint $q_0$ of order $d_0$ on an internal component $Z$. Choose any line $\ell$ through the image of $q_0$, with $\ell$ transverse to $H$. Lift $\xi'$ to a stable map $\xi$ by adjoining a $\PP^1=:R$ to the source curve at $q_0$, and defining the map $f_{|R}$ to be a $d_0$-fold cover of $\ell$ totally ramified at $q_0$ (any basepoint which is not internal is easier to deal with). Then $\xi$ belongs to $\M{0}{\alpha}{\PP^N|H}{d}$ by Remark \ref{rmk:combin}, and it can be smoothed by the work of Gathmann. By applying $\chi$ to such a smoothing, we see that $\xi'$ belongs to $\Q{0}{\alpha}{\PP^N|H}{d}$.
+\end{proof}
+
+
 
 I am going to discuss an adaptation of Gathmann's recursion formula to this setup: the idea is to push down Theorem \ref{thm:Gathmann_formula} along the collapsing morphism (Section \ref{sec:collapsing}) in the case of $(\PP^N|H)$, and then recover the general formula by virtual pullback.
 
