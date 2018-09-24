@@ -56,7 +56,8 @@ The above definitions make sense in families over arbitrary base schemes, and th
  Quasimaps to a point recover Hassett's moduli space of weighted pointed curves \cite{Hassett}. Thinking of $\{*\}$ as the GIT quotient of $\Aaff^1$ by $\Gm$, we find $\Q{g}{n}{\{*\}}{d}\simeq \oM_{g,n|d}/S_d$ where the first $n$-markings have weight $1$, and the last $d$ (which correspond to the basepoints) have weight $0+$ and are unordered. Notice that quasimaps \emph{do depend} on the presentation of the target as a GIT quotient.
 \end{ex}
 
-\subsection{Basic properties}\begin{thm}\cite[Theorems 3.2.1 and 4.0.1]{CF-K}
+\subsection{Basic properties}\label{sec:basic_qm}
+\begin{thm}\cite[Theorems 3.2.1 and 4.0.1]{CF-K}
  $\Q{g}{n}{X}{\beta}$ is a proper and virtually smooth DM stack of finite type over $\Spec(\kk)$.
 \end{thm}
 
@@ -714,37 +715,94 @@ set $L_Y=\bigotimes_{\rho\in\Sigma(1)}L_\rho^{\otimes a_\rho}$ and
 \end{enumerate}
 \end{lem}
 \begin{proof}
- From the cartesian diagram that we used to define $\Q{0}{\alpha}{X|Y}{\beta}$, it is easy to see that it is enough to prove this characterisation in the case of $(\PP^N|H)$. Now every quasimap in $\Q{0}{\alpha}{\PP^N|H}{d}$ enjoys the property above thanks to the principle of conservation of number. On the other hand $\chi_\alpha$ is surjective, being proper and birational. For what we need, we can be more explicit: let $\xi'$ be a quasimap satisfying the combinatorial description, with a basepoint $q_0$ of order $d_0$ on an internal component $Z$. Choose any line $\ell$ through the image of $q_0$, with $\ell$ transverse to $H$. Lift $\xi'$ to a stable map $\xi$ by adjoining a $\PP^1=:R$ to the source curve at $q_0$, and defining the map $f_{|R}$ to be a $d_0$-fold cover of $\ell$ totally ramified at $q_0$ (any basepoint which is not internal is easier to deal with). Then $\xi$ belongs to $\M{0}{\alpha}{\PP^N|H}{d}$ by Remark \ref{rmk:combin}, and it can be smoothed by the work of Gathmann. By applying $\chi$ to such a smoothing, we see that $\xi'$ belongs to $\Q{0}{\alpha}{\PP^N|H}{d}$.
+ From the cartesian diagram that we used to define $\Q{0}{\alpha}{X|Y}{\beta}$, we see that it is enough to prove the characterisation above in the case of $(\PP^N|H)$. Now the statement is true for the nice locus, so it holds on its closure $\Q{0}{\alpha}{\PP^N|H}{d}$ by the principle of conservation of number. On the other hand, let $\xi'$ be a quasimap satisfying the combinatorial description, with a basepoint $q_0$ of order $d_0$ on an internal component $Z$. Choose any line $\ell$ through the image of $q_0$, with $\ell$ transverse to $H$. Lift $\xi'$ to a stable map $\xi$ by adjoining a $\PP^1=:R$ to the source curve at $q_0$, and defining the map $f_{|R}$ to be a $d_0$-fold cover of $\ell$ totally ramified at $q_0$ (any basepoint which is not internal is easier to deal with). Then $\xi$ belongs to $\M{0}{\alpha}{\PP^N|H}{d}$ by Remark \ref{rmk:combin}, and it can be smoothed by the work of Gathmann. By applying $\chi$ to such a smoothing, we see that $\xi'$ belongs to $\Q{0}{\alpha}{\PP^N|H}{d}$.
 \end{proof}
 
+Before getting to a Gathmann-type recursion formula for relative quasimaps, I shall discuss virtual fundamental classes. First I show that there is a meaningful virtual pullback along $\Phi_{|Y|}$, following Appendix B of the first version of \cite{BN}.
 
+\begin{lem} \label{Exists relative POT} Given a closed embedding $i\colon X \hookrightarrow \PP^N$, there is a perfect obstruction theory $\EE_k$ for
+$ k \colon \Q{0}{n}{X}{\beta} \to \Q{0}{n}{\PP^N}{d} $
+which fits into a compatible triple with the standard obstruction theories for the quasimap spaces over $\MM_{0,n}$. So, in particular:
+\begin{equation*} k^!_{\operatorname{vir}} [ \Q{0}{n}{\PP^N}{d} ] = \virt{\Q{0}{n}{X}{\beta}}. \end{equation*} \end{lem}
 
-I am going to discuss an adaptation of Gathmann's recursion formula to this setup: the idea is to push down Theorem \ref{thm:Gathmann_formula} along the collapsing morphism (Section \ref{sec:collapsing}) in the case of $(\PP^N|H)$, and then recover the general formula by virtual pullback.
+\begin{proof} Note first that, since $i$ is an embedding, $i_*\beta_0\neq 0$ for every effective curve class $\beta_0\in H_2^+(X)$, hence $k$ does not change the source curve of a quasimap (there is no need for stabilising), so we indeed have a commuting triangle:
+\bcd
+\Q{0}{n}{X}{\beta} \ar[rr,"k"] \ar[rd] & & \Q{0}{n}{\PP^N}{d} \ar[ld] \\
+& \MM_{0,n} & 
+\ecd
+The following diagram of universal curves is therefore cartesian:
+\bcd
+\mathcal{C}_X \ar[r,"\alpha"] \ar[d,"\pi"] \ar[rd,phantom,"\square" right] & \mathcal{C}_{\PP^N} \ar[d,"\rho"] \\
+\Q{0}{n}{X}{\beta} \ar[r,"k"] & \Q{0}{n}{\PP^N}{d}
+\ecd
+Recall from \S \ref{sec:basic_qm} that we have sheaves $\mathcal{F}_X$ and $\mathcal{F}_{\PP^N}$ on $\mathcal{C}_X$ and $\mathcal{C}_{\PP^N}$ respectively such that:
+\begin{align*} \EE_{\om{Q}(X)/\MM}^\vee & = \R \pi_* \mathcal{F}_X \\
+\EE_{\om{Q}(\PP^N)/\MM}^\vee & = \R \rho_* \mathcal{F}_{\PP^N} \end{align*}
+By flatness of $\rho$ and \cite[Proposition III.9.3]{HAR}:
+\begin{equation*} k^* \EE_{\om{Q}(\PP^N)/\MM}^\vee = \R \pi_* \alpha^* \mathcal{F}_{\PP^N} \end{equation*}
+To construct a compatible triple, we require a morphism $k^* \EE_{\om{Q}(\PP^N)/\MM} \to \EE_{\om{Q}(X)/\MM}$. Dually, it is therefore enough to construct a morphism of sheaves on $\mathcal{C}_X$
+\begin{equation*} \mathcal{F}_X \to \alpha^* \mathcal{F}_{\PP^N} \end{equation*}
+and then apply $\R \pi_*$. This is analogous to the morphism $f^* T_X \to f^* T_{\PP^N}|_X$ which is used in the stable maps setting, but unfortunately we have no universal map $f$.
 
-\begin{lem}
- The collapsing morphism $\chi$ restricts to a proper and birational morphism \[\chi_\alpha\colon \M{0}{\alpha}{\PP^N|H}{d}\to \Q{0}{\alpha}{\PP^N|H}{d}.\]
-\end{lem}
-\begin{proof}
- We first show that a stable map satisfying \eqref{Relative stable map internal component inequality} is sent to a quasimap satisfying \eqref{Relative quasimap internal component inequality}: the collapsing of rational tails happens far from any markings, so we only have to discuss the case of an internal component $Z$. If the rational tail $R$ is internal, then collapsing does not affect the left hand side of the inequality (it simply transfers some degree from $R$ to $\overline{Z\setminus R}$); on the other hand, if it is external, collapsing may only increase the left hand side, since the multiplicity of contact $m^R$ is at most equal to the degree of $f_{|R}$. This proves that $\chi(\M{0}{\alpha}{\PP^N|H}{d})\subseteq \Q{0}{\alpha}{\PP^N|H}{d}$.
- 
- On the other hand $\chi_\alpha$ is surjective: given a relative quasimap $\xi'$ with an internal basepoint $q_0$ of order $d_0$, choose any line $\ell$ through its image, with $\ell$ transverse to $H$, and lift $\xi'$ to a stable map $\xi$ by adjoining a $\PP^1=:R$ to the source curve at $q_0$, and defining the map $f_{|R}$ to be a $d_0$-fold cover of $\ell$ totally ramified at $q_0$ (any basepoint which is not internal is easier to deal with).
- 
- Now, given any relative quasimap $\xi'\in\Q{0}{\alpha}{\PP^N|H}{d}$ we may choose a lifting $\xi\in\M{0}{\alpha}{\PP^N|H}{d}$; by Gathmann's result, $\xi$ can be smoothed to a map in the nice locus; applying $\chi$ to such a smoothing we obtain a smoothing of $\xi'$. This shows that $\Q{0}{\alpha}{\PP^N|H}{d}$ is contained in the closure of the nice locus of relative quasimaps with no basepoints and image not contained in $H$. On the other hand $\Q{0}{\alpha}{\PP^N|H}{d}$ is closed by the principle of conservation of number. Therefore $\chi_\alpha$ is proper and birational, being an isomorphism on the nice locus.
-\end{proof}
+The sheaf $\mathcal{F}_X$ is defined on $\mathcal{C}_X$ by the short exact sequence
+
+\begin{equation*} 0 \to \OO_{\mathcal{C}_X}^{\oplus r_X} \to \bigoplus_{\tau\in\Sigma_X(1)} \mathcal{L}_\tau \to \mathcal{F}_X \to 0 \end{equation*}
+
+\noindent where $r_X = \operatorname{rk} \Pic X$ (implicitly we have chosen a basis for $\Pic X$) and the first arrow can be described as the composition of the derivative of the torus ($\Gm^{r_X}$)-action on $\Aaff^{\Sigma_X(1)}$ with the diagonal matrix $(u_\tau)_{\tau\in\Sigma_X(1)}$.
+Similarly $\mathcal{F}_{\PP^N}$ on $\mathcal{C}_{\PP^N}$ is given by:
+
+\begin{equation*} 0 \to \OO_{\mathcal{C}_{\PP^N}} \to \mathcal{L}^{\oplus N+1} \to \mathcal{F}_{\PP^N} \to 0 \end{equation*}
+
+\noindent where by construction (compare with \S \ref{sec:functoriality}) the first arrow can be described as follows. The line bundle sections determining $i\colon X\hookrightarrow \PP^N$ can be expressed as homogeneous polynomials in the Cox ring of $X$:
+
+\begin{equation*} P_0,\ldots,P_N \in S^X_{\OO_X(1)} \subset S^X = k[z_\tau : \tau \in \Sigma_X(1)]. \end{equation*}
+
+\noindent By fixing one way of writing $\OO_X(1)=\bigotimes\OO_X(D_\tau)^{\otimes a_\tau}$, $\mathcal L$ is set to be $\bigotimes\mathcal L_\tau^{\otimes a_\tau}$, and if $P_j=\mu_{j,\mathbf a}\prod_{\tau\in\Sigma_X(1)}z_\tau^{a_\tau}+\sum_{\mathbf b\neq \mathbf a:[\mathbf b]=\OO_X(1)}\mu_{j,\mathbf b}\prod_{\tau\in\Sigma_X(1)}z_\tau^{b_\tau}$, the first arrow above is given by:
+\[\left(P_j(u_\tau)=\mu_{j,\mathbf a}\prod_{\tau\in\Sigma_X(1)}u_\tau^{a_\tau}+\sum_{\mathbf b\neq \mathbf a:[\mathbf b]=\OO_X(1)}\mu_{j,\mathbf b}\varphi_{\mathbf b-\mathbf a}\left(\prod_{\tau\in\Sigma_X(1)}u_\tau^{b_\tau}\right)\right)_{j=0,\ldots,N}.\]
+We will construct the map $\mathcal{F}_X \to \alpha^* \mathcal{F}_{\PP^N}$ by first constructing a morphism:
+\begin{equation*} \oplus_{\tau} \mathcal{L}_\tau \to \alpha^* \mathcal{L}^{\oplus N+1} \end{equation*}
+The latter is given by the Jacobian of $(P_0,\ldots,P_N)$, namely the matrix
+\[\left(\frac{\partial P_j}{\partial z_\tau}(u_\tau)\right)^{j=0,\ldots,N}_{\tau\in\Sigma_X(1)},\]
+\noindent where one needs to use the isomorphisms $\varphi_{\mathbf b-\mathbf a}$ as above in order to make sense of the sum as a section of one fixed line bundle. On the other hand writing $\OO_X(1)$ in the preferred basis of $\Pic(X)$ gives a vector $v\in\ZZ^{r_X}$.
+The commutativity of the left-hand square in the following diagram follows from the fact that Cox's result (Theorem \ref{CoxTheorem}) allows us to lift $i\colon X\hookrightarrow\PP^N$ to a $(\Gm^{r_X}\to\Gm)$-equivariant morphism $\Aaff^{\Sigma_X(1)}\to\Aaff^{N+1}$; hence there is an induced (dashed) map of sheaves as the one we were after:
+\begin{equation}\label{diagram:functoriality}
+\begin{tikzcd}
+0 \ar[r] & \OO_{C_X}^{\oplus r_X} \ar[r] \ar[d,"v^t"] & \oplus_{\tau} \mathcal{L}_\tau \ar[r] \ar[d,"\operatorname{Jac}(P)(u_\tau)"] & \mathcal{F}_X \ar[d,dashed]\ar[r] & 0 \\
+0 \ar[r] & \OO_{\mathcal{C}_{X}} \ar[r] & \alpha^* \mathcal{L}^{\oplus N+1} \ar[r] & \alpha^* \mathcal{F}_{\PP^N} \ar[r] & 0
+\end{tikzcd}
+\end{equation}
+Applying $\R \pi_*$ and dualising we obtain a morphism between the obstruction theories for the quasimap spaces, and we can complete this to obtain an exact triangle
+\begin{equation*} k^* \EE_{\om{Q}(\PP^N)/\MM} \to \EE_{\om{Q}(X)/\MM} \to \EE_k \xrightarrow{[1]}\end{equation*}
+on $\om{Q}(X)$. The axioms of a triangulated category then give a morphism of exact triangles:
+\bcd
+k^* \EE_{\om{Q}(\PP^N)/\MM} \ar[r] \ar[d] & \EE_{\om{Q}(X)/\MM} \ar[r] \ar[d] & \EE_k  \ar[r,"{[1]}"] \ar[d] & \, \\
+k^*\LL_{\om{Q}(\PP^N)/\MM} \ar[r] & \LL_{\om{Q}(X)/\MM} \ar[r] & \LL_k \ar[r,"{[1]}"] & \,
+\ecd
+It follows from a simple diagram chase that $\EE_k \to \LL_k$ is a relative obstruction theory for $k$ supported in $[-2,0]$. On the other hand, since $\Q{0}{n}{\PP^N}{d}$ is unobstructed over $\MM_{0,n}$, we may look at the long exact sequence in cohomology and find:
+\begin{equation*} 0 \to \h^{-2}(\EE_k) \to \h^{-1}(k^* \EE_{\om{Q}(\PP^N)/\MM}) = 0\end{equation*}
+Hence $\h^{-2}(\EE_k) = 0$ and so $\EE_k$ is perfect in $[-1,0]$. \end{proof}
+
+\begin{definition}
+ Let $(X|Y)$ be as above, inducing $\Phi_{|Y|}\colon \Q{0}{n}{X}{\beta}\to\Q{0}{n}{\PP^N}{d}$. The relative space $\Q{0}{\alpha}{X|Y}{\beta}$ is endowed with a virtual class of codimension $\sum\alpha$ in $\Q{0}{n}{X}{\beta}$ by setting
+ \[\virt{\Q{0}{\alpha}{X|Y}{\beta}}=\Phi_{|Y|,\rm{vir}}^![\Q{0}{\alpha}{\PP^N|H}{d}].\]
+\end{definition}
+
 
 \begin{prop}\label{prop:quasimap_Gathmann_formula} In the Chow group of $\Q{0}{\alpha}{X|Y}{\beta}$
  \begin{equation*} (\alpha_k \psi_k + x_k^*c_1(L_Y)) \cap \virt{\Q{0}{\alpha}{X|Y}{\beta}} = \virt{\Q{0}{\alpha+e_k}{X|Y}{\beta}} + \virt{\mathcal{D}^Q_{\alpha,k}(X,\beta)} \end{equation*}
 \end{prop}
-\noindent where $\mathcal{D}^Q_{\alpha,k}(X,\beta)$ is a sum of ``comb loci'', running over all splittings $A,B,M$ of the markings, curve class, and multiplicities at the internal-to-external nodes, this time required to satisfy the quasimap stability condition (in particular there are no rational tails):
+\noindent where $\mathcal{D}^Q_{\alpha,k}(X,\beta)$ is a sum of ``comb loci'', running over all splittings $A,B,M$ of the markings, curve class, and multiplicities at the internal-to-external nodes, satisfying
+\[\deg(L_{Y}|_Z) + \sum_{i=1}^r m^{(i)} = \sum_{x_i \in Z} \alpha_i\]
+and the quasimap stability condition (in particular there are no rational tails):
 \[\mathcal{D}^Q_{A,B,M}(X)=\Q{0}{\lvert\alpha^{(0)}\rvert+r}{Y}{\beta_0}\times_{H^r}\prod_{i=1}^r
 \Q{0}{\alpha^{(i)}\cup m^{(i)}}{X|Y}{\beta_i}\]
-endowed with the product virtual fundamental class, weighted by a factor $\frac{m^{(1)}\cdot\ldots\cdot m^{(r)}}{r!}$.
+The latter is endowed with the pullback of the product virtual fundamental class along the diagonal $\Delta_{H^r}\colon H\to H^r$, weighted by a factor $\frac{m^{(1)}\cdot\ldots\cdot m^{(r)}}{r!}$.
 \begin{proof}
- In the case of $(\PP^N|H)$ the result follows by pushing forward Gathmann's formula along $\chi_\alpha$: for this it is useful to notice that
+ In the case of $(\PP^N|H)$ the result follows by pushing forward Gathmann's formula (Theorem \ref{thm:Gathmann_formula}) along $\chi_\alpha$: for this it is useful to notice that
  \begin{equation}
   \chi^*(\psi_k)=\psi_k, \quad \text{and} \quad \chi^*(x_k^*L_Y)=\ev_k^*\OO_X(Y),
  \end{equation}
-because collapsing does not affect the universal curve in a neighbourhood of the marking $x_k$. On the other hand if a comb locus $\mathcal{D}^Q_{A,B,M}(X)$ contains a rational tail (necessarily external), then the restriction of $\chi$ to $\mathcal{D}^Q_{A,B,M}(X)$ has positive dimensional fibers, because $\dim(\M{0}{(m^{(i)})}{\PP^N|H}{d})>\dim H$, so the corresponding term of Gathmann's formula vanishes under $\chi_*$.
+since collapsing does not affect the universal curve in a neighbourhood of the marking $x_k$. On the other hand, if a comb locus $\mathcal{D}^Q_{A,B,M}(X)$ contains a rational tail (necessarily external), then the restriction of $\chi$ to $\mathcal{D}^Q_{A,B,M}(X)$ has positive dimensional fibers, because $\dim(\M{0}{(m^{(i)})}{\PP^N|H}{d})>\dim H$, so the corresponding term of Gathmann's formula vanishes under $\chi_*$.
 
 The case of a smooth very ample divisor $(X|Y)$ follows by virtual pullback: $\Q{0}{n}{\PP^N}{d}$ is unobstructed, hence the  closed embedding $\phi_{\lvert Y\rvert}\colon X\hookrightarrow \PP^N$ induces $\Phi_{\lvert Y\rvert}\colon \Q{0}{n}{X}{\beta}\to \Q{0}{n}{\PP^N}{d}$ endowed with a perfect obstruction theory.
 
