@@ -537,14 +537,12 @@ It would be interesting to have a full relative theory for $\epsilon$-quasimaps,
  \[\left((\PP^1,\mathbf x),s,t_0,t_1,\ldots,t_N\right)\mapsto \left((\PP^1,\mathbf x),f=[st_0:t_1:\ldots:t_N]\right),\]
  which is a $\Gm^2$-torsor over the nice locus. The dimensional count is \[(n-3)+1+(d-\sum\alpha+1)+N(d+1)-2=\dim \M{0}{n}{\PP^N}{d}-\sum\alpha.\]
 \end{proof}
-
-Notice that this endows $\M{0}{\alpha}{\PP^N|H}{d}$ with a schematic structure.
+\noindent Notice that this endows $\M{0}{\alpha}{\PP^N|H}{d}$ with a schematic structure.
 
 \begin{rmk}\label{rmk:combin}
-Gathmann then proves \cite[Proposition 1.14]{Ga} that the reducible maps that lie in the closure can be characterised combinatorially as follows:
- a stable map $(C,x_1, \ldots, x_n,f)$ is in $\M{0}{\alpha}{\PP^N|H}{d}$ if and only if, for each connected component $Z$ of $f^{-1}(H) \subseteq C$:
+Gathmann then proves \cite[Proposition 1.14]{Ga} that the reducible maps that lie in the closure can be characterised combinatorially as follows: $(C,x_1, \ldots, x_n,f)$ belongs to $\M{0}{\alpha}{\PP^N|H}{d}$ if and only if, for each connected component $Z$ of $f^{-1}(H) \subseteq C$:
 \begin{enumerate}
-\item if $Z$ is a point and is equal to a marked point $x_i$, then $f$ is tangent to $H$ at $x_i$ to order $\alpha_i$ at least;
+\item if $Z$ is the $i$-th marking $x_i$, then $f$ is tangent to $H$ at $Z$ to order $\alpha_i$ at least;
 \item if $Z$ is a curve - it is then a rational tree -, and if we let $C^{(i)}$ for $1 \leq i \leq r$ denote the irreducible components of $C$ adjacent to $Z$, and $m^{(i)}$ denote the multiplicity of $f|_{C^{(i)}}$ to $H$ at the node $Z \cap C^{(i)}$ (there is only one because $g=0$), then:
 \begin{equation} \label{Relative stable map internal component inequality} H \cdot f_* [Z] + \sum_{i=1}^r m^{(i)} \geq \sum_{x_i \in Z} \alpha_i \end{equation}
 \end{enumerate} 
@@ -603,7 +601,7 @@ Then, for every cartesian diagram
  G\ar[r,"g"]\ar[d,"q"]\ar[rd,phantom,"\Box"] & F\ar[d,"p"] \\
  Y\ar[r,"f"] & X 
  \ecd
-and every class $\alpha\in \Achow_*(F)$, the \emph{diagonal pull-back}
+and every class $\alpha\in \Achow_*(F)$, the \emph{diagonal pullback}
 \[
  f^!_{\Delta}(\alpha)=\Delta_{X/\mathfrak M}^!([Y]^\text{vir}\times\alpha)\in \Achow_*(G)
 \]
@@ -618,7 +616,7 @@ G \ar[r,"q \times g"] \ar[d,"g"] \ar[rd,phantom,"\square"] & Y\times_{\mathfrak 
 F \ar[r,"p \times \Id"] \ar[d,"p"] \ar[rd,phantom,"\square"] & X\times_{\mathfrak M} F \ar[r,"\pr_1"] \ar[d,"\Id \times p"] & X \\
 X \ar[r,"\Delta_{X/\mathfrak M}"] & X\times_{\mathfrak M}X &
 \ecd
-Then, by commutativity of (virtual) pull-backs, we have
+Then, by commutativity of (virtual) pullbacks, we have
 \begin{align*} \Delta_{X/\mathfrak M}^!([Y]^\text{vir}\times\alpha) & = \Delta_{X/\mathfrak M}^!((f^!_{\operatorname{vir}}[X])\times\alpha) \\
 & = \Delta_{X/\mathfrak M}^!(f^!_{\operatorname{vir}}([X]\times\alpha)) \\
 & = f^!_{\operatorname{vir}}(\Delta_{X/\mathfrak M}^!([X]\times\alpha)) \\
@@ -626,26 +624,26 @@ Then, by commutativity of (virtual) pull-backs, we have
 \end{align*}
 \end{proof}                                   
                                    
-Noticeably from the combinatorial description, Gathmann's relative spaces get smaller as we increase the tangency requirement, and in particular $\M{0}{\alpha+e_k}{X|Y}{\beta}\subseteq \M{0}{\alpha}{X|Y}{\beta}$ is a virtual divisor (where $e_k$ is the $k$-th standard basis vector of $\N^n$). Gathmann finds a line bundle on $\M{0}{\alpha}{X|Y}{\beta}$ with a section that vanishes along $\M{0}{\alpha+e_k}{X|Y}{\beta}$, together with a number of boundary correction terms.
+Noticeably from the combinatorial description, Gathmann's relative spaces become smaller as we increase the tangency requirement, and in particular $\M{0}{\alpha+e_k}{X|Y}{\beta}\subseteq \M{0}{\alpha}{X|Y}{\beta}$ is a virtual divisor (where $e_k$ is the $k$-th standard basis vector of $\N^n$). In order to describe its virtual class, Gathmann finds a line bundle on $\M{0}{\alpha}{X|Y}{\beta}$ with a section that vanishes along $\M{0}{\alpha+e_k}{X|Y}{\beta}$, with a number of boundary correction terms.
 
 Let me start with some heuristic: assume $n=1$ for this. Let $Y=V(s)\subseteq X$. Then $\M{0}{(1)}{X|Y}{\beta}\subseteq \M{0}{1}{X}{\beta}$ is cut out by the section $\ev_1^*(s)$ of $\ev_1^*\OO_X(Y)$.
 
-\textbf{Key relation: tangency and $\psi$-classes.} Now the restriction of $\ev_1$ to $\M{0}{(1)}{X|Y}{\beta}$ lands into $Y$; by composing $df_{x_1}\colon TC_{x_1}\to TX_{f(x_1)}$ with the projection to $N_{Y/X,f(x_1)}$ we get a map that has to vanish if $f$ is tangent to $H$ at $x_1$. Rearranging we get a section $\ev_1^*(d^1s)$ of $x_1^*(T^*C)\otimes\ev_1^*\OO_X(Y)$ that defines $\M{0}{(2)}{X|Y}{\beta}$ within $\M{0}{(1)}{X|Y}{\beta}$.
+\textbf{Key relation: tangency and $\psi$-classes.} Now the restriction of $\ev_1$ to $\M{0}{(1)}{X|Y}{\beta}$ lands into $Y$; by composing $df_{x_1}\colon TC_{x_1}\to TX_{f(x_1)}$ with the projection to $N_{Y/X,f(x_1)}$ we get a map that has to vanish if $f$ is tangent to $H$ at $x_1$. Rearranging we get a section $\ev_1^*(d^1s)$ of $x_1^*(T^*C)\otimes\ev_1^*\OO_X(Y)$ that vanishes along $\M{0}{(2)}{X|Y}{\beta}$ within $\M{0}{(1)}{X|Y}{\beta}$.
 
 More generally we may use the jet bundles (or bundles of principal parts) of $\OO_X(Y)$: there is an exact sequence
 \[ 0\to x_1^*\Omega_{C}^{\otimes \alpha}\otimes\ev_1^*\OO_X(Y)\to ev_1^*\mathcal P^{\alpha}(\OO_X(Y))\to ev_1^*\mathcal P^{\alpha-1}(\OO_X(Y))\to 0\]
-and $s$ induces a section $\ev_1^*(d^{\alpha}s)$ of the middle term (which should be thought of as the Taylor expansion of $s$ at $x_1$ up to order $\alpha$), the image of which in the rightmost term (i.e. its truncation up to order $\alpha-1$) vanishes on $\M{0}{(\alpha)}{X|Y}{\beta}$, hence inducing a section of the line bundle $x_1^*\Omega_{C}^{\otimes \alpha}\otimes\ev_1^*\OO_X(Y)$ which vanishes along $\M{0}{(\alpha+1)}{X|Y}{\beta}$. Notice though that it also vanishes (for every $\alpha$, really) on those maps such that the irreducible component of $C$ containing $x_1$ is mapped entirely into $Y$. We have thus arrived to Gathmann's formula:
+and $s$ induces a section $\ev_1^*(d^{\alpha}s)$ of the middle term (which should be thought of as the Taylor expansion of $s$ at $x_1$ up to order $\alpha$), the image of which in the rightmost term (i.e. its truncation up to order $\alpha-1$) vanishes on $\M{0}{(\alpha)}{X|Y}{\beta}$, hence inducing a section of the line bundle $x_1^*\Omega_{C}^{\otimes \alpha}\otimes\ev_1^*\OO_X(Y)$ which vanishes along $\M{0}{(\alpha+1)}{X|Y}{\beta}$. Notice though that it also vanishes (for every $\alpha$, really) on those maps such that the irreducible component of $C$ containing $x_1$ is mapped entirely into $Y$. This is some of the motivation behind Gathmann's formula:
 \begin{thm}\cite[Theorem 2.6]{Ga}\label{thm:Gathmann_formula} In the Chow group of $\M{0}{\alpha}{X|Y}{\beta}$
  \begin{equation*} (\alpha_k \psi_k + \ev_k^* \OO_X(Y)) \cap \virt{\M{0}{\alpha}{X|Y}{\beta}} = \virt{\M{0}{\alpha+e_k}{X|Y}{\beta}} + \virt{\mathcal{D}_{\alpha,k}(X,\beta)} \end{equation*}
 \end{thm}
 where $\mathcal{D}_{\alpha,k}(X,\beta)$ is a sum over all
 \begin{itemize}
  \item $r\geq 0$ determining the number of adjacent external components $C^{(1)},\ldots,C^{(r)}$,
- \item $M=(m^{(1)},\ldots,m^{(r)})\in \N^r_{>0}$ determining the order of contact of $C^{(i)}$ with $Y$ at the intersection with the internal component $C^{(0)}$,
+ \item $M=(m^{(1)},\ldots,m^{(r)})\in \N^r_{>0}$ determining the order of contact of $C^{(i)}$ with $Y$ at the intersection with the internal component $Z=C^{(0)}$,
  \item $A=(\alpha^{(0)},\ldots,\alpha^{(r)})$ and $B=(\beta_0,\ldots,\beta_r)$ dictating the splitting of the tangency conditions at the markings, and of the curve class respectively,
 \end{itemize}
    of the following ``comb loci'' (see Figure \ref{fig:relmap}):
-\[\mathcal{D}_{A,B,M}(X)=\M{0}{\lvert\alpha^{(0)}\rvert+r}{Y}{\beta_0}\times_{H^r}\prod_{i=1}^r
+\[\mathcal D(X|Y,A,B,M)=\M{0}{\lvert\alpha^{(0)}\rvert+r}{Y}{\beta_0}\times_{H^r}\prod_{i=1}^r
 \M{0}{\alpha^{(i)}\cup m^{(i)}}{X|Y}{\beta_i}\]
 satisfying $\alpha_k\in\alpha^{(0)}$ and the equality in \eqref{Relative stable map internal component inequality}:
 \[\OO_X(Y)\cdot\beta_0+\sum M=\sum \alpha^{(0)},\]
@@ -653,13 +651,13 @@ so that the corresponding stable maps belong to $\M{0}{\alpha}{X|Y}{\beta}$, but
 
 These comb loci are endowed with the pullback of the product virtual fundamental class under the diagonal of $H^r$ as in
 \bcd
-\mathcal D_{A,B,M}(X)\ar[r]\ar[d]\ar[dr,phantom,"\Box"] & \M{0}{\lvert\alpha^{(0)}\rvert+r}{Y}{\beta_0}\times\prod_{i=1}^r
+\mathcal D(X|Y,A,B,M)\ar[r]\ar[d]\ar[dr,phantom,"\Box"] & \M{0}{\lvert\alpha^{(0)}\rvert+r}{Y}{\beta_0}\times\prod_{i=1}^r
 \M{0}{\alpha^{(i)}\cup m^{(i)}}{X|Y}{\beta_i}\ar[d,"\ev"] \\
 H\ar[r,"\Delta"] & H^r
 \ecd
 weighted by a factor $\frac{m^{(1)}\cdot\ldots\cdot m^{(r)}}{r!}$; the denominator is there to make the auxiliary gluing markings unordered, while the numerator is the real content of Gathmann's formula.
 
-The proof goes roughly as follows: the reduction to the case of $(\PP^N|H)$ is just a matter of virtual intersection calculus. In the unobstructed case the shape of the formula simply follows from the above arguments and a dimensional computation (not virtual), so the hard part is to get the coefficients right. The general case follows from the case $\sum\alpha=d$: marking the extra intersections of the curve with $H$ induces a finite $(d-\sum\alpha)!-1$ cover (it is true on the nice locus, and this is dense); one needs some extra care in dealing with the $\psi$-classes and their pullbacks under forgetting the markings. Locally, one may further reduce to $(\PP^1,\{\infty\})$ by projecting from a generic $(N-2)$-plane inside $H$. Finally, the proof for $\PP^1$ is based on Vakil's observation that, for maps from curves to curves, the obstruction theory only sees the special loci (markings, nodes, ramification points, and contracted components), so that one can split the deformation space and reduce to a much simpler moduli problem (an orbi-$\PP^1$).
+The proof goes roughly as follows: the reduction to the case of $(\PP^N|H)$ is just a matter of virtual intersection calculus. In the unobstructed case, the vanishing locus of the section can be described as we did above, and it takes a dimensional computation (not virtual) to see what comb loci are divisors in $\M{0}{\alpha}{\PP^N|H}{d}$; so the hard part is to get the coefficients right. One can reduce to the case of maximal tangency $\sum\alpha=d$: marking (or, the other way round, forgetting) the unmarked intersections of the curve with $H$ induces a finite $(d-\sum\alpha)!-1$ cover (this is true on an open inside the nice locus, which is dense). One needs some extra care in dealing with the $\psi$-classes and their pullbacks under forgetting the markings. Locally, one may further reduce to the case of $(\PP^1,\{\infty\})$ by projecting from a generic $(N-2)$-plane inside $H$. Finally, the proof for $\PP^1$ is based on Vakil's observation that, for maps from curves to curves, the obstruction theory only picks up the special loci (markings, nodes, ramification points, and contracted components), so that one can split the deformation space and reduce to a much simpler moduli problem (an orbi-$\PP^1$).
 \begin{rmk}\label{rmk:expandedGathmann}
  Gathmann's recursion can be recovered in the framework of Jun Li's spaces of maps to expansions (or rather Kim's logarithmic stable maps). This was suggested by J. Wise and D. Ranganathan. It may seem surprising but in fact the idea of reducing from non-maximal to maximal tangency order was already contained in the proof of Gathmann's formula. Here is the strategy to get Theorem \ref{thm:Gathmann_formula} for $(\PP^N|H)$ using maps to expansions: add $h=d-\sum\alpha$ auxiliary markings of multiplicity $1$, so consider $\MK{0}{\alpha\cup(1,\ldots,1)}{\PP^N|H}{d}$. Call $c_h$ the map forgetting the auxiliary markings and the log structures, collapsing the target, and stabilising the source curve, which is an $(h!:1)$ cover of $\M{0}{\alpha}{\PP^N|H}{d}$ (generically we are just marking the $h$ simple unmarked intersections of the image of $C$ with $H$, and endowing $C$ with the pullback of the divisorial log structure on $\PP^N$; here we use that $g=0$ and the target is $\PP^N$, but notice that the approach will work whenever the nice locus is dense in the relative space). Denote instead by $c\colon \MK{0}{\alpha\cup(1,\ldots,1)}{\PP^N|H}{d}\to \M{0}{\alpha\cup(1,\ldots,1)}{\PP^N}{d}$ the map that forgets the log structures, collapses the target, and stabilises the source curve; we may then pullback Gathmann's line bundle and section along $c$. The vanishing locus of the section thus obtained consists of maps such that the target is expanded, and $x_k$ lies on a non-trivial (i.e. having either positive horizontal degree, or at least three markings) component at higher level. Notice that, as soon as there is more than one non-trivial component at higher level, $c$ has positive-dimensional fibers. Hence we are reduced to a sum over bipartite graphs with only one vertex at higher level; we recognise in these the shape of the comb loci appearing in Gathmann's formula. Also, I claim that the only term that survives pushforward under $c_h$, and in which one of the auxiliary markings (say $x_{n+1}$) lies on the component containing $x_k$, is when the latter has zero horizontal degree and contains only $x_k$ and $x_{n+1}$ among the markings - otherwise the map collapsing the target and forgetting the auxiliary markings will have positive dimensional fibers. This recovers $\M{0}{\alpha+e_k}{\PP^N|H}{d}$. 
  \begin{center}
@@ -690,7 +688,7 @@ I come now to the definition of relative quasimaps \cite[\S 2.3]{BN}. As in the 
 \end{definition}
 
 \begin{lem}
- $\Q{0}{\alpha}{\PP^N|H}{d}$ is closed and irreducible of codimension $\sum\alpha$ in $\Q{0}{n}{\PP^N}{d}$.
+ $\Q{0}{\alpha}{\PP^N|H}{d}$ is irreducible and has codimension $\sum\alpha$ in $\Q{0}{n}{\PP^N}{d}$.
 \end{lem}
 The proof is the same as in Lemma \ref{lem:irr} since the nice loci are isomorphic.
 
@@ -718,7 +716,7 @@ set $L_Y=\bigotimes_{\rho\in\Sigma(1)}L_\rho^{\otimes a_\rho}$ and
  From the cartesian diagram that we used to define $\Q{0}{\alpha}{X|Y}{\beta}$, we see that it is enough to prove the characterisation above in the case of $(\PP^N|H)$. Now the statement is true for the nice locus, so it holds on its closure $\Q{0}{\alpha}{\PP^N|H}{d}$ by the principle of conservation of number. On the other hand, let $\xi'$ be a quasimap satisfying the combinatorial description, with a basepoint $q_0$ of order $d_0$ on an internal component $Z$. Choose any line $\ell$ through the image of $q_0$, with $\ell$ transverse to $H$. Lift $\xi'$ to a stable map $\xi$ by adjoining a $\PP^1=:R$ to the source curve at $q_0$, and defining the map $f_{|R}$ to be a $d_0$-fold cover of $\ell$ totally ramified at $q_0$ (any basepoint which is not internal is easier to deal with). Then $\xi$ belongs to $\M{0}{\alpha}{\PP^N|H}{d}$ by Remark \ref{rmk:combin}, and it can be smoothed by the work of Gathmann. By applying $\chi$ to such a smoothing, we see that $\xi'$ belongs to $\Q{0}{\alpha}{\PP^N|H}{d}$.
 \end{proof}
 
-Before getting to a Gathmann-type recursion formula for relative quasimaps, I shall discuss virtual fundamental classes. First I show that there is a meaningful virtual pullback along $\Phi_{|Y|}$, following Appendix B of the first version of \cite{BN}.
+Before getting to a Gathmann-type recursion formula for relative quasimaps, I shall discuss virtual fundamental classes. First I show that there is a meaningful virtual pullback along $\Phi_{|Y|}$, following Appendix B of the first version of \cite{BN}. $\Phi_{|Y|}$ is simply called $k$ in the next lemma, because the connection to $Y$ is irrelevant.
 
 \begin{lem} \label{Exists relative POT} Given a closed embedding $i\colon X \hookrightarrow \PP^N$, there is a perfect obstruction theory $\EE_k$ for
 $ k \colon \Q{0}{n}{X}{\beta} \to \Q{0}{n}{\PP^N}{d} $
@@ -748,7 +746,7 @@ The sheaf $\mathcal{F}_X$ is defined on $\mathcal{C}_X$ by the short exact seque
 
 \begin{equation*} 0 \to \OO_{\mathcal{C}_X}^{\oplus r_X} \to \bigoplus_{\tau\in\Sigma_X(1)} \mathcal{L}_\tau \to \mathcal{F}_X \to 0 \end{equation*}
 
-\noindent where $r_X = \operatorname{rk} \Pic X$ (implicitly we have chosen a basis for $\Pic X$) and the first arrow can be described as the composition of the derivative of the torus ($\Gm^{r_X}$)-action on $\Aaff^{\Sigma_X(1)}$ with the diagonal matrix $(u_\tau)_{\tau\in\Sigma_X(1)}$.
+\noindent where $r_X = \operatorname{rk}(\Pic X)$ (implicitly we have chosen a basis for $\Pic X$), and the first arrow can be described as the composition of the derivative of the torus ($\Gm^{r_X}$)-action on $\Aaff^{\Sigma_X(1)}$ with the diagonal matrix $\operatorname{diag}(u_\tau)_{\tau\in\Sigma_X(1)}$.
 Similarly $\mathcal{F}_{\PP^N}$ on $\mathcal{C}_{\PP^N}$ is given by:
 
 \begin{equation*} 0 \to \OO_{\mathcal{C}_{\PP^N}} \to \mathcal{L}^{\oplus N+1} \to \mathcal{F}_{\PP^N} \to 0 \end{equation*}
@@ -763,7 +761,7 @@ We will construct the map $\mathcal{F}_X \to \alpha^* \mathcal{F}_{\PP^N}$ by fi
 \begin{equation*} \oplus_{\tau} \mathcal{L}_\tau \to \alpha^* \mathcal{L}^{\oplus N+1} \end{equation*}
 The latter is given by the Jacobian of $(P_0,\ldots,P_N)$, namely the matrix
 \[\left(\frac{\partial P_j}{\partial z_\tau}(u_\tau)\right)^{j=0,\ldots,N}_{\tau\in\Sigma_X(1)},\]
-\noindent where one needs to use the isomorphisms $\varphi_{\mathbf b-\mathbf a}$ as above in order to make sense of the sum as a section of one fixed line bundle. On the other hand writing $\OO_X(1)$ in the preferred basis of $\Pic(X)$ gives a vector $v\in\ZZ^{r_X}$.
+\noindent where one needs to use the isomorphisms $\varphi_{\mathbf b-\mathbf a}$ as above in order to make sense of the sum as a section of one fixed line bundle. On the other hand writing $\OO_X(1)$ in the preferred basis of $\Pic X$ gives us a vector $v\in\ZZ^{r_X}$.
 The commutativity of the left-hand square in the following diagram follows from the fact that Cox's result (Theorem \ref{CoxTheorem}) allows us to lift $i\colon X\hookrightarrow\PP^N$ to a $(\Gm^{r_X}\to\Gm)$-equivariant morphism $\Aaff^{\Sigma_X(1)}\to\Aaff^{N+1}$; hence there is an induced (dashed) map of sheaves as the one we were after:
 \begin{equation}\label{diagram:functoriality}
 \begin{tikzcd}
@@ -787,6 +785,52 @@ Hence $\h^{-2}(\EE_k) = 0$ and so $\EE_k$ is perfect in $[-1,0]$. \end{proof}
  \[\virt{\Q{0}{\alpha}{X|Y}{\beta}}=\Phi_{|Y|,\rm{vir}}^![\Q{0}{\alpha}{\PP^N|H}{d}].\]
 \end{definition}
 
+\begin{rmk}[Quasimaps to $Y$] Under our assumptions $Y$ needs not be toric. The moduli space of (absolute) quasimaps to $Y$ can be defined via the cartesian diagram:
+\bcd
+\Q{0}{n}{Y}{\beta}\ar[d, hook] \ar[r]\ar[rd,phantom,"\square"] & \Q{0}{n}{H}{d} \ar[d, hook] \\
+\Q{0}{n}{X}{\beta}\ar[r, "\Phi_{|Y|}"] & \Q{0}{n}{\PP^N}{d}
+\ecd
+It consists of those quasimaps to $X$ such that $0\equiv u_s\in H^0(C,L_Y)$.
+It is also endowed with a virtual class by pulling back $[\Q{0}{n}{H}{d}]$ along $\Phi_{|Y|}$.
+
+On the other hand, $Y$ has the natural structure of a GIT quotient
+$ Y = C(Y) \sslash G $,
+where $C(Y)\subseteq \mathbb A^{\Sigma_X(1)}$ is the affine cone over $Y$ and $G=\Hom_{\mathbb Z}(\Pic(X),\Gm)\cong\Gm^{r_X}$ acts on $C(Y)$ via the natural inclusion
+$ \Gm^{r_X}\hookrightarrow \Gm^{\Sigma_X(1)} $
+(here $C(Y)\subseteq \mathbb{A}^{\Sigma_X(1)}$ is preserved by $G$ because it is cut out by a homogeneous equation).
+
+In \cite{CFKM} moduli spaces of quasimaps are constructed for GIT quotient targets (satisfying a number of conditions, all of which hold for $Y$). There is thus a moduli space
+\begin{equation*} \om{Q}^{\operatorname{GIT}}_{0,n}(Y,\beta), \end{equation*}
+which admits a virtual class. Hence we have two moduli spaces of quasimaps to $Y$, each equipped with a virtual class, and we want to check that these definitions agree.
+
+Objects of $\om{Q}^{\operatorname{GIT}}_{0,n}(Y,\beta)$ are diagrams of the form
+\bcd
+P \ar[d,"G"] \ar[r] & C(Y) \\ 
+C & \,
+\ecd
+where $C$ is a prestable curve, $P$ is a principal $G$-bundle and the map $P \to C(Y)$ is $G$-equivariant. Equivalently, an object consists of a prestable curve $C$, a principal $G$-bundle $P$ and a section $u$ of the associated $C(Y)$-bundle:
+\bcd
+P\times_{G} C(Y) \ar[d,"p" left] \\
+C \ar[u,bend right,"u"right]
+\ecd
+
+The obstruction theory on this space is defined relative to the stack $\mathfrak{Bun}_{G}$ parametrising principal $G$-bundles on the universal curve $ \mathcal{C}_{\MM_{0,n}} \to \MM_{0,n}$.
+It is given by
+\[\EE_{\om{Q}/\mathfrak{Bun}_G}^\vee = \R \pi_* (u^*\TT_p),\]
+where $\pi$ is the universal curve over $\om{Q} = \om{Q}^{\operatorname{GIT}}_{0,n}(Y,\beta)$ and $\TT_p$ is the relative tangent complex. There is a natural isomorphism
+\begin{equation*} \mathfrak{Bun}_{G}^{0,n} \cong \times^{r_X}_{\MM_{0,n}} \mathfrak{Pic_{0,n}} \end{equation*}
+given by sending $P$ to the $r_X$ individual factors of the affine bundle $P\times_{G}\mathbb A^{r_X}$. Furthermore there is a $G$-equivariant embedding
+\bcd
+P\times_{G} C(Y) \ar[r,hook, "j"]\ar[d,"p" left] & P\times_{G}\mathbb A^{\Sigma_X(1)}\cong \bigoplus_{\rho\in\Sigma_X(1)} L_{\rho}\ar[dl]\\
+C \ar[u,bend right,"u"right] &
+\ecd
+which expresses $P \times_G C(Y)$ as the vanishing locus of $u_s$ in $\oplus_{\rho \in \Sigma_X(1)} L_\rho$. This shows that the two definitions of the moduli space agree.
+
+Finally we must compare the virtual classes. Using the normal sheaf sequence for the inclusion $j$ (relative to the base $C$) we obtain a short exact sequence on $C$:
+\begin{equation*} 0 \to u^* \TT_p \to \bigoplus_{\rho \in \Sigma_X(1)} L_\rho \to u^* \NN_{P \times_G C(Y)/\oplus_{\rho \in \Sigma_X(1)} L_\rho} \to 0 \end{equation*}
+Since $P \times_G C(Y)$ is defined by the vanishing of $u_s$, we see that the final term is isomorphic to the line bundle $L_Y$ discussed above. Thus as elements of the derived category
+\begin{equation*} u^* \TT_p = \left[ \bigoplus_{\rho \in \Sigma_X(1)} L_\rho \to L_Y \right] \end{equation*}
+Applying $\R \pi_*$ we obtain on the left hand side the obstruction theory for the GIT moduli space relative $\mathfrak{Bun}_G^{0,n}$. On the other hand, the first term on the right hand side is the obstruction theory for $\om{Q}(X)$ relative the product of the Picard stacks (isomorphic to $\mathfrak{Bun}_G^{0,n}$ via the discussion above) whereas the second term is the relative obstruction theory for $\om{Q}(Y)$ inside $\om{Q}(X)$. Thus the virtual classes agree, as claimed.\end{rmk}
 
 \begin{prop}\label{prop:quasimap_Gathmann_formula} In the Chow group of $\Q{0}{\alpha}{X|Y}{\beta}$
  \begin{equation*} (\alpha_k \psi_k + x_k^*c_1(L_Y)) \cap \virt{\Q{0}{\alpha}{X|Y}{\beta}} = \virt{\Q{0}{\alpha+e_k}{X|Y}{\beta}} + \virt{\mathcal{D}^Q_{\alpha,k}(X,\beta)} \end{equation*}
@@ -794,7 +838,7 @@ Hence $\h^{-2}(\EE_k) = 0$ and so $\EE_k$ is perfect in $[-1,0]$. \end{proof}
 \noindent where $\mathcal{D}^Q_{\alpha,k}(X,\beta)$ is a sum of ``comb loci'', running over all splittings $A,B,M$ of the markings, curve class, and multiplicities at the internal-to-external nodes, satisfying
 \[\deg(L_{Y}|_Z) + \sum_{i=1}^r m^{(i)} = \sum_{x_i \in Z} \alpha_i\]
 and the quasimap stability condition (in particular there are no rational tails):
-\[\mathcal{D}^Q_{A,B,M}(X)=\Q{0}{\lvert\alpha^{(0)}\rvert+r}{Y}{\beta_0}\times_{H^r}\prod_{i=1}^r
+\[\mathcal D^{\mathcal{Q}}(X|Y,A,B,M)=\Q{0}{\lvert\alpha^{(0)}\rvert+r}{Y}{\beta_0}\times_{H^r}\prod_{i=1}^r
 \Q{0}{\alpha^{(i)}\cup m^{(i)}}{X|Y}{\beta_i}\]
 The latter is endowed with the pullback of the product virtual fundamental class along the diagonal $\Delta_{H^r}\colon H\to H^r$, weighted by a factor $\frac{m^{(1)}\cdot\ldots\cdot m^{(r)}}{r!}$.
 \begin{proof}
@@ -802,20 +846,85 @@ The latter is endowed with the pullback of the product virtual fundamental class
  \begin{equation}
   \chi^*(\psi_k)=\psi_k, \quad \text{and} \quad \chi^*(x_k^*L_Y)=\ev_k^*\OO_X(Y),
  \end{equation}
-since collapsing does not affect the universal curve in a neighbourhood of the marking $x_k$. On the other hand, if a comb locus $\mathcal{D}^Q_{A,B,M}(X)$ contains a rational tail (necessarily external), then the restriction of $\chi$ to $\mathcal{D}^Q_{A,B,M}(X)$ has positive dimensional fibers, because $\dim(\M{0}{(m^{(i)})}{\PP^N|H}{d})>\dim H$, so the corresponding term of Gathmann's formula vanishes under $\chi_*$.
+since collapsing does not affect the universal curve in a neighbourhood of the marking $x_k$. On the other hand, if a comb locus $\mathcal D(X|Y,A,B,M)$ contains a rational tail (necessarily external), then the restriction of $\chi$ to $\mathcal D(X|Y,A,B,M)$ has positive dimensional fibers, because $\dim(\M{0}{(m^{(i)})}{\PP^N|H}{d})>\dim H$, so the corresponding term of Gathmann's formula vanishes under $\chi_*$.
 
-The case of a smooth very ample divisor $(X|Y)$ follows by virtual pullback: $\Q{0}{n}{\PP^N}{d}$ is unobstructed, hence the  closed embedding $\phi_{\lvert Y\rvert}\colon X\hookrightarrow \PP^N$ induces $\Phi_{\lvert Y\rvert}\colon \Q{0}{n}{X}{\beta}\to \Q{0}{n}{\PP^N}{d}$ endowed with a perfect obstruction theory.
+The case of a smooth very ample divisor $(X|Y)$ follows by virtual pullback along $\Phi_{\lvert Y\rvert}$ - see Lemma \ref{Exists relative POT} -, which I will simply denote by $\Phi_{\lvert Y\rvert}^!$. Indeed $\Phi_{\lvert Y\rvert}^![\Q{0}{\alpha}{\PP^N|H}{d}]=\virt{\Q{0}{\alpha}{X|Y}{\beta}}$ (and similarly for the $\alpha+e_k$ relative space) by the very definition of the latter, so we are left with checking that the fundamental class of a comb locus behaves well under virtual pullback.
+Let me introduce some more useful notation at this point: consider the product (\emph{not} the fiber product over $Y^r$)
+\begin{equation*} \mathcal E^{\mathcal{Q}}(X|Y,A,B,M) := \Q{0}{A^{(0)} \cup \{q_1, \ldots, q_r\}}{Y}{\beta^{(0)}} \times \prod_{i=1}^r \Q{0}{\alpha^{(i)}\cup (m_i)}{X|Y}{\beta^{(i)}} \end{equation*}
+which we may endow with the product virtual class (with weighting as before):
+\begin{align*} \virt{\mathcal E^{\mathcal{Q}}(X|Y, & A,B,M)} := \\
+& \left( \dfrac{m^{(1)} \cdots m^{(r)}}{r!}\right) \cdot \left( \virt{\Q{0}{A^{(0)} \cup \{q_1, \ldots, q_r\}}{Y}{\beta^{(0)}}} \times \prod_{i=1}^r \virt{\Q{0}{\alpha^{(i)}\cup (m_i)}{X|Y}{\beta^{(i)}}} \right) \end{align*}
+We have the following cartesian diagram
+\bcd
+\mathcal D^{\mathcal{Q}}(X|Y,A,B,M)\ar[r]\ar[d]\ar[dr,phantom,"\Box"] & \mathcal E^{\mathcal{Q}}(X|Y,A,B,M)\ar[d] \\
+X^r\ar[r,"\Delta_{X^r}"] & X^r\times X^r
+\ecd
+and the virtual class on the comb locus is given by:
+\[
+ \virt{\mathcal D^{\mathcal{Q}}(X|Y,A,B,M)} := \Delta_{X^r}^!\virt{\mathcal E^{\mathcal{Q}}(X|Y,A,B,M)}
+\]
+On the other hand, there is another cartesian diagram:
+\bcd
+{\displaystyle \coprod_{B \colon i_* B = B^\prime} \mathcal D^\mathcal{Q}(X|Y,A,B,M)} \ar[r] \ar[d] & \mathcal D^\mathcal{Q}(\PP^N|H, A, B^\prime, M) \ar[d] \ar[ld,phantom,"\square"]  \\
+\Q{0}{n}{X}{\beta} \ar[r,"\Phi_{\lvert Y\rvert}"] & \Q{0}{n}{\PP^N}{d}
+\ecd
 
-$\Phi_{\lvert Y\rvert}^![\Q{0}{\alpha}{\PP^N|H}{d}]=\virt{\Q{0}{\alpha}{X|Y}{\beta}}$ by the very definition of the latter, and it is easily checked that $\Phi_{\lvert Y\rvert}^![\Q{0}{a_0+r}{H}{d_0}]=\virt{\Q{0}{a_0+r}{Y}{\beta_0}}$ where the latter is defined as in \cite{CFKM}. The fact that the fundamental class of a comb locus pulls back to the corresponding virtual class follows from the splitting property of the virtual class of quasimap spaces (Section \ref{sec:cohFT}); this has been checked in all details in \cite[\S 4 and Appendix B.4]{BN}.
-\end{proof}
+We shall also denote by $\mathcal{D}^{\mathcal{Q}}(X,A,B)$ and $\mathcal{E}^{\mathcal{Q}}(X,A,B)$ the fiber product (resp. ordinary product) above where every occurrence of relative quasimaps to $(X|Y)$ and absolute quasimaps to $Y$ have been replaced by absolute quasimaps to $X$.
+Let us introduce the following shorthand notation.
+\begin{align*}
+\mathcal{D}(X|Y) & := \textstyle \coprod_{B \colon i_* B = B^\prime} \mathcal D^{\mathcal{Q}}(X|Y,A,B,M) &&& \mathcal{D}(\PP^N|H) & := \mathcal D^{\mathcal{Q}}(\PP^N|H,A,B^\prime,M)\\
+\mathcal{E}(X|Y) & := \textstyle \coprod_{B \colon i_* B = B^\prime} \mathcal E^{\mathcal{Q}}(X|Y,A,B,M) &&& \mathcal{E}(\PP^N|H) & := \mathcal E^{\mathcal{Q}}(\PP^N|H,A,B^\prime,M)\\
+\mathcal{D}(X) & := \textstyle \coprod_{B \colon i_* B = B^\prime} \mathcal{D}^{\mathcal{Q}}(X,A,B)  &&& \mathcal{D}(\PP^N) & := \mathcal D^{\mathcal{Q}}(\PP^N,A,B^\prime)\\
+\mathcal{E}(X) & := \textstyle \coprod_{B \colon i_* B = B^\prime} \mathcal{E}^{\mathcal{Q}}(X,A,B) &&& \mathcal{E}(\PP^N) & := \mathcal E^{\mathcal{Q}}(\PP^N,A,B^\prime)\\
+\om{Q}(X) & :=\Q{0}{n}{X}{\beta} &&& \om{Q}(\PP^N) & :=\Q{0}{n}{\PP^N}{i_* \beta} 
+\end{align*}
+There is a cartesian diagram:
+\bcd
+\mathcal{E}(X|Y) \ar[d]\ar[r]\ar[dr,phantom,"\Box"] & \mathcal{E}(\PP^N|H)\ar[d,"\theta"] \\
+\mathcal{E}(X)\ar[r] & \mathcal{E}(\PP^N)
+\ecd
+Since $\mathcal{E}(\PP^N)$ is smooth (being a product of spaces of quasimaps to $\PP^N$) and there is a (product) fundamental class on $\mathcal{E}(\PP^N|H)$, we have a diagonal pullback $\theta^! = \theta_{\Delta}^!$, such that
+\begin{equation}\label{theta-pull} \virt{\mathcal{E}(X|Y)}=\theta^!\virt{\mathcal{E}(X)}=[\mathcal{E}(\PP^N|H)]\cdot_{\mathcal{E}(\PP^N)}\virt{\mathcal{E}(X)}. \end{equation}
+Now consider the following cartesian diagram
+\bcd
+\mathcal D(X)\ar[r]\ar[d,"\psi_{{}_X}"]\ar[dr,phantom,"\Box"] & \mathcal D(\PP^N)\ar[r]\ar[d,"\psi_{\PP^N}"]\ar[dr,phantom,"\Box"] & \MM_{A,B}^{\operatorname{wt}}\ar[d,"\psi"] \\
+\om{Q}(X)\ar[r,"\Phi_{\lvert Y\rvert}"] & \om{Q}(\PP^N)\ar[r] & \MM_{0,n,\beta}^{\operatorname{wt}}
+\ecd
+where $\MM_{0,n,\beta}^{\operatorname{wt}}$ is the moduli space of prestable curves weighted by the class~$\beta$ and:
+\begin{equation*} \MM_{A,B}^{\operatorname{wt}} := \MM_{0,A^{(0)} \cup \{ q_1^0, \ldots, q_r^0 \}, \beta^{(0)}}^{\operatorname{wt}} \times \prod_{i=1}^r \MM_{0,A^{(i)} \cup \{ q_i^1 \},\beta^{(i)}}^{\operatorname{wt}}. \end{equation*}
+The vertical maps in the above diagram are given by gluing together curves (in the case of $\psi$) and quasimaps (in the case of $\psi_X$ and $\psi_{\PP^N}$). The morphism $\psi$ admits a perfect obstruction theory, and by the splitting axiom \cite[\S 2.3.3]{CF-K-higher-genus}:
+\begin{equation*} \virt{\mathcal{D}(X)} := \Delta_{X^r}^! \virt{\mathcal{E}(X)} = \psi^! \virt{\om{Q}(X)}, \end{equation*}
+and similarly for $\PP^N$. Commutativity of virtual pullbacks then implies that:
+\begin{equation} \virt{\mathcal{D}(X)} = \label{psishriek formula} \psi^!\virt{\om{Q}(X)}= \psi^! \Phi_{\lvert Y\rvert}^! [ \om{Q}(\PP^N)] = \Phi_{\lvert Y\rvert}^!\psi^![\om{Q}(\PP^N)] = \Phi_{\lvert Y\rvert}^! [ \mathcal{D}(\PP^N) ]\end{equation}
+Putting all the preceding results together, we consider the cartesian diagram:
+\bcd
+\mathcal D(X|Y)\ar[d]\ar[r]\ar[dr,phantom,"\Box"] & \mathcal E(X|Y)\ar[d]\ar[r]\ar[dr,phantom,"\Box"] & \mathcal E(\PP^N|H)\ar[d,"\theta"] \\
+\mathcal D(X)\ar[d]\ar[r]\ar[dr,phantom,"\Box"] & \mathcal E(X)\ar[d]\ar[r] & \mathcal E(\PP^N) \\
+X^r\ar[r,"\Delta_{X^r}"] & X^r\times X^r & {}
+\ecd
+We then have:
+\begin{align*} \virt{\mathcal D(X|Y)} & = \Delta_{X^r}^! \virt{\mathcal E(X|Y)} & \text{by definition}\\
+& =  \Delta_{X^r}^! \theta^!\virt{\mathcal E(X)} & \text{by Equation \eqref{theta-pull}} \\
+& =  \theta^!\Delta_{X^r}^! \virt{\mathcal E(X)} & \text{by commutativity} \\
+& =  \theta^! \virt{\mathcal{D}(X)} & \text{by definition} \\
+& =  \theta^!\Phi_{\lvert Y\rvert}^! [\mathcal{D}(\PP^N)] & \text{by Equation \eqref{psishriek formula}} \\
+& =  \theta^!\Phi_{\lvert Y\rvert}^!\Delta_{(\PP^N)^r}^! [\mathcal E(\PP^N)] & \text{by definition} \\
+& =  \Phi_{\lvert Y\rvert}^!\Delta_{(\PP^N)^r}^!\theta^! [\mathcal E(\PP^N)] & \text{by commutativity} \\
+& = \Phi_{\lvert Y\rvert}^! \Delta_{(\PP^N)^r}^! [\mathcal{E}(\PP^N|H)] & \text{by Equation \eqref{theta-pull}} \\
+& =  \Phi_{\lvert Y\rvert}^![\mathcal{D}(\PP^N|H)] & \text{by definition}
+\end{align*}
+Summing over all the relevant $r, A, B$, and $M$, we obain \[\Phi_{|Y|}^![\mathcal{D}^{\mathcal{Q}}_{\alpha,k}(\PP^N|H,d)]=\virt{\mathcal{D}^{\mathcal{Q}}_{\alpha,k}(X|Y,d)},\] from which Gathmann's formula for relative quasimaps follows. \end{proof}
 
-\subsection{Gathmann's algorithm and quasimap quantum Lefschetz} Notice that in the very last step of the recursion, i.e. increasing $\sum\alpha$ from $Y\cdot \beta$ to $Y\cdot \beta+1$, there is no main term but only boundary corrections; also, for one of them there are no external components, which recovers $\Q{0}{n}{Y}{\beta}$.
+\subsection{Gathmann's algorithm and quasimap quantum Lefschetz} Notice that in the very last step of the recursion, i.e. increasing $\sum\alpha$ from $Y\cdot \beta$ to $Y\cdot \beta+1$, there is no main term but only boundary corrections; also, one of them has got no external components, so that it boils down to $\Q{0}{n}{Y}{\beta}$.
 
 Gathmann describes an algorithm for computing relative invariants of $(X|Y)$ and \ilemph{restricted} absolute invariants of $Y$ (i.e. the cohomological insertions lie in the image of the restriction map $i^*\colon H^*(X)\to H^*(Y)$) recursively, assuming that we know the descendant invariants of $X$. The proof is by induction on the numerical invariants (i) $d=Y\cdot \beta,$ (ii) $n,$ and (iii) $\sum\alpha$ (convention: for absolute invariants of $Y$ set $\sum\alpha=d+1$). If we want to compute a relative invariant with tangency condition $\alpha$ and degree $\beta$, assume $\alpha_k>0$ (if we cannot find such a $k$ then we are just considering an absolute invariant of $X$); we may then write down the formula as
 \[\virt{\Q{0}{\alpha}{X}{\beta}}=((\alpha_k-1)\psi_k+\ev_k^*\OO_X(Y))\virt{\Q{0}{\alpha-e_k}{X}{\beta}}-\virt{\mathcal{D}^Q_{\alpha-e_k,k}(X,\beta)}\]
-The classes appearing on the right hand side have lower numerical invariants, so we may assume they have been computed inductively. There is a delicate point, namely that we use the cohomological splitting of the diagonal of $Y\times Y$ in order to reduce the integrals on comb loci to products of relative $(X|Y)$ and absolute $Y$ invariants, but in doing so we might introduce some non-restricted insertions.
+The classes appearing on the right hand side have lower numerical invariants, so we may assume they have been computed inductively.
 
-It can be proved that invariants of $Y$ comprising only one unrestricted insertion vanish: assume we are interested in $\langle\tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n)\rangle^{Y,0+}_{0,n,\beta}$ with only $\delta_1\in i^*H^*(X)^\perp$. Recall that $i_*\virt{\Q{0}{n}{Y}{\beta}}=c_{\text{top}}(\pi_*f^*\OO_X(Y))\cap \virt{\Q{0}{n}{X}{i_*\beta}}$ follows from pulling back the analogous statement for $(\PP^N|H)$, and we may write $c_{\text{top}}(\pi_*f^*\OO_X(Y))=\ev_1^*\OO_X(Y)c_{\text{top}}(E^{Y\cdot\beta})$ for a certain vector bundle $E^{Y\cdot\beta}$. Consider the following factorisation:
+There is a delicate point, namely that we use the cohomological splitting of the diagonal of $Y^r\times Y^r$ in order to reduce the integrals on comb loci to products of relative $(X|Y)$- and absolute $Y$-invariants, but in doing so we might introduce some non-restricted insertions.
+Let me call \emph{unrestricted} an insertion in $i^*H^*(X)^\perp$; by linearity of Gromov-Witten invariants we may always assume that the insertions are either restricted or unrestricted.
+
+It can be proved that invariants \emph{of $Y$} comprising \emph{only one} unrestricted insertion vanish: assume we are interested in $\langle\tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n)\rangle^{Y,0+}_{0,n,\beta}$ with only $\delta_1\in i^*H^*(X)^\perp$. Recall that $i_*\virt{\Q{0}{n}{Y}{\beta}}=c_{\text{top}}(\pi_*f^*\OO_X(Y))\cap \virt{\Q{0}{n}{X}{i_*\beta}}$ follows from pulling back the analogous statement for $(\PP^N|H)$, and we may write $c_{\text{top}}(\pi_*f^*\OO_X(Y))=\ev_1^*\OO_X(Y)c_{\text{top}}(E^{Y\cdot\beta})$ for a certain vector bundle $E^{Y\cdot\beta}$. Consider the following factorisation:
 \bcd
 \Q{0}{(1,0,\ldots,0)}{X|Y}{\beta}\ar[r,"j"]\ar[d,"\tilde\ev_1"] & \Q{0}{n}{X}{\beta}\ar[d,"\ev_1"] \\
 Y\ar[r,"i"] & X
@@ -825,7 +934,7 @@ and $\langle\tau_{a_1}(\delta_1),\ldots,\tau_{a_n}(\delta_n)\rangle^{\epsilon,Y}
  \delta_1\cdot\tilde\ev_{1,*}i^!\left(\psi_1^{a_1}\prod_{i=2}^n\ev_i^*(\delta_i)\psi_i^{a_i}c_{\text{top}}(E^{Y\cdot\beta})\cap\virt{\Q{0}{n}{X}{\beta}}\right)= \\
  \delta_1\cdot i^*\ev_{1,*}\left(\psi_1^{a_1}\prod_{i=2}^n\ev_i^*(\delta_i)\psi_i^{a_i}c_{\text{top}}(E^{Y\cdot\beta})\cap\virt{\Q{0}{n}{X}{\beta}}\right) =0
 \end{multline*}
-It is then possible to prove recursively that any relative invariant with only one unrestricted invariant vanishes (see \cite[Lemma 5.6]{Ga}), and this is sufficient for our application, since the external components always get at most one such insertion.
+It is then possible to prove recursively that any \emph{relative} invariant with \emph{only one} unrestricted insertion vanishes (see \cite[Lemma 5.6]{Ga}), and this is sufficient for our application, since the external components always get at most one such insertion due to $g=0$.
 
 \smallskip
 
@@ -837,44 +946,46 @@ From now on we make the following two assumptions:
 \item \emph{$Y$ contains all curve classes}: the map $i_* : \Achow_1(Y) \to \Achow_1(X)$ is surjective.
 \end{enumerate}
 \begin{rmk}
- By adjunction, $-K_X$ pairs strictly positively with every curve class coming from $Y$, hence with every curve class by Assumption (2). Thus $-K_X$ is ample, or in other words $X$ is Fano, by Kleiman's criterion, since the effective cone of the toric variety $X$ is finitely generated in $\Achow_1(X)$, hence is closed in $\Achow_1(X)_{\mathbb{R}}$. Also note that if $\dim X \geq 3$ Assumption (2) always holds, due to the classical Lefschetz hyperplane theorem; on the other hand if $\dim X = 2$ Assumption (2) forces $X$ to be $\PP^2$.
+ By adjunction, $-K_X$ pairs strictly positively with every curve class coming from $Y$, hence with every curve class by Assumption (2). Thus $-K_X$ is ample, or in other words $X$ is Fano, by Kleiman's criterion (note that, according to the latter, positivity must be checked on the closure of the cone of effective curve classes, but, since $X$ is a toric variety, $\operatorname{Eff}(X)$ is finitely generated in $\Achow_1(X)$, hence it is closed in $\Achow_1(X)_{\mathbb{R}}$). Also observe that if $\dim X \geq 3$ Assumption (2) always holds, due to the classical Lefschetz hyperplane theorem; on the other hand if $\dim X = 2$ Assumption (2) forces $X$ to be $\PP^2$.
 \end{rmk}
 
-Recall that we have fixed a homogeneous basis $\eta_0, \ldots, \eta_l$ for $\HH^*(X) = \HH^*(X,\QQ)$ and let $\eta^0, \ldots, \eta^l$ denote the dual basis with respect to the Poincar\'e pairing. Without loss of generality we may suppose that $\eta^0=\mathbbm 1_X$ and $\eta^1=[Y]$. We get an induced basis $\rho_1=i^*\eta_1, \ldots, \rho_l = i^* \eta_l$ for $i^*\HH^*(X)$. Notice that $\rho_0 = i^* \eta_0 = i^* [\pt_X] = 0$, $\rho_1 = i^* \eta_1 = [\pt_Y]$.  We can extend the $\rho_i$ to a basis $\rho_1, \ldots, \rho_k$ for $\HH^*(Y)$ by adding $\rho_{l+1}\ldots,\rho_{k}$. Let $\rho^1, \ldots, \rho^k$ denote the dual basis; notice that $\rho^i$ is \emph{not} equal to $i^* \eta^i$, and $\rho^1 = \mathbbm{1}_Y$.
+Recall that we have fixed a homogeneous basis $\eta_0, \ldots, \eta_l$ for $\HH^*(X) = \HH^*(X,\QQ)$ and let $\eta^0, \ldots, \eta^l$ denote the dual basis with respect to the Poincar\'e pairing. Without loss of generality we may suppose that $\eta^0=\mathbbm 1_X$ and $\eta^1=[Y]$. We get an induced system of generators $\rho_1=i^*\eta_1, \ldots, \rho_l = i^* \eta_l$ for $i^*\HH^*(X)$ (some are possibly zero when the cohomological degree is bigger than $\dim X-1$). Notice that $\rho_0 = i^* \eta_0 = i^* [\pt_X] = 0$, $\rho_1 = i^* \eta_1 = [\pt_Y]$.  We can extend the $\rho_i$ to a basis $\rho_1, \ldots, \rho_k$ for $\HH^*(Y)$ by adding $\rho_{l+1}\ldots,\rho_{k}$. Let $\rho^1, \ldots, \rho^k$ denote the dual basis; notice that $\rho^i$ is \emph{not} equal to $i^* \eta^i$, and $\rho^1 = \mathbbm{1}_Y$.
 
 We are going to analyse the behaviour of a generating function of $2$-pointed quasimap invariants with a fundamental class insertion, which in fact coincides with the small $I$-function from Section \ref{subsec:gf_and_wc}. Let me break the notation into two: for any smooth projective toric variety $X$ and any effective curve class $\beta\in \HH_2^+(X)$, define
-\begin{align*} S_0^X(z,\beta) & =(\ev_1)_*\left(\frac{1}{z-\psi_1} \virt{\Q{0}{2}{X}{\beta}}\right) 
+\begin{align*} S_0^X(z,\beta) & =(\ev_1)_*\left(\frac{1}{z-\psi_1} \virt{\Q{0}{2}{X}{\beta}}\right), 
 \intertext{and then the small $I$-function is}
-S_0^X(z,q) &=\sum_{\beta\geq 0} q^\beta S_0^X(z,\beta)\end{align*}
+S_0^X(z,q) &=\sum_{\beta\geq 0} q^\beta S_0^X(z,\beta),\end{align*}
 where by convention $S_0^X(z,0)= \mathbbm 1_X$; this function takes values in $\HH^*(X,\Lambda)$ and the notation is reminiscent of $I(q,z)=S^{0+}(q,0,z)(\mathds 1)$.
 
 The same definition applies to $Y$. However we may wish to consider only restricted insertions, and we therefore set
-\begin{equation*} \tilde{S}^Y_0(z,\beta) = (\ev_1)_* \left( \dfrac{1}{z-\psi_1} \virt{\Q{0}{2}{Y}{\beta}} \right) \end{equation*}
+\begin{equation*} \tilde{S}^Y_0(z,\beta) = (\ev_1)_* \left( \dfrac{1}{z-\psi_1} \virt{\Q{0}{2}{Y}{\beta}} \right), \end{equation*}
 where crucially $\ev_1$ is viewed as mapping to $X$ instead of to $Y$. Remark that $i_* S^Y_0(z,\beta) = \tilde{S}^Y_0(z,\beta)$ (since $X$ and $Y$ are smooth, we may use Poincar\'{e} duality to define a push-forward map on cohomology, $i_* \colon \HH^k(Y) \to \HH^{k+2}(X)$).
 
 \begin{thm} \label{Theorem Quantum Lefschetz}
 Let $X$ and $Y$ be as above. Then
 \begin{equation}\label{eqn:mirror}
-\dfrac{\sum_{\beta\geq 0} q^\beta\prod_{j=0}^{Y\cdot\beta}(Y+jz)S_0^X(z,\beta)}{P_0^X(q)}= \tilde{S}_0^Y(z,q)
+\dfrac{\sum_{\beta\geq 0} q^\beta\prod_{j=0}^{Y\cdot\beta}(Y+jz)S_0^X(z,\beta)}{P_0^X(q)}= \tilde{S}_0^Y(z,q),
 \end{equation}
 where:
 \begin{align*}
  P_0^X(q) % & = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta (Y\cdot\beta) \langle [\pt_Y],\mathbbm 1_{X}\rangle_{0,(Y\cdot\beta,0),\beta}^{X|Y} \\
-            & = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta(Y\cdot\beta)!\langle [\pt_X] \psi_1^{Y\cdot\beta-1} ,\mathbbm 1_{X}\rangle_{0,2,\beta}^X
+            & = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta(Y\cdot\beta)!\langle [\pt_X] \psi_1^{Y\cdot\beta-1} ,\mathbbm 1_{X}\rangle_{0,2,\beta}^X.
 \end{align*}
-Notice that $P_0^X(q)$ depends not only on $X$ but also on the divisor class of $Y$ in~$X$; the superscript is supposed to indicate that the definition only involves quasimap invariants of $X$.
+Notice that $P_0^X(q)$ depends not only on $X$ but also on $[Y]$ in $\Pic X$; the superscript is supposed to indicate that the definition only involves quasimap invariants of $X$.
 \end{thm}
 
 \begin{proof}
-For $m = 0, \ldots, Y \cdot \beta$, define the following generating function for $2$-pointed \emph{relative} quasimap invariants
+For $m = 0, \ldots, Y \cdot \beta$, define the following auxiliary generating functions for $2$-pointed \emph{relative} quasimap invariants
  \[
-  S_{0,(m)}^{X|Y}(z,\beta)=(\ev_1)_*\left(\frac{1}{z-\psi_1}\virt{\Q{0}{(m,0)}{X|Y}{\beta}}\right)
+  S_{0,(m)}^{X|Y}(z,\beta)=(\ev_1)_*\left(\frac{1}{z-\psi_1}\virt{\Q{0}{(m,0)}{X|Y}{\beta}}\right),
  \]
-where we view $\ev_1$ as mapping to $X$.  Note that  $S_{0,(0)}^{X|Y}(z,\beta) = S_0^X(z, \beta)$. Also define the following generating function for ``comb loci invariants''
+and for ``comb loci invariants''
 \[
- T_{0,(m)}^{X|Y}(z,\beta)=(\ev_1)_*\left(m \virt{\Q{0}{(m,0)}{X|Y}{\beta}}+\frac{1}{z-\psi_1} \virt{\mathcal{D}^{\mathcal{Q}}_{(m,0),1}(X|Y,\beta)} \right)
+ T_{0,(m)}^{X|Y}(z,\beta)=(\ev_1)_*\left(m \virt{\Q{0}{(m,0)}{X|Y}{\beta}}+\frac{1}{z-\psi_1} \virt{\mathcal{D}^{\mathcal{Q}}_{(m,0),1}(X|Y,\beta)} \right),
 \]
-where again we view $\ev_1$ as mapping to $X$. As in \cite[Lemma 1.2]{Ga-MF}, it follows from Proposition \ref{prop:quasimap_Gathmann_formula} that
+where in both cases we view $\ev_1$ as mapping to $X$. Note that  $S_{0,(0)}^{X|Y}(z,\beta) = S_0^X(z, \beta)$. A formal manipulation of Gathmann's formula for relative quasimaps (Proposition \ref{prop:quasimap_Gathmann_formula}), based on the push-pull formula and the identity
+\[\frac{mz}{z-\psi_1}-m=\frac{m\psi_1}{z-\psi_1},\]
+shows that
 \begin{equation}
  (Y+mz) S_{0,(m)}^{X|Y}(z,\beta) = S_{0,(m+1)}^{X|Y}(z,\beta)+ T_{0,(m)}^{X|Y}(z,\beta)
 \end{equation}
@@ -882,12 +993,12 @@ and we can apply this repeatedly to obtain:
 \begin{equation} \label{eqn:G}
 \prod_{j=0}^{Y\cdot\beta}(Y+jz) S_0^X(z,\beta) = \sum_{m=0}^{Y\cdot\beta}\prod_{j=m+1}^{Y\cdot\beta}(Y+jz)T_{0,(m)}^{X|Y}(z,\beta)
 \end{equation}
-We now examine the right-hand side in detail. By definition, $T_{0,(m)}^{X|Y}(z,\beta)$ splits into two parts: those terms coming from the relative space and those terms coming from the comb loci.
+We now examine the right-hand side in detail. By definition, $T_{0,(m)}^{X|Y}(z,\beta)$ splits into two parts: those terms coming from the relative space, and those coming from the comb loci.
 
 Let us first consider the contribution of the comb loci. Since there are only two marked points and the first is required to lie on the internal component of the comb, it follows from the strong stability condition that there are only two options: a comb with zero teeth or a comb with one tooth.
 
 First consider the case of a comb with zero teeth. The moduli space is then $\Q{0}{2}{Y}{\beta}$ and we require that $Y \cdot \beta = m$. Thus this piece only contributes to $T_{0,(Y\cdot\beta)}^{X|Y}(z,\beta)$, and the contribution is:
-\begin{equation*} \sum_{i=1}^l \left\langle \dfrac{\rho_i}{z-\psi_1}, \mathbbm{1}_Y \right\rangle_{0,2,\beta}^Y \eta^i \end{equation*}
+\begin{equation*} \sum_{i=1}^l \left\langle \dfrac{\rho_i}{z-\psi_1}, \mathbbm{1}_Y \right\rangle_{0,2,\beta}^Y \eta^i. \end{equation*}
 
 Next consider the case of a comb with one tooth. Let $\beta^{(0)}$ and $\beta^{(1)}$ denote the curve classes of the internal and external components, respectively, and let $m^{(1)}$ be the contact order of the external component with $Y$. The picture is as follows
 \begin{center}
@@ -912,22 +1023,21 @@ for $i = 1, \ldots, l$ and $h = 1, \ldots, k$. By computing dimensions, we find
 &= K_Y \cdot \beta^{(1)} - Y \cdot \beta^{(1)}+m^{(1)} \\
 &\leq 0
 \end{align*}
-where the final equality follows from adjunction and the final inequality holds because $-K_Y$ is nef and $m^{(1)}\leq Y \cdot \beta_1$. This shows that the only non-trivial contributions come from curve classes $\beta^{(1)}$ such that $K_Y \cdot \beta^{(1)}=0$, and that in this case the order of tangency must be maximal, i.e. $m^{(1)}=Y \cdot \beta^{(1)}$. Furthermore we must have $\codim \rho^h = 0$ and so $\rho^h = \rho^1 = \mathbbm{1}_Y$ which implies $\rho_h = \rho_1 = [\pt_Y]$. Finally since $m^{(1)}=Y \cdot \beta^{(1)}$ we have
-\begin{equation*} m = Y \cdot \beta^{(0)}+m^{(1)}=Y \cdot (\beta^{(0)} + \beta^{(1)}) = Y \cdot \beta \end{equation*}
-and so again this piece only contributes to $T_{0,(Y\cdot\beta)}^{X|Y}(z,\beta)$, and the contribution is:
-\begin{equation*} \sum_{i=1}^l \left( \sum_{\substack{0 < \beta^{(1)} < \beta \\ K_Y \cdot \beta^{(1)}=0}} (Y \cdot \beta^{(1)}) \bigg\langle \dfrac{\rho_i}{z-\psi_1}, \mathbbm{1}_Y \bigg\rangle_{0,2,\beta-\beta^{(1)}}^Y \bigg\langle \rho_1, \mathbbm{1}_X \bigg\rangle_{0,(Y \cdot \beta^{(1)},0),\beta^{(1)}}^{X|Y} \right) \eta^i \end{equation*}
-where the $Y \cdot \beta^{(1)}$ factor comes from the weighting on the virtual class of the comb locus. Finally, we must examine the terms of $T_{0,(m)}^{X|Y}(z,\beta)$ coming from:
-\begin{equation*}\ev_{1*}(m\virt{\Q{0}{(m,0)}{X|Y}{\beta}})\end{equation*} 
+where the last equality follows from adjunction and the final inequality holds because $-K_Y$ is nef and $m^{(1)}\leq Y \cdot \beta_1$. This shows that the only non-trivial contributions come from curve classes $\beta^{(1)}$ such that $K_Y \cdot \beta^{(1)}=0$, and that in this case the order of tangency must be maximal, i.e. $m^{(1)}=Y \cdot \beta^{(1)}$. Furthermore we must have $\codim \rho^h = 0$ and so $\rho^h = \rho^1 = \mathbbm{1}_Y$ which implies $\rho_h = \rho_1 = [\pt_Y]$. Finally since $m^{(1)}=Y \cdot \beta^{(1)}$ we have
+\begin{equation*} m = Y \cdot \beta^{(0)}+m^{(1)}=Y \cdot (\beta^{(0)} + \beta^{(1)}) = Y \cdot \beta. \end{equation*}
+So again this piece only contributes to $T_{0,(Y\cdot\beta)}^{X|Y}(z,\beta)$, and the contribution is:
+\begin{equation*} \sum_{i=1}^l \left( \sum_{\substack{0 < \beta^{(1)} < \beta \\ K_Y \cdot \beta^{(1)}=0}} (Y \cdot \beta^{(1)}) \bigg\langle \dfrac{\rho_i}{z-\psi_1}, \mathbbm{1}_Y \bigg\rangle_{0,2,\beta-\beta^{(1)}}^Y \bigg\langle \rho_1, \mathbbm{1}_X \bigg\rangle_{0,(Y \cdot \beta^{(1)},0),\beta^{(1)}}^{X|Y} \right) \eta^i, \end{equation*}
+where the $Y \cdot \beta^{(1)}$ factor comes from the weighting on the virtual class of the comb locus. Finally, we must examine the terms of $T_{0,(m)}^{X|Y}(z,\beta)$ coming from
+\begin{equation*}\ev_{1*}(m\virt{\Q{0}{(m,0)}{X|Y}{\beta}}). \end{equation*} 
 Notice that we only have insertions from $i^*\HH^*(X) \subseteq \HH^*(Y)$, since $\ev_1$ is viewed as mapping to $X$. On the other hand
 \begin{align*} \vdim \Q{0}{(m,0)}{X|Y}{\beta} & = \dim X-3 -K_X \cdot \beta +2-m & \\
 & = \dim X - 1 -K_Y \cdot \beta + Y \cdot \beta - m \ \ & \text{by adjunction} \\
 & \geq \dim X - 1 + Y\cdot\beta - m \ \ & \text{since $-K_Y$ is nef} \\
 & \geq \dim X - 1 \ \ & \text{since $m \leq Y \cdot \beta$} \end{align*}
-where in the second line we have applied the projection formula to $i$, and thus we have implicitly used Assumption (2), namely that every curve class on $X$ comes from a class on $Y$.
+where in the second line we have applied the projection formula to $i$, and thus implicitly used Assumption (2), namely that every curve class on $X$ comes from a class on $Y$.
 
 Consequently the only insertions that can appear are those of dimension $0$ and $1$. However, the restriction of the $0$-dimensional class $\eta_0 = [\pt_X]$ to $Y$ vanishes, as do the restrictions of all $1$-dimensional classes except for $\eta_1$ (by the definition of the dual basis, since $\eta^1 = Y$). Thus the only insertion is $i^*\eta_1=\rho_1=[\pt_Y]$, and since $\eta^1$ has dimension $1$ all the inequalities above must actually be equalities. Thus we only have a contribution if $-K_Y \cdot \beta = 0$ and $m = Y \cdot \beta$. The contribution to $T_{0,(Y\cdot\beta)}^{X|Y}(z,\beta)$ in this case is:
-\begin{equation*} (Y \cdot \beta) \langle \rho_1 , \mathbbm{1}_X \rangle_{0,(Y \cdot \beta,0),\beta}^{X|Y} \eta^1 \end{equation*}
-
+\begin{equation*} (Y \cdot \beta) \langle \rho_1 , \mathbbm{1}_X \rangle_{0,(Y \cdot \beta,0),\beta}^{X|Y} \eta^1. \end{equation*}
 Thus we have calculated $T_{0,(m)}^{X|Y}(z,\beta)$ for all $m$; substituting into equation \eqref{eqn:G} we obtain
 \begin{align*} \prod_{j=0}^{Y \cdot \beta} (Y + jz) & S_0^X(z,\beta) = T_{0,(Y\cdot\beta)}^{X|Y}(z,\beta) \\
 = \ & \sum_{i=1}^l \left\langle \dfrac{\rho_i}{z-\psi_1}, \mathbbm{1}_Y \right\rangle_{0,2,\beta}^Y \eta^i + \\
@@ -936,48 +1046,48 @@ Thus we have calculated $T_{0,(m)}^{X|Y}(z,\beta)$ for all $m$; substituting int
 \end{align*}
 where the third term only appears if $K_Y \cdot \beta=0$. We can rewrite this as:
 \begin{align*} \prod_{j=0}^{Y \cdot \beta} (Y + jz) & S_0^X(z,\beta) \\
-& = \tilde{S}_0^Y(z,\beta) + \sum_{\substack{0 < \beta^{(1)} \leq \beta \\ K_Y \cdot \beta^{(1)}=0}} \left( (Y \cdot \beta^{(1)}) \bigg\langle \rho_1, \mathbbm{1}_X \bigg\rangle_{0,(Y \cdot \beta^{(1)},0),\beta^{(1)}}^{X|Y} \right) \tilde{S}_0^Y(z,\beta-\beta^{(1)})
+& = \tilde{S}_0^Y(z,\beta) + \sum_{\substack{0 < \beta^{(1)} \leq \beta \\ K_Y \cdot \beta^{(1)}=0}} \left( (Y \cdot \beta^{(1)}) \bigg\langle \rho_1, \mathbbm{1}_X \bigg\rangle_{0,(Y \cdot \beta^{(1)},0),\beta^{(1)}}^{X|Y} \right) \tilde{S}_0^Y(z,\beta-\beta^{(1)}).
 \end{align*}
 It is now clear from the expression above that equation \eqref{eqn:mirror} in the statement of Theorem \ref{Theorem Quantum Lefschetz} holds, with:
-\begin{equation*} P_0^X(q) = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta (Y\cdot\beta) \langle \rho_1,\mathbbm 1_{X}\rangle_{0,(Y\cdot\beta,0),\beta}^{X|Y} \end{equation*}
+\begin{equation*} P_0^X(q) = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta (Y\cdot\beta) \langle \rho_1,\mathbbm 1_{X}\rangle_{0,(Y\cdot\beta,0),\beta}^{X|Y}. \end{equation*}
 To complete the proof it thus remains to show that:
-\begin{equation*} P_0^X(q) = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta(Y\cdot\beta)!\langle\psi_1^{Y\cdot\beta-1} [\pt_X],\mathbbm 1_{X}\rangle_{0,2,\beta}^X \end{equation*}
+\begin{equation*} P_0^X(q) = 1 + \sum_{\substack{\beta>0 \\ K_Y\cdot\beta=0}} q^\beta(Y\cdot\beta)!\langle\psi_1^{Y\cdot\beta-1} [\pt_X],\mathbbm 1_{X}\rangle_{0,2,\beta}^X. \end{equation*}
 The aim therefore is to express the relative invariants
 \begin{equation*} \langle \rho_1 , \mathbbm{1}_X \rangle_{0,(Y\cdot\beta,0),\beta}^{X|Y} \end{equation*}
 in terms of absolute invariants of $X$. Unsurprisingly, we once again do this by applying Proposition \ref{prop:quasimap_Gathmann_formula}. We have:
 \begin{align*} \virt{\Q{0}{(Y \cdot \beta,0)}{X|Y}{\beta}} = \ & ((Y\cdot\beta-1)\psi_1+\ev_1^*Y) \virt{\Q{0}{(Y\cdot\beta-1,0)}{X|Y}{\beta}} \ - \\
-& \virt{\mathcal{D}_{(Y\cdot\beta-1,0),1}^{\mathcal Q}(X|Y,\beta)} \end{align*}
+& \virt{\mathcal{D}_{(Y\cdot\beta-1,0),1}^{\mathcal Q}(X|Y,\beta)}. \end{align*}
 We begin by examining the contributions from the comb loci. As before, we have only contributions coming from combs with $0$ teeth and combs with $1$ tooth. The former contributions take the form
-\begin{equation*} \langle \rho_1 , \mathbbm{1}_Y \rangle_{0,2,\beta}^Y \end{equation*}
+\begin{equation*} \langle \rho_1 , \mathbbm{1}_Y \rangle_{0,2,\beta}^Y, \end{equation*}
 which vanish because $\vdim{\Q{0}{2}{Y}{\beta}} = \dim Y -1 -K_Y\cdot\beta = \dim Y -1$ whereas the insertion has codimension $\dim Y$. The latter contributions take the form
-\begin{equation*} \langle \rho_1 ,\rho^h\rangle_{0,2,\beta^{(0)}}^Y \langle \rho_h,\mathbbm 1_{X}\rangle_{0,(Y\cdot(\beta-\beta^{(0)})-1,0),\beta-\beta^{(0)}}^{X|Y}\end{equation*}
+\begin{equation*} \langle \rho_1 ,\rho^h\rangle_{0,2,\beta^{(0)}}^Y \langle \rho_h,\mathbbm 1_{X}\rangle_{0,(Y\cdot(\beta-\beta^{(0)})-1,0),\beta-\beta^{(0)}}^{X|Y},\end{equation*}
 and these must also vanish since:
 \begin{align*} \codim \rho^h & = \dim Y - \codim \rho_h \\
 & = \dim Y - \vdim \Q{0}{(Y\cdot(\beta-\beta^{(0)})-1,0)}{X|Y}{\beta-\beta^{(0)}} \\
 & = \dim Y - (\dim X - 3 - K_X \cdot (\beta - \beta^{(0)}) + 2 - Y \cdot (\beta - \beta^{(0)}) + 1) \\
 &= -1 + K_X \cdot (\beta-\beta^{(0)}) + Y \cdot (\beta-\beta^{(0)}) \\
 & = -1 + K_Y\cdot(\beta-\beta^{(0)}) \\
-& \leq -1
+& \leq -1.
 \end{align*}
 Thus the comb loci do not contribute at all. Applying this recursively (the same argument as above shows that we never get comb loci contributions), we find that
 \begin{align*}
 (Y\cdot\beta)\langle \rho_1 ,\mathbbm 1_{X}\rangle_{0,(Y\cdot\beta,0),\beta}^{X|Y} & = (Y\cdot\beta) \langle \eta_1 \prod_{j=0}^{Y\cdot\beta-1}(Y+j\psi_1) , \mathbbm{1}_X \rangle_{0,2,\beta}^X \\
-& = (Y\cdot\beta)!\langle[ \pt_X]\psi_1^{Y\cdot\beta-1},\mathbbm 1_X\rangle_{0,2,\beta}^X
+& = (Y\cdot\beta)!\langle[ \pt_X]\psi_1^{Y\cdot\beta-1},\mathbbm 1_X\rangle_{0,2,\beta}^X,
 \end{align*}
 where the second equality holds because $Y\cdot\eta_1=\eta^1 \cdot \eta_1 = [\pt_X]$ and $Y^2\cdot\eta_1=0$. This completes the proof of Theorem \ref{Theorem Quantum Lefschetz}. \end{proof}
 
 \begin{cor}
  If $Y$ is Fano then there is no correction term:
-\begin{equation*} \sum_{\beta\geq 0} q^\beta\prod_{j=0}^{Y\cdot\beta}(Y+jz)S_0^X(z,\beta) = \tilde{S}_0^Y(z,q) \end{equation*}
+\begin{equation*} \sum_{\beta\geq 0} q^\beta\prod_{j=0}^{Y\cdot\beta}(Y+jz)S_0^X(z,\beta) = \tilde{S}_0^Y(z,q). \end{equation*}
 \end{cor}
 
 \begin{cor}
-Let $Y = Y_5 \subseteq  X = \PP^4$ be the quintic three-fold. Then
-\begin{equation*} \tilde{S}_0^{Y_5}(z,q)=\dfrac{I_{\text{sm}}^{Y_5}(z,q)}{P(q)} \end{equation*}
+Let $Y = Y_5 \subseteq  X = \PP^4$ be the quintic threefold. Then
+\begin{equation*} \tilde{S}_0^{Y_5}(z,q)=\dfrac{I_{\text{sm}}^{Y_5}(z,q)}{P(q)}, \end{equation*}
 where
 \begin{equation*} I_{\text{sm}}^{Y_5}(z,q)=5H+\sum_{d>0}\frac{\prod_{j=0}^{5d}(H+jz)}{\prod_{j=0}^{d}(H+jz)^5} \ q^d \end{equation*}
 and:
-\begin{equation*} P(q)=1+\sum_{d>0}\frac{(5d)!}{(d!)^5}q^d \end{equation*}
+\begin{equation*} P(q)=1+\sum_{d>0}\frac{(5d)!}{(d!)^5}q^d. \end{equation*}
 \end{cor}
 \begin{proof} Apply Theorem \ref{Theorem Quantum Lefschetz} and use the fact that the quasimap invariants of $\PP^4$ coincide with the Gromov--Witten invariants, which are well-known from mirror symmetry. \end{proof}
 
