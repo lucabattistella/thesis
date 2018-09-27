@@ -173,10 +173,10 @@ The left hand side can be expanded as $q_*\left(\bigotimes_{\rho\in\Sigma_X(1)}L
 
 Finally, notice that the basepoint set of \[\xi':=\left((\bar C,\bar{\mathbf x}),(\bar L_\tau,\bar u_\tau)_{\tau\in\Sigma_Y(1)},(\varphi_{m_Y})_{m_Y\in M_Y}\right)\] is the image of that of $\xi$ under $q$, hence it is a finite set of non-special points by construction; also, $\xi'$ is stable by the very construction of $q$. We may therefore set $Q(f)(\xi)=\xi'$.
 
-\begin{rmk} We have proved in \cite[Lemma B.5]{BN} that if $f$ is finite onto its image (i.e. it does not contract any effective curve class in $X$) and $\Q{g}{n}{Y}{f_*\beta}$ is unobstructed, then $Q(f)$ admits a perfect obstruction theory compatible with the ones concerned, hence $Q(f)^![\Q{g}{n}{Y}{f_*\beta}]=\virt{\Q{g}{n}{X}{\beta}}$, i.e. the virtual classes behave well under virtual pullback. \end{rmk}
+\begin{rmk} We have proved in \cite[Lemma B.5]{BN} that if $f$ is finite onto its image (i.e. it does not contract any effective curve class in $X$) and $\Q{g}{n}{Y}{f_*\beta}$ is unobstructed, then $Q(f)$ admits a perfect obstruction theory compatible with the ones concerned, hence $Q(f)^![\Q{g}{n}{Y}{f_*\beta}]=\virt{\Q{g}{n}{X}{\beta}}$. I review this in a special case in Lemma \ref{Exists relative POT} below. \end{rmk}
 
 \begin{rmk}
-I. Ciocan-Fontanine has kindly pointed out that, contrary to the case of stable maps, $k$ might not be a closed embedding, even if $i$ is. Consider the Segre embedding:
+I. Ciocan-Fontanine has kindly pointed out that, contrary to the case of stable maps, $Q(f)$ might not be a closed embedding, even if $f$ is. Consider the Segre embedding:
 \begin{align*}
 \PP^1\times\PP^1 & \xhookrightarrow{i} \PP^3\\ 
 ([x:y],[z:w]) & \mapsto [xz:xw:yz:yw]\end{align*}
@@ -678,12 +678,12 @@ The proof goes roughly as follows: the reduction to the case of $(\PP^N|H)$ is j
 I come now to the definition of relative quasimaps \cite[\S 2.3]{BN}. As in the case of stable maps, we start from the unobstructed situation $(\PP^N|H)$, with $H=\{z_0=0\}$.
 
 \begin{definition}
- The space of relative quasimaps $\Q{0}{\alpha}{\PP^N|H}{d}$ is the closure inside $\Q{0}{n}{\PP^N}{d}$ of the nice locus of quasimaps \[\left\{\left((\PP^1,x_1,\ldots,x_n),u_0,\ldots,u_N\in H^0(\PP^1,\OO_{\PP^1}(d))\right)\right\}\] such that $u_0\nequiv 0$, $u_0^*(0)\geq\sum\alpha_ix_i$ and $(u_0,\ldots,u_N)$ do not vanish simultaneously on $\PP^1$.
+ The space of relative quasimaps $\Q{0}{\alpha}{\PP^N|H}{d}$ is the closure inside $\Q{0}{n}{\PP^N}{d}$ of the nice locus of quasimaps \[\left((\PP^1,x_1,\ldots,x_n),u_0,\ldots,u_N\in H^0(\PP^1,\OO_{\PP^1}(d))\right)\] such that $u_0\nequiv 0$, $u_0^*(0)\geq\sum\alpha_ix_i$ and $(u_0,\ldots,u_N)$ do not vanish simultaneously on $\PP^1$.
  
  More generally, if $X$ is a smooth toric variety and $Y\subseteq X$ a smooth and very ample divisor, the closed embedding $\phi_{\lvert Y\rvert}\colon X\hookrightarrow \PP^N$ induces $\Phi_{\lvert Y\rvert}\colon \Q{0}{n}{X}{\beta}\to \Q{0}{n}{\PP^N}{d}$ by functoriality (\S \ref{sec:functoriality}), and we may define the relative space as the fiber product\index{Quasimaps!$\Q{0}{\alpha}{XrelY}{\beta}$ space of relative quasimaps}:
 \bcd
 \Q{0}{\alpha}{X|Y}{\beta}\ar[d]\ar[r,hook]\ar[dr,phantom,"\Box"] & \Q{0}{n}{X}{\beta}\ar[d,"\Phi_{\lvert Y\rvert}"] \\
-\Q{0}{\alpha}{\PP^N|H}{d} \ar[r,hook] & \Q{0}{n}{\PP^N}{d}
+\Q{0}{\alpha}{\PP^N|H}{d} \ar[r,hook] & \Q{0}{n}{\PP^N}{d}.
 \ecd
 \end{definition}
 
@@ -846,7 +846,13 @@ The latter is endowed with the pullback of the product virtual fundamental class
  \begin{equation}
   \chi^*(\psi_k)=\psi_k, \quad \text{and} \quad \chi^*(x_k^*L_Y)=\ev_k^*\OO_X(Y),
  \end{equation}
-since collapsing does not affect the universal curve in a neighbourhood of the marking $x_k$. On the other hand, if a comb locus $\mathcal D(X|Y,A,B,M)$ contains a rational tail (necessarily external), then the restriction of $\chi$ to $\mathcal D(X|Y,A,B,M)$ has positive dimensional fibers, because $\dim(\M{0}{(m^{(i)})}{\PP^N|H}{d})>\dim H$, so the corresponding term of Gathmann's formula vanishes under $\chi_*$.
+since collapsing does not affect the universal curve in a neighbourhood of the marking $x_k$. On the other hand, if a comb locus $\mathcal D(\PP^N|H,A,B,M)$ contains a rational tail (necessarily external), then the restriction of $\chi$ to $\mathcal D(\PP^N|H,A,B,M)$ is not finite over its image, because $\dim(\M{0}{(m^{(i)})}{\PP^N|H}{d})>\dim H$, so the corresponding term of Gathmann's formula vanishes under $\chi_*$. To be more precise, there is a cartesian diagram
+\bcd
+\mathcal D(\PP^N|H,A,B,M)\ar[r]\ar[d,"\chi"]\ar[dr,phantom,"\Box"] & \mathcal E(\PP^N|H,A,B,M)\ar[d,"\prod\chi"] \\
+\mathcal {D^Q}(\PP^N|H,A,B,M)\ar[r]\ar[d]\ar[dr,phantom,"\Box"] & \mathcal {E^Q}(\PP^N|H,A,B,M)\ar[d,"\ev"] \\
+H^r\ar[r,"\Delta_{H^r}"] & H^r\times H^r
+\ecd
+(where $\mathcal E$ is the usual - not -fiber - product of the relevant (quasi)map spaces, see below) and by commutativity of proper pushforward with Gysin maps we can argue as above at the level of $\mathcal E$, where we are actually pushing forward the fundamental class.
 
 The case of a smooth very ample divisor $(X|Y)$ follows by virtual pullback along $\Phi_{\lvert Y\rvert}$ - see Lemma \ref{Exists relative POT} -, which I will simply denote by $\Phi_{\lvert Y\rvert}^!$. Indeed $\Phi_{\lvert Y\rvert}^![\Q{0}{\alpha}{\PP^N|H}{d}]=\virt{\Q{0}{\alpha}{X|Y}{\beta}}$ (and similarly for the $\alpha+e_k$ relative space) by the very definition of the latter, so we are left with checking that the fundamental class of a comb locus behaves well under virtual pullback.
 Let me introduce some more useful notation at this point: consider the product (\emph{not} the fiber product over $Y^r$)\index{Quasimaps!$\mathcal E^{\mathcal{Q}}(XrelY,A,B,M)$ ordinary product of quasimaps to $Y$ and relative quasimaps to $(XrelY)$}
@@ -911,7 +917,7 @@ We then have:
 & =  \theta^!\Phi_{\lvert Y\rvert}^!\Delta_{(\PP^N)^r}^! [\mathcal E(\PP^N)] & \text{by definition} \\
 & =  \Phi_{\lvert Y\rvert}^!\Delta_{(\PP^N)^r}^!\theta^! [\mathcal E(\PP^N)] & \text{by commutativity} \\
 & = \Phi_{\lvert Y\rvert}^! \Delta_{(\PP^N)^r}^! [\mathcal{E}(\PP^N|H)] & \text{by Equation \eqref{theta-pull}} \\
-& =  \Phi_{\lvert Y\rvert}^![\mathcal{D}(\PP^N|H)] & \text{by definition}
+& =  \Phi_{\lvert Y\rvert}^![\mathcal{D}(\PP^N|H)] & \text{by definition.}
 \end{align*}
 Summing over all the relevant $r, A, B$, and $M$, we obain \[\Phi_{|Y|}^![\mathcal{D}^{\mathcal{Q}}_{\alpha,k}(\PP^N|H,d)]=\virt{\mathcal{D}^{\mathcal{Q}}_{\alpha,k}(X|Y,d)},\] from which Gathmann's formula for relative quasimaps follows. \end{proof}
 
@@ -949,7 +955,7 @@ From now on we make the following two assumptions:
  By adjunction, $-K_X$ pairs strictly positively with every curve class coming from $Y$, hence with every curve class by Assumption (2). Thus $-K_X$ is ample, or in other words $X$ is Fano, by Kleiman's criterion (note that, according to the latter, positivity must be checked on the closure of the cone of effective curve classes, but, since $X$ is a toric variety, $\operatorname{Eff}(X)$ is finitely generated in $\Achow_1(X)$, hence it is closed in $\Achow_1(X)_{\mathbb{R}}$). Also observe that if $\dim X \geq 3$ Assumption (2) always holds, due to the classical Lefschetz hyperplane theorem; on the other hand if $\dim X = 2$ Assumption (2) forces $X$ to be $\PP^2$.
 \end{rmk}
 
-Recall that we have fixed a homogeneous basis $\eta_0, \ldots, \eta_l$ for $\HH^*(X) = \HH^*(X,\QQ)$ and let $\eta^0, \ldots, \eta^l$ denote the dual basis with respect to the Poincar\'e pairing. Without loss of generality we may suppose that $\eta^0=\mathbbm 1_X$ and $\eta^1=[Y]$. We get an induced system of generators $\rho_1=i^*\eta_1, \ldots, \rho_l = i^* \eta_l$ for $i^*\HH^*(X)$ (some are possibly zero when the cohomological degree is bigger than $\dim X-1$). Notice that $\rho_0 = i^* \eta_0 = i^* [\pt_X] = 0$, $\rho_1 = i^* \eta_1 = [\pt_Y]$.  We can extend the $\rho_i$ to a basis $\rho_1, \ldots, \rho_k$ for $\HH^*(Y)$ by adding $\rho_{l+1}\ldots,\rho_{k}$. Let $\rho^1, \ldots, \rho^k$ denote the dual basis; notice that $\rho^i$ is \emph{not} equal to $i^* \eta^i$, and $\rho^1 = \mathbbm{1}_Y$.
+Recall that we have fixed a homogeneous basis $\eta_0, \ldots, \eta_l$ for $\HH^*(X) = \HH^*(X,\QQ)$ and let $\eta^0, \ldots, \eta^l$ denote the dual basis with respect to the Poincar\'e pairing. Without loss of generality we may suppose that $\eta^0=\mathbbm 1_X$ and $\eta^1=[Y]$. We get an induced system of generators $\rho_1=i^*\eta_1, \ldots, \rho_l = i^* \eta_l$ for $i^*\HH^*(X)$ (some are possibly zero when the cohomological degree is bigger than $\dim X-1$). Notice that $\rho_0 = i^* \eta_0 = i^* [\pt_X] = 0$, $\rho_1 = i^* \eta_1 = [\pt_Y]$.  After possibly extracting a linearly independent subset of $\{\rho_j\}$ that spans $i^*\HH^*(X)$ and renumbering, we may extend it to a basis $\rho_1, \ldots, \rho_k$ for $\HH^*(Y)$ by adding a basis $\rho_{\tilde l+1},\ldots,\rho_{k}$ of $i^*\HH^*(X)^\perp$. Let $\rho^1, \ldots, \rho^k$ denote the dual basis; notice that $\rho^i$ is \emph{not} equal to $i^* \eta^i$, and $\rho^1 = \mathbbm{1}_Y$.
 
 We are going to analyse the behaviour of a generating function of $2$-pointed quasimap invariants with a fundamental class insertion, which in fact coincides with the small $I$-function from Section \ref{subsec:gf_and_wc}. Let me break the notation into two: for any smooth projective toric variety $X$ and any effective curve class $\beta\in \HH_2^+(X)$, define
 \begin{align*} S_0^X(z,\beta) & =(\ev_1)_*\left(\frac{1}{z-\psi_1} \virt{\Q{0}{2}{X}{\beta}}\right), 
